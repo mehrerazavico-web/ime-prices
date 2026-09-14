@@ -1,0 +1,10 @@
+{
+  "updated_at": "2026-09-14 10:00:00",
+  "items": [
+    {
+      "supplier": "test",
+      "product": "test-product",
+      "base_price": "100"
+    }
+  ]
+}
