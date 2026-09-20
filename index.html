@@ -571,9 +571,6 @@
     <button id="audio-toggle-btn" class="splash-audio-btn" onclick="toggleSplashAudio(event)">
       🔊 فعال‌سازی صدا
     </button>
-    <button class="splash-skip-btn" onclick="hideSplash(event)">
-      رد کردن ✕
-    </button>
   </div>
 
   <!-- Main Application -->
@@ -708,7 +705,7 @@
 
     video.addEventListener('ended', hideSplash);
     video.addEventListener('error', hideSplash);
-    setTimeout(hideSplash, 6500); // Safety fallback timeout
+    setTimeout(hideSplash, 14000); // Safety fallback timeout
 
     // Commodity Icons SVG generator (Matching the Android Custom Vector Icons)
     function getCommodityIconSvg(product, size = 22) {
