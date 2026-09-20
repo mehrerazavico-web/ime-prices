@@ -73,6 +73,49 @@
       object-fit: cover;
     }
 
+    .splash-audio-btn {
+      position: absolute;
+      bottom: calc(var(--safe-bottom) + 32px);
+      left: 20px;
+      background: rgba(26, 31, 27, 0.85);
+      backdrop-filter: blur(10px);
+      color: #FFF;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      padding: 10px 18px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      z-index: 10000;
+      transition: transform 0.15s ease, background 0.2s;
+    }
+
+    .splash-audio-btn:active {
+      transform: scale(0.94);
+      background: rgba(56, 142, 60, 0.9);
+    }
+
+    .splash-skip-btn {
+      position: absolute;
+      top: calc(var(--safe-top) + 20px);
+      left: 20px;
+      background: rgba(26, 31, 27, 0.6);
+      backdrop-filter: blur(8px);
+      color: #FFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-family: inherit;
+      font-size: 12px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
     /* Main App Layout */
     #app-container {
       flex: 1;
@@ -524,6 +567,13 @@
     <video id="splash-video" playsinline autoplay muted preload="auto">
       <source src="./splash_video.mp4" type="video/mp4">
     </video>
+    <!-- Audio toggle button overlay for iOS -->
+    <button id="audio-toggle-btn" class="splash-audio-btn" onclick="toggleSplashAudio(event)">
+      🔊 فعال‌سازی صدا
+    </button>
+    <button class="splash-skip-btn" onclick="hideSplash(event)">
+      رد کردن ✕
+    </button>
   </div>
 
   <!-- Main Application -->
@@ -535,7 +585,7 @@
         <img src="./icon-192.png" alt="لوگو" class="brand-logo-img">
         <div>
           <h1 class="brand-title">رادار بورس کالا</h1>
-          <p class="brand-subtitle">شرکت بازرگانی معدنی مهر رضوی</p>
+          <p class="brand-subtitle">هلدینگ آرمان مهررضوی</p>
         </div>
       </div>
       <div class="header-actions">
@@ -601,7 +651,7 @@
       <div class="brand-promo-card">
         <img src="./icon-192.png" style="width: 36px; height: 36px; border-radius: 50%;">
         <div style="font-size: 11px; line-height: 1.5; color: #DDD;">
-          <strong>توسعه تجارت مهر رضوی:</strong> تامین پایدار مواد اولیه فولادسازی و کنسانتره با تسهیلات و اعتبار اسنادی.
+          <strong>هلدینگ آرمان مهررضوی:</strong> تامین پایدار مواد اولیه فولادسازی و کنسانتره با تسهیلات و اعتبار اسنادی.
         </div>
       </div>
 
@@ -624,19 +674,41 @@
       document.getElementById('ios-install-prompt').style.display = 'block';
     }
 
-    // Video Splash logic
+    // Video Splash logic with Audio toggle for iOS
     const splash = document.getElementById('splash-screen');
     const video = document.getElementById('splash-video');
-    function hideSplash() {
+    const audioBtn = document.getElementById('audio-toggle-btn');
+
+    function toggleSplashAudio(e) {
+      if (e) e.stopPropagation();
+      if (video) {
+        if (video.muted) {
+          video.muted = false;
+          video.volume = 1.0;
+          audioBtn.innerHTML = '🔊 صدا روشن شد';
+          audioBtn.style.background = 'rgba(56, 142, 60, 0.95)';
+        } else {
+          video.muted = true;
+          audioBtn.innerHTML = '🔇 صدا خاموش';
+          audioBtn.style.background = 'rgba(26, 31, 27, 0.85)';
+        }
+      }
+    }
+
+    function hideSplash(e) {
+      if (e) e.stopPropagation();
       if (splash && splash.style.display !== 'none') {
         splash.style.opacity = '0';
+        if (video) {
+          video.pause();
+        }
         setTimeout(() => splash.style.display = 'none', 500);
       }
     }
+
     video.addEventListener('ended', hideSplash);
     video.addEventListener('error', hideSplash);
-    splash.addEventListener('click', hideSplash);
-    setTimeout(hideSplash, 6000); // Safety fallback timeout
+    setTimeout(hideSplash, 6500); // Safety fallback timeout
 
     // Commodity Icons SVG generator (Matching the Android Custom Vector Icons)
     function getCommodityIconSvg(product, size = 22) {
@@ -693,12 +765,24 @@
       return 'linear-gradient(135deg, #8B9CB5 0%, #4A5C75 100%)';
     }
 
-    // Number formatter
+    // Number formatter for Persian numbers
+    const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+    function toPersianDigits(str) {
+      if (str === null || str === undefined) return '—';
+      return str.toString().replace(/[0-9]/g, (d) => persianDigits[parseInt(d, 10)]);
+    }
+
     function formatAmount(val) {
       if (!val) return '—';
       const clean = val.toString().replace(/,/g, '').trim();
       const num = parseInt(clean, 10);
-      return isNaN(num) ? val : num.toLocaleString('fa-IR');
+      if (isNaN(num)) return toPersianDigits(val);
+      return toPersianDigits(num.toLocaleString('en-US'));
+    }
+
+    function formatDemand(demand) {
+      if (!demand) return '—';
+      return formatAmount(demand);
     }
 
     // App State
@@ -796,9 +880,9 @@
         let trendHtml = '';
         if (diff !== null && diff !== undefined) {
           if (diff > 0) {
-            trendHtml = `<span class="trend-up">↑ %${diff.toFixed(2)}</span>`;
+            trendHtml = `<span class="trend-up">↑ ٪${toPersianDigits(diff.toFixed(2))}</span>`;
           } else if (diff < 0) {
-            trendHtml = `<span class="trend-down">↓ %${Math.abs(diff).toFixed(2)}</span>`;
+            trendHtml = `<span class="trend-down">↓ ٪${toPersianDigits(Math.abs(diff).toFixed(2))}</span>`;
           } else {
             trendHtml = `<span class="trend-zero">— بدون رقابت</span>`;
           }
@@ -859,7 +943,7 @@
       modalIcon.innerHTML = getCommodityIconSvg(item.product, 26);
 
       const diffVal = item.diff_percent != null
-        ? (item.diff_percent > 0 ? `+%${item.diff_percent}` : `%${item.diff_percent}`)
+        ? (item.diff_percent > 0 ? `+٪${toPersianDigits(item.diff_percent)}` : `٪${toPersianDigits(item.diff_percent)}`)
         : '—';
 
       const detailsHtml = `
@@ -887,7 +971,7 @@
         ${item.demand ? `
         <div class="detail-row">
           <span class="detail-label">میزان تقاضا:</span>
-          <span class="detail-val">${item.demand} تن</span>
+          <span class="detail-val">${formatDemand(item.demand)} تن</span>
         </div>` : ''}
         <div class="detail-row">
           <span class="detail-label">نوع تسویه:</span>
