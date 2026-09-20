@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20 16:46:59",
+  "updated_at": "2026-09-20 17:08:53",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -7,7 +7,11 @@
       "date": "1405/06/29",
       "base_price": "141032",
       "volume": "50000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "144816",
+      "diff_percent": 2.68,
+      "demand": "78,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -15,7 +19,11 @@
       "date": "1405/06/29",
       "base_price": "124790",
       "volume": "45000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "124790",
+      "diff_percent": 0.0,
+      "demand": "130,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -23,7 +31,11 @@
       "date": "1405/06/29",
       "base_price": "124790",
       "volume": "100000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "124790",
+      "diff_percent": 0.0,
+      "demand": "130,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معدنی و صنعتی گهر زمین",
@@ -31,7 +43,11 @@
       "date": "1405/06/29",
       "base_price": "152982",
       "volume": "35000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "154653",
+      "diff_percent": 1.09,
+      "demand": "31,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معدنی و صنعتی گهر زمین",
@@ -39,7 +55,11 @@
       "date": "1405/06/29",
       "base_price": "152982",
       "volume": "19000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "154653",
+      "diff_percent": 1.09,
+      "demand": "31,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معدنی و صنعتی گهر زمین",
@@ -47,7 +67,11 @@
       "date": "1405/06/29",
       "base_price": "152982",
       "volume": "20000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "154653",
+      "diff_percent": 1.09,
+      "demand": "31,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معدنی و صنعتی گل گهر",
@@ -55,7 +79,11 @@
       "date": "1405/06/29",
       "base_price": "152982",
       "volume": "80000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "152982",
+      "diff_percent": 0.0,
+      "demand": "60,000",
+      "final_checked_at": "2026-09-20 17:05"
     },
     {
       "supplier": "معدنی و صنعتی گل گهر",
@@ -63,7 +91,11 @@
       "date": "1405/06/29",
       "base_price": "152982",
       "volume": "30000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "152982",
+      "diff_percent": 0.0,
+      "demand": "60,000",
+      "final_checked_at": "2026-09-20 17:05"
     },
     {
       "supplier": "سنگ آهن مرکزی ایران",
@@ -79,7 +111,11 @@
       "date": "1405/06/29",
       "base_price": "131060",
       "volume": "10000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "131060",
+      "diff_percent": 0.0,
+      "demand": "10,000",
+      "final_checked_at": "2026-09-20 17:05"
     },
     {
       "supplier": "معدنی و صنعتی گهر زمین",
@@ -87,7 +123,11 @@
       "date": "1405/06/29",
       "base_price": "133290",
       "volume": "10000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "133290",
+      "diff_percent": 0.0,
+      "demand": "10,000",
+      "final_checked_at": "2026-09-20 17:06"
     },
     {
       "supplier": "معادن سنگ آهن احیاءسپاهان",
@@ -95,7 +135,11 @@
       "date": "1405/06/29",
       "base_price": "127890",
       "volume": "32000",
-      "settlement": "نقدی / اعتباری"
+      "settlement": "نقدی / اعتباری",
+      "final_price": "127890",
+      "diff_percent": 0.0,
+      "demand": "32,000",
+      "final_checked_at": "2026-09-20 17:06"
     }
   ]
 }
