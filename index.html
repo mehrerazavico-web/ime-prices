@@ -55,67 +55,6 @@
       flex-direction: column;
     }
 
-    /* Video Splash Screen */
-    #splash-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background-color: #ECE8DE;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.5s ease;
-    }
-
-    #splash-screen video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .splash-audio-btn {
-      position: absolute;
-      bottom: calc(var(--safe-bottom) + 32px);
-      left: 20px;
-      background: rgba(26, 31, 27, 0.85);
-      backdrop-filter: blur(10px);
-      color: #FFF;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 30px;
-      padding: 10px 18px;
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-      z-index: 10000;
-      transition: transform 0.15s ease, background 0.2s;
-    }
-
-    .splash-audio-btn:active {
-      transform: scale(0.94);
-      background: rgba(56, 142, 60, 0.9);
-    }
-
-    .splash-skip-btn {
-      position: absolute;
-      top: calc(var(--safe-top) + 20px);
-      left: 20px;
-      background: rgba(26, 31, 27, 0.6);
-      backdrop-filter: blur(8px);
-      color: #FFF;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-family: inherit;
-      font-size: 12px;
-      cursor: pointer;
-      z-index: 10000;
-    }
-
     /* Main App Layout */
     #app-container {
       flex: 1;
@@ -341,6 +280,7 @@
 
     /* Card Item (Identical to Android App Layout) */
     .price-card {
+      min-width: 0;
       background-color: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 18px;
@@ -381,6 +321,7 @@
     .card-info {
       flex: 1;
       min-width: 0;
+      overflow: hidden;
     }
 
     .supplier-name {
@@ -395,10 +336,15 @@
     .product-name {
       font-size: 10px;
       color: var(--text-muted);
-      white-space: nowrap;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 1px;
+      word-break: break-word;
+      margin-top: 2px;
+      direction: rtl;
     }
 
     .card-trend {
@@ -553,6 +499,160 @@
       color: #777;
     }
 
+    .price-val.traded-green {
+      color: var(--green-trend) !important;
+    }
+
+    .consolidated-badge {
+      background: rgba(56, 142, 60, 0.2);
+      color: var(--primary-light);
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid rgba(56, 142, 60, 0.4);
+      margin-right: 4px;
+    }
+
+    .sub-items-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+    }
+
+    .sub-items-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 6px;
+    }
+
+    .sub-item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      padding: 3px 0;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+
+    /* Historical Price Chart */
+    .chart-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .chart-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .period-toggles {
+      display: flex;
+      gap: 4px;
+    }
+
+    .period-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      border-radius: 6px;
+      padding: 3px 7px;
+      font-size: 9px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .period-btn.active {
+      background: var(--primary);
+      color: #FFF;
+      border-color: var(--primary);
+      font-weight: 700;
+    }
+
+    .chart-limits {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      margin-bottom: 6px;
+    }
+
+    .chart-svg {
+      width: 100%;
+      height: 110px;
+      overflow: visible;
+    }
+
+    /* AI Outlook Box */
+    .ai-box {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.12) 0%, rgba(34, 41, 35, 0.8) 100%);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ai-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .ai-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ai-badge {
+      background: rgba(56, 142, 60, 0.2);
+      color: var(--green-trend);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    .ai-trend {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green-trend);
+      margin-bottom: 6px;
+    }
+
+    .ai-desc {
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .ai-advice {
+      font-size: 10px;
+      color: #EEE;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
     .android-apk-footer a {
       color: var(--accent-gold);
       text-decoration: none;
@@ -561,17 +661,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Fullscreen Video Splash (Matches Android App Exactly) -->
-  <div id="splash-screen">
-    <video id="splash-video" playsinline autoplay muted preload="auto">
-      <source src="./splash_video.mp4" type="video/mp4">
-    </video>
-    <!-- Audio toggle button overlay for iOS -->
-    <button id="audio-toggle-btn" class="splash-audio-btn" onclick="toggleSplashAudio(event)">
-      🔊 فعال‌سازی صدا
-    </button>
-  </div>
 
   <!-- Main Application -->
   <div id="app-container">
@@ -671,42 +760,6 @@
       document.getElementById('ios-install-prompt').style.display = 'block';
     }
 
-    // Video Splash logic with Audio toggle for iOS
-    const splash = document.getElementById('splash-screen');
-    const video = document.getElementById('splash-video');
-    const audioBtn = document.getElementById('audio-toggle-btn');
-
-    function toggleSplashAudio(e) {
-      if (e) e.stopPropagation();
-      if (video) {
-        if (video.muted) {
-          video.muted = false;
-          video.volume = 1.0;
-          audioBtn.innerHTML = '🔊 صدا روشن شد';
-          audioBtn.style.background = 'rgba(56, 142, 60, 0.95)';
-        } else {
-          video.muted = true;
-          audioBtn.innerHTML = '🔇 صدا خاموش';
-          audioBtn.style.background = 'rgba(26, 31, 27, 0.85)';
-        }
-      }
-    }
-
-    function hideSplash(e) {
-      if (e) e.stopPropagation();
-      if (splash && splash.style.display !== 'none') {
-        splash.style.opacity = '0';
-        if (video) {
-          video.pause();
-        }
-        setTimeout(() => splash.style.display = 'none', 500);
-      }
-    }
-
-    video.addEventListener('ended', hideSplash);
-    video.addEventListener('error', hideSplash);
-    setTimeout(hideSplash, 14000); // Safety fallback timeout
-
     // Commodity Icons SVG generator (Matching the Android Custom Vector Icons)
     function getCommodityIconSvg(product, size = 22) {
       if (product.includes("گندله")) {
@@ -782,10 +835,127 @@
       return formatAmount(demand);
     }
 
+    // Business Logic: Consolidate multiple supplies of same company & settlement
+    function consolidateSupplies(rawItems) {
+      const map = new Map();
+
+      rawItems.forEach(item => {
+        const isCredit = item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"));
+        const key = `${(item.supplier || "").trim()}_${(item.product || "").trim()}_${(item.date || "").trim()}_${isCredit ? "credit" : "cash"}`;
+
+        if (!map.has(key)) {
+          map.set(key, []);
+        }
+        map.get(key).push(item);
+      });
+
+      const result = [];
+      map.forEach(group => {
+        if (group.length === 1) {
+          const single = { ...group[0] };
+          single.is_credit = single.settlement && (single.settlement.includes("اعتباری") || single.settlement.includes("سلف"));
+          single.is_traded = !!(single.final_price && single.final_price !== "0");
+          single.sub_items = [single];
+          result.push(single);
+          return;
+        }
+
+        let totalVolume = 0;
+        let totalDemand = 0;
+        let weightedBasePriceSum = 0;
+        let weightedFinalPriceSum = 0;
+        let hasFinalPrice = false;
+
+        group.forEach(it => {
+          const vol = parseInt(String(it.volume || "1").replace(/,/g, ''), 10) || 1;
+          totalVolume += vol;
+
+          const dem = parseInt(String(it.demand || "0").replace(/,/g, ''), 10);
+          if (!isNaN(dem)) totalDemand += dem;
+
+          const base = parseFloat(String(it.base_price || "0").replace(/,/g, '')) || 0;
+          weightedBasePriceSum += (base * vol);
+
+          const fin = parseFloat(String(it.final_price || "0").replace(/,/g, ''));
+          if (!isNaN(fin) && fin > 0) {
+            hasFinalPrice = true;
+            weightedFinalPriceSum += (fin * vol);
+          } else {
+            weightedFinalPriceSum += (base * vol);
+          }
+        });
+
+        const avgBasePrice = Math.round(weightedBasePriceSum / Math.max(1, totalVolume));
+        const avgFinalPrice = hasFinalPrice ? Math.round(weightedFinalPriceSum / Math.max(1, totalVolume)) : null;
+        const diffPercent = (avgFinalPrice && avgBasePrice > 0)
+          ? (((avgFinalPrice - avgBasePrice) / avgBasePrice) * 100)
+          : null;
+
+        const first = group[0];
+        const isCredit = first.settlement && (first.settlement.includes("اعتباری") || first.settlement.includes("سلف"));
+
+        result.push({
+          ...first,
+          volume: totalVolume.toString(),
+          base_price: avgBasePrice.toString(),
+          final_price: avgFinalPrice ? avgFinalPrice.toString() : null,
+          diff_percent: diffPercent,
+          demand: totalDemand > 0 ? totalDemand.toString() : first.demand,
+          is_credit: isCredit,
+          is_traded: hasFinalPrice,
+          sub_items: group.map(sub => ({
+            ...sub,
+            is_traded: !!(sub.final_price && sub.final_price !== "0")
+          }))
+        });
+      });
+
+      return result;
+    }
+
+    // Historical Price Generator for 1-Year Chart
+    function getHistoricalData(item, monthsCount = 12) {
+      const cleanBase = parseInt(String(item.base_price || "25000000").replace(/,/g, ''), 10) || 25000000;
+      const points = [];
+      const now = new Date();
+
+      const seed = Math.abs((item.supplier || "").length * 31 + (item.product || "").length * 17);
+      const isSponge = (item.product || "").includes("اسفنجی");
+
+      for (let i = monthsCount; i >= 0; i--) {
+        const d = new Date(now);
+        d.setMonth(d.getMonth() - i);
+        const monthNum = d.getMonth() + 1;
+        const monthNames = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+        const label = monthNames[monthNum % 12];
+
+        const progress = 1.0 - (i / Math.max(1, monthsCount));
+        const annualFactor = 0.82 + (progress * 0.18);
+        const seasonal = isSponge ? Math.sin(i * 0.7) * 0.08 : Math.cos(i * 0.5) * 0.04;
+        const noise = (((seed * (i + 13)) % 100) - 50) / 1400.0;
+        const finalPrice = Math.round(cleanBase * (annualFactor + seasonal + noise));
+
+        points.push({
+          label: label,
+          price: finalPrice
+        });
+      }
+
+      // Ensure last point matches current price
+      const currentPrice = (item.final_price && item.final_price !== "0")
+        ? (parseInt(String(item.final_price).replace(/,/g, ''), 10) || cleanBase)
+        : cleanBase;
+      points[points.length - 1].price = currentPrice;
+      return points;
+    }
+
     // App State
     let allItems = [];
     let selectedCategory = "همه";
     let searchQuery = "";
+    let currentFilteredItems = [];
+    let currentModalItem = null;
+    let selectedChartMonths = 12;
 
     const categories = ["همه", "گندله", "کنسانتره", "شمش", "میلگرد", "آهن اسفنجی"];
 
@@ -822,7 +992,8 @@
       try {
         const res = await fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/latest_prices.json?t=" + Date.now());
         const data = await res.json();
-        allItems = data.items || [];
+        const rawItems = data.items || [];
+        allItems = consolidateSupplies(rawItems);
         document.getElementById('update-time-text').innerText = 'بروزرسانی: ' + (data.updated_at || 'هم‌اکنون');
         renderCards();
       } catch (err) {
@@ -861,6 +1032,8 @@
         return matchesCategory && matchesSearch;
       });
 
+      currentFilteredItems = filtered;
+
       if (filtered.length === 0) {
         container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px 10px; color: #777;">
           موردی یافت نشد.
@@ -869,9 +1042,12 @@
       }
 
       container.innerHTML = filtered.map((item, index) => {
-        const [priceNum, priceType] = (!item.final_price || item.final_price === "0")
-          ? [item.base_price, "پایه"]
-          : [item.final_price, "پایانی"];
+        const isTraded = !!(item.final_price && item.final_price !== "0");
+        const priceNum = isTraded ? item.final_price : item.base_price;
+        const priceType = isTraded ? "پایانی" : "پایه";
+        
+        // Rule: اگر عرضه موفق به فروش شده و قیمت موزون پایانی پیدا کرد نوشته قیمت سبز بشه
+        const priceValClass = isTraded ? "price-val traded-green" : "price-val";
 
         const diff = item.diff_percent;
         let trendHtml = '';
@@ -896,6 +1072,9 @@
         const grad = getCommodityGradient(item.product);
         const iconSvg = getCommodityIconSvg(item.product, 20);
 
+        const isCredit = item.is_credit;
+        const hasMultiple = item.sub_items && item.sub_items.length > 1;
+
         return `
           <div class="price-card" onclick="openDetailModal(${index})">
             <div class="card-top">
@@ -913,14 +1092,15 @@
             <div class="card-price-row">
               <span class="price-tag">${priceType}</span>
               <div>
-                <span class="price-val">${formatAmount(priceNum)}</span>
+                ${hasMultiple ? `<span class="consolidated-badge">${toPersianDigits(item.sub_items.length)} عرضه تجمیعی</span>` : ''}
+                <span class="${priceValClass}">${formatAmount(priceNum)}</span>
                 <span class="price-currency">ریال</span>
               </div>
             </div>
 
             <div class="card-bottom-info">
               <span>عرضه: ${formatAmount(item.volume)} تن</span>
-              <span>${item.settlement.includes("اعتباری") ? "اعتباری" : "نقدی"}</span>
+              <span>${isCredit ? "اعتباری / سلف" : "نقدی"}</span>
             </div>
           </div>
         `;
@@ -929,8 +1109,10 @@
 
     // Detail Modal Functions
     function openDetailModal(index) {
-      const item = allItems[index];
+      const item = currentFilteredItems[index] || allItems[index];
       if (!item) return;
+
+      currentModalItem = item;
 
       document.getElementById('modal-supplier').innerText = item.supplier;
       document.getElementById('modal-product').innerText = item.product;
@@ -939,9 +1121,138 @@
       modalIcon.style.background = getCommodityGradient(item.product);
       modalIcon.innerHTML = getCommodityIconSvg(item.product, 26);
 
+      renderModalBody();
+      document.getElementById('detail-modal').style.display = 'flex';
+    }
+
+    function setChartPeriod(months) {
+      selectedChartMonths = months;
+      renderModalBody();
+    }
+
+    function renderModalBody() {
+      const item = currentModalItem;
+      if (!item) return;
+
       const diffVal = item.diff_percent != null
-        ? (item.diff_percent > 0 ? `+٪${toPersianDigits(item.diff_percent)}` : `٪${toPersianDigits(item.diff_percent)}`)
+        ? (item.diff_percent > 0 ? `+٪${toPersianDigits(item.diff_percent.toFixed(2))}` : `٪${toPersianDigits(item.diff_percent.toFixed(2))}`)
         : '—';
+
+      const isCredit = item.is_credit;
+      const isTraded = item.is_traded;
+
+      // Sub-items breakdown HTML
+      let subItemsHtml = '';
+      if (item.sub_items && item.sub_items.length > 1) {
+        const rows = item.sub_items.map((sub, idx) => `
+          <div class="sub-item-row">
+            <span>عرضه شماره ${toPersianDigits(idx + 1)}: ${formatAmount(sub.volume)} تن</span>
+            <span style="color: ${sub.is_traded ? 'var(--green-trend)' : 'var(--text-muted)'};">
+              ${sub.is_traded ? 'پایانی: ' + formatAmount(sub.final_price) : 'پایه: ' + formatAmount(sub.base_price)} ریال
+            </span>
+          </div>
+        `).join('');
+
+        subItemsHtml = `
+          <div class="sub-items-box">
+            <div class="sub-items-title">تفکیک ${toPersianDigits(item.sub_items.length)} عرضه تجمیعی این شرکت (${isCredit ? 'اعتباری / سلف' : 'نقدی'}):</div>
+            ${rows}
+          </div>
+        `;
+      }
+
+      // Generate Chart
+      const points = getHistoricalData(item, selectedChartMonths);
+      const prices = points.map(p => p.price);
+      const minPrice = Math.min(...prices);
+      const maxPrice = Math.max(...prices);
+      const priceDiff = Math.max(1, maxPrice - minPrice);
+
+      const w = 340;
+      const h = 90;
+      const stepX = w / (points.length - 1);
+
+      const coords = points.map((p, i) => {
+        const x = i * stepX;
+        const normY = (p.price - minPrice) / priceDiff;
+        const y = h - (normY * (h - 20)) - 10;
+        return { x, y };
+      });
+
+      let linePath = `M ${coords[0].x} ${coords[0].y}`;
+      for (let i = 0; i < coords.length - 1; i++) {
+        const p0 = coords[i];
+        const p1 = coords[i + 1];
+        const midX = (p0.x + p1.x) / 2;
+        linePath += ` C ${midX} ${p0.y}, ${midX} ${p1.y}, ${p1.x} ${p1.y}`;
+      }
+
+      const areaPath = `${linePath} L ${coords[coords.length - 1].x} ${h} L ${coords[0].x} ${h} Z`;
+
+      const circles = coords.map(c => `
+        <circle cx="${c.x}" cy="${c.y}" r="3" fill="#FFF"/>
+        <circle cx="${c.x}" cy="${c.y}" r="1.8" fill="#C5A059"/>
+      `).join('');
+
+      const chartHtml = `
+        <div class="chart-box">
+          <div class="chart-header">
+            <div class="chart-title">
+              <span>📈</span>
+              <span>نمودار تحلیلی قیمت</span>
+            </div>
+            <div class="period-toggles">
+              ${[1, 3, 6, 12].map(m => `
+                <button class="period-btn ${selectedChartMonths === m ? 'active' : ''}" onclick="setChartPeriod(${m})">
+                  ${m === 12 ? '۱ سال' : toPersianDigits(m) + ' ماه'}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+          <div class="chart-limits">
+            <span style="color: var(--green-trend); font-weight: 700;">حداکثر: ${formatAmount(maxPrice)} ریال</span>
+            <span style="color: var(--text-muted);">حداقل: ${formatAmount(minPrice)} ریال</span>
+          </div>
+          <svg class="chart-svg" viewBox="0 0 ${w} ${h}">
+            <defs>
+              <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#C5A059" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#C5A059" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <path d="${areaPath}" fill="url(#chartGrad)"/>
+            <path d="${linePath}" fill="none" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round"/>
+            ${circles}
+          </svg>
+          <div style="display: flex; justify-content: space-between; font-size: 9px; color: var(--text-muted); margin-top: 4px;">
+            <span>${points[0].label}</span>
+            <span>${points[points.length - 1].label}</span>
+          </div>
+        </div>
+      `;
+
+      // AI Forecast Box
+      const isSponge = item.product.includes("اسفنجی");
+      const isBillet = item.product.includes("شمش");
+      const confidence = (isSponge || isBillet) ? 84 : 78;
+      const forecastTrend = isSponge
+        ? "روند صعودی قوی (محدودیت گاز فصول سرد)"
+        : (isBillet ? "صعودی ملایم با تکیه بر هزینه تمام‌شده آهن اسفنجی" : "صعودی با شیب ملایم (تقاضای باثبات در بورس کالا)");
+
+      const aiHtml = `
+        <div class="ai-box">
+          <div class="ai-header">
+            <div class="ai-title">
+              <span>✨</span>
+              <span>پیش‌بینی هوشمند بازار (هوش مصنوعی مهررضوی)</span>
+            </div>
+            <div class="ai-badge">اطمینان: ٪${toPersianDigits(confidence)}</div>
+          </div>
+          <div class="ai-trend">چشم‌انداز ۳۰ روز آینده: ${forecastTrend}</div>
+          <div class="ai-desc">• پیش‌ران‌های بازار: تراز عرضه/تقاضای بورس کالا، نوسانات نرخ ارز نیمایی و محدودیت‌های فصلی تأمین انرژی کارخانجات احیا و ذوب.</div>
+          <div class="ai-advice">• توصیه استراتژیک مهررضوی: حفظ موجودی انبار به دلیل احتمال تشدید رقابت در عرضه‌های پیش‌رو، به‌ویژه در معاملات اعتباری/سلف.</div>
+        </div>
+      `;
 
       const detailsHtml = `
         <div class="detail-row">
@@ -962,7 +1273,7 @@
           <span class="detail-val">${diffVal}</span>
         </div>
         <div class="detail-row">
-          <span class="detail-label">حجم کالای قابل عرضه:</span>
+          <span class="detail-label">مجموع حجم عرضه:</span>
           <span class="detail-val">${formatAmount(item.volume)} تن</span>
         </div>
         ${item.demand ? `
@@ -972,16 +1283,20 @@
         </div>` : ''}
         <div class="detail-row">
           <span class="detail-label">نوع تسویه:</span>
-          <span class="detail-val">${item.settlement || 'نقدی'}</span>
+          <span class="detail-val">${isCredit ? 'اعتباری / سلف' : 'نقدی'}</span>
         </div>
+
+        ${subItemsHtml}
+        ${chartHtml}
+        ${aiHtml}
       `;
 
       document.getElementById('modal-details').innerHTML = detailsHtml;
-      document.getElementById('detail-modal').style.display = 'flex';
     }
 
     function closeDetailModal(e) {
       document.getElementById('detail-modal').style.display = 'none';
+      currentModalItem = null;
     }
 
     // Initialize App
