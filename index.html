@@ -402,24 +402,33 @@
     #detail-modal {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 10000;
       display: none;
       align-items: flex-end;
       justify-content: center;
-      transition: opacity 0.3s;
+      padding-top: calc(var(--safe-top) + 16px);
+      box-sizing: border-box;
+      transition: opacity 0.25s ease;
     }
 
     .modal-content {
       background: var(--surface-dark);
-      border-radius: 24px 24px 0 0;
+      border-radius: 28px 28px 0 0;
       width: 100%;
       max-width: 600px;
-      padding: 20px 20px calc(var(--safe-bottom) + 20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-      animation: slideUp 0.25s ease-out;
+      max-height: calc(88dvh);
+      max-height: calc(100dvh - var(--safe-top) - 24px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: none;
+      box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6);
+      animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
     }
 
     @keyframes slideUp {
@@ -427,26 +436,61 @@
       to { transform: translateY(0); }
     }
 
+    .modal-fixed-top {
+      padding: 12px 20px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--surface-dark);
+      flex-shrink: 0;
+    }
+
     .sheet-handle {
       width: 36px;
       height: 4px;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.25);
       border-radius: 2px;
-      margin: 0 auto 16px;
+      margin: 0 auto 12px;
     }
 
     .modal-header-row {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 20px;
+    }
+
+    .modal-close-icon {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #FFF;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .modal-close-icon:active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-scroll-area {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 16px 20px calc(var(--safe-bottom) + 24px);
+      box-sizing: border-box;
     }
 
     .modal-details-list {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .detail-row {
@@ -720,30 +764,35 @@
   <!-- Detail Bottom Sheet Modal -->
   <div id="detail-modal" onclick="closeDetailModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
-      <div class="sheet-handle"></div>
-      
-      <div class="modal-header-row">
-        <div id="modal-icon" class="card-icon" style="width: 44px; height: 44px;"></div>
-        <div>
-          <h2 id="modal-supplier" style="font-size: 16px; font-weight: 800; color: #FFF;">-</h2>
-          <p id="modal-product" style="font-size: 12px; color: var(--text-muted);">-</p>
+      <div class="modal-fixed-top">
+        <div class="sheet-handle"></div>
+        
+        <div class="modal-header-row">
+          <div id="modal-icon" class="card-icon" style="width: 44px; height: 44px; flex-shrink: 0;"></div>
+          <div style="flex: 1; min-width: 0;">
+            <h2 id="modal-supplier" style="font-size: 16px; font-weight: 800; color: #FFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">-</h2>
+            <p id="modal-product" style="font-size: 12px; color: var(--text-muted);">-</p>
+          </div>
+          <button class="modal-close-icon" onclick="closeDetailModal(event)" title="بستن">✕</button>
         </div>
       </div>
 
-      <div class="modal-details-list" id="modal-details">
-        <!-- Injected dynamically -->
-      </div>
-
-      <div class="brand-promo-card">
-        <img src="./icon-192.png" style="width: 36px; height: 36px; border-radius: 50%;">
-        <div style="font-size: 11px; line-height: 1.5; color: #DDD;">
-          <strong>هلدینگ آرمان مهررضوی:</strong> تامین پایدار مواد اولیه فولادسازی و کنسانتره با تسهیلات و اعتبار اسنادی.
+      <div class="modal-scroll-area" id="modal-scroll-area">
+        <div class="modal-details-list" id="modal-details">
+          <!-- Injected dynamically -->
         </div>
-      </div>
 
-      <button class="close-sheet-btn" onclick="document.getElementById('detail-modal').style.display='none'">
-        بستن
-      </button>
+        <div class="brand-promo-card">
+          <img src="./icon-192.png" style="width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;">
+          <div style="font-size: 11px; line-height: 1.5; color: #DDD;">
+            <strong>هلدینگ آرمان مهررضوی:</strong> تامین پایدار مواد اولیه فولادسازی و کنسانتره با تسهیلات و اعتبار اسنادی.
+          </div>
+        </div>
+
+        <button class="close-sheet-btn" onclick="closeDetailModal(event)">
+          بستن
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1123,6 +1172,10 @@
 
       renderModalBody();
       document.getElementById('detail-modal').style.display = 'flex';
+      const scrollArea = document.getElementById('modal-scroll-area');
+      if (scrollArea) {
+        scrollArea.scrollTop = 0;
+      }
     }
 
     function setChartPeriod(months) {
