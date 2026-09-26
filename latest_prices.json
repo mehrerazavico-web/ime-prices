@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26 16:26:03",
+  "updated_at": "2026-09-26 16:37:30",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -124,7 +124,11 @@
       "date": "1405/07/04",
       "base_price": "1040000",
       "volume": "300",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "1040000",
+      "diff_percent": 0.0,
+      "demand": "75",
+      "final_checked_at": "2026-09-26 16:35"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -133,7 +137,11 @@
       "date": "1405/07/04",
       "base_price": "1000000",
       "volume": "250",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "1000000",
+      "diff_percent": 0.0,
+      "demand": "50",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -142,7 +150,11 @@
       "date": "1405/07/04",
       "base_price": "940000",
       "volume": "150",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "940000",
+      "diff_percent": 0.0,
+      "demand": "25",
+      "final_checked_at": "2026-09-26 16:35"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -150,8 +162,12 @@
       "symbol": "AISC-BSO834X-00",
       "date": "1405/07/04",
       "base_price": "740000",
-      "volume": "1000",
-      "settlement": "نقدی"
+      "volume": "4000",
+      "settlement": "نقدی",
+      "final_price": "784504",
+      "diff_percent": 6.01,
+      "demand": "9,725",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "فولاد خوزستان",
@@ -159,8 +175,12 @@
       "symbol": "KSC-BSO494X-00",
       "date": "1405/07/04",
       "base_price": "775029",
-      "volume": "2500",
-      "settlement": "نقدی"
+      "volume": "10000",
+      "settlement": "نقدی",
+      "final_price": "775029",
+      "diff_percent": 0.0,
+      "demand": "1,000",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -169,7 +189,11 @@
       "date": "1405/07/04",
       "base_price": "928637",
       "volume": "750",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "928637",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -178,7 +202,11 @@
       "date": "1405/07/04",
       "base_price": "914673",
       "volume": "750",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "914673",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -187,7 +215,11 @@
       "date": "1405/07/04",
       "base_price": "998460",
       "volume": "15000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "998460",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -196,7 +228,11 @@
       "date": "1405/07/04",
       "base_price": "1005443",
       "volume": "1000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "1005443",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -205,7 +241,11 @@
       "date": "1405/07/04",
       "base_price": "858815",
       "volume": "500",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "858815",
+      "diff_percent": 0.0,
+      "demand": "150",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -214,7 +254,11 @@
       "date": "1405/07/04",
       "base_price": "907691",
       "volume": "500",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "907691",
+      "diff_percent": 0.0,
+      "demand": "25",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -223,7 +267,11 @@
       "date": "1405/07/04",
       "base_price": "802958",
       "volume": "125",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "802958",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -232,7 +280,11 @@
       "date": "1405/07/04",
       "base_price": "869458",
       "volume": "100",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "876744",
+      "diff_percent": 0.84,
+      "demand": "175",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -241,7 +293,11 @@
       "date": "1405/07/04",
       "base_price": "869458",
       "volume": "150",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "869458",
+      "diff_percent": 0.0,
+      "demand": "50",
+      "final_checked_at": "2026-09-26 16:37"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -250,7 +306,11 @@
       "date": "1405/07/04",
       "base_price": "869458",
       "volume": "100",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "869458",
+      "diff_percent": 0.0,
+      "demand": "25",
+      "final_checked_at": "2026-09-26 16:37"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -259,7 +319,11 @@
       "date": "1405/07/04",
       "base_price": "869458",
       "volume": "150",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "869458",
+      "diff_percent": 0.0,
+      "demand": "150",
+      "final_checked_at": "2026-09-26 16:35"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -268,7 +332,11 @@
       "date": "1405/07/04",
       "base_price": "869458",
       "volume": "200",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "869458",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:37"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -277,7 +345,11 @@
       "date": "1405/07/04",
       "base_price": "795000",
       "volume": "150",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "895912",
+      "diff_percent": 12.69,
+      "demand": "850",
+      "final_checked_at": "2026-09-26 16:36"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -286,7 +358,11 @@
       "date": "1405/07/04",
       "base_price": "802958",
       "volume": "125",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "802958",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-26 16:37"
     },
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -574,6 +650,17 @@
       "base_price": "802958",
       "volume": "125",
       "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد خوزستان",
+      "product": "تختال C",
+      "symbol": "KSC-SSG09XROA-00",
+      "date": "1405/07/04",
+      "base_price": "771900",
+      "final_price": "771900",
+      "diff_percent": 0.0,
+      "demand": "2,000",
+      "final_checked_at": "2026-09-26 16:36"
     }
   ]
 }
