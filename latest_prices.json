@@ -1,6 +1,293 @@
 {
-  "updated_at": "2026-09-26 10:25:54",
+  "updated_at": "2026-09-26 10:30:48",
   "items": [
+    {
+      "supplier": "معدنی و صنعتی چادر ملو",
+      "product": "گندله سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "141032",
+      "volume": "50000",
+      "settlement": "نقدی / اعتباری",
+      "final_price": "144816",
+      "diff_percent": 2.68,
+      "demand": "78,000",
+      "final_checked_at": "2026-09-20 17:06"
+    },
+    {
+      "supplier": "معدنی و صنعتی چادر ملو",
+      "product": "کنسانتره سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "124790",
+      "volume": "100000",
+      "settlement": "نقدی / اعتباری",
+      "final_price": "124790",
+      "diff_percent": 0.0,
+      "demand": "130,000",
+      "final_checked_at": "2026-09-20 17:06"
+    },
+    {
+      "supplier": "معدنی و صنعتی گهر زمین",
+      "product": "گندله سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "152982",
+      "volume": "20000",
+      "settlement": "نقدی / اعتباری",
+      "final_price": "154653",
+      "diff_percent": 1.09,
+      "demand": "31,000",
+      "final_checked_at": "2026-09-20 17:06"
+    },
+    {
+      "supplier": "معدنی و صنعتی گل گهر",
+      "product": "گندله سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "152982",
+      "volume": "30000",
+      "settlement": "نقدی / اعتباری",
+      "final_price": "152982",
+      "diff_percent": 0.0,
+      "demand": "60,000",
+      "final_checked_at": "2026-09-20 17:05"
+    },
+    {
+      "supplier": "سنگ آهن مرکزی ایران",
+      "product": "گندله سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "139400",
+      "volume": "46000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "معدنی و صنعتی گل گهر",
+      "product": "کنسانتره سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "131060",
+      "volume": "10000",
+      "settlement": "نقدی",
+      "final_price": "131060",
+      "diff_percent": 0.0,
+      "demand": "10,000",
+      "final_checked_at": "2026-09-20 17:05"
+    },
+    {
+      "supplier": "معدنی و صنعتی گهر زمین",
+      "product": "کنسانتره سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "133290",
+      "volume": "10000",
+      "settlement": "نقدی",
+      "final_price": "133290",
+      "diff_percent": 0.0,
+      "demand": "10,000",
+      "final_checked_at": "2026-09-20 17:06"
+    },
+    {
+      "supplier": "معادن سنگ آهن احیاءسپاهان",
+      "product": "کنسانتره سنگ آهن",
+      "date": "1405/06/29",
+      "base_price": "127890",
+      "volume": "32000",
+      "settlement": "نقدی / اعتباری",
+      "final_price": "127890",
+      "diff_percent": 0.0,
+      "demand": "32,000",
+      "final_checked_at": "2026-09-20 17:06"
+    },
+    {
+      "supplier": "معدنی و صنعتی چادر ملو",
+      "product": "شمش بلوم (150*150)5SP",
+      "date": "1405/06/30",
+      "base_price": "682145",
+      "volume": "7000",
+      "settlement": "نقدی / اعتباری"
+    },
+    {
+      "supplier": "معدنی و صنعتی چادر ملو",
+      "product": "شمش بلوم طول کوتاه (5SP(150*150",
+      "date": "1405/06/30",
+      "base_price": "682145",
+      "volume": "8600",
+      "settlement": "نقدی / اعتباری"
+    },
+    {
+      "supplier": "فولاد غدیر نی ریز",
+      "product": "شمش بلوم (150*150)5SP",
+      "date": "1405/06/30",
+      "base_price": "678491",
+      "volume": "2000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد روهینا جنوب",
+      "product": "میلگرد آلیاژ 70CR2",
+      "symbol": "FROJ-AR70CR2B-00",
+      "date": "1405/07/04",
+      "base_price": "1040000",
+      "volume": "300",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد روهینا جنوب",
+      "product": "میلگرد آلیاژ CK45",
+      "symbol": "FROJ-ARCK45B-00",
+      "date": "1405/07/04",
+      "base_price": "1000000",
+      "volume": "250",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد روهینا جنوب",
+      "product": "میلگرد آلیاژ CK15",
+      "symbol": "FROJ-ARCK15B-00",
+      "date": "1405/07/04",
+      "base_price": "940000",
+      "volume": "150",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "آهن و فولاد ارفع",
+      "product": "شمش بلوم (150*150)C30",
+      "symbol": "AISC-BSO834X-00",
+      "date": "1405/07/04",
+      "base_price": "740000",
+      "volume": "1000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد خوزستان",
+      "product": "شمش بلوم (150*150) RST34-2",
+      "symbol": "KSC-BSO494X-00",
+      "date": "1405/07/04",
+      "base_price": "775029",
+      "volume": "2500",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
+      "product": "میلگرد آلیاژ C45E",
+      "symbol": "PSC-ARC45EB-00",
+      "date": "1405/07/04",
+      "base_price": "928637",
+      "volume": "750",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
+      "product": "میلگرد آلیاژ C15E",
+      "symbol": "PSC-ARC15EB-00",
+      "date": "1405/07/04",
+      "base_price": "914673",
+      "volume": "750",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
+      "product": "شمش بلوم آلیاژ 55Cr3",
+      "symbol": "PSC-BSO78OO-00",
+      "date": "1405/07/04",
+      "base_price": "998460",
+      "volume": "15000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
+      "product": "میلگرد آلیاژ 70CR2",
+      "symbol": "PSC-AR70CR2B-00",
+      "date": "1405/07/04",
+      "base_price": "1005443",
+      "volume": "1000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
+      "product": "میلگرد کلاف 5.5-3sp",
+      "symbol": "PSC-SW5532-00",
+      "date": "1405/07/04",
+      "base_price": "858815",
+      "volume": "500",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
+      "product": "میلگرد کلاف 5.5-RST34_2",
+      "symbol": "PSC-SW5549-00",
+      "date": "1405/07/04",
+      "base_price": "907691",
+      "volume": "500",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "شرکت فولاد زرند ایرانیان",
+      "product": "شمش بلوم (150*150)CK45",
+      "symbol": "FZI-BSO454X-00",
+      "date": "1405/07/04",
+      "base_price": "802958",
+      "volume": "125",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "ذوب آهن اصفهان",
+      "product": "میلگرد آلیاژی A3-14",
+      "symbol": "ESC-MRENNNA3BCU-00",
+      "date": "1405/07/04",
+      "base_price": "869458",
+      "volume": "100",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "ذوب آهن اصفهان",
+      "product": "میلگرد آلیاژی A3-16",
+      "symbol": "ESC-MRNENNA3BCU-00",
+      "date": "1405/07/04",
+      "base_price": "869458",
+      "volume": "150",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "ذوب آهن اصفهان",
+      "product": "میلگرد آلیاژی A3-20",
+      "symbol": "ESC-MRNNNEA3BCU-00",
+      "date": "1405/07/04",
+      "base_price": "869458",
+      "volume": "100",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "ذوب آهن اصفهان",
+      "product": "میلگرد آلیاژی A3-25",
+      "symbol": "ESC-HRNENNA3BCU-00",
+      "date": "1405/07/04",
+      "base_price": "869458",
+      "volume": "150",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "ذوب آهن اصفهان",
+      "product": "میلگرد آلیاژی 28-A3",
+      "symbol": "ESC-HRNNENA3BCU-00",
+      "date": "1405/07/04",
+      "base_price": "869458",
+      "volume": "200",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "ذوب آهن اصفهان",
+      "product": "میلگرد کلاف 6.5-SAE1008",
+      "symbol": "ESC-SW6552-00",
+      "date": "1405/07/04",
+      "base_price": "795000",
+      "volume": "150",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "شرکت فولاد زرند ایرانیان",
+      "product": "شمش بلوم (200*200)CK45",
+      "symbol": "FZI-BSO455X-00",
+      "date": "1405/07/04",
+      "base_price": "802958",
+      "volume": "125",
+      "settlement": "نقدی"
+    },
     {
       "supplier": "معدنی و صنعتی چادر ملو",
       "product": "گندله سنگ آهن",
