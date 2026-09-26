@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 00:08:10",
+  "updated_at": "2026-09-27 00:24:03",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -162,7 +162,7 @@
       "symbol": "AISC-BSO834X-00",
       "date": "1405/07/04",
       "base_price": "740000",
-      "volume": "4000",
+      "volume": "1000",
       "settlement": "نقدی",
       "final_price": "784504",
       "diff_percent": 6.01,
@@ -175,7 +175,7 @@
       "symbol": "KSC-BSO494X-00",
       "date": "1405/07/04",
       "base_price": "775029",
-      "volume": "10000",
+      "volume": "2500",
       "settlement": "نقدی",
       "final_price": "775029",
       "diff_percent": 0.0,
