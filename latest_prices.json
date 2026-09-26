@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26 18:33:53",
+  "updated_at": "2026-09-26 18:50:35",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -128,7 +128,7 @@
       "final_price": "1040000",
       "diff_percent": 0.0,
       "demand": "75",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -141,7 +141,7 @@
       "final_price": "1000000",
       "diff_percent": 0.0,
       "demand": "50",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -154,7 +154,7 @@
       "final_price": "940000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -167,7 +167,7 @@
       "final_price": "784504",
       "diff_percent": 6.01,
       "demand": "9,725",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "فولاد خوزستان",
@@ -180,7 +180,7 @@
       "final_price": "775029",
       "diff_percent": 0.0,
       "demand": "1,000",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -193,7 +193,7 @@
       "final_price": "928637",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -206,7 +206,7 @@
       "final_price": "914673",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -219,7 +219,7 @@
       "final_price": "998460",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -232,7 +232,7 @@
       "final_price": "1005443",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -245,7 +245,7 @@
       "final_price": "858815",
       "diff_percent": 0.0,
       "demand": "150",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "صنایع فولاد آلیاژی پاسارگاد (مجتمع صنعتی ذوب آهن پاسارگاد)",
@@ -258,7 +258,7 @@
       "final_price": "907691",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -271,7 +271,7 @@
       "final_price": "802958",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -284,7 +284,7 @@
       "final_price": "876744",
       "diff_percent": 0.84,
       "demand": "175",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -297,7 +297,7 @@
       "final_price": "869458",
       "diff_percent": 0.0,
       "demand": "50",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -310,7 +310,7 @@
       "final_price": "869458",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -323,7 +323,7 @@
       "final_price": "869458",
       "diff_percent": 0.0,
       "demand": "150",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -336,7 +336,7 @@
       "final_price": "869458",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -349,7 +349,7 @@
       "final_price": "895912",
       "diff_percent": 12.69,
       "demand": "850",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -362,7 +362,7 @@
       "final_price": "802958",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:50"
     },
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -660,7 +660,7 @@
       "final_price": "771900",
       "diff_percent": 0.0,
       "demand": "2,000",
-      "final_checked_at": "2026-09-26 18:33"
+      "final_checked_at": "2026-09-26 18:49"
     }
   ]
 }
