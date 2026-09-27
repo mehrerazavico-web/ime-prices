@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 10:48:15",
+  "updated_at": "2026-09-27 11:05:19",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -134,27 +134,27 @@
       "supplier": "فولاد روهینا جنوب",
       "product": "میلگرد آلیاژ CK45",
       "symbol": "FROJ-ARCK45B-00",
-      "date": "1405/07/04",
+      "date": "1405/07/05",
       "base_price": "1000000",
       "volume": "250",
       "settlement": "نقدی",
       "final_price": "1000000",
       "diff_percent": 0.0,
-      "demand": "50",
-      "final_checked_at": "2026-09-27 03:10"
+      "demand": "25",
+      "final_checked_at": "2026-09-27 11:05"
     },
     {
       "supplier": "فولاد روهینا جنوب",
       "product": "میلگرد آلیاژ CK15",
       "symbol": "FROJ-ARCK15B-00",
-      "date": "1405/07/04",
+      "date": "1405/07/05",
       "base_price": "940000",
       "volume": "150",
       "settlement": "نقدی",
       "final_price": "940000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 03:10"
+      "final_checked_at": "2026-09-27 11:05"
     },
     {
       "supplier": "آهن و فولاد ارفع",
