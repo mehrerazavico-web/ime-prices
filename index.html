@@ -38,6 +38,19 @@
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
 
+    @media (prefers-color-scheme: light) {
+        :root {
+            --bg-dark: #f3f4f6;
+            --surface-dark: #ffffff;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.1);
+            --primary: #388E3C;
+            --primary-light: #4CAF50;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+        }
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -119,7 +132,6 @@
     .price-tag { font-size: 9px; background: rgba(255, 255, 255, 0.08); padding: 2px 6px; border-radius: 6px; color: #CCC; }
     .card-bottom-info { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(255, 255, 255, 0.06); font-size: 9px; color: var(--text-muted); }
 
-    /* Modal Styles */
     #detail-modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10000; display: none; align-items: flex-end; justify-content: center; padding-top: calc(var(--safe-top) + 16px); box-sizing: border-box; transition: opacity 0.25s ease; }
     .modal-content { background: var(--surface-dark); border-radius: 28px 28px 0 0; width: 100%; max-width: 600px; max-height: calc(88dvh); max-height: calc(100dvh - var(--safe-top) - 24px); display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); border-bottom: none; box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6); animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-sizing: border-box; }
     @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
@@ -137,6 +149,7 @@
     .close-sheet-btn { width: 100%; background: var(--primary); color: #FFF; border: none; border-radius: 12px; padding: 12px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
     .android-apk-footer { text-align: center; margin-top: 24px; font-size: 11px; color: #777; }
     .android-apk-footer a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
+    
     .price-val.traded-green { color: var(--green-trend) !important; }
     .consolidated-badge { background: rgba(56, 142, 60, 0.2); color: var(--primary-light); font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(56, 142, 60, 0.4); margin-right: 4px; }
     .sub-items-box { background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 10px 12px; margin-bottom: 14px; }
@@ -152,6 +165,7 @@
     .period-btn.active { background: var(--primary); color: #FFF; border-color: var(--primary); font-weight: 700; }
     #apex-chart-area { direction: ltr; margin: 0 -10px; }
 
+    /* AI Outlook Box */
     .ai-box { background: linear-gradient(135deg, rgba(197, 160, 89, 0.12) 0%, rgba(34, 41, 35, 0.8) 100%); border: 1px solid rgba(197, 160, 89, 0.35); border-radius: 14px; padding: 12px; margin-bottom: 16px; }
     .ai-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .ai-title { font-size: 12px; font-weight: 800; color: #FFF; display: flex; align-items: center; gap: 5px; }
@@ -263,69 +277,17 @@
     const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
     function toPersianDigits(str) { return (str === null || str === undefined) ? '—' : str.toString().replace(/[0-9]/g, d => persianDigits[parseInt(d, 10)]); }
     function formatAmount(val) { 
-      if (!val) return '—';
-      const clean = val.toString().replace(/,/g, '').trim();
-      const num = parseInt(clean, 10);
-      return isNaN(num) ? toPersianDigits(val) : toPersianDigits(num.toLocaleString('en-US')); 
-    }
-    function formatDemand(demand) { return !demand ? '—' : formatAmount(demand); }
-
-    // Logic اصلی شما برای تجمیع عرضه ها (کارت ها)
-    function consolidateSupplies(rawItems) {
-      const map = new Map();
-      rawItems.forEach(item => {
-        const isCredit = item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"));
-        const key = `${(item.supplier || "").trim()}_${(item.product || "").trim()}_${(item.date || "").trim()}_${isCredit ? "credit" : "cash"}`;
-        if (!map.has(key)) map.set(key, []);
-        map.get(key).push(item);
-      });
-
-      const result = [];
-      map.forEach(group => {
-        if (group.length === 1) {
-          const single = { ...group[0] };
-          single.is_credit = single.settlement && (single.settlement.includes("اعتباری") || single.settlement.includes("سلف"));
-          single.is_traded = !!(single.final_price && single.final_price !== "0");
-          single.sub_items = [single];
-          result.push(single);
-          return;
-        }
-
-        let totalVolume = 0, totalDemand = 0, weightedBasePriceSum = 0, weightedFinalPriceSum = 0, hasFinalPrice = false;
-        group.forEach(it => {
-          const vol = parseInt(String(it.volume || "1").replace(/,/g, ''), 10) || 1;
-          totalVolume += vol;
-          const dem = parseInt(String(it.demand || "0").replace(/,/g, ''), 10);
-          if (!isNaN(dem)) totalDemand += dem;
-          const base = parseFloat(String(it.base_price || "0").replace(/,/g, '')) || 0;
-          weightedBasePriceSum += (base * vol);
-          const fin = parseFloat(String(it.final_price || "0").replace(/,/g, ''));
-          if (!isNaN(fin) && fin > 0) { hasFinalPrice = true; weightedFinalPriceSum += (fin * vol); } 
-          else { weightedFinalPriceSum += (base * vol); }
-        });
-
-        const avgBasePrice = Math.round(weightedBasePriceSum / Math.max(1, totalVolume));
-        const avgFinalPrice = hasFinalPrice ? Math.round(weightedFinalPriceSum / Math.max(1, totalVolume)) : null;
-        const diffPercent = (avgFinalPrice && avgBasePrice > 0) ? (((avgFinalPrice - avgBasePrice) / avgBasePrice) * 100) : null;
-        const first = group[0];
-
-        result.push({
-          ...first,
-          volume: totalVolume.toString(),
-          base_price: avgBasePrice.toString(),
-          final_price: avgFinalPrice ? avgFinalPrice.toString() : null,
-          diff_percent: diffPercent,
-          demand: totalDemand > 0 ? totalDemand.toString() : first.demand,
-          is_credit: first.settlement && (first.settlement.includes("اعتباری") || first.settlement.includes("سلف")),
-          is_traded: hasFinalPrice,
-          sub_items: group.map(sub => ({ ...sub, is_traded: !!(sub.final_price && sub.final_price !== "0") }))
-        });
-      });
-      return result;
+        if (!val) return '—';
+        const num = parseInt(String(val).replace(/,/g, ''), 10);
+        return isNaN(num) ? toPersianDigits(val) : toPersianDigits(num.toLocaleString('en-US')); 
     }
 
-    let allItems = [];
-    let chartHistoryDict = {}; // دیتابیس جداگانه برای رسم چارت { "شمش - ارفع": [{x,y}, ...] }
+    // State Variables
+    let rawHistory = [];
+    let latestUpdates = [];
+    let symbolToTargetMap = {}; // ساخت مپ از روی نماد برای حل مشکل فاصله‌ها
+    let mergedChartData = {}; 
+    let displayCards = []; 
     let currentChartData = [];
     let currentApexChart = null;
 
@@ -333,12 +295,129 @@
     let searchQuery = "";
     let currentFilteredItems = [];
     let currentModalItem = null;
-    const categories = ["همه", "گندله", "کنسانتره", "شمش", "میلگرد", "آهن اسفنجی"];
+
+    // اضافه شدن گزینه "اسلب" به دسته‌بندی‌ها
+    const categories = ["همه", "گندله", "کنسانتره", "آهن اسفنجی", "شمش", "تختال", "اسلب", "میلگرد"];
+
+    // 1. Fetching Data
+    async function loadPrices() {
+      const refreshBtn = document.getElementById('refresh-btn');
+      refreshBtn.style.animation = 'spin 1s infinite linear';
+      
+      try {
+        // خواندن هیستوری ۱ ساله بورس
+        const resHist = await fetch("historical_prices.json?t=" + Date.now());
+        rawHistory = await resHist.json();
+
+        // خواندن آپدیت زنده ربات از گیت هاب
+        const resLive = await fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/latest_prices.json?t=" + Date.now());
+        const dataLive = await resLive.json();
+        latestUpdates = dataLive.items ? dataLive.items : dataLive;
+        
+        document.getElementById('update-time-text').innerText = 'بروزرسانی: ' + (dataLive.updated_at || 'هم‌اکنون');
+        
+        processAllData();
+        renderCategories();
+        renderCards();
+      } catch (err) {
+        console.error(err);
+        document.getElementById('cards-container').innerHTML = `<p style="grid-column: 1/-1;text-align:center;color:var(--red-trend);">خطا در دریافت اطلاعات دیتابیس</p>`;
+      } finally {
+        refreshBtn.style.animation = 'none';
+      }
+    }
+
+    function processAllData() {
+        mergedChartData = {};
+        symbolToTargetMap = {};
+        
+        // A) استخراج تاریخچه و ساخت مپ از روی سیمبل برای دقت ۱۰۰٪
+        rawHistory.forEach(item => {
+            if(!item.matched_targets || item.matched_targets.length === 0) return;
+            const targetName = item.matched_targets[0];
+            
+            // ذخیره نماد جهت مچ کردن دیتای ربات
+            if (item.symbol) symbolToTargetMap[item.symbol] = targetName;
+            
+            if(item.final_price !== null) {
+                if(!mergedChartData[targetName]) mergedChartData[targetName] = {};
+                mergedChartData[targetName][item.date] = parseInt(item.final_price);
+            }
+        });
+
+        // B) آماده سازی دیتای زنده برای کارت‌ها و اضافه کردن آخرین قیمت به چارت
+        let cardsMap = new Map();
+        
+        latestUpdates.forEach(item => {
+            // یافتن هوشمند نام تارگت (حتی در صورت تفاوت فاصله‌گذاری)
+            let targetName = null;
+            if (item.matched_targets && item.matched_targets.length > 0) {
+                targetName = item.matched_targets[0];
+            } else if (item.symbol && symbolToTargetMap[item.symbol]) {
+                targetName = symbolToTargetMap[item.symbol];
+            } else {
+                // پاکسازی اسپیس‌ها برای یافتن نام 
+                const cleanSup = (item.producer || item.supplier || "").replace(/\s+/g, '');
+                const keys = Object.keys(mergedChartData);
+                targetName = keys.find(k => {
+                    const parts = k.split(' - ');
+                    if(parts.length < 2) return false;
+                    return item.product.includes(parts[0]) && cleanSup.includes(parts[1].replace(/\s+/g, ''));
+                });
+            }
+
+            item.targetName = targetName;
+            
+            // اگر قیمت پایانی آپدیت شده، آن را به دیتای چارت نیز اضافه کن
+            if (targetName && item.final_price !== null && item.final_price !== "0") {
+                if(!mergedChartData[targetName]) mergedChartData[targetName] = {};
+                mergedChartData[targetName][item.date] = parseInt(String(item.final_price).replace(/,/g,''));
+            }
+            
+            // مدیریت کارت‌های نقدی و اعتباری
+            const isCredit = item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"));
+            const cardKey = `${targetName}_${isCredit ? "credit" : "cash"}`;
+            
+            item.is_credit = isCredit;
+            
+            // اگر دیتای چندم یک روز است، در یک آرایه ذخیره کن برای مودال
+            if (!cardsMap.has(cardKey)) {
+                cardsMap.set(cardKey, { ...item, sub_items: [item] });
+            } else {
+                cardsMap.get(cardKey).sub_items.push(item);
+                // اگر دیتای جدیدتر در همان روز بود جایگزین قیمت اصلی شود
+                if (item.final_price !== null && item.final_price !== "0") {
+                    cardsMap.get(cardKey).final_price = item.final_price;
+                    cardsMap.get(cardKey).demand = item.demand;
+                }
+            }
+        });
+
+        // تبدیل دیکشنری چارت به فرمت ApexCharts
+        Object.keys(mergedChartData).forEach(key => {
+            const dates = Object.keys(mergedChartData[key]).sort();
+            mergedChartData[key] = dates.map(d => ({ x: d, y: mergedChartData[key][d] }));
+        });
+
+        // پردازش نهایی کارت‌ها
+        displayCards = Array.from(cardsMap.values()).map(group => {
+            // آیا رقابت و تقاضا صورت گرفته؟
+            const dmd = parseInt(String(group.demand || "0").replace(/,/g, ''));
+            group.has_real_trade = (group.final_price !== null && group.final_price !== "0" && dmd > 0);
+            
+            // محاسبه حجم کل تجمیعی
+            let totVol = 0;
+            group.sub_items.forEach(si => { totVol += (parseInt(String(si.volume||"0").replace(/,/g, '')) || 0); });
+            group.total_volume = totVol;
+
+            return group;
+        });
+    }
 
     function renderCategories() {
       document.getElementById('categories-container').innerHTML = categories.map(cat => {
         const isActive = cat === selectedCategory ? 'active' : '';
-        const iconSvg = cat !== "همه" ? getCommodityIconSvg(cat, 16) : '';
+        const iconSvg = cat !== "همه" && cat !== "اسلب" ? getCommodityIconSvg(cat, 16) : (cat === "اسلب" ? getCommodityIconSvg("تختال", 16) : '');
         return `<div class="cat-chip ${isActive}" onclick="setCategory('${cat}')">${iconSvg}<span>${cat}</span></div>`;
       }).join('');
     }
@@ -346,83 +425,43 @@
     function setCategory(cat) { selectedCategory = cat; renderCategories(); renderCards(); }
     document.getElementById('search-input').addEventListener('input', (e) => { searchQuery = e.target.value.trim().toLowerCase(); renderCards(); });
 
-    async function loadPrices() {
-      const refreshBtn = document.getElementById('refresh-btn');
-      refreshBtn.style.animation = 'spin 1s infinite linear';
-      
-      try {
-        // 1. دریافت دیتای زنده برای ساخت کارت ها (کد اصلی شما)
-        const res = await fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/latest_prices.json?t=" + Date.now());
-        const data = await res.json();
-        const rawItems = data.items || [];
-        allItems = consolidateSupplies(rawItems);
-        document.getElementById('update-time-text').innerText = 'به‌روزرسانی: ' + (data.updated_at || 'هم‌اکنون');
-        
-        // 2. دریافت دیتای یکساله فقط برای رسم چارت 
-        const resHist = await fetch("historical_prices.json?t=" + Date.now());
-        const histData = await resHist.json();
-        
-        chartHistoryDict = {};
-        histData.forEach(item => {
-            if(item.final_price === null || !item.matched_targets) return;
-            const targetName = item.matched_targets[0];
-            if(!chartHistoryDict[targetName]) chartHistoryDict[targetName] = {};
-            // جایگزینی روزهای تکراری برای جلوگیری از خرابی چارت
-            chartHistoryDict[targetName][item.date] = parseInt(item.final_price);
-        });
-
-        // تبدیل دیکشنری به آرایه
-        Object.keys(chartHistoryDict).forEach(key => {
-            const dates = Object.keys(chartHistoryDict[key]).sort();
-            chartHistoryDict[key] = dates.map(d => ({ x: d, y: chartHistoryDict[key][d] }));
-        });
-
-        renderCards();
-      } catch (err) {
-        console.error("Error loading prices", err);
-      } finally {
-        refreshBtn.style.animation = 'none';
-      }
-    }
-
-    document.getElementById('refresh-btn').addEventListener('click', loadPrices);
-    document.getElementById('share-btn').addEventListener('click', () => {
-      if (navigator.share) navigator.share({ title: 'رادار بورس کالا', text: 'مشاهده نرخ‌های بورس کالا', url: window.location.href }).catch(() => {});
-      else { navigator.clipboard.writeText(window.location.href); alert('لینک کپی شد!'); }
-    });
-
     function renderCards() {
       const container = document.getElementById('cards-container');
-      const filtered = allItems.filter(item => {
-        const matchesCategory = selectedCategory === "همه" || item.product.includes(selectedCategory);
-        const matchesSearch = !searchQuery || item.supplier.toLowerCase().includes(searchQuery) || item.product.toLowerCase().includes(searchQuery) || item.settlement.toLowerCase().includes(searchQuery);
-        return matchesCategory && matchesSearch;
+      const filtered = displayCards.filter(item => {
+        // فیلتر کردن اسلب برای پیدا کردن تختال
+        const checkCategory = selectedCategory === "اسلب" ? "تختال" : selectedCategory;
+        const matchesCat = selectedCategory === "همه" || item.product.includes(checkCategory);
+        const matchesSearch = !searchQuery || (item.supplier||"").toLowerCase().includes(searchQuery) || item.product.toLowerCase().includes(searchQuery) || (item.settlement||"").toLowerCase().includes(searchQuery);
+        return matchesCat && matchesSearch;
       });
 
       currentFilteredItems = filtered;
 
       if (filtered.length === 0) {
-        container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 40px 10px; color: #777;">موردی یافت نشد.</div>`;
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px 10px; color: var(--text-muted);">موردی یافت نشد.</div>`;
         return;
       }
 
       container.innerHTML = filtered.map((item, index) => {
-        const isTraded = !!(item.final_price && item.final_price !== "0");
+        const isTraded = item.has_real_trade;
         const priceNum = isTraded ? item.final_price : item.base_price;
         const priceType = isTraded ? "پایانی" : "پایه";
         const priceValClass = isTraded ? "price-val traded-green" : "price-val";
 
-        const diff = item.diff_percent;
+        const baseP = parseInt(String(item.base_price).replace(/,/g, ''));
+        const finalP = parseInt(String(item.final_price).replace(/,/g, ''));
+        
         let trendHtml = '';
-        if (diff !== null && diff !== undefined) {
-          if (diff > 0) trendHtml = `<span class="trend-up">↑ ٪${toPersianDigits(diff.toFixed(2))}</span>`;
-          else if (diff < 0) trendHtml = `<span class="trend-down">↓ ٪${toPersianDigits(Math.abs(diff).toFixed(2))}</span>`;
-          else trendHtml = `<span class="trend-zero">— بدون رقابت</span>`;
+        if (isTraded && baseP > 0) {
+            const diff = finalP - baseP;
+            const diffPct = (diff / baseP) * 100;
+            if (diff > 0) trendHtml = `<span class="trend-up">↑ رقابت ٪${toPersianDigits(diffPct.toFixed(2))}</span>`;
+            else trendHtml = `<span class="trend-zero">— معامله با نرخ پایه</span>`;
         } else {
-          trendHtml = `<span class="trend-zero">بدون معامله</span>`;
+            trendHtml = `<span class="trend-zero">بدون معامله</span>`;
         }
 
-        const shortSupplier = item.supplier.replace("معدنی و صنعتی", "").replace("شرکت", "").replace("سنگ آهن", "").trim();
+        const shortSupplier = (item.producer || item.supplier).replace("معدنی و صنعتی", "").replace("شرکت", "").replace("سنگ آهن", "").trim();
         const grad = getCommodityGradient(item.product);
         const iconSvg = getCommodityIconSvg(item.product, 20);
         const hasMultiple = item.sub_items && item.sub_items.length > 1;
@@ -432,7 +471,7 @@
             <div class="card-top">
               <div class="card-icon" style="background: ${grad}">${iconSvg}</div>
               <div class="card-info">
-                <div class="supplier-name" title="${item.supplier}">${shortSupplier}</div>
+                <div class="supplier-name" title="${item.producer || item.supplier}">${shortSupplier}</div>
                 <div class="product-name" title="${item.product}">${item.product}</div>
               </div>
             </div>
@@ -446,8 +485,8 @@
               </div>
             </div>
             <div class="card-bottom-info">
-              <span>عرضه: ${formatAmount(item.volume)} تن</span>
-              <span>${item.is_credit ? "اعتباری/سلف" : "نقدی"}</span>
+              <span>عرضه: ${formatAmount(item.total_volume)} تن</span>
+              <span>${item.is_credit ? "اعتباری / سلف" : "نقدی"}</span>
             </div>
           </div>
         `;
@@ -455,12 +494,12 @@
     }
 
     function openDetailModal(index) {
-      const item = currentFilteredItems[index] || allItems[index];
+      const item = currentFilteredItems[index];
       if (!item) return;
 
       currentModalItem = item;
-      document.getElementById('modal-supplier').innerText = item.supplier;
-      document.getElementById('modal-product').innerText = item.product;
+      document.getElementById('modal-supplier').innerText = item.producer || item.supplier;
+      document.getElementById('modal-product').innerText = item.product + (item.symbol ? ` (${item.symbol})` : '');
       const modalIcon = document.getElementById('modal-icon');
       modalIcon.style.background = getCommodityGradient(item.product);
       modalIcon.innerHTML = getCommodityIconSvg(item.product, 26);
@@ -475,22 +514,28 @@
       const item = currentModalItem;
       if (!item) return;
 
-      const diffVal = item.diff_percent != null ? (item.diff_percent > 0 ? `+٪${toPersianDigits(item.diff_percent.toFixed(2))}` : `٪${toPersianDigits(item.diff_percent.toFixed(2))}`) : '—';
-      const isCredit = item.is_credit;
+      const isTraded = item.has_real_trade;
+      let diffVal = '—';
+      if (isTraded && item.base_price) {
+          const bp = parseInt(String(item.base_price).replace(/,/g, ''));
+          const fp = parseInt(String(item.final_price).replace(/,/g, ''));
+          const pct = ((fp - bp) / bp * 100).toFixed(2);
+          diffVal = (fp > bp) ? `+٪${toPersianDigits(pct)}` : `٪${toPersianDigits(pct)}`;
+      }
 
       let subItemsHtml = '';
       if (item.sub_items && item.sub_items.length > 1) {
-        const rows = item.sub_items.map((sub, idx) => `
-          <div class="sub-item-row">
-            <span>عرضه ${toPersianDigits(idx + 1)}: ${formatAmount(sub.volume)} تن</span>
-            <span style="color: ${sub.is_traded ? 'var(--green-trend)' : 'var(--text-muted)'};">
-              ${sub.is_traded ? 'پایانی: ' + formatAmount(sub.final_price) : 'پایه: ' + formatAmount(sub.base_price)} ریال
-            </span>
-          </div>`).join('');
+        const rows = item.sub_items.map((sub, idx) => {
+            const si_traded = (sub.final_price !== null && sub.final_price !== "0");
+            const si_price = si_traded ? formatAmount(sub.final_price) : formatAmount(sub.base_price);
+            return `<div class="sub-item-row">
+                <span>عرضه ${toPersianDigits(idx + 1)}: ${formatAmount(sub.volume)} تن</span>
+                <span style="color: ${si_traded ? 'var(--green-trend)' : 'var(--text-muted)'};">${si_traded ? 'پایانی: ' : 'پایه: '}${si_price} ریال</span>
+            </div>`;
+        }).join('');
         subItemsHtml = `<div class="sub-items-box"><div class="sub-items-title">تفکیک عرضه‌های امروز:</div>${rows}</div>`;
       }
 
-      // جایگزینی کدهای SVG فیک با کانتینر ApexCharts
       const chartHtml = `
         <div class="chart-box">
           <div class="chart-header">
@@ -521,36 +566,24 @@
       const detailsHtml = `
         <div class="detail-row"><span class="detail-label">تاریخ عرضه:</span><span class="detail-val">${item.date || '—'}</span></div>
         <div class="detail-row"><span class="detail-label">قیمت پایه:</span><span class="detail-val">${formatAmount(item.base_price)} ریال</span></div>
-        ${item.final_price ? `<div class="detail-row"><span class="detail-label">قیمت پایانی:</span><span class="detail-val" style="color: var(--green-trend);">${formatAmount(item.final_price)} ریال</span></div>` : ''}
+        ${isTraded ? `<div class="detail-row"><span class="detail-label">قیمت پایانی:</span><span class="detail-val" style="color: var(--green-trend);">${formatAmount(item.final_price)} ریال</span></div>` : ''}
         <div class="detail-row"><span class="detail-label">تغییر نسبت به پایه:</span><span class="detail-val">${diffVal}</span></div>
-        <div class="detail-row"><span class="detail-label">مجموع عرضه:</span><span class="detail-val">${formatAmount(item.volume)} تن</span></div>
+        <div class="detail-row"><span class="detail-label">مجموع عرضه:</span><span class="detail-val">${formatAmount(item.total_volume)} تن</span></div>
         ${item.demand ? `<div class="detail-row"><span class="detail-label">میزان تقاضا:</span><span class="detail-val">${formatAmount(item.demand)} تن</span></div>` : ''}
+        <div class="detail-row"><span class="detail-label">نوع تسویه:</span><span class="detail-val">${item.is_credit ? 'اعتباری / سلف' : 'نقدی'}</span></div>
       `;
 
       document.getElementById('modal-details').innerHTML = detailsHtml + subItemsHtml + chartHtml + aiHtml;
 
-      // تشخیص اینکه این کارت مربوط به کدام شرکت است برای کشیدن چارت از روی هیستوری
-      let targetName = null;
-      if (item.matched_targets && item.matched_targets.length > 0) {
-          targetName = item.matched_targets[0];
-      } else {
-          // در صورتی که ساختار دیتای لایو matched_targets نداشت، از روی اسم کالا و شرکت پیدا کن
-          const keys = Object.keys(chartHistoryDict);
-          targetName = keys.find(k => {
-              const parts = k.split(' - ');
-              return parts.length >= 2 && item.product.includes(parts[0]) && item.supplier.includes(parts[1]);
-          });
-      }
-
-      currentChartData = targetName ? (chartHistoryDict[targetName] || []) : [];
+      // گرفتن داده‌های چارت از مپ ترکیب شده
+      currentChartData = item.targetName ? (mergedChartData[item.targetName] || []) : [];
       renderApexChart(currentChartData);
 
-      // اتصال رویداد به دکمه‌های تایم‌فریم نمودار
+      // هندلر دکمه‌های چارت
       document.getElementById('apex-toggles').addEventListener('click', (e) => {
           if (e.target.tagName === 'BUTTON') {
               document.querySelectorAll('#apex-toggles button').forEach(b => b.classList.remove('active'));
               e.target.classList.add('active');
-
               const range = e.target.getAttribute('data-range');
               let slice = currentChartData;
               if (range !== 'all') {
@@ -565,7 +598,7 @@
     function renderApexChart(dataSlice) {
       const chartContainer = document.querySelector("#apex-chart-area");
       if(!dataSlice || dataSlice.length < 2) {
-          chartContainer.innerHTML = "<p style='text-align:center; font-size:11px; color:#999; padding:20px 0;'>دیتای کافی برای رسم نمودار ۱ سال گذشته وجود ندارد.</p>";
+          chartContainer.innerHTML = "<p style='text-align:center; font-size:11px; color:var(--text-muted); padding:20px 0;'>دیتای کافی برای رسم نمودار ۱ سال گذشته وجود ندارد.</p>";
           return;
       }
       
@@ -575,6 +608,7 @@
 
       const options = {
         series: [{ name: 'قیمت پایانی', data: dataSlice }],
+        theme: { mode: isDarkMode() ? 'dark' : 'light' },
         chart: { type: 'area', height: 160, fontFamily: 'Vazirmatn, sans-serif', toolbar: { show: false }, zoom: { enabled: false }, background: 'transparent' },
         colors: [colorCode],
         fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0.0, stops: [0, 100] } },
@@ -583,7 +617,7 @@
         xaxis: { type: 'category', labels: { show: false }, axisBorder: { show: false }, axisTicks: { show: false }, tooltip: { enabled: false }, crosshairs: { stroke: { color: colorCode, width: 1, dashArray: 4 } } },
         yaxis: { show: false, min: Math.min(...dataSlice.map(d => d.y)) * 0.98 },
         grid: { show: false },
-        tooltip: { theme: 'dark', y: { formatter: (val) => formatAmount(val) + " ریال" }, x: { show: true } }
+        tooltip: { theme: isDarkMode() ? 'dark' : 'light', y: { formatter: (val) => formatAmount(val) + " ریال" }, x: { show: true } }
       };
 
       if (currentApexChart) currentApexChart.destroy();
@@ -597,6 +631,11 @@
       if(currentApexChart) { currentApexChart.destroy(); currentApexChart = null; }
     }
 
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if(currentApexChart) currentApexChart.updateOptions({ theme: { mode: e.matches ? 'dark' : 'light' } });
+    });
+
+    document.getElementById('refresh-btn').addEventListener('click', loadPrices);
     renderCategories();
     loadPrices();
   </script>
