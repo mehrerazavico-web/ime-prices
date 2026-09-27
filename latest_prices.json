@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 13:03:39",
+  "updated_at": "2026-09-27 13:20:46",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -141,7 +141,7 @@
       "final_price": "1000000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 13:03"
+      "final_checked_at": "2026-09-27 13:20"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -154,7 +154,7 @@
       "final_price": "940000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 13:03"
+      "final_checked_at": "2026-09-27 13:20"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -669,7 +669,11 @@
       "date": "1405/07/05",
       "base_price": "143853",
       "volume": "30000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "143853",
+      "diff_percent": 0.0,
+      "demand": "10,000",
+      "final_checked_at": "2026-09-27 13:20"
     },
     {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -723,7 +727,11 @@
       "date": "1405/07/05",
       "base_price": "122189",
       "volume": "30000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "122189",
+      "diff_percent": 0.0,
+      "demand": "20,000",
+      "final_checked_at": "2026-09-27 13:20"
     },
     {
       "supplier": "آهن و فولاد غدیر ایرانیان",
@@ -759,7 +767,11 @@
       "date": "1405/07/05",
       "base_price": "142487",
       "volume": "7000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "142487",
+      "diff_percent": 0.0,
+      "demand": "4,000",
+      "final_checked_at": "2026-09-27 13:20"
     },
     {
       "supplier": "توسعه معدنی و صنعتی صبانور",
