@@ -5,20 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>رادار مهر رضوی | نرخ‌های بورس کالا</title>
 
-  <!-- PWA & Apple iOS Web App Meta Tags -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#1A1F1B">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="رادار مهر رضوی">
   
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="./favicon.png">
-
-  <!-- Vazirmatn Persian Font & ApexCharts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
   <style>
@@ -29,7 +21,6 @@
       --card-border: rgba(255, 255, 255, 0.08);
       --primary: #388E3C;
       --primary-light: #4CAF50;
-      --accent-gold: #C5A059;
       --text-main: #FFFFFF;
       --text-muted: #9E9E9E;
       --green-trend: #4CAF50;
@@ -37,527 +28,130 @@
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-      user-select: none;
+    
+    /* پشتیبانی از دارک/لایت مود */
+    @media (prefers-color-scheme: light) {
+        :root {
+            --bg-dark: #f3f4f6;
+            --surface-dark: #ffffff;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.1);
+            --primary: #388E3C;
+            --primary-light: #4CAF50;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+        }
     }
 
-    body {
-      font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-tap-highlight-color: transparent;}
+    body { font-family: 'Vazirmatn', sans-serif; background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
 
-    /* Main App Layout */
-    #app-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      margin: 0 auto;
-      width: 100%;
-      padding-top: calc(var(--safe-top) + 12px);
-      padding-bottom: calc(var(--safe-bottom) + 24px);
-      padding-left: 16px;
-      padding-right: 16px;
-    }
+    #app-container { flex: 1; max-width: 600px; margin: 0 auto; width: 100%; padding: calc(var(--safe-top) + 12px) 16px calc(var(--safe-bottom) + 24px) 16px; }
 
-    /* Header Bar */
-    .app-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
+    .app-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .brand-title-row { display: flex; align-items: center; gap: 10px; }
+    .brand-title { font-size: 16px; font-weight: 800; color: var(--text-main); }
+    .brand-subtitle { font-size: 11px; color: var(--text-muted); }
+    .icon-btn { background: rgba(128, 128, 128, 0.1); border: 1px solid var(--card-border); color: var(--text-main); width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-    .brand-title-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo-img {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background-color: #2F3931;
-      padding: 4px;
-    }
-
-    .brand-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: #FFFFFF;
-      letter-spacing: -0.3px;
-    }
-
-    .brand-subtitle {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 1px;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .icon-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--text-main);
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 16px;
-      transition: transform 0.15s ease, background 0.2s;
-    }
-
-    .icon-btn:active {
-      transform: scale(0.92);
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    /* iOS Installation Banner */
-    #ios-install-prompt {
-      display: none;
-      background: linear-gradient(135deg, rgba(56, 142, 60, 0.2) 0%, rgba(197, 160, 89, 0.15) 100%);
-      border: 1px solid rgba(197, 160, 89, 0.4);
-      border-radius: 16px;
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      font-size: 12px;
-      line-height: 1.6;
-      color: #E0E0E0;
-      position: relative;
-    }
-
-    #ios-install-prompt strong { color: var(--accent-gold); }
-    .close-prompt-btn { position: absolute; top: 10px; left: 10px; background: none; border: none; color: #999; font-size: 16px; cursor: pointer; }
-
-    /* Search Input */
-    .search-box { position: relative; margin-bottom: 12px; }
-    .search-box input { width: 100%; background-color: var(--surface-dark); border: 1px solid var(--card-border); border-radius: 14px; padding: 12px 42px 12px 16px; font-family: inherit; font-size: 13px; color: #FFF; outline: none; transition: border-color 0.2s; }
-    .search-box input:focus { border-color: var(--primary-light); }
-    .search-box input::placeholder { color: #757575; }
-    .search-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #757575; font-size: 16px; pointer-events: none; }
-
-    /* Category Chips Slider */
     .categories-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 12px; scrollbar-width: none; }
     .categories-bar::-webkit-scrollbar { display: none; }
-    .cat-chip { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background-color: var(--surface-dark); border: 1px solid var(--card-border); border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--text-muted); white-space: nowrap; cursor: pointer; transition: all 0.2s; }
+    .cat-chip { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background-color: var(--surface-dark); border: 1px solid var(--card-border); border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--text-muted); white-space: nowrap; cursor: pointer; }
     .cat-chip.active { background-color: var(--primary); border-color: var(--primary-light); color: #FFF; }
-    .cat-chip svg { width: 16px; height: 16px; }
 
-    /* Live Update Status Banner */
-    .status-badge { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 12px; padding: 0 4px; }
-    .pulse-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: var(--green-trend); margin-left: 6px; box-shadow: 0 0 8px var(--green-trend); animation: pulse 2s infinite; }
+    .status-badge { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 12px; }
+    .pulse-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background-color: var(--green-trend); margin-left: 6px; animation: pulse 2s infinite; }
     @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
 
-    /* Cards Grid */
     .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     @media (max-width: 360px) { .cards-grid { grid-template-columns: 1fr; } }
 
-    /* Card Item */
-    .price-card { min-width: 0; background-color: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 14px; display: flex; flex-direction: column; cursor: pointer; transition: transform 0.15s ease, border-color 0.2s; }
-    .price-card:active { transform: scale(0.97); border-color: var(--primary-light); }
+    .price-card { background-color: var(--card-bg); border: 1px solid var(--card-border); border-radius: 18px; padding: 14px; display: flex; flex-direction: column; cursor: pointer; }
     .card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
     .card-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .card-icon svg { width: 22px; height: 22px; }
-    .card-info { flex: 1; min-width: 0; overflow: hidden; }
-    .supplier-name { font-size: 12px; font-weight: 700; color: #FFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .product-name { font-size: 10px; color: var(--text-muted); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; word-break: break-word; margin-top: 2px; direction: rtl; }
-    .card-trend { font-size: 11px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 4px; }
+    .supplier-name { font-size: 12px; font-weight: 700; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .product-name { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+    .card-trend { font-size: 11px; font-weight: 700; margin-bottom: 12px; }
     .trend-up { color: var(--green-trend); }
     .trend-down { color: var(--red-trend); }
     .trend-zero { color: var(--text-muted); }
     .card-price-row { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; }
-    .price-val { font-size: 17px; font-weight: 900; color: #FFF; letter-spacing: -0.5px; }
+    .price-val { font-size: 17px; font-weight: 900; color: var(--text-main); }
     .price-currency { font-size: 9px; color: var(--text-muted); margin-right: 3px; }
-    .price-tag { font-size: 9px; background: rgba(255, 255, 255, 0.08); padding: 2px 6px; border-radius: 6px; color: #CCC; }
-    .card-bottom-info { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(255, 255, 255, 0.06); font-size: 9px; color: var(--text-muted); }
+    .price-tag { font-size: 9px; background: rgba(128, 128, 128, 0.15); padding: 2px 6px; border-radius: 6px; color: var(--text-muted); }
+    .card-bottom-info { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(128, 128, 128, 0.2); font-size: 9px; color: var(--text-muted); }
     .price-val.traded-green { color: var(--green-trend) !important; }
-    .consolidated-badge { background: rgba(56, 142, 60, 0.2); color: var(--primary-light); font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(56, 142, 60, 0.4); margin-right: 4px; }
 
-    /* Detail Modal (Bottom Sheet) */
-    #detail-modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10000; display: none; align-items: flex-end; justify-content: center; padding-top: calc(var(--safe-top) + 16px); box-sizing: border-box; transition: opacity 0.25s ease; }
-    .modal-content { background: var(--surface-dark); border-radius: 28px 28px 0 0; width: 100%; max-width: 600px; max-height: calc(88dvh); max-height: calc(100dvh - var(--safe-top) - 24px); display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); border-bottom: none; box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6); animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1); box-sizing: border-box; }
+    /* Modal */
+    #detail-modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); z-index: 10000; display: none; align-items: flex-end; justify-content: center; padding-top: calc(var(--safe-top) + 16px); }
+    .modal-content { background: var(--surface-dark); border-radius: 28px 28px 0 0; width: 100%; max-width: 600px; max-height: calc(90dvh); display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--card-border); border-bottom: none; animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
     @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-    .modal-fixed-top { padding: 12px 20px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: var(--surface-dark); flex-shrink: 0; }
-    .sheet-handle { width: 36px; height: 4px; background: rgba(255, 255, 255, 0.25); border-radius: 2px; margin: 0 auto 12px; }
+    .modal-fixed-top { padding: 12px 20px 12px; border-bottom: 1px solid var(--card-border); background: var(--surface-dark); }
+    .sheet-handle { width: 36px; height: 4px; background: rgba(128, 128, 128, 0.4); border-radius: 2px; margin: 0 auto 12px; }
     .modal-header-row { display: flex; align-items: center; gap: 12px; }
-    .modal-close-icon { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #FFF; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0; transition: background 0.2s; }
-    .modal-close-icon:active { background: rgba(255, 255, 255, 0.2); }
-    .modal-scroll-area { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 16px 20px calc(var(--safe-bottom) + 24px); box-sizing: border-box; }
-    .modal-details-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
-    .detail-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; padding-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .modal-close-icon { background: rgba(128, 128, 128, 0.1); border: 1px solid var(--card-border); color: var(--text-main); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .modal-scroll-area { flex: 1; overflow-y: auto; padding: 16px 20px calc(var(--safe-bottom) + 24px); }
+    .detail-row { display: flex; justify-content: space-between; font-size: 13px; padding-bottom: 8px; border-bottom: 1px solid var(--card-border); margin-bottom: 12px;}
     .detail-label { color: var(--text-muted); }
-    .detail-val { color: #FFF; font-weight: 700; }
-    .brand-promo-card { background: linear-gradient(135deg, #243527 0%, #1c261e 100%); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-    .close-sheet-btn { width: 100%; background: var(--primary); color: #FFF; border: none; border-radius: 12px; padding: 12px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
-    .android-apk-footer { text-align: center; margin-top: 24px; font-size: 11px; color: #777; }
-    .android-apk-footer a { color: var(--accent-gold); text-decoration: none; font-weight: 600; }
-    
-    .sub-items-box { background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 10px 12px; margin-bottom: 14px; }
-    .sub-items-title { font-size: 11px; font-weight: 700; color: var(--primary-light); margin-bottom: 6px; }
-    .sub-item-row { display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.05); }
+    .detail-val { color: var(--text-main); font-weight: 700; }
 
-    /* Historical Price Chart - Updated for ApexCharts */
-    .chart-box { background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 12px; margin-bottom: 14px; }
-    .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .chart-title { font-size: 12px; font-weight: 700; color: var(--accent-gold); display: flex; align-items: center; gap: 5px; }
+    .chart-box { background: rgba(128, 128, 128, 0.05); border: 1px solid var(--card-border); border-radius: 14px; padding: 12px; margin-bottom: 14px; }
+    .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+    .chart-title { font-size: 12px; font-weight: 700; color: var(--text-main); }
     .period-toggles { display: flex; gap: 4px; direction: ltr; }
-    .period-btn { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-muted); border-radius: 6px; padding: 3px 7px; font-size: 9px; cursor: pointer; font-family: inherit; }
-    .period-btn.active { background: var(--primary); color: #FFF; border-color: var(--primary); font-weight: 700; }
-    
-    /* ApexCharts overrides for RTL */
+    .period-btn { background: rgba(128, 128, 128, 0.1); border: none; color: var(--text-muted); border-radius: 6px; padding: 4px 10px; font-size: 10px; cursor: pointer; font-family: inherit; font-weight: 600;}
+    .period-btn.active { background: var(--text-main); color: var(--bg-dark); }
     #apex-chart-area { direction: ltr; margin: 0 -10px; }
-
-    /* AI Outlook Box */
-    .ai-box { background: linear-gradient(135deg, rgba(197, 160, 89, 0.12) 0%, rgba(34, 41, 35, 0.8) 100%); border: 1px solid rgba(197, 160, 89, 0.35); border-radius: 14px; padding: 12px; margin-bottom: 16px; }
-    .ai-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-    .ai-title { font-size: 12px; font-weight: 800; color: #FFF; display: flex; align-items: center; gap: 5px; }
-    .ai-badge { background: rgba(56, 142, 60, 0.2); color: var(--green-trend); font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 6px; }
-    .ai-trend { font-size: 11px; font-weight: 700; color: var(--green-trend); margin-bottom: 6px; }
-    .ai-desc { font-size: 10px; color: var(--text-muted); line-height: 1.5; margin-bottom: 4px; }
-    .ai-advice { font-size: 10px; color: #EEE; font-weight: 600; line-height: 1.5; }
   </style>
 </head>
 <body>
 
-  <!-- Main Application -->
   <div id="app-container">
-    
-    <!-- Top Bar -->
     <header class="app-header">
       <div class="brand-title-row">
-        <img src="./icon-192.png" alt="لوگو" class="brand-logo-img">
+        <div style="width: 38px; height: 38px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 18px;">📊</div>
         <div>
           <h1 class="brand-title">رادار بورس کالا</h1>
           <p class="brand-subtitle">هلدینگ آرمان مهررضوی</p>
         </div>
       </div>
       <div class="header-actions">
-        <button class="icon-btn" id="refresh-btn" title="به‌روزرسانی نرخ‌ها">
-          🔄
-        </button>
-        <button class="icon-btn" id="share-btn" title="اشتراک‌گذاری">
-          📤
-        </button>
+        <button class="icon-btn" onclick="fetchData()">🔄</button>
       </div>
     </header>
 
-    <!-- iOS Add to Home Screen Banner -->
-    <div id="ios-install-prompt">
-      <button class="close-prompt-btn" onclick="document.getElementById('ios-install-prompt').style.display='none'">✕</button>
-      📲 <strong>نصب روی صفحه آیفون:</strong> در پایین مرورگر سافاری روی دکمه <strong>Share (اشتراک‌گذاری)</strong> بزنید و گزینه <strong>Add to Home Screen (افزودن به صفحه اصلی)</strong> را لمس کنید تا مانند یک اپلیکیشن بومی اجرا شود.
-    </div>
-
-    <!-- Search Input -->
-    <div class="search-box">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search-input" placeholder="جستجوی تامین‌کننده، کالا یا نوع تسویه...">
-    </div>
-
-    <!-- Category Filter Bar -->
     <div class="categories-bar" id="categories-container"></div>
 
-    <!-- Live Status Row -->
     <div class="status-badge">
       <div><span class="pulse-dot"></span> تابلوی زنده معاملات IME</div>
-      <div id="update-time-text">به‌روزرسانی: در حال دریافت...</div>
+      <div id="update-time-text">بارگذاری کامل اطلاعات...</div>
     </div>
 
-    <!-- Price Cards Grid -->
     <main class="cards-grid" id="cards-container">
-      <div style="grid-column: 1 / -1; text-align: center; padding: 40px 10px; color: #777;">در حال دریافت داده‌ها...</div>
+      <p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">در حال دریافت داده‌ها...</p>
     </main>
-
-    <div class="android-apk-footer">
-      📱 کاربران اندروید: <a href="./radar-mehrerazavi.apk" download>دانلود مستقیم فایل APK</a>
-    </div>
   </div>
 
-  <!-- Detail Bottom Sheet Modal -->
-  <div id="detail-modal" onclick="closeDetailModal(event)">
+  <div id="detail-modal" onclick="closeDetailModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
       <div class="modal-fixed-top">
         <div class="sheet-handle"></div>
-        
         <div class="modal-header-row">
-          <div id="modal-icon" class="card-icon" style="width: 44px; height: 44px; flex-shrink: 0;"></div>
+          <div id="modal-icon" class="card-icon" style="width: 44px; height: 44px; flex-shrink: 0; background: var(--primary);"></div>
           <div style="flex: 1; min-width: 0;">
-            <h2 id="modal-supplier" style="font-size: 16px; font-weight: 800; color: #FFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">-</h2>
+            <h2 id="modal-supplier" style="font-size: 16px; font-weight: 800; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">-</h2>
             <p id="modal-product" style="font-size: 12px; color: var(--text-muted);">-</p>
           </div>
-          <button class="modal-close-icon" onclick="closeDetailModal(event)" title="بستن">✕</button>
+          <button class="modal-close-icon" onclick="closeDetailModal()">✕</button>
         </div>
       </div>
 
-      <div class="modal-scroll-area" id="modal-scroll-area">
-        <div class="modal-details-list" id="modal-details">
-          <!-- Injected dynamically -->
-        </div>
-
-        <div class="brand-promo-card">
-          <img src="./icon-192.png" style="width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;">
-          <div style="font-size: 11px; line-height: 1.5; color: #DDD;">
-            <strong>هلدینگ آرمان مهررضوی:</strong> تامین پایدار مواد اولیه فولادسازی و کنسانتره با تسهیلات و اعتبار اسنادی.
-          </div>
-        </div>
-
-        <button class="close-sheet-btn" onclick="closeDetailModal(event)">
-          بستن
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js').catch(() => {}); }
-
-    const isIos = /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
-    const isStandalone = ('standalone' in window.navigator) && (window.navigator.standalone);
-    if (isIos && !isStandalone) { document.getElementById('ios-install-prompt').style.display = 'block'; }
-
-    // --- Utils & Icons ---
-    function getCommodityIconSvg(product, size = 22) {
-      if (product.includes("گندله")) {
-        return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none"><circle cx="11" cy="15" r="4.5" fill="#FFF"/><circle cx="16" cy="13" r="3.8" fill="#FFF" fill-opacity="0.9"/><circle cx="13" cy="8" r="4.0" fill="#FFF" fill-opacity="0.95"/><circle cx="6" cy="11" r="3.2" fill="#FFF" fill-opacity="0.85"/><circle cx="10" cy="13.5" r="1.5" fill="#FFF" fill-opacity="0.6"/></svg>`;
-      } else if (product.includes("کنسانتره")) {
-        return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none"><path d="M2 19C6 16 9 5 12 4C15 5 18 16 22 19Z" fill="#FFF"/><circle cx="12" cy="2.5" r="1.2" fill="#FFF"/><circle cx="9.5" cy="3.2" r="0.9" fill="#FFF" fill-opacity="0.8"/><circle cx="14.5" cy="3.2" r="0.9" fill="#FFF" fill-opacity="0.8"/></svg>`;
-      } else if (product.includes("شمش")) {
-        return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none"><path d="M6 6L18 6L21 11L3 11Z" fill="#FFF"/><path d="M3 11L21 11L19.5 17L4.5 17Z" fill="#FFF" fill-opacity="0.85"/><rect x="5.5" y="12" width="13" height="3.5" rx="1" stroke="#FFF" stroke-width="1"/></svg>`;
-      } else if (product.includes("میلگرد")) {
-        return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none"><rect x="6" y="3" width="5" height="18" rx="2.5" fill="#FFF"/><line x1="6.5" y1="7" x2="10.5" y2="6.5" stroke="#1A1F1B" stroke-width="1.2"/><line x1="6.5" y1="11" x2="10.5" y2="10.5" stroke="#1A1F1B" stroke-width="1.2"/><line x1="6.5" y1="15" x2="10.5" y2="14.5" stroke="#1A1F1B" stroke-width="1.2"/><rect x="14" y="5" width="5" height="16" rx="2.5" fill="#FFF" fill-opacity="0.9"/><line x1="14.5" y1="9" x2="18.5" y2="8.5" stroke="#1A1F1B" stroke-width="1.2"/><line x1="14.5" y1="13" x2="18.5" y2="12.5" stroke="#1A1F1B" stroke-width="1.2"/><line x1="14.5" y1="17" x2="18.5" y2="16.5" stroke="#1A1F1B" stroke-width="1.2"/></svg>`;
-      } else {
-        return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none"><path d="M12 3L21 12L12 21L3 12Z" fill="#FFF"/><circle cx="12" cy="12" r="3" fill="#1A1F1B" fill-opacity="0.3"/></svg>`;
-      }
-    }
-
-    function getCommodityGradient(product) {
-      if (product.includes("گندله")) return 'linear-gradient(135deg, #E5A855 0%, #B87825 100%)';
-      if (product.includes("کنسانتره")) return 'linear-gradient(135deg, #5CB8E4 0%, #267CA8 100%)';
-      if (product.includes("شمش")) return 'linear-gradient(135deg, #E07850 0%, #A84218 100%)';
-      if (product.includes("میلگرد")) return 'linear-gradient(135deg, #5DBB7D 0%, #2F7D4B 100%)';
-      return 'linear-gradient(135deg, #8B9CB5 0%, #4A5C75 100%)';
-    }
-
-    const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    function toPersianDigits(str) { return str == null ? '—' : str.toString().replace(/[0-9]/g, d => persianDigits[d]); }
-    function formatAmount(val) { 
-        if (!val) return '—';
-        const num = parseInt(String(val).replace(/,/g, ''), 10);
-        return isNaN(num) ? toPersianDigits(val) : toPersianDigits(num.toLocaleString('en-US')); 
-    }
-
-    // --- App State & Data Processing ---
-    let allItems = [];
-    let chartHistoryDict = {}; // ذخیره تاریخچه قیمت برای رسم نمودار ApexCharts
-    let currentChartData = [];
-    let currentApexChart = null;
-
-    let selectedCategory = "همه";
-    let searchQuery = "";
-    let currentFilteredItems = [];
-    let currentModalItem = null;
-
-    const categories = ["همه", "گندله", "کنسانتره", "شمش", "میلگرد", "آهن اسفنجی"];
-
-    function renderCategories() {
-      document.getElementById('categories-container').innerHTML = categories.map(cat => {
-        const isActive = cat === selectedCategory ? 'active' : '';
-        const iconSvg = cat !== "همه" ? getCommodityIconSvg(cat, 16) : '';
-        return `<div class="cat-chip ${isActive}" onclick="setCategory('${cat}')">${iconSvg}<span>${cat}</span></div>`;
-      }).join('');
-    }
-
-    function setCategory(cat) { selectedCategory = cat; renderCategories(); renderCards(); }
-    document.getElementById('search-input').addEventListener('input', (e) => { searchQuery = e.target.value.trim().toLowerCase(); renderCards(); });
-
-    // Business Logic: Group items by target and find the latest trade for Cards + Extract TimeSeries for Chart
-    function processPrices(rawItems) {
-        let mapCard = new Map();
-        let mapHistory = {};
-
-        rawItems.forEach(item => {
-            if(!item.matched_targets || item.matched_targets.length === 0) return;
-            const targetName = item.matched_targets[0];
-            const isCredit = item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"));
-            
-            // 1. ذخیره برای کارت‌ها (اولویت با جدیدترین تاریخ)
-            const cardKey = targetName + (isCredit ? "_credit" : "_cash");
-            if (!mapCard.has(cardKey) || item.date > mapCard.get(cardKey).date) {
-                // اطمینان از اینکه رکوردهای فاقد معامله را به عنوان آخرین وضعیت در نظر نگیریم مگر اینکه چاره ای نباشد
-                if(item.final_price !== null || !mapCard.has(cardKey)) {
-                     mapCard.set(cardKey, { ...item, is_credit: isCredit, is_traded: item.final_price !== null });
-                }
-            }
-
-            // 2. ذخیره تاریخچه قیمت برای رسم چارت
-            if (item.final_price !== null) { // فقط روزهایی که معامله شدند رسم میشوند
-                if(!mapHistory[targetName]) mapHistory[targetName] = {};
-                // در صورت چند عرضه در یک روز، دیتای آخر ثبت میشود
-                mapHistory[targetName][item.date] = parseInt(item.final_price);
-            }
-        });
-
-        // تبدیل دیکشنری چارت به آرایه مرتب برای ApexCharts
-        Object.keys(mapHistory).forEach(tName => {
-            const sortedDates = Object.keys(mapHistory[tName]).sort();
-            chartHistoryDict[tName] = sortedDates.map(d => ({ x: d, y: mapHistory[tName][d] }));
-        });
-
-        return Array.from(mapCard.values());
-    }
-
-    async function loadPrices() {
-      const refreshBtn = document.getElementById('refresh-btn');
-      refreshBtn.style.animation = 'spin 1s infinite linear';
-      
-      try {
-        // خواندن دیتابیس کامل
-        const res = await fetch("historical_prices.json?t=" + Date.now());
-        const rawData = await res.json();
-        
-        allItems = processPrices(rawData);
-        
-        // نمایش زمان به روزرسانی
-        const latestRecordDate = allItems.reduce((max, obj) => obj.date > max ? obj.date : max, "نامشخص");
-        document.getElementById('update-time-text').innerText = 'آخرین رکورد: ' + latestRecordDate;
-        
-        renderCards();
-      } catch (err) {
-        console.error("Error loading prices", err);
-        document.getElementById('cards-container').innerHTML = `<p style="grid-column: 1/-1;text-align:center;color:var(--red-trend);">خطا در خواندن فایل دیتابیس</p>`;
-      } finally {
-        refreshBtn.style.animation = 'none';
-      }
-    }
-
-    document.getElementById('refresh-btn').addEventListener('click', loadPrices);
-    document.getElementById('share-btn').addEventListener('click', () => {
-      if (navigator.share) navigator.share({ title: 'رادار بورس کالا', text: 'مشاهده لحظه‌ای نرخ‌های بورس کالا', url: window.location.href }).catch(() => {});
-      else { navigator.clipboard.writeText(window.location.href); alert('لینک رادار کپی شد!'); }
-    });
-
-    // Render Price Cards
-    function renderCards() {
-      const container = document.getElementById('cards-container');
-      const filtered = allItems.filter(item => {
-        const matchesCat = selectedCategory === "همه" || item.product.includes(selectedCategory);
-        const matchesSearch = !searchQuery || item.supplier.toLowerCase().includes(searchQuery) || item.product.toLowerCase().includes(searchQuery) || (item.settlement && item.settlement.toLowerCase().includes(searchQuery));
-        return matchesCat && matchesSearch;
-      });
-
-      currentFilteredItems = filtered;
-
-      if (filtered.length === 0) {
-        container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px 10px; color: #777;">موردی یافت نشد.</div>`;
-        return;
-      }
-
-      container.innerHTML = filtered.map((item, index) => {
-        const isTraded = item.is_traded;
-        const priceNum = isTraded ? item.final_price : item.base_price;
-        const priceType = isTraded ? "پایانی" : "پایه";
-        const priceValClass = isTraded ? "price-val traded-green" : "price-val";
-
-        const diff = item.diff_percent;
-        let trendHtml = '';
-        if (diff !== null && diff !== undefined) {
-          if (diff > 0) trendHtml = `<span class="trend-up">↑ ٪${toPersianDigits(diff.toFixed(2))}</span>`;
-          else if (diff < 0) trendHtml = `<span class="trend-down">↓ ٪${toPersianDigits(Math.abs(diff).toFixed(2))}</span>`;
-          else trendHtml = `<span class="trend-zero">— بدون رقابت</span>`;
-        } else {
-          trendHtml = `<span class="trend-zero">پایه: ${formatAmount(item.base_price)}</span>`;
-        }
-
-        const shortSupplier = (item.producer || item.supplier).replace("معدنی و صنعتی", "").replace("شرکت", "").replace("سنگ آهن", "").trim();
-        const grad = getCommodityGradient(item.product);
-        const iconSvg = getCommodityIconSvg(item.product, 20);
-
-        return `
-          <div class="price-card" onclick="openDetailModal(${index})">
-            <div class="card-top">
-              <div class="card-icon" style="background: ${grad}">${iconSvg}</div>
-              <div class="card-info">
-                <div class="supplier-name" title="${item.producer}">${shortSupplier}</div>
-                <div class="product-name" title="${item.product}">${item.product}</div>
-              </div>
-            </div>
-            <div class="card-trend">${trendHtml}</div>
-            <div class="card-price-row">
-              <span class="price-tag">${priceType}</span>
-              <div>
-                <span class="${priceValClass}">${formatAmount(priceNum)}</span>
-                <span class="price-currency">ریال</span>
-              </div>
-            </div>
-            <div class="card-bottom-info">
-              <span>آخرین تاریخ: ${item.date || 'نامشخص'}</span>
-              <span>${item.is_credit ? "اعتباری / سلف" : "نقدی"}</span>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    // Detail Modal Functions
-    function openDetailModal(index) {
-      const item = currentFilteredItems[index];
-      if (!item) return;
-
-      currentModalItem = item;
-      document.getElementById('modal-supplier').innerText = item.producer || item.supplier;
-      document.getElementById('modal-product').innerText = item.product + (item.symbol ? ` (${item.symbol})` : '');
-      
-      const modalIcon = document.getElementById('modal-icon');
-      modalIcon.style.background = getCommodityGradient(item.product);
-      modalIcon.innerHTML = getCommodityIconSvg(item.product, 26);
-
-      renderModalBody();
-      document.getElementById('detail-modal').style.display = 'flex';
-    }
-
-    function renderModalBody() {
-      const item = currentModalItem;
-      if (!item) return;
-
-      const diffVal = item.diff_percent != null
-        ? (item.diff_percent > 0 ? `+٪${toPersianDigits(item.diff_percent.toFixed(2))}` : `٪${toPersianDigits(item.diff_percent.toFixed(2))}`)
-        : '—';
-
-      // HTML اطلاعات متنی
-      const detailsHtml = `
-        <div class="detail-row"><span class="detail-label">تاریخ عرضه:</span><span class="detail-val">${item.date || '—'}</span></div>
-        <div class="detail-row"><span class="detail-label">قیمت پایه:</span><span class="detail-val">${formatAmount(item.base_price)} ریال</span></div>
-        ${item.final_price ? `<div class="detail-row"><span class="detail-label">قیمت پایانی موزون:</span><span class="detail-val" style="color: var(--green-trend);">${formatAmount(item.final_price)} ریال</span></div>` : ''}
-        <div class="detail-row"><span class="detail-label">تغییر نسبت به پایه:</span><span class="detail-val">${diffVal}</span></div>
-        <div class="detail-row"><span class="detail-label">مجموع حجم عرضه:</span><span class="detail-val">${formatAmount(item.volume)} تن</span></div>
-        ${item.demand ? `<div class="detail-row"><span class="detail-label">میزان تقاضا:</span><span class="detail-val">${formatAmount(item.demand)} تن</span></div>` : ''}
-        <div class="detail-row"><span class="detail-label">نوع تسویه:</span><span class="detail-val">${item.is_credit ? 'اعتباری / سلف' : 'نقدی'}</span></div>
-      `;
-
-      // HTML ساختار چارت Apex
-      const chartHtml = `
+      <div class="modal-scroll-area">
         <div class="chart-box">
           <div class="chart-header">
-            <div class="chart-title"><span>📈</span><span>تاریخچه قیمت پایانی</span></div>
-            <div class="period-toggles" id="apex-toggles">
+            <div class="chart-title">نمودار قیمت (پایه و پایانی)</div>
+            <div class="period-toggles" id="chart-toggles">
                 <button class="period-btn" data-range="30">1M</button>
                 <button class="period-btn" data-range="90">3M</button>
                 <button class="period-btn" data-range="180">6M</button>
@@ -566,97 +160,264 @@
           </div>
           <div id="apex-chart-area"></div>
         </div>
-      `;
 
-      // AI Forecast Box
-      const isSponge = item.product.includes("اسفنجی");
-      const isBillet = item.product.includes("شمش");
-      const forecastTrend = isSponge ? "روند صعودی قوی (محدودیت گاز فصول سرد)" : (isBillet ? "صعودی ملایم با تکیه بر هزینه آهن اسفنجی" : "صعودی با شیب ملایم (تقاضای باثبات در بورس کالا)");
-      const aiHtml = `
-        <div class="ai-box">
-          <div class="ai-header">
-            <div class="ai-title"><span>✨</span><span>پیش‌بینی هوشمند بازار</span></div>
-            <div class="ai-badge">اطمینان: ٪${toPersianDigits(isSponge || isBillet ? 84 : 78)}</div>
-          </div>
-          <div class="ai-trend">چشم‌انداز ۳۰ روز آینده: ${forecastTrend}</div>
-          <div class="ai-desc">• پیش‌ران‌های بازار: تراز عرضه/تقاضای بورس، نوسانات نیمایی و محدودیت‌های انرژی.</div>
-          <div class="ai-advice">• استراتژی مهررضوی: حفظ موجودی به دلیل احتمال رقابت در عرضه‌های پیش‌رو.</div>
-        </div>
-      `;
+        <div id="modal-details"></div>
+      </div>
+    </div>
+  </div>
 
-      document.getElementById('modal-details').innerHTML = detailsHtml + chartHtml + aiHtml;
+  <script>
+    const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+    const toPersianDigits = (str) => str ? str.toString().replace(/[0-9]/g, d => persianDigits[d]) : '—';
+    const formatAmount = (val) => { 
+        if (!val) return '—';
+        const num = parseInt(String(val).replace(/,/g, ''), 10);
+        return isNaN(num) ? toPersianDigits(val) : toPersianDigits(num.toLocaleString('en-US')); 
+    };
+    const isDarkMode = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-      // گرفتن داده‌های چارت برای این شرکت
-      const targetName = item.matched_targets ? item.matched_targets[0] : null;
-      currentChartData = targetName ? (chartHistoryDict[targetName] || []) : [];
-      
-      // رندر اولیه چارت با کل داده‌ها
-      renderApexChart(currentChartData);
-
-      // هندل کردن دکمه‌های تایم‌فریم
-      document.getElementById('apex-toggles').addEventListener('click', (e) => {
-          if (e.target.tagName === 'BUTTON') {
-              document.querySelectorAll('#apex-toggles button').forEach(b => b.classList.remove('active'));
-              e.target.classList.add('active');
-
-              const range = e.target.getAttribute('data-range');
-              let slice = currentChartData;
-              if (range !== 'all') {
-                  const days = parseInt(range);
-                  slice = currentChartData.slice(-Math.min(days, currentChartData.length));
-              }
-              renderApexChart(slice);
-          }
-      });
+    function getCommodityIconSvg(product) {
+        return `<svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3L21 12L12 21L3 12Z" fill="#FFF"/><circle cx="12" cy="12" r="3" fill="#1A1F1B" fill-opacity="0.3"/></svg>`;
+    }
+    function getCommodityGradient(product) {
+      if (product.includes("گندله")) return 'linear-gradient(135deg, #E5A855 0%, #B87825 100%)';
+      if (product.includes("کنسانتره")) return 'linear-gradient(135deg, #5CB8E4 0%, #267CA8 100%)';
+      if (product.includes("شمش")) return 'linear-gradient(135deg, #E07850 0%, #A84218 100%)';
+      if (product.includes("میلگرد")) return 'linear-gradient(135deg, #5DBB7D 0%, #2F7D4B 100%)';
+      return 'linear-gradient(135deg, #8B9CB5 0%, #4A5C75 100%)';
     }
 
-    // متد رسم ApexChart
-    function renderApexChart(dataSlice) {
-      const chartContainer = document.querySelector("#apex-chart-area");
-      
-      if(!dataSlice || dataSlice.length < 2) {
-          chartContainer.innerHTML = "<p style='text-align:center; font-size:11px; color:#999; padding:20px 0;'>دیتای کافی برای رسم نمودار این کالا وجود ندارد.</p>";
-          return;
-      }
-      
-      const firstPrice = dataSlice[0].y;
-      const lastPrice = dataSlice[dataSlice.length - 1].y;
-      const colorCode = lastPrice > firstPrice ? '#4CAF50' : (lastPrice === firstPrice ? '#9E9E9E' : '#E53935');
+    let rawHistory = [];
+    let latestUpdates = [];
+    let mergedChartData = {}; 
+    let displayCards = []; 
+    let currentChartData = [];
+    let currentApexChart = null;
+    let selectedCategory = "همه";
+    const categories = ["همه", "گندله", "کنسانتره", "آهن اسفنجی", "شمش", "تختال", "میلگرد"];
 
-      const options = {
-        series: [{ name: 'قیمت پایانی', data: dataSlice }],
-        chart: {
-            type: 'area', height: 160, fontFamily: 'Vazirmatn, sans-serif',
-            toolbar: { show: false }, zoom: { enabled: false }, background: 'transparent',
-            animations: { enabled: true, easing: 'easeinout', speed: 600 }
-        },
-        colors: [colorCode],
-        fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0.0, stops: [0, 100] } },
-        dataLabels: { enabled: false },
-        stroke: { curve: 'smooth', width: 2.5 },
-        xaxis: { type: 'category', labels: { show: false }, axisBorder: { show: false }, axisTicks: { show: false }, tooltip: { enabled: false }, crosshairs: { stroke: { color: colorCode, width: 1, dashArray: 4 } } },
-        yaxis: { show: false, min: Math.min(...dataSlice.map(d => d.y)) * 0.98 },
-        grid: { show: false },
-        tooltip: {
-            theme: 'dark', // چون تم اصلی اپلیکیشن مشکی است
-            y: { formatter: (val) => formatAmount(val) + " ریال" },
-            x: { show: true }
+    async function fetchData() {
+        try {
+            // خواندن تاریخچه یکساله برای رسم چارت
+            const resHist = await fetch("historical_prices.json?t=" + Date.now());
+            rawHistory = await resHist.json();
+
+            // خواندن آپدیت زنده ربات برای نمایش روی کارت‌ها
+            const resLive = await fetch("latest_prices.json?t=" + Date.now());
+            const dataLive = await resLive.json();
+            // اگر ربات ساختار {items: [...]} برمیگرداند
+            latestUpdates = dataLive.items ? dataLive.items : dataLive;
+            
+            document.getElementById('update-time-text').innerText = 'بروزرسانی: ' + (dataLive.updated_at || 'هم‌اکنون');
+            
+            processAllData();
+            renderCategories();
+            renderCards();
+        } catch (err) {
+            console.error(err);
+            document.getElementById('cards-container').innerHTML = `<p style="grid-column: 1/-1;text-align:center;color:red;">خطا در دریافت اطلاعات</p>`;
         }
-      };
-
-      if (currentApexChart) currentApexChart.destroy();
-      currentApexChart = new ApexCharts(chartContainer, options);
-      currentApexChart.render();
     }
 
-    function closeDetailModal(e) {
-      document.getElementById('detail-modal').style.display = 'none';
-      if(currentApexChart) { currentApexChart.destroy(); currentApexChart = null; }
+    function processAllData() {
+        mergedChartData = {};
+        
+        // 1. ساخت تاریخچه زمانی چارت از فایل هیستوری
+        rawHistory.forEach(item => {
+            if(item.final_price === null) return; // روزهایی که معامله نشده رسم نمیشوند
+            if(!item.matched_targets) return;
+            
+            const targetName = item.matched_targets[0];
+            if(!mergedChartData[targetName]) mergedChartData[targetName] = {};
+            
+            mergedChartData[targetName][item.date] = parseInt(item.final_price);
+        });
+
+        // 2. تزریق دیتای روز جاری (ربات) به چارت برای زنده بودن نمودار
+        latestUpdates.forEach(item => {
+            if(item.final_price === null || item.final_price === "0" || !item.matched_targets) return;
+            const targetName = item.matched_targets[0];
+            if(!mergedChartData[targetName]) mergedChartData[targetName] = {};
+            
+            mergedChartData[targetName][item.date] = parseInt(item.final_price);
+        });
+
+        // تبدیل دیکشنری چارت به آرایه مرتب
+        Object.keys(mergedChartData).forEach(key => {
+            const dates = Object.keys(mergedChartData[key]).sort();
+            mergedChartData[key] = dates.map(d => ({ x: d, y: mergedChartData[key][d] }));
+        });
+
+        // 3. آماده سازی کارت ها از روی فایل آپدیت ربات (latest_prices)
+        let cardsMap = new Map();
+        
+        latestUpdates.forEach(item => {
+            if(!item.matched_targets) return;
+            const targetName = item.matched_targets[0];
+            
+            // جدا کردن عرضه‌های نقدی از اعتباری برای نمایش کارت مجزا
+            const isCredit = item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"));
+            const cardKey = targetName + (isCredit ? "_credit" : "_cash");
+            
+            item.targetName = targetName;
+            item.is_credit = isCredit;
+            
+            // قانون مهم: آیا تقاضا وجود دارد؟
+            const demandStr = String(item.demand || "0").replace(/,/g, '');
+            const demandNum = parseInt(demandStr);
+            const hasDemand = !isNaN(demandNum) && demandNum > 0;
+            
+            // آیا معامله رقابتی بوده و رنگ باید سبز شود؟
+            item.has_real_trade = (item.final_price !== null && item.final_price !== "0" && hasDemand);
+            
+            // اگر در یک روز یک شرکت چند عرضه از یک نوع (مثلا چند تا نقدی) داشت، تجمیع شوند (در اینجا آخرین مورد جایگزین میشود)
+            cardsMap.set(cardKey, item);
+        });
+
+        displayCards = Array.from(cardsMap.values());
     }
 
-    // Init
-    renderCategories();
-    loadPrices();
+    function renderCategories() {
+        document.getElementById('categories-container').innerHTML = categories.map(cat => 
+            `<div class="cat-chip ${cat === selectedCategory ? 'active' : ''}" onclick="setCategory('${cat}')">${cat}</div>`
+        ).join('');
+    }
+
+    function setCategory(cat) { selectedCategory = cat; renderCategories(); renderCards(); }
+
+    function renderCards() {
+        const container = document.getElementById('cards-container');
+        const filtered = displayCards.filter(item => selectedCategory === "همه" || item.product.includes(selectedCategory));
+
+        if (filtered.length === 0) { container.innerHTML = `<p style="grid-column: 1/-1;text-align:center;">موردی یافت نشد.</p>`; return; }
+
+        container.innerHTML = filtered.map((item, index) => {
+            const isTraded = item.has_real_trade;
+            const priceNum = isTraded ? item.final_price : item.base_price;
+            const priceType = isTraded ? "پایانی" : "پایه";
+            
+            // رنگ قیمت: اگر تقاضا داشته و فروخته شده سبز شود، وگرنه سفید می‌ماند
+            const priceValClass = isTraded ? "price-val traded-green" : "price-val";
+
+            // محاسبه رقابت
+            const baseP = parseInt(String(item.base_price).replace(/,/g, ''));
+            const finalP = parseInt(String(item.final_price).replace(/,/g, ''));
+            
+            let trendHtml = '';
+            if (isTraded && baseP > 0) {
+                const diff = finalP - baseP;
+                const diffPct = (diff / baseP) * 100;
+                if (diff > 0) trendHtml = `<span class="trend-up">↑ رقابت ٪${toPersianDigits(diffPct.toFixed(2))}</span>`;
+                else trendHtml = `<span class="trend-zero">— معامله با نرخ پایه</span>`;
+            } else {
+                trendHtml = `<span class="trend-zero">بدون معامله</span>`;
+            }
+
+            const shortSupplier = (item.producer || item.supplier).replace("معدنی و صنعتی", "").replace("شرکت", "").replace("سنگ آهن", "").trim();
+            const grad = getCommodityGradient(item.product);
+
+            return `
+              <div class="price-card" onclick="openModal(${index})">
+                <div class="card-top">
+                  <div class="card-icon" style="background: ${grad}">${getCommodityIconSvg(item.product)}</div>
+                  <div class="card-info">
+                    <div class="supplier-name">${shortSupplier}</div>
+                    <div class="product-name">${item.product}</div>
+                  </div>
+                </div>
+                <div class="card-trend">${trendHtml}</div>
+                <div class="card-price-row">
+                  <span class="price-tag">${priceType}</span>
+                  <div><span class="${priceValClass}">${formatAmount(priceNum)}</span><span class="price-currency">ریال</span></div>
+                </div>
+                <div class="card-bottom-info">
+                  <span>حجم عرضه: ${formatAmount(item.volume)} تن</span>
+                  <span>${item.is_credit ? "اعتباری / سلف" : "نقدی"}</span>
+                </div>
+              </div>
+            `;
+        }).join('');
+    }
+
+    function openModal(index) {
+        const item = displayCards[index];
+        if (!item) return;
+
+        document.getElementById('modal-supplier').innerText = item.producer || item.supplier;
+        document.getElementById('modal-product').innerText = item.product + (item.symbol ? ` (${item.symbol})` : '');
+        document.getElementById('modal-icon').style.background = getCommodityGradient(item.product);
+
+        const isTraded = item.has_real_trade;
+        const diffVal = isTraded ? `٪${toPersianDigits(((item.final_price - item.base_price) / item.base_price * 100).toFixed(2))}` : '—';
+
+        document.getElementById('modal-details').innerHTML = `
+            <div class="detail-row"><span class="detail-label">تاریخ عرضه:</span><span class="detail-val">${item.date}</span></div>
+            <div class="detail-row"><span class="detail-label">قیمت پایه:</span><span class="detail-val">${formatAmount(item.base_price)} ریال</span></div>
+            ${isTraded ? `<div class="detail-row"><span class="detail-label">قیمت پایانی:</span><span class="detail-val" style="color: var(--green-trend);">${formatAmount(item.final_price)} ریال</span></div>` : ''}
+            <div class="detail-row"><span class="detail-label">درصد رقابت:</span><span class="detail-val">${diffVal}</span></div>
+            <div class="detail-row"><span class="detail-label">حجم عرضه:</span><span class="detail-val">${formatAmount(item.volume)} تن</span></div>
+            <div class="detail-row"><span class="detail-label">حجم تقاضا:</span><span class="detail-val">${formatAmount(item.demand)} تن</span></div>
+            <div class="detail-row"><span class="detail-label">نوع تسویه:</span><span class="detail-val">${item.is_credit ? 'اعتباری / سلف' : 'نقدی'}</span></div>
+        `;
+
+        currentChartData = mergedChartData[item.targetName] || [];
+        document.getElementById('detail-modal').style.display = 'flex';
+        
+        document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.period-btn[data-range="all"]').classList.add('active');
+
+        renderApexChart(currentChartData);
+    }
+
+    function renderApexChart(dataSlice) {
+        if(!dataSlice || dataSlice.length < 2) {
+            document.getElementById('apex-chart-area').innerHTML = "<p style='text-align:center; font-size:11px; color:#999; padding:20px 0;'>دیتای کافی برای رسم نمودار ۱ سال گذشته وجود ندارد.</p>";
+            return;
+        }
+        
+        const firstPrice = dataSlice[0].y;
+        const lastPrice = dataSlice[dataSlice.length - 1].y;
+        const colorCode = lastPrice > firstPrice ? '#4CAF50' : (lastPrice === firstPrice ? '#9E9E9E' : '#E53935');
+
+        const options = {
+            series: [{ name: 'قیمت', data: dataSlice }],
+            theme: { mode: isDarkMode() ? 'dark' : 'light' },
+            chart: { type: 'area', height: 180, fontFamily: 'Vazirmatn, sans-serif', toolbar: { show: false }, zoom: { enabled: false }, background: 'transparent' },
+            colors: [colorCode],
+            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: 0.5, opacityTo: 0.0, stops: [0, 100] } },
+            dataLabels: { enabled: false },
+            stroke: { curve: 'smooth', width: 2.5 },
+            xaxis: { type: 'category', labels: { show: false }, axisBorder: { show: false }, axisTicks: { show: false }, tooltip: { enabled: false }, crosshairs: { stroke: { color: colorCode, width: 1, dashArray: 4 } } },
+            yaxis: { show: false, min: Math.min(...dataSlice.map(d => d.y)) * 0.98 },
+            grid: { show: false },
+            tooltip: { theme: isDarkMode() ? 'dark' : 'light', y: { formatter: (val) => formatAmount(val) + " ریال" }, x: { show: true } }
+        };
+
+        if (currentApexChart) currentApexChart.destroy();
+        currentApexChart = new ApexCharts(document.querySelector("#apex-chart-area"), options);
+        currentApexChart.render();
+    }
+
+    document.getElementById('chart-toggles').addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            const range = e.target.getAttribute('data-range');
+            let slice = currentChartData;
+            if (range !== 'all') {
+                const days = parseInt(range);
+                slice = currentChartData.slice(-Math.min(days, currentChartData.length));
+            }
+            renderApexChart(slice);
+        }
+    });
+
+    function closeDetailModal() { document.getElementById('detail-modal').style.display = 'none'; }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if(currentApexChart) currentApexChart.updateOptions({ theme: { mode: e.matches ? 'dark' : 'light' } });
+    });
+
+    fetchData();
   </script>
 </body>
 </html>
