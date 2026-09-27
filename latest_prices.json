@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 11:05:19",
+  "updated_at": "2026-09-27 11:22:13",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -141,7 +141,7 @@
       "final_price": "1000000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 11:05"
+      "final_checked_at": "2026-09-27 11:22"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -154,7 +154,7 @@
       "final_price": "940000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 11:05"
+      "final_checked_at": "2026-09-27 11:22"
     },
     {
       "supplier": "آهن و فولاد ارفع",
