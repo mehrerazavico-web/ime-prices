@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 21:24:01",
+  "updated_at": "2026-09-27 21:43:09",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -141,7 +141,7 @@
       "final_price": "1000000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:40"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -154,7 +154,7 @@
       "final_price": "940000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:40"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -673,7 +673,7 @@
       "final_price": "143853",
       "diff_percent": 0.0,
       "demand": "10,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:40"
     },
     {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -686,7 +686,7 @@
       "final_price": "125337",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "معدنی و صنعتی گهر زمین (سنگ آهن گهر زمین)",
@@ -699,7 +699,7 @@
       "final_price": "156042",
       "diff_percent": 0.0,
       "demand": "21,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "معدنی و صنعتی گل گهر",
@@ -712,7 +712,7 @@
       "final_price": "158937",
       "diff_percent": 1.86,
       "demand": "61,000",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "صنعت فولاد شادگان",
@@ -725,7 +725,7 @@
       "final_price": "396059",
       "diff_percent": 7.03,
       "demand": "6,050",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -738,7 +738,7 @@
       "final_price": "431758",
       "diff_percent": 22.81,
       "demand": "21,250",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "فولاد شرق کاوه",
@@ -751,7 +751,7 @@
       "final_price": "122189",
       "diff_percent": 0.0,
       "demand": "10,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "آهن و فولاد غدیر ایرانیان",
@@ -764,7 +764,7 @@
       "final_price": "428418",
       "diff_percent": 15.77,
       "demand": "6,600",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "فولاد سیرجان ایرانیان",
@@ -777,7 +777,7 @@
       "final_price": "145451",
       "diff_percent": 2.18,
       "demand": "10,000",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "معادن سنگ آهن احیای سپاهان",
@@ -790,7 +790,7 @@
       "final_price": "131870",
       "diff_percent": 2.63,
       "demand": "80,000",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "توسعه معدنی و صنعتی صبانور",
@@ -803,7 +803,7 @@
       "final_price": "142487",
       "diff_percent": 0.0,
       "demand": "3,000",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "توسعه معدنی و صنعتی صبانور",
@@ -816,7 +816,7 @@
       "final_price": "122189",
       "diff_percent": 0.0,
       "demand": "15,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -829,7 +829,7 @@
       "final_price": "616499",
       "diff_percent": 4.93,
       "demand": "1,025",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "سنگ آهن مرکزی ایران",
@@ -842,7 +842,7 @@
       "final_price": "142352",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "معدنی و صنعتی گل گهر",
@@ -855,7 +855,7 @@
       "final_price": "131773",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "معدنی و صنعتی گهر زمین (سنگ آهن گهر زمین)",
@@ -868,7 +868,7 @@
       "final_price": "134136",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "صنعتی و معدنی توسعه فراگیر سناباد (صنعتی و معدنی توسعه ملی)",
@@ -880,7 +880,7 @@
       "diff_percent": 0.0,
       "volume": "5000",
       "demand": "5,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "توسعه آهن و فولاد گل گهر",
@@ -892,7 +892,7 @@
       "diff_percent": 20.87,
       "volume": "3000",
       "demand": "6,100",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "جهان فولاد سیرجان",
@@ -904,7 +904,7 @@
       "diff_percent": 14.35,
       "volume": "5000",
       "demand": "7,550",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "احیاء استیل فولاد بافت",
@@ -916,7 +916,7 @@
       "diff_percent": 16.1,
       "volume": "3250",
       "demand": "5,150",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "صبا فولاد خلیج فارس",
@@ -928,7 +928,7 @@
       "diff_percent": 22.15,
       "volume": "10000",
       "demand": "56,500",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -941,7 +941,7 @@
       "final_price": "406984",
       "diff_percent": 10.03,
       "demand": "14,300",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "صنایع معدنی فولاد سنگان خراسان",
@@ -954,7 +954,7 @@
       "final_price": "147894",
       "diff_percent": 0.0,
       "demand": "20,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -967,7 +967,7 @@
       "final_price": "142352",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-27 21:22"
+      "final_checked_at": "2026-09-27 21:41"
     },
     {
       "supplier": "صنعتی و معدنی اپال پارسیان سنگان",
@@ -980,7 +980,7 @@
       "final_price": "142352",
       "diff_percent": 0.0,
       "demand": "10,000",
-      "final_checked_at": "2026-09-27 21:21"
+      "final_checked_at": "2026-09-27 21:41"
     }
   ]
 }
