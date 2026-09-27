@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 15:59:57",
+  "updated_at": "2026-09-27 16:18:28",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -141,7 +141,7 @@
       "final_price": "1000000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 15:58"
+      "final_checked_at": "2026-09-27 16:16"
     },
     {
       "supplier": "فولاد روهینا جنوب",
@@ -154,7 +154,7 @@
       "final_price": "940000",
       "diff_percent": 0.0,
       "demand": "25",
-      "final_checked_at": "2026-09-27 15:58"
+      "final_checked_at": "2026-09-27 16:16"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -673,7 +673,7 @@
       "final_price": "143853",
       "diff_percent": 0.0,
       "demand": "10,000",
-      "final_checked_at": "2026-09-27 15:59"
+      "final_checked_at": "2026-09-27 16:16"
     },
     {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -691,7 +691,11 @@
       "date": "1405/07/05",
       "base_price": "156042",
       "volume": "20000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "156042",
+      "diff_percent": 0.0,
+      "demand": "21,000",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "معدنی و صنعتی گل گهر",
@@ -699,12 +703,12 @@
       "symbol": "GOLG-PELL-00",
       "date": "1405/07/05",
       "base_price": "156042",
-      "volume": "50000",
+      "volume": "25000",
       "settlement": "نقدی",
-      "final_price": "156042",
-      "diff_percent": 0.0,
-      "demand": "50,000",
-      "final_checked_at": "2026-09-27 15:59"
+      "final_price": "158937",
+      "diff_percent": 1.86,
+      "demand": "61,000",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "صنعت فولاد شادگان",
@@ -713,7 +717,11 @@
       "date": "1405/07/05",
       "base_price": "370059",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "396059",
+      "diff_percent": 7.03,
+      "demand": "6,050",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -722,7 +730,11 @@
       "date": "1405/07/05",
       "base_price": "351556",
       "volume": "14000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "431758",
+      "diff_percent": 22.81,
+      "demand": "21,250",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "فولاد شرق کاوه",
@@ -735,7 +747,7 @@
       "final_price": "122189",
       "diff_percent": 0.0,
       "demand": "10,000",
-      "final_checked_at": "2026-09-27 15:59"
+      "final_checked_at": "2026-09-27 16:16"
     },
     {
       "supplier": "آهن و فولاد غدیر ایرانیان",
@@ -744,7 +756,11 @@
       "date": "1405/07/05",
       "base_price": "370059",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "428418",
+      "diff_percent": 15.77,
+      "demand": "6,600",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "فولاد سیرجان ایرانیان",
@@ -753,7 +769,11 @@
       "date": "1405/07/05",
       "base_price": "142352",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "145451",
+      "diff_percent": 2.18,
+      "demand": "10,000",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "معادن سنگ آهن احیای سپاهان",
@@ -762,7 +782,11 @@
       "date": "1405/07/05",
       "base_price": "128485",
       "volume": "32000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "131870",
+      "diff_percent": 2.63,
+      "demand": "80,000",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "توسعه معدنی و صنعتی صبانور",
@@ -775,7 +799,7 @@
       "final_price": "142487",
       "diff_percent": 0.0,
       "demand": "4,000",
-      "final_checked_at": "2026-09-27 15:58"
+      "final_checked_at": "2026-09-27 16:16"
     },
     {
       "supplier": "توسعه معدنی و صنعتی صبانور",
@@ -788,7 +812,7 @@
       "final_price": "122189",
       "diff_percent": 0.0,
       "demand": "15,000",
-      "final_checked_at": "2026-09-27 15:59"
+      "final_checked_at": "2026-09-27 16:16"
     },
     {
       "supplier": "ذوب آهن اصفهان",
@@ -797,7 +821,11 @@
       "date": "1405/07/05",
       "base_price": "587532",
       "volume": "500",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "616499",
+      "diff_percent": 4.93,
+      "demand": "1,025",
+      "final_checked_at": "2026-09-27 16:17"
     },
     {
       "supplier": "سنگ آهن مرکزی ایران",
@@ -836,7 +864,43 @@
       "diff_percent": 0.0,
       "volume": "5000",
       "demand": "5,000",
-      "final_checked_at": "2026-09-27 15:59"
+      "final_checked_at": "2026-09-27 16:16"
+    },
+    {
+      "supplier": "توسعه آهن و فولاد گل گهر",
+      "product": "آهن اسفنجی",
+      "symbol": "GISD-DRI-00",
+      "date": "1405/07/05",
+      "base_price": "364561",
+      "final_price": "440632",
+      "diff_percent": 20.87,
+      "volume": "3000",
+      "demand": "6,100",
+      "final_checked_at": "2026-09-27 16:17"
+    },
+    {
+      "supplier": "جهان فولاد سیرجان",
+      "product": "آهن اسفنجی",
+      "symbol": "SJS-DRI-00",
+      "date": "1405/07/05",
+      "base_price": "370059",
+      "final_price": "423174",
+      "diff_percent": 14.35,
+      "volume": "5000",
+      "demand": "7,550",
+      "final_checked_at": "2026-09-27 16:17"
+    },
+    {
+      "supplier": "احیاء استیل فولاد بافت",
+      "product": "آهن اسفنجی",
+      "symbol": "BSC-DRI-00",
+      "date": "1405/07/05",
+      "base_price": "370059",
+      "final_price": "429627",
+      "diff_percent": 16.1,
+      "volume": "3250",
+      "demand": "5,150",
+      "final_checked_at": "2026-09-27 16:17"
     }
   ]
 }
