@@ -821,10 +821,16 @@
       </div>
       <div class="header-actions">
         <button class="icon-btn" id="refresh-btn" title="به‌روزرسانی نرخ‌ها">
-          🔄
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
         </button>
         <button class="icon-btn" id="share-btn" title="اشتراک‌گذاری">
-          📤
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+            <polyline points="16 6 12 2 8 6"/>
+            <line x1="12" y1="2" x2="12" y2="15"/>
+          </svg>
         </button>
       </div>
     </header>
@@ -886,7 +892,7 @@
         <div class="brand-promo-card">
           <img src="./icon-192.png" style="width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;">
           <div style="font-size: 11px; line-height: 1.5; color: #DDD;">
-            <strong>هلدینگ آرمان مهررضوی:</strong> تامین پایدار مواد اولیه فولادسازی و کنسانتره با تسهیلات و اعتبار اسنادی.
+            <strong>هلدینگ آرمان مهررضوی:</strong> تأمین پایدار مواد اولیه فولادسازی و زنجیره فولاد
           </div>
         </div>
 
@@ -1222,7 +1228,15 @@
         let sliced = sorted;
         if (monthsCount === 1) sliced = sorted.length > 5 ? sorted.slice(-5) : sorted;
         else if (monthsCount === 3) sliced = sorted.length > 8 ? sorted.slice(-8) : sorted;
-        else if (monthsCount === 6) sliced = sorted.length > 14 ? sorted.slice(-14) : sorted;
+        else if (monthsCount === 6) sliced = sorted.length > 12 ? sorted.slice(-12) : sorted;
+        else if (monthsCount === 12 && sorted.length > 14) {
+          const step = (sorted.length - 1) / 12;
+          sliced = [];
+          for (let k = 0; k < 12; k++) {
+            sliced.push(sorted[Math.round(k * step)]);
+          }
+          sliced.push(sorted[sorted.length - 1]);
+        }
 
         return {
           points: sliced.map(p => ({ label: p.label, price: p.price, isTraded: p.isTraded })),
@@ -1760,9 +1774,7 @@
         xaxis: {
           type: 'category',
           labels: {
-            show: true,
-            style: { colors: '#888', fontSize: '10px', fontFamily: 'Vazirmatn' },
-            hideOverlappingLabels: true
+            show: false
           },
           axisBorder: { show: false },
           axisTicks: { show: false },
