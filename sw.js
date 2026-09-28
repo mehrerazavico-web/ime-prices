@@ -1,11 +1,12 @@
-const CACHE_NAME = 'radar-mehr-razavi-v6';
+const CACHE_NAME = 'radar-mehr-razavi-v7';
 const ASSETS_TO_CACHE = [
   '/',
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png',
   '/apple-touch-icon.png',
-  '/mehr-razavi-logo-horizontal.png'
+  '/mehr-razavi-logo-horizontal.png',
+  '/logo-clean.png'
 ];
 
 self.addEventListener('install', (event) => {
