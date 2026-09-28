@@ -721,7 +721,7 @@
       background: var(--tooltip-bg);
       border: 1px solid var(--tooltip-border);
       border-radius: 10px;
-      padding: 5px 9px;
+      padding: 5px 10px;
       font-size: 11px;
       font-weight: 700;
       color: var(--text-main);
@@ -731,6 +731,7 @@
       white-space: nowrap;
       display: none;
       z-index: 10;
+      direction: rtl;
     }
 
     .chart-time-tabs {
@@ -994,14 +995,14 @@
       <div class="modal-fixed-top">
         <div class="sheet-handle"></div>
         <div class="modal-header-row">
+          <div class="modal-title-group" id="modal-title-group">
+            <!-- Filled dynamically -->
+          </div>
           <div class="modal-close-icon" id="modal-close-btn">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"/>
               <line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
-          </div>
-          <div class="modal-title-group" id="modal-title-group">
-            <!-- Filled dynamically -->
           </div>
         </div>
       </div>
@@ -1878,10 +1879,10 @@
         dot.setAttribute('cy', pt.y);
         dot.style.display = 'block';
 
-        tooltip.innerText = `${formatNumber(pt.price)} ریال • ${pt.label}`;
+        tooltip.innerHTML = `<span style="display: inline-flex; align-items: center; gap: 4px; direction: rtl;"><span style="font-weight: 800; white-space: nowrap;"><bdi dir="ltr">${formatNumber(pt.price)}</bdi> ریال</span><span style="opacity: 0.5; margin: 0 2px;">•</span><span style="color: var(--text-secondary); white-space: nowrap;">${pt.label}</span></span>`;
         tooltip.style.left = `${(pt.x / width) * 100}%`;
         tooltip.style.top = `${(pt.y / height) * 100}%`;
-        tooltip.style.display = 'block';
+        tooltip.style.display = 'inline-flex';
 
         if (mainPriceElem) mainPriceElem.innerText = formatNumber(pt.price);
       }
