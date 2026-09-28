@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28 20:30:08",
+  "updated_at": "2026-09-28 20:47:34",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -673,7 +673,7 @@
       "final_price": "143853",
       "diff_percent": 0.0,
       "demand": "20,000",
-      "final_checked_at": "2026-09-28 20:28"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -993,7 +993,7 @@
       "final_price": "695788",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "فولاد کاوه جنوب کیش",
@@ -1006,7 +1006,7 @@
       "final_price": "690235",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "فولاد کاوه جنوب کیش",
@@ -1019,7 +1019,7 @@
       "final_price": "690235",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "فولاد غدیر نی ریز",
@@ -1032,7 +1032,7 @@
       "final_price": "692061",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "فولاد خوزستان",
@@ -1045,7 +1045,7 @@
       "final_price": "667833",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -1058,7 +1058,7 @@
       "final_price": "682481",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "مجتمع فولاد خراسان",
@@ -1071,7 +1071,7 @@
       "final_price": "667833",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -1084,7 +1084,7 @@
       "final_price": "686433",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -1097,7 +1097,7 @@
       "final_price": "686433",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "جهان فولاد سیرجان",
@@ -1110,7 +1110,7 @@
       "final_price": "691554",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "جهان فولاد سیرجان",
@@ -1123,7 +1123,7 @@
       "final_price": "691554",
       "diff_percent": 0.0,
       "demand": "0",
-      "final_checked_at": "2026-09-28 20:29"
+      "final_checked_at": "2026-09-28 20:46"
     },
     {
       "supplier": "فولاد جهان آرا اروند",
@@ -1134,7 +1134,7 @@
       "final_price": "771900",
       "diff_percent": 0.0,
       "demand": "6,000",
-      "final_checked_at": "2026-09-28 20:28"
+      "final_checked_at": "2026-09-28 20:46"
     }
   ]
 }
