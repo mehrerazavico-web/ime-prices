@@ -1326,17 +1326,41 @@
       renderCards();
     }
 
-    // Search handler
-    document.getElementById('search-input').addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim().toLowerCase();
-      renderCards();
-    });
+    // Clean text for Persian/Arabic fuzzy search
+    function cleanSearchText(str) {
+      if (!str) return '';
+      return str.toString()
+        .replace(/[يى]/g, 'ی')
+        .replace(/[ك]/g, 'ک')
+        .replace(/[آأإ]/g, 'ا')
+        .replace(/[\u200c\s]+/g, '')
+        .toLowerCase()
+        .trim();
+    }
+
+    // Search handler for all event types
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      ['input', 'keyup', 'change', 'search'].forEach(evt => {
+        searchInput.addEventListener(evt, (e) => {
+          searchQuery = e.target.value.trim();
+          renderCards();
+        });
+      });
+    }
 
     // Fetch live prices and historical prices concurrently
     async function loadPrices() {
       const refreshBtn = document.getElementById('refresh-btn');
-      if (refreshBtn) refreshBtn.style.animation = 'spin 1s infinite linear';
+      if (refreshBtn) {
+        refreshBtn.style.transition = 'transform 0.5s ease';
+        refreshBtn.style.transform = 'rotate(360deg)';
+        setTimeout(() => { if (refreshBtn) refreshBtn.style.transform = 'none'; }, 600);
+      }
       
+      const updateElem = document.getElementById('update-time-text');
+      if (updateElem) updateElem.innerText = 'در حال دریافت اطلاعات...';
+
       try {
         const [latestRes, histRes] = await Promise.allSettled([
           fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/latest_prices.json?t=" + Date.now()),
@@ -1364,19 +1388,23 @@
 
         allRawLatestItems = rawLatest;
         allHistoricalItems = rawHist;
-        allItems = consolidateSupplies(rawLatest);
+        // Combine latest and historical so all producers (e.g. Mobarakeh, Hormozgan, Khouzestan for Slab) are always available
+        const allAvailable = [...rawLatest, ...rawHist];
+        allItems = consolidateSupplies(allAvailable);
 
-        const updateElem = document.getElementById('update-time-text');
         if (updateElem) updateElem.innerText = 'بروزرسانی: ' + updatedAt;
         renderCards();
       } catch (err) {
         console.error("Error loading prices", err);
-      } finally {
-        if (refreshBtn) refreshBtn.style.animation = 'none';
+        if (updateElem) updateElem.innerText = 'خطا در ارتباط';
       }
     }
 
-    document.getElementById('refresh-btn').addEventListener('click', loadPrices);
+    const refreshBtnElem = document.getElementById('refresh-btn');
+    if (refreshBtnElem) {
+      refreshBtnElem.addEventListener('click', loadPrices);
+      refreshBtnElem.addEventListener('touchend', (e) => { e.preventDefault(); loadPrices(); });
+    }
 
     // Share action
     document.getElementById('share-btn').addEventListener('click', () => {
@@ -1395,7 +1423,8 @@
     // Render Price Cards
     function renderCards() {
       const container = document.getElementById('cards-container');
-      
+      const q = cleanSearchText(searchQuery);
+
       const filtered = allItems.filter(item => {
         let matchesCategory = false;
         if (selectedCategory === "همه") {
@@ -1410,10 +1439,11 @@
           matchesCategory = item.product.includes(selectedCategory);
         }
 
-        const matchesSearch = !searchQuery || 
-          item.supplier.toLowerCase().includes(searchQuery) || 
-          item.product.toLowerCase().includes(searchQuery) ||
-          item.settlement.toLowerCase().includes(searchQuery);
+        const matchesSearch = !q || 
+          cleanSearchText(item.supplier).includes(q) || 
+          cleanSearchText(item.product).includes(q) ||
+          cleanSearchText(item.settlement).includes(q) ||
+          cleanSearchText(item.date).includes(q);
         return matchesCategory && matchesSearch;
       });
 

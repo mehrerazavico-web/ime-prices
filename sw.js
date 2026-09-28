@@ -1,9 +1,7 @@
-const CACHE_NAME = 'radar-mehr-razavi-v1';
+const CACHE_NAME = 'radar-mehr-razavi-v4';
 const ASSETS_TO_CACHE = [
   '/',
-  '/index.html',
   '/manifest.json',
-  '/splash_video.mp4',
   '/icon-192.png',
   '/icon-512.png',
   '/apple-touch-icon.png'
@@ -29,11 +27,21 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+// Network-First for HTML and JSON data, Cache-First only for images
 self.addEventListener('fetch', (event) => {
-  // Network first for prices, cache first for static assets
-  if (event.request.url.includes('latest_prices.json')) {
+  const url = event.request.url;
+
+  if (event.request.mode === 'navigate' || url.endsWith('.html') || url.includes('prices.json')) {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const resClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request) || caches.match('/index.html'))
     );
     return;
   }
