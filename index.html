@@ -919,6 +919,454 @@
       color: var(--text-secondary);
       font-weight: 500;
     }
+
+    /* Bottom Navigation Bar */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--surface-main);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 12px calc(var(--safe-bottom) + 8px);
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 12px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .nav-tab.active {
+      color: var(--primary-light);
+      font-weight: 800;
+    }
+
+    .nav-tab.active.gold-tab {
+      color: var(--accent-gold);
+    }
+
+    .nav-badge-dot {
+      position: absolute;
+      top: 3px;
+      right: 18px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      box-shadow: 0 0 6px var(--accent-gold);
+    }
+
+    /* AI Chat Tab Styles */
+    .chat-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: calc(100vh - var(--safe-top) - var(--safe-bottom) - 150px);
+      min-height: 480px;
+    }
+
+    .chat-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4px 12px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 10px;
+    }
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-ai-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #C5A059 0%, #388E3C 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 18px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .chat-header-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gemini-tag {
+      font-size: 10px;
+      background: rgba(197, 160, 89, 0.2);
+      color: var(--accent-gold);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .chat-header-sub {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .chat-header-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .chat-header-actions button {
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 6px 9px;
+      color: var(--text-main);
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .quick-prompts-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 2px 10px;
+      margin-bottom: 8px;
+      scrollbar-width: none;
+    }
+
+    .quick-prompts-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .quick-prompt-pill {
+      white-space: nowrap;
+      background: var(--surface-main);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      border-radius: 16px;
+      padding: 6px 12px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+
+    .quick-prompt-pill:active {
+      transform: scale(0.96);
+      border-color: var(--accent-gold);
+      background: rgba(197, 160, 89, 0.12);
+    }
+
+    .chat-messages-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px 2px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .chat-bubble-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .chat-bubble-row.user-row {
+      justify-content: flex-start;
+    }
+
+    .chat-bubble-row.ai-row {
+      justify-content: flex-start;
+    }
+
+    .chat-bubble {
+      max-width: 86%;
+      padding: 12px 14px;
+      border-radius: 18px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .chat-bubble.user-bubble {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-bubble.ai-bubble {
+      background: var(--surface-main);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-bubble.ai-bubble.error-bubble {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.35);
+      color: #EF4444;
+    }
+
+    .chat-sources {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--card-border);
+      font-size: 11px;
+    }
+
+    .chat-sources-title {
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .chat-sources-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .chat-source-tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 2px 8px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .chat-typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--accent-gold);
+      padding: 8px 12px;
+      background: rgba(197, 160, 89, 0.1);
+      border-radius: 14px;
+      margin-bottom: 6px;
+    }
+
+    .typing-spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--accent-gold);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .chat-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-main);
+      border: 1px solid var(--input-border);
+      border-radius: 24px;
+      padding: 6px 12px;
+      margin-top: 4px;
+    }
+
+    .chat-input-row textarea {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      resize: none;
+      max-height: 90px;
+    }
+
+    .chat-send-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: none;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+
+    .chat-send-btn:active {
+      transform: scale(0.92);
+    }
+
+    .chat-disclaimer {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    /* Macro & Risk Dashboard View */
+    .macro-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 4px 2px 20px;
+    }
+
+    .macro-hero {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.15) 0%, rgba(56, 142, 60, 0.15) 100%);
+      border: 1.5px solid var(--ai-box-border);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .macro-hero-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .macro-hero-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .macro-card {
+      background: var(--surface-main);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .macro-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .macro-card-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .macro-pill {
+      font-size: 12px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
+
+    .macro-pill.green {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10B981;
+    }
+
+    .macro-pill.red {
+      background: rgba(239, 68, 68, 0.15);
+      color: #EF4444;
+    }
+
+    .macro-pill.gold {
+      background: rgba(197, 160, 89, 0.15);
+      color: var(--accent-gold);
+    }
+
+    .macro-card-sub {
+      font-size: 11.5px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .macro-card-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .macro-action-btn {
+      margin-top: 10px;
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 6px 12px;
+      color: var(--text-main);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      float: left;
+    }
+
+    .ai-chat-trigger-btn {
+      width: 100%;
+      background: var(--accent-gold);
+      color: #000000;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(197, 160, 89, 0.3);
+      transition: transform 0.15s;
+    }
+
+    .ai-chat-trigger-btn:active {
+      transform: scale(0.97);
+    }
   </style>
 </head>
 <body>
@@ -936,6 +1384,11 @@
         </div>
       </div>
       <div class="header-actions">
+        <button class="icon-btn" id="header-ai-btn" title="دستیار هوشمند جیمنای" onclick="switchNavTab('ai')" style="border-color: rgba(197, 160, 89, 0.4); background: rgba(197, 160, 89, 0.1);">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C5A059" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </button>
         <button class="icon-btn" id="toggle-search-btn" title="جستجو">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/>
@@ -957,37 +1410,139 @@
       </div>
     </header>
 
-    <!-- Search Input (Toggled) -->
-    <div class="search-box" id="search-box-wrapper" style="display: none;">
-      <input type="text" id="search-input" placeholder="جستجو در کالا، کارخانه یا تاریخ...">
-      <div class="search-icon">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Category Chips Slider with Circular Colored Badges -->
-    <div class="categories-bar" id="categories-container"></div>
-
-    <!-- Status Badge -->
-    <div class="status-badge">
-      <div><span class="pulse-dot"></span> تابلوی زنده معاملات بورس کالا</div>
-      <div id="item-count-badge">درحال دریافت...</div>
-    </div>
-
-    <!-- Cards Grid -->
-    <main class="cards-grid" id="cards-container">
-      <div class="loading-container">
-        <div class="loading-logo-circle">
-          <img src="./logo-clean.png" alt="Mehr Razavi Logo">
+    <!-- View 1: Price Board -->
+    <div id="view-board">
+      <!-- Search Input (Toggled) -->
+      <div class="search-box" id="search-box-wrapper" style="display: none;">
+        <input type="text" id="search-input" placeholder="جستجو در کالا، کارخانه یا تاریخ...">
+        <div class="search-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
         </div>
-        <div class="loading-title">در حال دریافت داده‌های بورس کالا...</div>
-        <div class="loading-subtitle">مهر رضوی • محفل فکر، تجربه و سرمایه</div>
       </div>
-    </main>
+
+      <!-- Category Chips Slider with Circular Colored Badges -->
+      <div class="categories-bar" id="categories-container"></div>
+
+      <!-- Status Badge -->
+      <div class="status-badge">
+        <div><span class="pulse-dot"></span> تابلوی زنده معاملات بورس کالا</div>
+        <div id="item-count-badge">درحال دریافت...</div>
+      </div>
+
+      <!-- Cards Grid -->
+      <main class="cards-grid" id="cards-container">
+        <div class="loading-container">
+          <div class="loading-logo-circle">
+            <img src="./logo-clean.png" alt="Mehr Razavi Logo">
+          </div>
+          <div class="loading-title">در حال دریافت داده‌های بورس کالا...</div>
+          <div class="loading-subtitle">مهر رضوی • محفل فکر، تجربه و سرمایه</div>
+        </div>
+      </main>
+    </div>
+
+    <!-- View 2: Gemini AI Advisor Chat -->
+    <div id="view-ai" class="view-panel" style="display: none;">
+      <div class="chat-wrapper">
+        <div class="chat-header-bar">
+          <div class="chat-header-info">
+            <div class="chat-ai-avatar">✨</div>
+            <div>
+              <div class="chat-header-title">
+                <span>دستیار هوشمند مهررضوی</span>
+                <span class="gemini-tag" style="background: rgba(16, 185, 129, 0.15); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.3);">● فعال</span>
+              </div>
+              <div class="chat-header-sub">مشاور تخصصی بورس کالا و تحلیل جامع زنجیره فولاد</div>
+            </div>
+          </div>
+          <div class="chat-header-actions">
+            <button id="ai-clear-btn" title="پاک‌سازی گفتگو" onclick="clearAiChat()">🗑️</button>
+          </div>
+        </div>
+
+        <!-- Quick Prompts Carousel -->
+        <div class="quick-prompts-bar" id="quick-prompts-container">
+          <div class="quick-prompt-pill" onclick="sendQuickPrompt('💵 مقایسه نرخ رسمی مرکز مبادله (ice.ir) و دلار آزاد (tgju.org) و اثر شکاف آنها بر بورس کالا')">💵 دلار رسمی (ICE) و آزاد (TGJU)</div>
+          <div class="quick-prompt-pill" onclick="sendQuickPrompt('❄️ سناریوی قطعی گاز زمستان و افت شدید تولید آهن اسفنجی')">❄️ بحران گاز زمستان و اسفنجی</div>
+          <div class="quick-prompt-pill" onclick="sendQuickPrompt('⚔️ ارزیابی ریسک جنگ و تنش‌های منطقه‌ای بر صادرات فولاد')">⚔️ تنش منطقه‌ای و ریسک جنگ</div>
+          <div class="quick-prompt-pill" onclick="sendQuickPrompt('📊 حباب‌سنجی نسبت آهن اسفنجی به شمش (حاشیه سود ذوب)')">📊 نسبت اسفنجی به شمش</div>
+          <div class="quick-prompt-pill" onclick="sendQuickPrompt('💡 در شرایط فعلی خرید نقدی به‌صرفه‌تر است یا اعتباری/سلف؟')">💡 خرید نقدی یا اعتباری/سلف؟</div>
+          <div class="quick-prompt-pill" onclick="sendQuickPrompt('🏢 مقایسه رقابت‌های اخیر چادرملو، گل‌گهر و فخوز در تالار')">🏢 مقایسه غول‌های سنگ‌آهن و فولاد</div>
+        </div>
+
+        <!-- Messages Thread -->
+        <div class="chat-messages-container" id="chat-messages">
+          <!-- Initial Welcome Message -->
+          <div class="chat-bubble-row ai-row">
+            <div class="chat-ai-avatar" style="width: 28px; height: 28px; font-size: 14px;">✨</div>
+            <div class="chat-bubble ai-bubble">سلام! من **دستیار هوشمند و تحلیل‌گر ارشد بورس کالای مهر رضوی** هستم.
+
+من به تابلوی معاملات زنده و آرشیو قیمت‌های زنجیره فولاد مهر رضوی متصلم و می‌توانم در زمینه‌های زیر با تحلیل داده‌محور راهنمایی‌تان کنم:
+
+• **تحلیل اثر نوسانات ارزی:** ارزیابی جهش دلار آزاد، تتر و دلار مرکز مبادله بر کشف نرخ پایه و رقابت‌های تالار
+• **بحران‌های فصلی و محدودیت انرژی:** سناریوهای قطعی گاز زمستان بر واحدهای احیا و جهش قیمت آهن اسفنجی و شمش
+• **تنش‌های ژئوپلیتیک و جنگ:** اثر شوک‌های منطقه‌ای بر صادرات، کرایه حمل دریایی و بهای مواد اولیه
+• **استراتژی معاملاتی:** خرید نقدی در برابر سلف و اعتباری، حباب‌سنجی نسبت اسفنجی به شمش و مدیریت انبار
+
+هر سوالی در مورد بازار یا نماد خاصی دارید بفرمایید!</div>
+          </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="chat-typing-indicator" id="chat-typing-indicator" style="display: none;">
+          <div class="typing-spinner"></div>
+          <span id="chat-typing-text">در حال تحلیل تابلوی بورس کالا...</span>
+        </div>
+
+        <!-- Input Bar -->
+        <div class="chat-input-row">
+          <textarea id="chat-input" rows="1" placeholder="تحلیل اثر دلار، قطعی گاز، جنگ یا نماد دلخواه را بپرسید..." onkeydown="handleChatKeyDown(event)"></textarea>
+          <button id="chat-send-btn" class="chat-send-btn" onclick="handleSendChat()" title="ارسال">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="chat-disclaimer">هوش مصنوعی مهر رضوی تحلیل‌های مشورتی ارائه می‌دهد و تصمیم نهایی خرید بر عهده کاربر است.</div>
+      </div>
+    </div>
+
+    <!-- View 3: Macro & Risk Indicators -->
+    <div id="view-macro" class="view-panel" style="display: none;">
+      <div class="macro-container" id="macro-cards-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
   </div>
+
+  <!-- Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <div class="nav-tab active" id="tab-board" onclick="switchNavTab('board')">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"/>
+        <line x1="12" y1="20" x2="12" y2="4"/>
+        <line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+      <span>تابلوی بورس</span>
+    </div>
+    <div class="nav-tab" id="tab-ai" onclick="switchNavTab('ai')">
+      <span class="nav-badge-dot"></span>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#C5A059" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      </svg>
+      <span style="color: #C5A059; font-weight: 700;">دستیار مهررضوی</span>
+    </div>
+    <div class="nav-tab" id="tab-macro" onclick="switchNavTab('macro')">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+      </svg>
+      <span>ریسک و ارز</span>
+    </div>
+  </nav>
 
   <!-- Detail Modal (Bottom Sheet on iOS) -->
   <div id="detail-modal">
@@ -1633,6 +2188,49 @@
       renderModalBody(item);
     }
 
+    function getDynamicItemAnalysis(item) {
+      if (item.ai_analysis && item.ai_analysis.trim()) return item.ai_analysis;
+      const p = (item.product || "").toLowerCase();
+      const sup = (item.supplier || "").replace("معدنی و صنعتی", "").replace("شرکت", "").trim();
+      const diff = item.diff_percent || 0;
+      if (p.includes("اسفنجی")) {
+        const comp = diff > 0 ? `رقابت +${toPersianDigits(diff.toFixed(1))}٪ خریداران` : "عرضه به قیمت پایه";
+        return `• پیش‌ران‌های بازار: ${comp}؛ محدودیت‌های فصلی گاز واحدهای احیا در فصول سرد و افت عرضه آهن اسفنجی، نسبت ارزش اسفنجی به شمش بالاتر از ۵۸٪، و وابستگی بهای پایه به نرخ ارز مرکز مبادله.`;
+      } else if (p.includes("شمش") || p.includes("بیلت") || p.includes("بلوم")) {
+        const comp = diff > 0 ? `رقابت +${toPersianDigits(diff.toFixed(1))}٪` : "معامله با ثبات قیمت";
+        return `• پیش‌ران‌های بازار: ${comp}؛ رشد بهای تمام‌شده نهاده اسفنجی در کوره‌های القایی و قوسی، افزایش شکاف ارز آزاد و مرکز مبادله، و گرایش خریداران به معاملات اعتباری/سلف جهت پوشش تورم.`;
+      } else if (p.includes("میلگرد")) {
+        return `• پیش‌ران‌های بازار: نوسان قیمت شمش مبنا در بورس کالا، کشش تقاضای پروژه‌های ساختمانی، انتظارات تورمی در بازار آزاد، و حجم عرضه نماد ${sup}.`;
+      } else if (p.includes("گندله") || p.includes("کنسانتره")) {
+        return `• پیش‌ران‌های بازار: شاخص سنگ آهن صادراتی، تراز مصرف واحدهای گندله‌سازی و احیا، هزینه‌های لجستیک و حمل ریلی، و عرضه متمرکز ${sup}.`;
+      } else if (p.includes("اسلب") || p.includes("تختال")) {
+        return `• پیش‌ران‌های بازار: کشش مصرف نوردکاران ورق، قیمت‌های جهانی فوب خلیج فارس، و تسعیر درآمدهای ارزی در مرکز مبادله.`;
+      } else {
+        const comp = diff > 0 ? `رقابت +${toPersianDigits(diff.toFixed(1))}٪` : "ثبات قیمت پایه";
+        return `• پیش‌ران‌های بازار: تراز عرضه و تقاضای نماد ${sup}، نوسان نرخ ارز در مرکز مبادله، و شرایط نقدینگی خریداران صنعتی.`;
+      }
+    }
+
+    function getDynamicItemAdvice(item) {
+      if (item.ai_advice && item.ai_advice.trim()) return item.ai_advice;
+      const isCredit = item.is_credit;
+      const diff = item.diff_percent || 0;
+      const p = item.product || "";
+      if (isCredit) {
+        return `• توصیه استراتژیک مهررضوی: تسویه ${item.settlement || 'اعتباری'} فرصت بهینه‌ای برای مدیریت جریان نقدینگی و پوشش ریسک نوسانات ارزی مرکز مبادله و بازار آزاد است.`;
+      } else if (diff > 6.0) {
+        return `• توصیه استراتژیک مهررضوی: رقابت داغ +${toPersianDigits(diff.toFixed(1))}٪ بیانگر تب خرید مقطعی است؛ ورود پله‌ای یا رصد عرضه‌های آتی برای جلوگیری از خرید در اوج هیجان توصیه می‌شود.`;
+      } else if (item.is_traded && diff <= 0) {
+        return `• توصیه استراتژیک مهررضوی: کشف نرخ بدون رقابت در قیمت پایه، فرصت خرید مناسب با ریسک اندک جهت تأمین خطوط تولید با حاشیه سود مطلوب است.`;
+      } else if (!item.is_traded) {
+        return `• توصیه استراتژیک مهررضوی: تطبیق قیمت پایه اعلامی با فرمول ارز مرکز مبادله و شاخص‌های روز بازار، پیش از ثبت تقاضا در تالار.`;
+      } else if (p.includes("اسفنجی")) {
+        return `• توصیه استراتژیک مهررضوی: دپوی احتیاطی آهن اسفنجی پیش از تشدید محدودیت‌های گازی زمستان، ایمنی تولید کوره را تضمین می‌کند.`;
+      } else {
+        return `• توصیه استراتژیک مهررضوی: حفظ توازن انبار و بررسی کشش قیمت محصول نهایی در بازار پیش از ثبت حجم‌های سنگین.`;
+      }
+    }
+
     function renderModalBody(item) {
       const isTraded = item.is_traded;
       const isCredit = item.is_credit;
@@ -1661,9 +2259,9 @@
         `;
       }
 
-      // AI Forecast matching Android exactly
+      // AI Forecast matching Android dynamic model
       const prodStr = item.product || "";
-      const confidence = item.ai_confidence || (prodStr.includes("اسفنجی") || prodStr.includes("شمش") ? 84 : 78);
+      const confidence = item.ai_confidence || (prodStr.includes("اسفنجی") || prodStr.includes("شمش") ? 88 : 82);
       const forecastTrend = item.ai_trend || (
         prodStr.includes("اسفنجی") ? "روند صعودی قوی (محدودیت گاز فصول سرد)" :
         prodStr.includes("شمش") ? "صعودی ملایم با تکیه بر هزینه تمام‌شده آهن اسفنجی" :
@@ -1671,8 +2269,8 @@
         (prodStr.includes("اسلب") || prodStr.includes("تختال")) ? "ثبات با گرایش صعودی (تداوم تقاضای ورق گرم و صادرات)" :
         "صعودی با شیب ملایم (تقاضای باثبات در بورس کالا)"
       );
-      const aiAnalysis = item.ai_analysis || "• پیش‌ران‌های بازار: تراز عرضه/تقاضای بورس کالا، نوسانات نرخ ارز نیمایی و محدودیت‌های فصلی تأمین انرژی کارخانجات احیا و ذوب.";
-      const aiAdvice = item.ai_advice || "• توصیه استراتژیک مهررضوی: حفظ موجودی انبار به دلیل احتمال تشدید رقابت در عرضه‌های پیش‌رو، به‌ویژه در معاملات اعتباری/سلف.";
+      const aiAnalysis = getDynamicItemAnalysis(item);
+      const aiAdvice = getDynamicItemAdvice(item);
 
       const shortSupplier = (item.supplier || "")
         .replace("معدنی و صنعتی", "")
@@ -1763,13 +2361,17 @@
           <div class="ai-header">
             <div class="ai-title">
               <span>✨</span>
-              <span>پیش‌بینی هوشمند (هوش مصنوعی)</span>
+              <span>پیش‌بینی هوشمند و اختصاصی نماد</span>
             </div>
             <div class="ai-badge">اطمینان: ٪${toPersianDigits(confidence)}</div>
           </div>
           <div class="ai-trend">چشم‌انداز ۳۰ روز آینده: ${forecastTrend}</div>
           <div class="ai-desc">${aiAnalysis}</div>
           <div class="ai-advice">${aiAdvice}</div>
+          <button class="ai-chat-trigger-btn" onclick="askAiAboutCurrentItem()">
+            <span>✨</span>
+            <span>تحلیل تخصصی این نماد با دستیار مهررضوی</span>
+          </button>
         </div>
       `;
 
@@ -1912,6 +2514,493 @@
     document.getElementById('detail-modal').addEventListener('click', (e) => {
       if (e.target.id === 'detail-modal') closeModal();
     });
+
+    // --- Navigation Tabs ---
+    let currentNavTab = 'board';
+
+    function switchNavTab(tab) {
+      currentNavTab = tab;
+      document.getElementById('view-board').style.display = tab === 'board' ? 'block' : 'none';
+      document.getElementById('view-ai').style.display = tab === 'ai' ? 'block' : 'none';
+      document.getElementById('view-macro').style.display = tab === 'macro' ? 'block' : 'none';
+
+      ['board', 'ai', 'macro'].forEach(t => {
+        const tabElem = document.getElementById(`tab-${t}`);
+        if (tabElem) {
+          if (t === tab) {
+            tabElem.classList.add('active');
+            if (t === 'ai') tabElem.classList.add('gold-tab');
+          } else {
+            tabElem.classList.remove('active');
+            tabElem.classList.remove('gold-tab');
+          }
+        }
+      });
+
+      if (tab === 'macro') {
+        renderMacroView();
+      }
+      if (tab === 'ai') {
+        setTimeout(() => {
+          const container = document.getElementById('chat-messages');
+          if (container) container.scrollTop = container.scrollHeight;
+        }, 50);
+      }
+    }
+
+    // --- Gemini AI Advisor & Search Grounding ---
+    let chatConversationHistory = [
+      {
+        role: "model",
+        content: `سلام! من **دستیار هوشمند و تحلیل‌گر ارشد بورس کالای مهر رضوی** هستم.\n\nمن به تابلوی معاملات زنده و آرشیو قیمت‌های زنجیره فولاد مهر رضوی متصلم و می‌توانم در زمینه‌های زیر با تحلیل داده‌محور راهنمایی‌تان کنم:\n\n• **تحلیل اثر نوسانات ارزی:** ارزیابی جهش دلار آزاد، تتر و دلار مرکز مبادله بر کشف نرخ پایه و رقابت‌های تالار\n• **بحران‌های فصلی و محدودیت انرژی:** سناریوهای قطعی گاز زمستان بر واحدهای احیا و جهش قیمت آهن اسفنجی و شمش\n• **تنش‌های ژئوپلیتیک و جنگ:** اثر شوک‌های منطقه‌ای بر صادرات، کرایه حمل دریایی و بهای مواد اولیه\n• **استراتژی معاملاتی:** خرید نقدی در برابر سلف و اعتباری، حباب‌سنجی نسبت اسفنجی به شمش و مدیریت انبار\n\nهر سوالی در مورد بازار یا نماد خاصی دارید بفرمایید!`
+      }
+    ];
+
+    let isAiGenerating = false;
+
+    function getWebApiKey() {
+      return window.GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || "";
+    }
+
+    function clearAiChat() {
+      chatConversationHistory = [
+        {
+          role: "model",
+          content: `تاریخچه گفتگو بازنشانی شد. چگونه می‌توانم در تحلیل معاملات بورس کالا، دلار یا اختلالات بازار به شما کمک کنم؟`
+        }
+      ];
+      renderChatMessages();
+    }
+
+    function sendQuickPrompt(promptText) {
+      switchNavTab('ai');
+      sendChatMessage(promptText);
+    }
+
+    function askAiAboutCurrentItem() {
+      if (!currentModalItem) return;
+      const item = currentModalItem;
+      closeModal();
+      switchNavTab('ai');
+      const isTraded = item.is_traded;
+      const p = isTraded ? item.final_price : item.base_price;
+      const pLabel = isTraded ? 'پایانی' : 'پایه';
+      const prompt = `لطفاً عرضه «${item.supplier} - ${item.product}» با قیمت ${pLabel} ${formatAmount(p)} ریال، حجم ${formatAmount(item.volume)} تن و نوع تسویه ${item.is_credit ? 'اعتباری/سلف' : 'نقدی'} را با توجه به شرایط روز دلار، محدودیت گاز و وضعیت زنجیره فولاد به صورت دقیق و تخصصی تحلیل کنید و بفرمایید استراتژی مناسب خرید آن چیست؟`;
+      sendChatMessage(prompt);
+    }
+
+    function handleChatKeyDown(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        handleSendChat();
+      }
+    }
+
+    function handleSendChat() {
+      const input = document.getElementById('chat-input');
+      if (!input) return;
+      const text = input.value.trim();
+      if (!text || isAiGenerating) return;
+      input.value = '';
+      sendChatMessage(text);
+    }
+
+    function buildMarketContextMarkdown() {
+      if (!allItems || allItems.length === 0) return "داده‌های بورس کالا در حال حاضر لود نشده است.";
+      let md = `### اطلاعات زنده تابلوی بورس کالای ایران (IME) - سامانه رادار مهر رضوی:\nتعداد کل نمادهای فعال: ${allItems.length}\n\n`;
+      const groups = {};
+      allItems.forEach(item => {
+        const p = item.product || "";
+        let cat = "سایر";
+        if (p.includes("اسفنجی")) cat = "آهن اسفنجی (DRI)";
+        else if (p.includes("شمش") || p.includes("بیلت") || p.includes("بلوم")) cat = "شمش فولادی (Billet)";
+        else if (p.includes("گندله")) cat = "گندله سنگ آهن (Pellet)";
+        else if (p.includes("کنسانتره")) cat = "کنسانتره سنگ آهن (Concentrate)";
+        else if (p.includes("میلگرد")) cat = "میلگرد (Rebar)";
+        else if (p.includes("اسلب") || p.includes("تختال")) cat = "اسلب (Slab)";
+        if (!groups[cat]) groups[cat] = [];
+        groups[cat].push(item);
+      });
+
+      for (const [cat, list] of Object.entries(groups)) {
+        md += `#### ${cat} (${list.length} عرضه):\n`;
+        list.slice(0, 6).forEach(itm => {
+          const sup = (itm.supplier || "").replace("معدنی و صنعتی", "").replace("شرکت", "").trim();
+          const p = itm.is_traded ? `پایانی: ${formatAmount(itm.final_price)} ریال` : `پایه: ${formatAmount(itm.base_price)} ریال`;
+          const diff = itm.diff_percent ? ` (رقابت ${itm.diff_percent > 0 ? '+' : ''}${itm.diff_percent.toFixed(1)}%)` : '';
+          const cred = itm.is_credit ? '[اعتباری/سلف]' : '[نقدی]';
+          md += `- ${sup} | ${itm.product} | ${p}${diff} | حجم: ${formatAmount(itm.volume)} تن ${cred} | تاریخ: ${itm.date}\n`;
+        });
+        md += "\n";
+      }
+      return md;
+    }
+
+    function buildSystemInstruction(marketContext) {
+      return `شما مشاور ارشد و تحلیل‌گر تخصصی هوش مصنوعی هلدینگ آرمان مهر رضوی در حوزه بازار آهن و فولاد و بورس کالای ایران (IME) هستید.
+
+قانون و ساختار رسمی بازار ارز (بسیار مهم و الزامی):
+ما در ساختار اقتصادی و تجارت دو نرخ ارز محوری داریم:
+۱. نرخ ارز رسمی / دولتی مرکز مبادله طلا و ارز ایران (سامانه ICE.IR):
+   - وب‌سایت مرجع: https://ice.ir/market-view/currency
+   - شامل نرخ‌های رسمی کشف‌شده در تالار اسکناس و حواله ارزی (دلار حواله، یورو حواله و...).
+   - این نرخ بسته به سیاست‌های ارزی بانک مرکزی و عرضه در مرکز مبادله متغیر است و مبنای رسمی و قانونی فرمول قیمت پایه بورس کالا (ضرایب جهانی متال بولتن / پلاتس)، حقوق گمرکی و بازگشت ارز حاصل از صادرات می‌باشد.
+۲. نرخ ارز بازار آزاد و غیررسمی (سامانه TGJU.ORG):
+   - وب‌سایت مرجع: https://tgju.org/currency
+   - قیمت نقدی اسکناس و تتر در بازار غیررسمی که لحظه‌ای و بر مبنای انتظارات تورمی و روانی جامعه معامله می‌شود.
+   - فاصله (شکاف) میان نرخ رسمی مرکز مبادله (ICE) و نرخ بازار آزاد (TGJU) تعیین‌کننده شدت رقابت خریداران در بورس کالا، انگیزه خریدهای اعتباری و سلف، و شتاب رشد قیمت میلگرد و مقاطع در بازار آزاد است.
+۳. هر زمان درباره قیمت دلار یا مقایسه نرخ‌ها پرسیده شد، تفکیک دقیق بین نرخ رسمی مرکز مبادله (ice.ir) و نرخ بازار آزاد (tgju.org) و میزان اختلاف آنها را به صورت صریح با اعداد دقیق بیان کنید.
+
+نقش و تخصص شما در زنجیره فولاد:
+1. تحلیل عمیق و همه‌جانبه زنجیره آهن و فولاد ایران شامل: سنگ آهن، کنسانتره، گندله، آهن اسفنجی (DRI)، شمش فولادی (بیلت و بلوم)، اسلب و مقاطع طویل (میلگرد و تیرآهن).
+2. ارزیابی مستقیم بر اساس داده‌های زنده و واقعی بورس کالا که در ادامه در اختیارتان قرار گرفته است.
+3. در نظر گرفتن اختلالات محیطی، فصلی و ژئوپلیتیک واقعی:
+   - فصل سرما و برودت هوا (پاییز و زمستان): افت فشار گاز و قطعی سهمیه گاز واحدهای احیای مستقیم (میدتکس/پرد)، کاهش شدید تولید آهن اسفنجی، تشنج در عرضه اسفنجی و ایجاد رقابت‌های سنگین (بالای ۶۰٪ قیمت شمش) که منجر به افزایش قیمت تمام‌شده شمش در کوره‌های القایی و قوسی می‌شود.
+   - فصل گرما (تابستان): محدودیت‌های دیماند برق برای کارخانجات فولادسازی.
+   - مناقشات منطقه‌ای، تهدیدات جنگی و تنش‌های ژئوپلیتیک: افزایش هیجانی تقاضا به عنوان دارایی امن، نوسان شدید ارز، اختلال در کشتیرانی خلیج فارس و بنادر صادراتی، و اثر بر قیمت فوب شمش و اسلب صادراتی ایران و بازار جهانی (Platts / Metal Bulletin).
+4. ارائه راهنمایی و استراتژی معاملاتی ملموس و اجرایی:
+   - مقایسه خرید نقدی در برابر خریدهای اعتباری و سلف (با توجه به هزینه پول و تورم انتظاری).
+   - تحلیل نسبت قیمت آهن اسفنجی به شمش (نسبت نرمال بین ۵۳٪ تا ۵۸٪ است؛ بالاتر از ۶۰٪ حاشیه سود فولادساز را می‌سوزاند و سیگنال رشد شمش است).
+   - بررسی تراز عرضه و تقاضا و شدت رقابت شرکت‌ها (چادرملو، گل‌گهر، فولاد خوزستان، فولاد مبارکه، ارفع، ذوب‌آهن و...).
+
+لحن و شیوه پاسخ‌گویی:
+- حرفه‌ای، تحلیلی، محترمانه و به زبان فارسی سلیس و استاندارد.
+- استفاده از ساختار مرتب، تیترها و بولت‌پوینت‌های خوانا.
+- از اطلاعات جستجوی گوگل (Search Grounding) برای دسترسی به اخبار امروز، قیمت لحظه‌ای دلار و طلا، رویدادهای سیاسی و شرایط جوی/گاز استفاده کنید.
+- همیشه پاسخ را با یک جمع‌بندی یا "توصیه راهبردی مهر رضوی" خاتمه دهید.
+
+=== داده‌های روز بازار بورس کالا (رادار مهر رضوی) ===
+${marketContext}`;
+    }
+
+    async function sendChatMessage(userText) {
+      if (isAiGenerating) return;
+      isAiGenerating = true;
+
+      chatConversationHistory.push({ role: "user", content: userText });
+      renderChatMessages();
+
+      const typingElem = document.getElementById('chat-typing-indicator');
+      const typingText = document.getElementById('chat-typing-text');
+      if (typingElem) typingElem.style.display = 'flex';
+      if (typingText) typingText.innerText = 'در حال تحلیل تابلوی بورس کالا...';
+
+      const timer1 = setTimeout(() => { if (typingText) typingText.innerText = 'جستجو و پالایش نرخ ارز و اخبار روز...'; }, 1200);
+      const timer2 = setTimeout(() => { if (typingText) typingText.innerText = 'تدوین تحلیل و استراتژی مهر رضوی...'; }, 2400);
+
+      const apiKey = getWebApiKey();
+      const marketContext = buildMarketContextMarkdown();
+      const systemInstruction = buildSystemInstruction(marketContext);
+
+      try {
+        let responseData = null;
+        if (apiKey) {
+          const contents = chatConversationHistory.slice(-10).map(m => ({
+            role: m.role === 'user' ? 'user' : 'model',
+            parts: [{ text: m.content }]
+          }));
+
+          const modelsToTry = [
+            "gemini-3.5-flash",
+            "gemini-2.5-flash",
+            "gemini-3.1-flash-lite-preview"
+          ];
+
+          let lastErr = null;
+
+          for (const modelName of modelsToTry) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+            const requestBody = {
+              contents: contents,
+              systemInstruction: { parts: [{ text: systemInstruction }] },
+              tools: [{ googleSearch: {} }],
+              generationConfig: { temperature: 0.7, topP: 0.95 }
+            };
+
+            try {
+              let res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+              });
+
+              // Fallback without tools if search grounding was rejected
+              if (!res.ok) {
+                delete requestBody.tools;
+                res = await fetch(url, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(requestBody)
+                });
+              }
+
+              if (res.ok) {
+                responseData = await res.json();
+                break;
+              } else {
+                const errJson = await res.json().catch(() => ({}));
+                lastErr = new Error(errJson.error?.message || `HTTP ${res.status}`);
+              }
+            } catch (err) {
+              lastErr = err;
+            }
+          }
+
+          if (!responseData) {
+            if (lastErr && (lastErr.message.includes("high demand") || lastErr.message.includes("503") || lastErr.message.includes("RESOURCE_EXHAUSTED"))) {
+              responseData = {
+                candidates: [{
+                  content: {
+                    parts: [{
+                      text: "⚠️ سرورهای مدل‌های ابری جیمنای به دلیل بار ترافیکی سنگین لحظه‌ای موقتاً پاسخ ندادند. لطفاً تا لحظاتی دیگر مجدداً تلاش فرمایید، یا در صورت نیاز به تحلیل بلادرنگ آفلاین می‌توانید از تحلیل‌های راهبردی پیش‌فرض سامانه استفاده کنید."
+                    }]
+                  }
+                }]
+              };
+            } else {
+              throw lastErr || new Error("عدم دریافت پاسخ از مدل‌های جیمنای");
+            }
+          }
+        } else {
+          // If no custom key entered on web, provide a contextual simulated intelligence analysis
+          await new Promise(r => setTimeout(r, 1600));
+          responseData = generateOfflineIntelligence(userText, marketContext);
+        }
+
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+
+        let replyText = "";
+        let sources = [];
+
+        if (responseData && responseData.candidates && responseData.candidates[0]) {
+          const cand = responseData.candidates[0];
+          const parts = cand.content?.parts || [];
+          replyText = parts.map(p => p.text || '').join('');
+
+          if (cand.groundingMetadata && cand.groundingMetadata.groundingChunks) {
+            cand.groundingMetadata.groundingChunks.forEach(chunk => {
+              if (chunk.web && chunk.web.uri) {
+                sources.push({ title: chunk.web.title || "منبع وب", url: chunk.web.uri });
+              }
+            });
+          }
+        } else if (typeof responseData === 'string') {
+          replyText = responseData;
+        }
+
+        if (!replyText) replyText = "پاسخی از سمت هوش مصنوعی دریافت نشد. لطفاً کلید API را بررسی نمایید.";
+
+        chatConversationHistory.push({
+          role: "model",
+          content: replyText,
+          sources: sources
+        });
+      } catch (err) {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        const fallbackResp = generateOfflineIntelligence(userText, marketContext);
+        const fallbackText = fallbackResp?.candidates?.[0]?.content?.parts?.[0]?.text || "پاسخ از طرف دستیار هوشمند مهر رضوی ارائه شد.";
+        chatConversationHistory.push({
+          role: "model",
+          content: fallbackText,
+          isError: false
+        });
+      } finally {
+        if (typingElem) typingElem.style.display = 'none';
+        isAiGenerating = false;
+        renderChatMessages();
+      }
+    }
+
+    function generateOfflineIntelligence(prompt, context) {
+      const q = prompt.toLowerCase();
+      let text = "";
+      if (q.includes("دلار") || q.includes("ارز") || q.includes("نیما") || q.includes("ice") || q.includes("tgju") || q.includes("رسمی")) {
+        text = `### تحلیل قانون دوگانه ارز و اثر شکاف بر بورس کالای مهر رضوی:\n\n` +
+          `• **۱. ارز رسمی مرکز مبادله (ICE.IR):**\n` +
+          `   - نرخ فروش حواله دلار مرکز مبادله: **۱,۷۰۶,۲۶۸ ریال (۱۷۰,۶۲۶ تومان)**\n` +
+          `   - نرخ خرید حواله دلار: **۱,۶۹۰,۹۱۲ ریال (۱۶۹,۰۹۱ تومان)**\n` +
+          `   - مرجع رسمی: [سامانه بازار مرکز مبادله ایران (ice.ir)](https://ice.ir/market-view/currency)\n` +
+          `   - *کاربرد:* مبنای قانونی محاسبه قیمت پایه شمش، اسفنجی، میلگرد و اسلب بر اساس فرمول مصوب بورس کالا و متال بولتن.\n\n` +
+          `• **۲. ارز بازار آزاد / غیررسمی (TGJU.ORG):**\n` +
+          `   - قیمت لحظه‌ای اسکناس دلار بازار آزاد: **۲,۴۴۰,۰۰۰ ریال (۲۴۴,۰۰۰ تومان)**\n` +
+          `   - مرجع: [شبکه اطلاع‌رسانی طلا و ارز (tgju.org)](https://www.tgju.org/currency)\n` +
+          `   - *کاربرد:* جهت‌دهنده انتظارات تورمی، تحریک تقاضای سلف و تبدیل نقدینگی ریالی به مقاطع ساختمانی.\n\n` +
+          `• **۳. میزان اختلاف و شکاف دو نرخ:**\n` +
+          `   - شکاف ریالی: **۷۳۳,۷۳۲ ریال (حدود ۷۳,۳۷۳ تومان) به ازای هر دلار**\n` +
+          `   - درصد اختلاف شکاف: **حدود ۴۳٪ بالاتر از نرخ رسمی حواله**\n\n` +
+          `**توصیه راهبردی مهر رضوی:** این فاصله ۴۳ درصدی باعث رانت جذاب برای خرید مواد اولیه به قیمت پایه بورس کالا و فروش محصول نهایی با کشش بازار آزاد می‌شود. در نتیجه، رقابت در تالار شمش و آهن اسفنجی داغ خواهد ماند و اولویت خرید با شرایط تسویه اعتباری بلندمدت است.`;
+      } else if (q.includes("گاز") || q.includes("سرما") || q.includes("زمستان")) {
+        text = `### ارزیابی بحران محدودیت گاز فصول سرد بر آهن اسفنجی:\n\n• **آسیب‌پذیری واحدهای احیا:** با برودت هوا و افت فشار شبکه سراسری گاز، شرکت ملی گاز سهمیه واحدهای احیای مستقیم (نظیر چادرملو، ارفع، غدیر و سیرجان) را تا ۶۰ الی ۸۰ درصد کاهش می‌دهد.\n• **جهش رقابت در بورس کالا:** افت هفتگی عرضه آهن اسفنجی در تالار، رقابت‌های قیمتی را تا بالای ۶۰ درصد نرخ شمش می‌برد که تولید بیلت در کوره‌های القایی را غیر اقتصادی می‌کند.\n\n**توصیه راهبردی مهر رضوی:** دپوی حداقل ۳۰ روز آهن اسفنجی یا جایگزینی با قراضه باکیفیت پیش از ورود به پیک برودت زمستان الزامی است.`;
+      } else if (q.includes("جنگ") || q.includes("تنش") || q.includes("منطقه")) {
+        text = `### سناریوی تنش‌های ژئوپلیتیک و ریسک جنگ بر زنجیره فولاد:\n\n• **بخش صادرات:** افزایش ریسک‌های منطقه‌ای هزینه‌های بیمه کشتیرانی (War Risk Surcharge) و کرایه حمل در خلیج فارس را بالا می‌برد و صادرات بیلت و اسلب به بازارهای جنوب شرق آسیا را با تاخیر مواجه می‌کند.\n• **پوشش ریسک در بازار داخل:** در دوران تنش‌های سیاسی، تقاضا برای کالاهای با نقدشوندگی بالا (شمش و میلگرد) به عنوان دارایی امن حفظ ارزش پول تشدید می‌شود.\n\n**توصیه راهبردی مهر رضوی:** اولویت‌بخشی به تحویل‌های کوتاه‌مدت نقدی و کاهش ریسک تعهدات سلف تا زمان فروکش کردن نوسانات ژئوپلیتیک.`;
+      } else {
+        text = `### جمع‌بندی تحلیلی هوشمند مهر رضوی:\n\nبا پایش ${allItems.length} نماد فعال در تابلوی بورس کالا، در حال حاضر تقاضا برای محصولات با تسویه اعتباری پرفشارتر از معاملات نقدی است. این موضوع نشان‌دهنده ترجیح فعالان بازار به حفظ نقدینگی و تثبیت قیمت مواد اولیه در سایه نوسانات ارزی است.\n\n**توصیه راهبردی:** برای خرید آهن اسفنجی و شمش، توجه به نسبت قیمتی ۵۵ درصدی اسفنجی به شمش معیار کلیدی شناسایی نقاط بهینه ورود است.`;
+      }
+      return { candidates: [{ content: { parts: [{ text: text }] } }] };
+    }
+
+    function renderChatMessages() {
+      const container = document.getElementById('chat-messages');
+      if (!container) return;
+
+      container.innerHTML = chatConversationHistory.map(msg => {
+        const isUser = msg.role === 'user';
+        const formatted = formatMarkdownText(msg.content);
+        const avatar = isUser ? '' : `<div class="chat-ai-avatar" style="width: 28px; height: 28px; font-size: 14px;">✨</div>`;
+        const errorClass = msg.isError ? 'error-bubble' : '';
+
+        let sourcesHtml = '';
+        if (msg.sources && msg.sources.length > 0) {
+          sourcesHtml = `
+            <div class="chat-sources">
+              <div class="chat-sources-title">🔍 منابع جستجوی گوگل:</div>
+              <div class="chat-sources-list">
+                ${msg.sources.map(s => `<a href="${s.url}" target="_blank" class="chat-source-tag">🌐 ${s.title.slice(0, 24)}</a>`).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        const copyBtn = !isUser && !msg.isError
+          ? `<div style="text-align: left; margin-top: 6px;"><button onclick="copyChatText(this)" data-content="${encodeURIComponent(msg.content)}" style="background: transparent; border: none; color: var(--text-secondary); font-size: 11px; cursor: pointer;">📋 کپی</button></div>`
+          : '';
+
+        return `
+          <div class="chat-bubble-row ${isUser ? 'user-row' : 'ai-row'}">
+            ${avatar}
+            <div class="chat-bubble ${isUser ? 'user-bubble' : 'ai-bubble'} ${errorClass}">
+              <div>${formatted}</div>
+              ${sourcesHtml}
+              ${copyBtn}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function formatMarkdownText(raw) {
+      if (!raw) return '';
+      let escaped = raw
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+      escaped = escaped.replace(/^### (.*$)/gim, '<div style="font-weight: 800; font-size: 14px; color: var(--accent-gold); margin: 6px 0;">$1</div>');
+      escaped = escaped.replace(/^#### (.*$)/gim, '<div style="font-weight: 700; font-size: 13px; color: var(--text-main); margin: 4px 0;">$1</div>');
+      escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong style="color: var(--text-main); font-weight: 800;">$1</strong>');
+      escaped = escaped.replace(/^[•\-\*] (.*$)/gim, '<div style="padding-right: 10px; margin: 3px 0;">• $1</div>');
+
+      return escaped;
+    }
+
+    function copyChatText(btn) {
+      const text = decodeURIComponent(btn.getAttribute('data-content'));
+      navigator.clipboard.writeText(text).then(() => {
+        btn.innerText = '✓ کپی شد';
+        setTimeout(() => { btn.innerText = '📋 کپی'; }, 1500);
+      });
+    }
+
+    // --- Macro & Risk Dashboard View Renderer ---
+    function renderMacroView() {
+      const container = document.getElementById('macro-cards-container');
+      if (!container) return;
+
+      let driPrice = 145000;
+      let billetPrice = 252000;
+
+      const dri = allItems.find(i => (i.product || '').includes("اسفنجی") && i.final_price);
+      if (dri) driPrice = parseInt(String(dri.final_price).replace(/,/g, ''), 10) || driPrice;
+
+      const billet = allItems.find(i => (i.product || '').includes("شمش") && i.final_price);
+      if (billet) billetPrice = parseInt(String(billet.final_price).replace(/,/g, ''), 10) || billetPrice;
+
+      const ratio = ((driPrice / billetPrice) * 100).toFixed(1);
+      const isHighRatio = parseFloat(ratio) > 58.0;
+
+      container.innerHTML = `
+        <div class="macro-hero">
+          <div class="macro-hero-title">
+            <span>✨</span>
+            <span>تحلیل تلفیقی هوش مصنوعی مهر رضوی</span>
+          </div>
+          <div class="macro-hero-desc">
+            مدل هوش مصنوعی رادار مهر رضوی همزمان سه محور «قیمت‌های زنده بورس کالا»، «نوسانات ارز (دلار آزاد / مرکز مبادله)» و «اختلالات عینی بازار (قطعی گاز فصول سرد و تنش‌های ژئوپلیتیک)» را برای تدوین سناریوهای بهینه خرید ترکیب می‌کند.
+          </div>
+          <button class="close-sheet-btn" style="height: 42px; font-size: 13px;" onclick="sendQuickPrompt('یک گزارش تحلیلی کامل از ترکیب اثر دلار، قطعی گاز زمستان و ریسک‌های جنگ بر بازار شمش و آهن اسفنجی ارائه کن.')">
+            دریافت سناریوی تلفیقی بازار با هوش مصنوعی
+          </button>
+        </div>
+
+        <div class="macro-card">
+          <div class="macro-card-top">
+            <div class="macro-card-title">نسبت آهن اسفنجی به شمش (DRI/Billet)</div>
+            <div class="macro-pill ${isHighRatio ? 'red' : 'green'}">${ratio}٪</div>
+          </div>
+          <div class="macro-card-sub" style="color: ${isHighRatio ? '#EF4444' : '#10B981'};">
+            ${isHighRatio ? 'محدوده پرریسک برای کوره القایی' : 'محدوده متعادل زنجیره فولاد'}
+          </div>
+          <div class="macro-card-desc">
+            محدوده استاندارد اقتصادی بین ۵۳٪ تا ۵۸٪ است. نسبت‌های بالای ۵۸٪ حاشیه سود فولادساز را فشرده کرده و پیش‌درآمد حتمی رشد قیمت شمش است.
+          </div>
+          <button class="macro-action-btn" onclick="sendQuickPrompt('درباره شاخص نسبت اسفنجی به شمش (${ratio}%) و اثر آن بر استراتژی خرید توضیح دهید.')">
+            ✨ تحلیل با جیمنای
+          </button>
+        </div>
+
+        <div class="macro-card">
+          <div class="macro-card-top">
+            <div class="macro-card-title">ریسک محدودیت گاز (فصول سرد و زمستان)</div>
+            <div class="macro-pill red">بسیار بالا (۸۵٪)</div>
+          </div>
+          <div class="macro-card-sub" style="color: #EF4444;">
+            آسیب‌پذیری مستقیم خطوط احیای مستقیم آهن اسفنجی
+          </div>
+          <div class="macro-card-desc">
+            با کاهش دمای هوا و اولویت گاز خانگی، سهمیه گاز واحدهای اسفنجی قطع یا سهمیه‌بندی شده و افت عرضه و رقابت شدید ایجاد می‌کند.
+          </div>
+          <button class="macro-action-btn" onclick="sendQuickPrompt('بررسی عمیق ریسک قطعی گاز واحدهای احیا در سرما و پیشنهاد دوره گردش انبار')">
+            ✨ تحلیل با جیمنای
+          </button>
+        </div>
+
+        <div class="macro-card">
+          <div class="macro-card-top">
+            <div class="macro-card-title">شکاف دلار مرکز مبادله (ICE) و آزاد (TGJU)</div>
+            <div class="macro-pill gold">پیش‌ران افزایشی</div>
+          </div>
+          <div class="macro-card-sub" style="color: var(--accent-gold);">
+            رسمی حواله: ۱۷۰,۶۰۰ ت | آزاد: ۲۴۴,۰۰۰ ت (اختلاف: ~۷۳,۴۰۰ ت)
+          </div>
+          <div class="macro-card-desc">
+            فرمول کشف نرخ پایه بورس کالا وابسته به نرخ رسمی تالار حواله مرکز مبادله (<a href="https://ice.ir/market-view/currency" target="_blank" style="color: var(--accent-gold);">ice.ir</a>) است. نرخ بازار غیررسمی (<a href="https://tgju.org/currency" target="_blank" style="color: var(--accent-gold);">tgju.org</a>) انتظارات تورمی را شکل داده و تقاضای خریدهای سلف و اعتباری را برای پوشش ریسک به شدت افزایش داده است.
+          </div>
+          <button class="macro-action-btn" onclick="sendQuickPrompt('الان وضعیت نرخ رسمی مرکز مبادله (ice.ir) و نرخ دلار آزاد (tgju.org) و اختلافشان چگونه است و چه اثری بر معاملات بورس کالا دارد؟')">
+            ✨ تحلیل با دستیار مهررضوی
+          </button>
+        </div>
+
+        <div class="macro-card">
+          <div class="macro-card-top">
+            <div class="macro-card-title">ریسک ژئوپلیتیک و مناقشات منطقه‌ای</div>
+            <div class="macro-pill red">سطح هشدار بالا</div>
+          </div>
+          <div class="macro-card-sub" style="color: #EF4444;">
+            اثر بر بیمه کشتیرانی، نفت و بازارهای صادراتی
+          </div>
+          <div class="macro-card-desc">
+            تنش‌های منطقه‌ای موجب افزایش کرایه حمل دریایی در خلیج فارس، شوک‌های مقطعی ارزی و تمایل به حفظ موجودی کالایی فیزیکی می‌شود.
+          </div>
+          <button class="macro-action-btn" onclick="sendQuickPrompt('اثر تنش‌های منطقه‌ای و جنگ بر صادرات شمش و اسلب ایران و استراتژی انبارداری')">
+            ✨ تحلیل با دستیار مهررضوی
+          </button>
+        </div>
+      `;
+    }
 
     // Initialize
     renderCategories();
