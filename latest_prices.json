@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27 23:57:07",
+  "updated_at": "2026-09-28 09:00:17",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -981,6 +981,105 @@
       "diff_percent": 0.0,
       "demand": "10,000",
       "final_checked_at": "2026-09-27 23:55"
+    },
+    {
+      "supplier": "شرکت معدنی وصنعتی چادرملو",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "CHMI-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "695788",
+      "volume": "10000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد کاوه جنوب کیش",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "SKS-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "690235",
+      "volume": "5000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد کاوه جنوب کیش",
+      "product": "شمش بلوم (150*150)3SP",
+      "symbol": "SKS-BSG324X-00",
+      "date": "1405/07/06",
+      "base_price": "690235",
+      "volume": "5000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد غدیر نی ریز",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "NGHS-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "692061",
+      "volume": "5000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "فولاد خوزستان",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "KSC-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "667833",
+      "volume": "10000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "آهن و فولاد ارفع",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "AISC-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "682481",
+      "volume": "4000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "مجتمع فولاد خراسان",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "KSO-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "667833",
+      "volume": "2500",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "شرکت فولاد زرند ایرانیان",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "FZI-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "686433",
+      "volume": "2500",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "شرکت فولاد زرند ایرانیان",
+      "product": "شمش بلوم (150*150)3SP",
+      "symbol": "FZI-BSG324X-00",
+      "date": "1405/07/06",
+      "base_price": "686433",
+      "volume": "2500",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "جهان فولاد سیرجان",
+      "product": "شمش بلوم (150*150)5SP",
+      "symbol": "SJS-BSG194X-00",
+      "date": "1405/07/06",
+      "base_price": "691554",
+      "volume": "5000",
+      "settlement": "نقدی"
+    },
+    {
+      "supplier": "جهان فولاد سیرجان",
+      "product": "شمش بلوم (150*150)3SP",
+      "symbol": "SJS-BSG324X-00",
+      "date": "1405/07/06",
+      "base_price": "691554",
+      "volume": "3000",
+      "settlement": "نقدی"
     }
   ]
 }
