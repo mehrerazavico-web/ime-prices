@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28 16:40:55",
+  "updated_at": "2026-09-28 16:58:57",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -673,7 +673,7 @@
       "final_price": "143853",
       "diff_percent": 0.0,
       "demand": "20,000",
-      "final_checked_at": "2026-09-28 16:40"
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -989,7 +989,11 @@
       "date": "1405/07/06",
       "base_price": "695788",
       "volume": "10000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "695788",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "فولاد کاوه جنوب کیش",
@@ -998,7 +1002,11 @@
       "date": "1405/07/06",
       "base_price": "690235",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "690235",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "فولاد کاوه جنوب کیش",
@@ -1007,7 +1015,11 @@
       "date": "1405/07/06",
       "base_price": "690235",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "690235",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "فولاد غدیر نی ریز",
@@ -1016,7 +1028,11 @@
       "date": "1405/07/06",
       "base_price": "692061",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "692061",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "فولاد خوزستان",
@@ -1025,7 +1041,11 @@
       "date": "1405/07/06",
       "base_price": "667833",
       "volume": "10000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "667833",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "آهن و فولاد ارفع",
@@ -1034,7 +1054,11 @@
       "date": "1405/07/06",
       "base_price": "682481",
       "volume": "4000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "682481",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "مجتمع فولاد خراسان",
@@ -1043,7 +1067,11 @@
       "date": "1405/07/06",
       "base_price": "667833",
       "volume": "2500",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "667833",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -1052,7 +1080,11 @@
       "date": "1405/07/06",
       "base_price": "686433",
       "volume": "2500",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "686433",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:57"
     },
     {
       "supplier": "شرکت فولاد زرند ایرانیان",
@@ -1061,7 +1093,11 @@
       "date": "1405/07/06",
       "base_price": "686433",
       "volume": "2500",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "686433",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:58"
     },
     {
       "supplier": "جهان فولاد سیرجان",
@@ -1070,7 +1106,11 @@
       "date": "1405/07/06",
       "base_price": "691554",
       "volume": "5000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "691554",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:58"
     },
     {
       "supplier": "جهان فولاد سیرجان",
@@ -1079,7 +1119,11 @@
       "date": "1405/07/06",
       "base_price": "691554",
       "volume": "3000",
-      "settlement": "نقدی"
+      "settlement": "نقدی",
+      "final_price": "691554",
+      "diff_percent": 0.0,
+      "demand": "0",
+      "final_checked_at": "2026-09-28 16:58"
     },
     {
       "supplier": "فولاد جهان آرا اروند",
@@ -1090,7 +1134,7 @@
       "final_price": "771900",
       "diff_percent": 0.0,
       "demand": "6,000",
-      "final_checked_at": "2026-09-28 16:40"
+      "final_checked_at": "2026-09-28 16:57"
     }
   ]
 }
