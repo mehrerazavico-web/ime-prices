@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28 14:11:21",
+  "updated_at": "2026-09-28 14:27:49",
   "items": [
     {
       "supplier": "معدنی و صنعتی چادر ملو",
@@ -673,7 +673,7 @@
       "final_price": "143853",
       "diff_percent": 0.0,
       "demand": "16,000",
-      "final_checked_at": "2026-09-28 14:11"
+      "final_checked_at": "2026-09-28 14:27"
     },
     {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -1090,7 +1090,7 @@
       "final_price": "771900",
       "diff_percent": 0.0,
       "demand": "4,000",
-      "final_checked_at": "2026-09-28 14:11"
+      "final_checked_at": "2026-09-28 14:27"
     }
   ]
 }
