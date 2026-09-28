@@ -7,9 +7,10 @@
 
   <!-- PWA & Apple iOS Web App Meta Tags -->
   <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#1A1F1B">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F6F9">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#12151B">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="رادار مهر رضوی">
   
   <link rel="apple-touch-icon" href="./apple-touch-icon.png">
@@ -25,22 +26,75 @@
 
   <style>
     :root {
-      --bg-dark: #1A1F1B;
-      --surface-dark: #222923;
-      --card-bg: #222923;
+      /* Dark Theme (Default) */
+      --bg-dark: #10141A;
+      --surface-dark: #171C24;
+      --card-bg: #171C24;
       --card-border: rgba(255, 255, 255, 0.08);
       --primary: #388E3C;
       --primary-light: #4CAF50;
       --accent-gold: #C5A059;
       --text-main: #FFFFFF;
-      --text-muted: #9E9E9E;
+      --text-muted: #8E9BAE;
       --green-trend: #10B981;
       --red-trend: #EF4444;
       --btn-hover: rgba(255, 255, 255, 0.08);
       --btn-active: #388E3C;
       --btn-active-text: #FFFFFF;
+      --input-bg: #171C24;
+      --input-border: rgba(255, 255, 255, 0.12);
+      --filter-pill-bg: #171C24;
+      --filter-pill-text: #8E9BAE;
+      --sub-items-bg: rgba(0, 0, 0, 0.25);
+      --sub-items-border: rgba(255, 255, 255, 0.08);
+      --modal-bg: #171C24;
+      --modal-border: rgba(255, 255, 255, 0.12);
+      --promo-bg: linear-gradient(135deg, #1C281F 0%, #151F18 100%);
+      --promo-border: rgba(197, 160, 89, 0.35);
+      --promo-text: #E0E0E0;
+      --time-filter-bg: rgba(255, 255, 255, 0.06);
+      --chart-card-bg: rgba(0, 0, 0, 0.35);
+      --chart-card-border: rgba(255, 255, 255, 0.09);
+      --tag-bg: rgba(255, 255, 255, 0.08);
+      --tag-text: #CCC;
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    /* Automatic Light Mode matching Android Theme */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-dark: #F4F6F9;
+        --surface-dark: #FFFFFF;
+        --card-bg: #FFFFFF;
+        --card-border: #E2E8F0;
+        --primary: #2E7D32;
+        --primary-light: #388E3C;
+        --accent-gold: #B45309;
+        --text-main: #0F172A;
+        --text-muted: #64748B;
+        --green-trend: #059669;
+        --red-trend: #DC2626;
+        --btn-hover: rgba(0, 0, 0, 0.04);
+        --btn-active: #2E7D32;
+        --btn-active-text: #FFFFFF;
+        --input-bg: #FFFFFF;
+        --input-border: #CBD5E1;
+        --filter-pill-bg: #FFFFFF;
+        --filter-pill-text: #64748B;
+        --sub-items-bg: #F8FAFC;
+        --sub-items-border: #E2E8F0;
+        --modal-bg: #FFFFFF;
+        --modal-border: #E2E8F0;
+        --promo-bg: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+        --promo-border: rgba(46, 125, 50, 0.3);
+        --promo-text: #1B5E20;
+        --time-filter-bg: #E2E8F0;
+        --chart-card-bg: #F8FAFC;
+        --chart-card-border: #E2E8F0;
+        --tag-bg: #F1F5F9;
+        --tag-text: #475569;
+      }
     }
 
     * {
@@ -100,7 +154,7 @@
     .brand-title {
       font-size: 16px;
       font-weight: 800;
-      color: #FFFFFF;
+      color: var(--text-main);
       letter-spacing: -0.3px;
     }
 
@@ -117,8 +171,8 @@
     }
 
     .icon-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--tag-bg);
+      border: 1px solid var(--card-border);
       color: var(--text-main);
       width: 38px;
       height: 38px;
@@ -133,20 +187,20 @@
 
     .icon-btn:active {
       transform: scale(0.92);
-      background: rgba(255, 255, 255, 0.12);
+      background: var(--btn-hover);
     }
 
     /* iOS Installation Banner (For Safari on iPhone) */
     #ios-install-prompt {
       display: none;
-      background: linear-gradient(135deg, rgba(56, 142, 60, 0.2) 0%, rgba(197, 160, 89, 0.15) 100%);
-      border: 1px solid rgba(197, 160, 89, 0.4);
+      background: var(--promo-bg);
+      border: 1px solid var(--promo-border);
       border-radius: 16px;
       padding: 12px 14px;
       margin-bottom: 14px;
       font-size: 12px;
       line-height: 1.6;
-      color: #E0E0E0;
+      color: var(--promo-text);
       position: relative;
     }
 
@@ -160,7 +214,7 @@
       left: 10px;
       background: none;
       border: none;
-      color: #999;
+      color: var(--text-muted);
       font-size: 16px;
       cursor: pointer;
     }
@@ -173,13 +227,13 @@
 
     .search-box input {
       width: 100%;
-      background-color: var(--surface-dark);
-      border: 1px solid var(--card-border);
+      background-color: var(--input-bg);
+      border: 1px solid var(--input-border);
       border-radius: 14px;
       padding: 12px 42px 12px 16px;
       font-family: inherit;
       font-size: 13px;
-      color: #FFF;
+      color: var(--text-main);
       outline: none;
       transition: border-color 0.2s;
     }
@@ -189,7 +243,7 @@
     }
 
     .search-box input::placeholder {
-      color: #757575;
+      color: var(--text-muted);
     }
 
     .search-icon {
@@ -197,7 +251,7 @@
       right: 14px;
       top: 50%;
       transform: translateY(-50%);
-      color: #757575;
+      color: var(--text-muted);
       font-size: 16px;
       pointer-events: none;
     }
@@ -221,12 +275,12 @@
       align-items: center;
       gap: 6px;
       padding: 7px 14px;
-      background-color: var(--surface-dark);
+      background-color: var(--filter-pill-bg);
       border: 1px solid var(--card-border);
       border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
-      color: var(--text-muted);
+      color: var(--filter-pill-text);
       white-space: nowrap;
       cursor: pointer;
       transition: all 0.2s;
@@ -333,7 +387,7 @@
     .supplier-name {
       font-size: 12px;
       font-weight: 700;
-      color: #FFF;
+      color: var(--text-main);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -376,7 +430,7 @@
     .price-val {
       font-size: 17px;
       font-weight: 900;
-      color: #FFF;
+      color: var(--text-main);
       letter-spacing: -0.5px;
     }
 
@@ -388,10 +442,10 @@
 
     .price-tag {
       font-size: 9px;
-      background: rgba(255, 255, 255, 0.08);
+      background: var(--tag-bg);
       padding: 2px 6px;
       border-radius: 6px;
-      color: #CCC;
+      color: var(--tag-text);
     }
 
     .card-bottom-info {
@@ -399,7 +453,7 @@
       justify-content: space-between;
       margin-top: 8px;
       padding-top: 8px;
-      border-top: 1px dashed rgba(255, 255, 255, 0.06);
+      border-top: 1px dashed var(--card-border);
       font-size: 9px;
       color: var(--text-muted);
     }
@@ -408,7 +462,7 @@
     #detail-modal {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       z-index: 10000;
@@ -421,7 +475,7 @@
     }
 
     .modal-content {
-      background: var(--surface-dark);
+      background: var(--modal-bg);
       border-radius: 28px 28px 0 0;
       width: 100%;
       max-width: 600px;
@@ -430,9 +484,9 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--modal-border);
       border-bottom: none;
-      box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.4);
       animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       box-sizing: border-box;
     }
@@ -444,8 +498,8 @@
 
     .modal-fixed-top {
       padding: 12px 20px 12px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: var(--surface-dark);
+      border-bottom: 1px solid var(--modal-border);
+      background: var(--modal-bg);
       flex-shrink: 0;
     }
 
@@ -464,9 +518,9 @@
     }
 
     .modal-close-icon {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #FFF;
+      background: var(--tag-bg);
+      border: 1px solid var(--modal-border);
+      color: var(--text-main);
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -481,7 +535,7 @@
     }
 
     .modal-close-icon:active {
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--btn-hover);
     }
 
     .modal-scroll-area {
@@ -505,7 +559,7 @@
       align-items: center;
       font-size: 13px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid var(--card-border);
     }
 
     .detail-label {
@@ -513,13 +567,13 @@
     }
 
     .detail-val {
-      color: #FFF;
+      color: var(--text-main);
       font-weight: 700;
     }
 
     .brand-promo-card {
-      background: linear-gradient(135deg, #243527 0%, #1c261e 100%);
-      border: 1px solid rgba(197, 160, 89, 0.3);
+      background: var(--promo-bg);
+      border: 1px solid var(--promo-border);
       border-radius: 14px;
       padding: 12px 14px;
       display: flex;
@@ -1741,13 +1795,15 @@
         }
       }
 
+      const isLightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
       const options = {
         series: [{
           name: 'قیمت بورس کالا',
           data: points.map(p => ({ x: p.label || p.date, y: p.price }))
         }],
         theme: {
-          mode: 'dark'
+          mode: isLightMode ? 'light' : 'dark'
         },
         chart: {
           type: 'area',
@@ -1788,7 +1844,7 @@
         },
         grid: { show: false },
         tooltip: {
-          theme: 'dark',
+          theme: isLightMode ? 'light' : 'dark',
           y: { formatter: (val) => formatNumber(val) + " ریال" },
           x: { show: true },
           marker: { show: true }
