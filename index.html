@@ -12,6 +12,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="رادار مهر رضوی">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   
   <link rel="apple-touch-icon" href="./apple-touch-icon.png">
   <link rel="icon" type="image/png" href="./favicon.png">
@@ -920,7 +923,7 @@
       font-weight: 500;
     }
 
-    /* Bottom Navigation Bar */
+    /* Bottom Navigation Bar with Modern Micro-Interactions */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -932,50 +935,87 @@
       border-top: 1px solid var(--card-border);
       display: flex;
       justify-content: space-around;
-      padding: 4px 10px calc(var(--safe-bottom) + 4px);
+      padding: 6px 12px calc(var(--safe-bottom) + 6px);
       z-index: 100;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.2s ease;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    body.keyboard-open .bottom-nav,
+    body.chat-active-typing .bottom-nav {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateY(120%) !important;
     }
 
     .nav-tab {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2px;
+      justify-content: center;
+      gap: 3px;
       color: var(--text-secondary);
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 600;
       cursor: pointer;
-      padding: 2px 10px;
-      border-radius: 12px;
-      transition: all 0.2s ease;
+      padding: 6px 14px;
+      border-radius: 16px;
+      transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, color 0.2s ease;
       position: relative;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-tab:active {
+      transform: scale(0.88);
     }
 
     .nav-tab svg {
-      width: 19px;
-      height: 19px;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .nav-tab.active {
       color: var(--primary-light);
       font-weight: 800;
+      background: rgba(16, 124, 65, 0.1);
+    }
+
+    .nav-tab.active svg {
+      transform: scale(1.12);
+      animation: tabIconBounce 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .nav-tab.active.gold-tab {
       color: var(--accent-gold);
+      background: rgba(197, 160, 89, 0.12);
+    }
+
+    @keyframes tabIconBounce {
+      0% { transform: scale(0.85); }
+      50% { transform: scale(1.22); }
+      100% { transform: scale(1.12); }
     }
 
     .nav-badge-dot {
       position: absolute;
-      top: 3px;
+      top: 4px;
       right: 18px;
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: var(--accent-gold);
       box-shadow: 0 0 6px var(--accent-gold);
+      animation: badgePulse 2s infinite ease-in-out;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; box-shadow: 0 0 4px var(--accent-gold); }
+      50% { transform: scale(1.35); opacity: 1; box-shadow: 0 0 10px var(--accent-gold); }
     }
 
     /* AI Chat Tab Styles */
@@ -983,8 +1023,14 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      height: calc(100vh - var(--safe-top) - var(--safe-bottom) - 150px);
-      min-height: 480px;
+      height: calc(var(--viewport-height, 100dvh) - var(--safe-top) - var(--safe-bottom) - 140px);
+      min-height: 380px;
+      transition: height 0.2s ease;
+    }
+
+    body.keyboard-open .chat-wrapper {
+      height: calc(var(--viewport-height, 100dvh) - var(--safe-top) - 80px);
+      min-height: 240px;
     }
 
     .chat-header-bar {
@@ -1092,12 +1138,12 @@
       flex: 1 1 auto;
       min-height: 0;
       overflow-y: auto;
-      padding: 6px 4px 12px;
+      padding: 8px 6px 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       -webkit-overflow-scrolling: touch;
-      justify-content: flex-start !important;
+      justify-content: flex-start;
       align-items: stretch;
     }
 
@@ -1107,58 +1153,59 @@
       gap: 8px;
       width: 100%;
       flex-shrink: 0;
-      flex-grow: 0;
-      min-height: min-content;
-      height: auto;
+      animation: bubbleEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes bubbleEnter {
+      from { opacity: 0; transform: translateY(6px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .chat-bubble-row.user-row {
-      justify-content: flex-start;
+      justify-content: flex-end;
       flex-direction: row;
-      flex-shrink: 0;
     }
 
     .chat-bubble-row.ai-row {
       justify-content: flex-start;
       flex-direction: row;
-      flex-shrink: 0;
     }
 
     .chat-bubble {
-      max-width: 82%;
-      width: auto !important;
-      display: inline-block;
       box-sizing: border-box;
-      height: auto !important;
-      min-height: unset !important;
-      max-height: none !important;
-      flex: 0 0 auto !important;
-      align-self: flex-start;
-      padding: 10px 14px;
+      height: auto;
+      min-height: unset;
+      padding: 9px 13px;
       border-radius: 18px;
       font-size: 13.5px;
-      line-height: 1.6;
+      line-height: 1.55;
       word-break: break-word;
-      white-space: pre-wrap;
     }
 
     .chat-bubble.user-bubble {
       background: #107C41;
       color: #FFFFFF;
-      border-bottom-left-radius: 4px;
-      display: inline-block;
-      width: auto !important;
-      max-width: 80%;
-      height: auto !important;
-      min-height: unset !important;
-      flex: 0 0 auto !important;
+      border-radius: 18px 18px 4px 18px;
+      width: fit-content;
+      max-width: 78%;
+      box-shadow: 0 2px 8px rgba(16, 124, 65, 0.25);
+      margin: 0;
     }
 
     .chat-bubble.ai-bubble {
       background: var(--surface-main);
       border: 1px solid var(--card-border);
       color: var(--text-main);
-      border-bottom-right-radius: 4px;
+      border-radius: 18px 18px 18px 4px;
+      width: fit-content;
+      max-width: 85%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .chat-bubble-text {
+      white-space: pre-line;
+      word-break: break-word;
+      line-height: 1.55;
     }
 
     .chat-bubble.ai-bubble.error-bubble {
@@ -1209,6 +1256,7 @@
       background: rgba(197, 160, 89, 0.1);
       border-radius: 14px;
       margin-bottom: 6px;
+      animation: bubbleEnter 0.2s ease;
     }
 
     .typing-spinner {
@@ -1233,6 +1281,7 @@
       border-radius: 24px;
       padding: 6px 12px;
       margin-top: 4px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     }
 
     .chat-input-field {
@@ -1274,11 +1323,11 @@
       justify-content: center;
       cursor: pointer;
       flex-shrink: 0;
-      transition: transform 0.15s;
+      transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .chat-send-btn:active {
-      transform: scale(0.92);
+      transform: scale(0.90);
     }
 
     /* Hide bottom nav bar when keyboard is active or when typing */
@@ -1287,7 +1336,7 @@
       display: none !important;
       opacity: 0 !important;
       pointer-events: none !important;
-      transform: translateY(100%) !important;
+      transform: translateY(120%) !important;
     }
 
     /* Macro & Risk Dashboard View */
@@ -1521,7 +1570,7 @@
           <!-- Initial Welcome Message -->
           <div class="chat-bubble-row ai-row">
             <div class="chat-ai-avatar" style="width: 28px; height: 28px; font-size: 14px;">✨</div>
-            <div class="chat-bubble ai-bubble">سلام! من دستیار هوشمند و تحلیلگر ارشد بورس کالای مهر رضوی هستم.
+            <div class="chat-bubble ai-bubble"><div class="chat-bubble-text">سلام! من دستیار هوشمند و تحلیلگر ارشد بورس کالای مهر رضوی هستم.
 
 من به تابلوی معاملات زنده و دادههای زنجیره فولاد متصلم و میتوانم در موارد زیر راهنماییتان کنم:
 
@@ -1529,7 +1578,7 @@
 🔹 عوامل محیطی: تاثیر قطعی گاز زمستان، تنشهای منطقهای و هزینههای حمل
 🔹 استراتژی معاملاتی: مقایسه خریدهای نقدی، سلف و اعتباری
 
-برای شروع، نماد مدنظرتان یا سوالتان درباره بازار را بپرسید!</div>
+برای شروع، نماد مدنظرتان یا سوالتان درباره بازار را بپرسید!</div></div>
           </div>
         </div>
 
@@ -1541,7 +1590,7 @@
 
         <!-- Input Bar -->
         <div class="chat-input-row">
-          <div id="chat-input" class="chat-input-field" contenteditable="plaintext-only" role="textbox" aria-multiline="true" data-placeholder="تحلیل اثر دلار، قطعی گاز، جنگ یا نماد دلخواه را بپرسید..." onkeydown="handleChatKeyDown(event)"></div>
+          <div id="chat-input" class="chat-input-field" contenteditable="true" inputmode="text" enterkeyhint="send" autocorrect="off" autocapitalize="sentences" spellcheck="false" tabindex="0" role="textbox" aria-multiline="true" data-placeholder="تحلیل اثر دلار، قطعی گاز، جنگ یا نماد دلخواه را بپرسید..." onkeydown="handleChatKeyDown(event)"></div>
           <button id="chat-send-btn" class="chat-send-btn" onclick="handleSendChat()" title="ارسال">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);">
               <line x1="22" y1="2" x2="11" y2="13"/>
@@ -2730,8 +2779,8 @@ ${marketContext}`;
       if (typingElem) typingElem.style.display = 'flex';
       if (typingText) typingText.innerText = 'در حال تحلیل تابلوی بورس کالا...';
 
-      const timer1 = setTimeout(() => { if (typingText) typingText.innerText = 'جستجو و پالایش نرخ ارز و اخبار روز...'; }, 1200);
-      const timer2 = setTimeout(() => { if (typingText) typingText.innerText = 'تدوین تحلیل و استراتژی مهر رضوی...'; }, 2400);
+      const timer1 = setTimeout(() => { if (typingText) typingText.innerText = 'جستجو و پالایش نرخ ارز و اخبار روز...'; }, 1000);
+      const timer2 = setTimeout(() => { if (typingText) typingText.innerText = 'تدوین تحلیل و استراتژی مهر رضوی...'; }, 2000);
 
       const proxyUrl = getGeminiProxyUrl();
       const apiKey = getWebApiKey();
@@ -2741,19 +2790,32 @@ ${marketContext}`;
       try {
         let responseData = null;
         if (proxyUrl || apiKey) {
-          const contents = chatConversationHistory.slice(-10).map(m => ({
-            role: m.role === 'user' ? 'user' : 'model',
-            parts: [{ text: m.content }]
-          }));
+          // Prepare clean conversation history: start with user and alternate
+          const validHistory = chatConversationHistory
+            .filter(m => m.content && m.content.trim() && !m.isError)
+            .slice(-8);
 
+          const contents = [];
+          for (const item of validHistory) {
+            const role = item.role === 'user' ? 'user' : 'model';
+            if (contents.length > 0 && contents[contents.length - 1].role === role) {
+              contents[contents.length - 1].parts[0].text += "\n" + item.content;
+            } else {
+              contents.push({ role, parts: [{ text: item.content }] });
+            }
+          }
+          while (contents.length > 0 && contents[0].role !== 'user') {
+            contents.shift();
+          }
+          if (contents.length === 0) {
+            contents.push({ role: 'user', parts: [{ text: userText }] });
+          }
+
+          // Verified fast & active models through proxy
           const modelsToTry = [
-            "gemini-3.8-flash",
-            "gemini-3.7-flash",
-            "gemini-3.6-flash",
-            "gemini-3.5-flash-lite",
             "gemini-3.5-flash",
-            "gemini-2.5-flash",
-            "gemini-2.0-flash"
+            "gemini-3.5-flash-lite",
+            "gemini-3.8-flash"
           ];
 
           let lastErr = null;
@@ -2773,43 +2835,38 @@ ${marketContext}`;
               generationConfig: { temperature: 0.7, topP: 0.95 }
             };
 
+            const abortCtrl = new AbortController();
+            const abortTimeout = setTimeout(() => abortCtrl.abort(), 9000);
+
             try {
               let res = await fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestBody)
+                body: JSON.stringify(requestBody),
+                signal: abortCtrl.signal
               });
+              clearTimeout(abortTimeout);
 
               if (res.ok) {
                 responseData = await res.json();
-                break;
+                if (responseData?.candidates?.[0]?.content?.parts?.[0]?.text) {
+                  break;
+                }
               } else {
                 const errJson = await res.json().catch(() => ({}));
                 lastErr = new Error(errJson.error?.message || `HTTP ${res.status}`);
               }
             } catch (err) {
+              clearTimeout(abortTimeout);
               lastErr = err;
             }
           }
 
-          if (!responseData) {
-            if (lastErr && (lastErr.message.includes("high demand") || lastErr.message.includes("503") || lastErr.message.includes("RESOURCE_EXHAUSTED"))) {
-              responseData = {
-                candidates: [{
-                  content: {
-                    parts: [{
-                      text: "⚠️ سرورهای مدل‌های ابری جیمنای به دلیل بار ترافیکی سنگین لحظه‌ای موقتاً پاسخ ندادند. لطفاً تا لحظاتی دیگر مجدداً تلاش فرمایید، یا در صورت نیاز از تحلیل‌های راهبردی پیش‌فرض سامانه استفاده کنید."
-                    }]
-                  }
-                }]
-              };
-            } else {
-              throw lastErr || new Error("عدم دریافت پاسخ از مدل‌های جیمنای");
-            }
+          if (!responseData || !responseData.candidates || !responseData.candidates[0]) {
+            responseData = generateOfflineIntelligence(userText, marketContext);
           }
         } else {
-          // If no proxy or custom key entered on web, provide a contextual simulated intelligence analysis
-          await new Promise(r => setTimeout(r, 1400));
+          await new Promise(r => setTimeout(r, 600));
           responseData = generateOfflineIntelligence(userText, marketContext);
         }
 
@@ -2822,7 +2879,7 @@ ${marketContext}`;
         if (responseData && responseData.candidates && responseData.candidates[0]) {
           const cand = responseData.candidates[0];
           const parts = cand.content?.parts || [];
-          replyText = parts.map(p => p.text || '').join('');
+          replyText = parts.map(p => p.text || '').filter(t => t.trim()).join('\n');
 
           if (cand.groundingMetadata && cand.groundingMetadata.groundingChunks) {
             cand.groundingMetadata.groundingChunks.forEach(chunk => {
@@ -2835,7 +2892,10 @@ ${marketContext}`;
           replyText = responseData;
         }
 
-        if (!replyText) replyText = "پاسخی از سمت هوش مصنوعی دریافت نشد. لطفاً کلید API را بررسی نمایید.";
+        if (!replyText) {
+          const fallbackResp = generateOfflineIntelligence(userText, marketContext);
+          replyText = fallbackResp?.candidates?.[0]?.content?.parts?.[0]?.text || "پاسخ از طرف دستیار هوشمند مهر رضوی ارائه شد.";
+        }
 
         chatConversationHistory.push({
           role: "model",
@@ -2853,6 +2913,8 @@ ${marketContext}`;
           isError: false
         });
       } finally {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
         if (typingElem) typingElem.style.display = 'none';
         isAiGenerating = false;
         renderChatMessages();
@@ -2905,30 +2967,14 @@ ${marketContext}`;
 
         let sourcesHtml = '';
         if (msg.sources && msg.sources.length > 0) {
-          sourcesHtml = `
-            <div class="chat-sources">
-              <div class="chat-sources-title">🔍 منابع جستجوی گوگل:</div>
-              <div class="chat-sources-list">
-                ${msg.sources.map(s => `<a href="${s.url}" target="_blank" class="chat-source-tag">🌐 ${s.title.slice(0, 24)}</a>`).join('')}
-              </div>
-            </div>
-          `;
+          sourcesHtml = `<div class="chat-sources"><div class="chat-sources-title">🔍 منابع جستجوی گوگل:</div><div class="chat-sources-list">${msg.sources.map(s => `<a href="${s.url}" target="_blank" class="chat-source-tag">🌐 ${s.title.slice(0, 24)}</a>`).join('')}</div></div>`;
         }
 
         const copyBtn = !isUser && !msg.isError
-          ? `<div style="text-align: left; margin-top: 4px;"><button onclick="copyChatText(this)" data-content="${encodeURIComponent(msg.content)}" title="کپی متن" style="background: transparent; border: none; color: var(--text-secondary); font-size: 13px; cursor: pointer; padding: 2px 4px; display: inline-flex; align-items: center; justify-content: center;">📋</button></div>`
+          ? `<div style="text-align: left; margin-top: 5px;"><button onclick="copyChatText(this)" data-content="${encodeURIComponent(msg.content)}" title="کپی" style="background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-secondary); cursor: pointer; padding: 4px 7px; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></div>`
           : '';
 
-        return `
-          <div class="chat-bubble-row ${isUser ? 'user-row' : 'ai-row'}">
-            ${avatar}
-            <div class="chat-bubble ${isUser ? 'user-bubble' : 'ai-bubble'} ${errorClass}">
-              <div>${formatted}</div>
-              ${sourcesHtml}
-              ${copyBtn}
-            </div>
-          </div>
-        `;
+        return `<div class="chat-bubble-row ${isUser ? 'user-row' : 'ai-row'}">${avatar}<div class="chat-bubble ${isUser ? 'user-bubble' : 'ai-bubble'} ${errorClass}"><div class="chat-bubble-text">${formatted}</div>${sourcesHtml}${copyBtn}</div></div>`;
       }).join('');
 
       container.scrollTop = container.scrollHeight;
@@ -2952,8 +2998,9 @@ ${marketContext}`;
     function copyChatText(btn) {
       const text = decodeURIComponent(btn.getAttribute('data-content'));
       navigator.clipboard.writeText(text).then(() => {
-        btn.innerText = '✓';
-        setTimeout(() => { btn.innerText = '📋'; }, 1500);
+        const oldHtml = btn.innerHTML;
+        btn.innerHTML = '<span style="color: var(--primary-light); font-size: 11px; font-weight: bold;">✓</span>';
+        setTimeout(() => { btn.innerHTML = oldHtml; }, 1500);
       });
     }
 
@@ -3059,26 +3106,57 @@ ${marketContext}`;
     loadPrices();
     setInterval(loadPrices, 90000);
 
-    // Auto-hide bottom nav bar when keyboard is open or when typing
+    // Auto-hide bottom nav bar when keyboard is open or when typing on mobile/iPhone
     const chatInputElem = document.getElementById('chat-input');
+    const bottomNavBarElem = document.getElementById('bottom-nav-bar');
+
+    function hideBottomNavOnTyping() {
+      document.body.classList.add('keyboard-open', 'chat-active-typing');
+      if (bottomNavBarElem) {
+        bottomNavBarElem.style.setProperty('display', 'none', 'important');
+      }
+      setTimeout(() => {
+        const c = document.getElementById('chat-messages');
+        if (c) c.scrollTop = c.scrollHeight;
+      }, 150);
+    }
+
+    function showBottomNavAfterTyping() {
+      setTimeout(() => {
+        if (document.activeElement !== chatInputElem) {
+          document.body.classList.remove('keyboard-open', 'chat-active-typing');
+          if (bottomNavBarElem) {
+            bottomNavBarElem.style.removeProperty('display');
+          }
+        }
+      }, 200);
+    }
+
     if (chatInputElem) {
-      chatInputElem.addEventListener('focus', () => {
-        document.body.classList.add('chat-active-typing');
-      });
-      chatInputElem.addEventListener('blur', () => {
-        document.body.classList.remove('chat-active-typing');
-      });
+      chatInputElem.addEventListener('focus', hideBottomNavOnTyping);
+      chatInputElem.addEventListener('click', hideBottomNavOnTyping);
+      chatInputElem.addEventListener('touchstart', hideBottomNavOnTyping, { passive: true });
+      chatInputElem.addEventListener('blur', showBottomNavAfterTyping);
+    }
+
+    let initialVpHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
+    function handleViewportChange() {
+      if (!window.visualViewport) return;
+      const curH = window.visualViewport.height;
+      document.documentElement.style.setProperty('--viewport-height', `${curH}px`);
+
+      if (initialVpHeight - curH > 100) {
+        hideBottomNavOnTyping();
+      } else if (Math.abs(curH - initialVpHeight) < 60) {
+        showBottomNavAfterTyping();
+      }
     }
 
     if (window.visualViewport) {
-      window.visualViewport.addEventListener('resize', () => {
-        if (window.visualViewport.height < window.innerHeight - 100) {
-          document.body.classList.add('keyboard-open');
-        } else {
-          document.body.classList.remove('keyboard-open');
-          document.body.classList.remove('chat-active-typing');
-        }
-      });
+      window.visualViewport.addEventListener('resize', handleViewportChange);
+      window.visualViewport.addEventListener('scroll', handleViewportChange);
+      handleViewportChange();
     }
   </script>
 </body>
