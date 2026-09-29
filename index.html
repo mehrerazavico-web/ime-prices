@@ -1478,16 +1478,15 @@
           <!-- Initial Welcome Message -->
           <div class="chat-bubble-row ai-row">
             <div class="chat-ai-avatar" style="width: 28px; height: 28px; font-size: 14px;">✨</div>
-            <div class="chat-bubble ai-bubble">سلام! من **دستیار هوشمند و تحلیل‌گر ارشد بورس کالای مهر رضوی** هستم.
+            <div class="chat-bubble ai-bubble">سلام! من دستیار هوشمند و تحلیلگر ارشد بورس کالای مهر رضوی هستم.
 
-من به تابلوی معاملات زنده و آرشیو قیمت‌های زنجیره فولاد مهر رضوی متصلم و می‌توانم در زمینه‌های زیر با تحلیل داده‌محور راهنمایی‌تان کنم:
+من به تابلوی معاملات زنده و دادههای زنجیره فولاد متصلم و میتوانم در موارد زیر راهنماییتان کنم:
 
-• **تحلیل اثر نوسانات ارزی:** ارزیابی جهش دلار آزاد، تتر و دلار مرکز مبادله بر کشف نرخ پایه و رقابت‌های تالار
-• **بحران‌های فصلی و محدودیت انرژی:** سناریوهای قطعی گاز زمستان بر واحدهای احیا و جهش قیمت آهن اسفنجی و شمش
-• **تنش‌های ژئوپلیتیک و جنگ:** اثر شوک‌های منطقه‌ای بر صادرات، کرایه حمل دریایی و بهای مواد اولیه
-• **استراتژی معاملاتی:** خرید نقدی در برابر سلف و اعتباری، حباب‌سنجی نسبت اسفنجی به شمش و مدیریت انبار
+🔹 تحلیل بازار: بررسی حباب قیمتها، نوسانات ارزی و استراتژیهای خرید
+🔹 عوامل محیطی: تاثیر قطعی گاز زمستان، تنشهای منطقهای و هزینههای حمل
+🔹 استراتژی معاملاتی: مقایسه خریدهای نقدی، سلف و اعتباری
 
-هر سوالی در مورد بازار یا نماد خاصی دارید بفرمایید!</div>
+برای شروع، نماد مدنظرتان یا سوالتان درباره بازار را بپرسید!</div>
           </div>
         </div>
 
@@ -2552,14 +2551,17 @@
     let chatConversationHistory = [
       {
         role: "model",
-        content: `سلام! من **دستیار هوشمند و تحلیل‌گر ارشد بورس کالای مهر رضوی** هستم.\n\nمن به تابلوی معاملات زنده و آرشیو قیمت‌های زنجیره فولاد مهر رضوی متصلم و می‌توانم در زمینه‌های زیر با تحلیل داده‌محور راهنمایی‌تان کنم:\n\n• **تحلیل اثر نوسانات ارزی:** ارزیابی جهش دلار آزاد، تتر و دلار مرکز مبادله بر کشف نرخ پایه و رقابت‌های تالار\n• **بحران‌های فصلی و محدودیت انرژی:** سناریوهای قطعی گاز زمستان بر واحدهای احیا و جهش قیمت آهن اسفنجی و شمش\n• **تنش‌های ژئوپلیتیک و جنگ:** اثر شوک‌های منطقه‌ای بر صادرات، کرایه حمل دریایی و بهای مواد اولیه\n• **استراتژی معاملاتی:** خرید نقدی در برابر سلف و اعتباری، حباب‌سنجی نسبت اسفنجی به شمش و مدیریت انبار\n\nهر سوالی در مورد بازار یا نماد خاصی دارید بفرمایید!`
+        content: `سلام! من دستیار هوشمند و تحلیلگر ارشد بورس کالای مهر رضوی هستم.\n\nمن به تابلوی معاملات زنده و دادههای زنجیره فولاد متصلم و میتوانم در موارد زیر راهنماییتان کنم:\n\n🔹 تحلیل بازار: بررسی حباب قیمتها، نوسانات ارزی و استراتژیهای خرید\n🔹 عوامل محیطی: تاثیر قطعی گاز زمستان، تنشهای منطقهای و هزینههای حمل\n🔹 استراتژی معاملاتی: مقایسه خریدهای نقدی، سلف و اعتباری\n\nبرای شروع، نماد مدنظرتان یا سوالتان درباره بازار را بپرسید!`
       }
     ];
 
     let isAiGenerating = false;
 
-    function getWebApiKey() {
-      return window.GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || "";
+    // Cloudflare Worker Proxy URL (مستقیماً در کد سامانه ست شد و کاربر هیچ تنظیمی انجام نمی‌دهد)
+    const DEFAULT_GEMINI_PROXY_URL = "https://mehrerazavi-gemini-proxy.mehrerazavi-co.workers.dev";
+
+    function getGeminiProxyUrl() {
+      return (window.GEMINI_PROXY_URL || DEFAULT_GEMINI_PROXY_URL || "").trim();
     }
 
     function clearAiChat() {
@@ -2688,32 +2690,43 @@ ${marketContext}`;
       const timer1 = setTimeout(() => { if (typingText) typingText.innerText = 'جستجو و پالایش نرخ ارز و اخبار روز...'; }, 1200);
       const timer2 = setTimeout(() => { if (typingText) typingText.innerText = 'تدوین تحلیل و استراتژی مهر رضوی...'; }, 2400);
 
+      const proxyUrl = getGeminiProxyUrl();
       const apiKey = getWebApiKey();
       const marketContext = buildMarketContextMarkdown();
       const systemInstruction = buildSystemInstruction(marketContext);
 
       try {
         let responseData = null;
-        if (apiKey) {
+        if (proxyUrl || apiKey) {
           const contents = chatConversationHistory.slice(-10).map(m => ({
             role: m.role === 'user' ? 'user' : 'model',
             parts: [{ text: m.content }]
           }));
 
           const modelsToTry = [
+            "gemini-3.8-flash",
+            "gemini-3.7-flash",
+            "gemini-3.6-flash",
+            "gemini-3.5-flash-lite",
             "gemini-3.5-flash",
             "gemini-2.5-flash",
-            "gemini-3.1-flash-lite-preview"
+            "gemini-2.0-flash"
           ];
 
           let lastErr = null;
 
           for (const modelName of modelsToTry) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+            let url = "";
+            if (proxyUrl) {
+              const cleanProxy = proxyUrl.replace(/\/+$/, '');
+              url = `${cleanProxy}/v1beta/models/${modelName}:generateContent`;
+            } else {
+              url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+            }
+
             const requestBody = {
               contents: contents,
               systemInstruction: { parts: [{ text: systemInstruction }] },
-              tools: [{ googleSearch: {} }],
               generationConfig: { temperature: 0.7, topP: 0.95 }
             };
 
@@ -2723,16 +2736,6 @@ ${marketContext}`;
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(requestBody)
               });
-
-              // Fallback without tools if search grounding was rejected
-              if (!res.ok) {
-                delete requestBody.tools;
-                res = await fetch(url, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(requestBody)
-                });
-              }
 
               if (res.ok) {
                 responseData = await res.json();
@@ -2752,7 +2755,7 @@ ${marketContext}`;
                 candidates: [{
                   content: {
                     parts: [{
-                      text: "⚠️ سرورهای مدل‌های ابری جیمنای به دلیل بار ترافیکی سنگین لحظه‌ای موقتاً پاسخ ندادند. لطفاً تا لحظاتی دیگر مجدداً تلاش فرمایید، یا در صورت نیاز به تحلیل بلادرنگ آفلاین می‌توانید از تحلیل‌های راهبردی پیش‌فرض سامانه استفاده کنید."
+                      text: "⚠️ سرورهای مدل‌های ابری جیمنای به دلیل بار ترافیکی سنگین لحظه‌ای موقتاً پاسخ ندادند. لطفاً تا لحظاتی دیگر مجدداً تلاش فرمایید، یا در صورت نیاز از تحلیل‌های راهبردی پیش‌فرض سامانه استفاده کنید."
                     }]
                   }
                 }]
@@ -2762,8 +2765,8 @@ ${marketContext}`;
             }
           }
         } else {
-          // If no custom key entered on web, provide a contextual simulated intelligence analysis
-          await new Promise(r => setTimeout(r, 1600));
+          // If no proxy or custom key entered on web, provide a contextual simulated intelligence analysis
+          await new Promise(r => setTimeout(r, 1400));
           responseData = generateOfflineIntelligence(userText, marketContext);
         }
 
@@ -2814,9 +2817,15 @@ ${marketContext}`;
     }
 
     function generateOfflineIntelligence(prompt, context) {
-      const q = prompt.toLowerCase();
+      const q = prompt.toLowerCase().trim();
       let text = "";
-      if (q.includes("دلار") || q.includes("ارز") || q.includes("نیما") || q.includes("ice") || q.includes("tgju") || q.includes("رسمی")) {
+      if (/^(سلام|درود|خوبی|خوبید|چطوری|چطورید|چخبر|چه خبر|سلام علیکم|روز بخیر|صبح بخیر|عصر بخیر|شب بخیر|hi|hello|hey)[!?؟.]*$/.test(q) ||
+          (q.includes("سلام") && q.length < 15) ||
+          (q.includes("خوبی") && q.length < 15) ||
+          (q.includes("چخبر") && q.length < 15) ||
+          q.includes("معرفی") || q.includes("کی هستی") || q.includes("چه کمکی")) {
+        text = `سلام و درود! روزتان بخیر 🌹\n\nمن **دستیار هوشمند و مشاور تحلیلی هلدینگ آرمان مهر رضوی** هستم.\nبه تابلوی معاملات زنده بورس کالای ایران و متغیرهای کلان بازار متصلم و در حوزه‌های زیر آماده راهنمایی شما هستم:\n\n• **تحلیل جامع زنجیره آهن و فولاد:** (آهن اسفنجی، شمش، میلگرد، اسلب، گندله و کنسانتره)\n• **پایش رقابت‌های تالار و قیمت پایانی نمادها:** مقایسه حجم و درصد رقابت خریداران\n• **بررسی نرخ ارز مرکز مبادله (ICE) و دلار آزاد (TGJU):** اثر شکاف ارزی بر بهای پایه و تقاضای سلف\n• **راهبرد بهینه خرید اعتباری/سلف در برابر نقدی:** مدیریت بهره پول و تورم انتظاری\n• **ارزیابی ریسک‌های فصلی و ژئوپلیتیک:** اثر برودت هوا و افت گاز یا تنش‌های منطقه‌ای بر زنجیره فولاد\n\nهر سوالی درباره یک نماد معاملاتی خاص، سابقه قیمتی، یا استراتژی خرید امروز دارید بفرمایید در خدمتتان هستم.`;
+      } else if (q.includes("دلار") || q.includes("ارز") || q.includes("نیما") || q.includes("ice") || q.includes("tgju") || q.includes("رسمی")) {
         text = `### تحلیل قانون دوگانه ارز و اثر شکاف بر بورس کالای مهر رضوی:\n\n` +
           `• **۱. ارز رسمی مرکز مبادله (ICE.IR):**\n` +
           `   - نرخ فروش حواله دلار مرکز مبادله: **۱,۷۰۶,۲۶۸ ریال (۱۷۰,۶۲۶ تومان)**\n` +
