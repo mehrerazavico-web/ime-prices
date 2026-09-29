@@ -1089,43 +1089,69 @@
     }
 
     .chat-messages-container {
-      flex: 1;
+      flex: 1 1 auto;
+      min-height: 0;
       overflow-y: auto;
-      padding: 4px 2px 12px;
+      padding: 6px 4px 12px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       -webkit-overflow-scrolling: touch;
+      justify-content: flex-start !important;
+      align-items: stretch;
     }
 
     .chat-bubble-row {
       display: flex;
       align-items: flex-start;
       gap: 8px;
+      width: 100%;
+      flex-shrink: 0;
+      flex-grow: 0;
+      min-height: min-content;
+      height: auto;
     }
 
     .chat-bubble-row.user-row {
       justify-content: flex-start;
+      flex-direction: row;
+      flex-shrink: 0;
     }
 
     .chat-bubble-row.ai-row {
       justify-content: flex-start;
+      flex-direction: row;
+      flex-shrink: 0;
     }
 
     .chat-bubble {
-      max-width: 86%;
-      padding: 12px 14px;
+      max-width: 82%;
+      width: auto !important;
+      display: inline-block;
+      box-sizing: border-box;
+      height: auto !important;
+      min-height: unset !important;
+      max-height: none !important;
+      flex: 0 0 auto !important;
+      align-self: flex-start;
+      padding: 10px 14px;
       border-radius: 18px;
       font-size: 13.5px;
-      line-height: 1.65;
+      line-height: 1.6;
       word-break: break-word;
       white-space: pre-wrap;
     }
 
     .chat-bubble.user-bubble {
-      background: var(--primary);
+      background: #107C41;
       color: #FFFFFF;
       border-bottom-left-radius: 4px;
+      display: inline-block;
+      width: auto !important;
+      max-width: 80%;
+      height: auto !important;
+      min-height: unset !important;
+      flex: 0 0 auto !important;
     }
 
     .chat-bubble.ai-bubble {
@@ -1209,16 +1235,31 @@
       margin-top: 4px;
     }
 
-    .chat-input-row textarea {
+    .chat-input-field {
       flex: 1;
       background: transparent;
       border: none;
       color: var(--text-main);
       font-family: inherit;
-      font-size: 13px;
+      font-size: 13.5px;
       outline: none;
-      resize: none;
       max-height: 90px;
+      overflow-y: auto;
+      min-height: 24px;
+      line-height: 1.5;
+      text-align: right;
+      direction: rtl;
+      -webkit-user-select: text;
+      user-select: text;
+      word-break: break-word;
+      padding: 2px 4px;
+    }
+
+    .chat-input-field:empty::before {
+      content: attr(data-placeholder);
+      color: var(--text-secondary);
+      pointer-events: none;
+      display: block;
     }
 
     .chat-send-btn {
@@ -1240,11 +1281,13 @@
       transform: scale(0.92);
     }
 
-    .chat-disclaimer {
-      font-size: 10px;
-      color: var(--text-muted);
-      text-align: center;
-      margin-top: 6px;
+    /* Hide bottom nav bar when keyboard is active or when typing */
+    body.keyboard-open .bottom-nav,
+    body.chat-active-typing .bottom-nav {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateY(100%) !important;
     }
 
     /* Macro & Risk Dashboard View */
@@ -1498,7 +1541,7 @@
 
         <!-- Input Bar -->
         <div class="chat-input-row">
-          <textarea id="chat-input" rows="1" placeholder="تحلیل اثر دلار، قطعی گاز، جنگ یا نماد دلخواه را بپرسید..." onkeydown="handleChatKeyDown(event)"></textarea>
+          <div id="chat-input" class="chat-input-field" contenteditable="plaintext-only" role="textbox" aria-multiline="true" data-placeholder="تحلیل اثر دلار، قطعی گاز، جنگ یا نماد دلخواه را بپرسید..." onkeydown="handleChatKeyDown(event)"></div>
           <button id="chat-send-btn" class="chat-send-btn" onclick="handleSendChat()" title="ارسال">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="transform: scaleX(-1);">
               <line x1="22" y1="2" x2="11" y2="13"/>
@@ -1506,7 +1549,6 @@
             </svg>
           </button>
         </div>
-        <div class="chat-disclaimer">هوش مصنوعی مهر رضوی تحلیل‌های مشورتی ارائه می‌دهد و تصمیم نهایی خرید بر عهده کاربر است.</div>
       </div>
     </div>
 
@@ -1519,7 +1561,7 @@
   </div>
 
   <!-- Bottom Navigation Bar -->
-  <nav class="bottom-nav">
+  <nav class="bottom-nav" id="bottom-nav-bar">
     <div class="nav-tab active" id="tab-board" onclick="switchNavTab('board')">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="20" x2="18" y2="10"/>
@@ -2601,9 +2643,10 @@
     function handleSendChat() {
       const input = document.getElementById('chat-input');
       if (!input) return;
-      const text = input.value.trim();
+      const text = (input.innerText || input.textContent || input.value || '').trim();
       if (!text || isAiGenerating) return;
-      input.value = '';
+      if (input.innerText !== undefined) input.innerText = '';
+      if (input.value !== undefined) input.value = '';
       sendChatMessage(text);
     }
 
@@ -2873,7 +2916,7 @@ ${marketContext}`;
         }
 
         const copyBtn = !isUser && !msg.isError
-          ? `<div style="text-align: left; margin-top: 6px;"><button onclick="copyChatText(this)" data-content="${encodeURIComponent(msg.content)}" style="background: transparent; border: none; color: var(--text-secondary); font-size: 11px; cursor: pointer;">📋 کپی</button></div>`
+          ? `<div style="text-align: left; margin-top: 4px;"><button onclick="copyChatText(this)" data-content="${encodeURIComponent(msg.content)}" title="کپی متن" style="background: transparent; border: none; color: var(--text-secondary); font-size: 13px; cursor: pointer; padding: 2px 4px; display: inline-flex; align-items: center; justify-content: center;">📋</button></div>`
           : '';
 
         return `
@@ -2909,8 +2952,8 @@ ${marketContext}`;
     function copyChatText(btn) {
       const text = decodeURIComponent(btn.getAttribute('data-content'));
       navigator.clipboard.writeText(text).then(() => {
-        btn.innerText = '✓ کپی شد';
-        setTimeout(() => { btn.innerText = '📋 کپی'; }, 1500);
+        btn.innerText = '✓';
+        setTimeout(() => { btn.innerText = '📋'; }, 1500);
       });
     }
 
@@ -3015,6 +3058,28 @@ ${marketContext}`;
     renderCategories();
     loadPrices();
     setInterval(loadPrices, 90000);
+
+    // Auto-hide bottom nav bar when keyboard is open or when typing
+    const chatInputElem = document.getElementById('chat-input');
+    if (chatInputElem) {
+      chatInputElem.addEventListener('focus', () => {
+        document.body.classList.add('chat-active-typing');
+      });
+      chatInputElem.addEventListener('blur', () => {
+        document.body.classList.remove('chat-active-typing');
+      });
+    }
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', () => {
+        if (window.visualViewport.height < window.innerHeight - 100) {
+          document.body.classList.add('keyboard-open');
+        } else {
+          document.body.classList.remove('keyboard-open');
+          document.body.classList.remove('chat-active-typing');
+        }
+      });
+    }
   </script>
 </body>
 </html>
