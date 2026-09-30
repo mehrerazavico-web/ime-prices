@@ -1468,5 +1468,33 @@
     "diff_percent": 1.69,
     "status": "معامله شده",
     "final_checked_at": "2026-09-30 18:28"
+  },
+  {
+    "supplier": "2,023,412,550",
+    "product": "مجتمع فولاد خراسان",
+    "symbol": "سلف",
+    "date": "تالار صنعتی و معدنی",
+    "base_price": "2500",
+    "volume": "40100",
+    "demand": "51,135",
+    "settlement": "نقدی",
+    "final_price": "800265",
+    "diff_percent": 79926.5,
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-09-30 20:44"
+  },
+  {
+    "supplier": "3,882,083,850",
+    "product": "فولاد کاوه جنوب کیش",
+    "symbol": "نقدی",
+    "date": "تالار صنعتی و معدنی",
+    "base_price": "5000",
+    "volume": "25500",
+    "demand": "42,175",
+    "settlement": "نقدی",
+    "final_price": "791551",
+    "diff_percent": 15731.02,
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-09-30 20:44"
   }
 ]
