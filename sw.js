@@ -1,4 +1,4 @@
-const CACHE_NAME = 'radar-mehr-razavi-v30';
+const CACHE_NAME = 'radar-mehr-razavi-v31';
 const ASSETS_TO_CACHE = [
   '/',
   '/manifest.json',
