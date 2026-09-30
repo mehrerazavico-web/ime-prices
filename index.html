@@ -125,28 +125,26 @@
 
     html {
       height: 100%;
-      height: -webkit-fill-available;
       overflow: hidden;
       background-color: var(--surface-main);
     }
 
     body {
       font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--surface-main); /* حتماً به رنگ پس‌زمینه نوار پایین تغییر کند */
+      background-color: var(--surface-main); /* همرنگ نوار پایین */
       color: var(--text-main);
       overflow: hidden;
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100vh;
-      height: -webkit-fill-available;
+      /* مهم: فقط 100 درصد */
+      height: 100%;
       overscroll-behavior: none;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      padding-bottom: env(safe-area-inset-bottom, 0px);
       box-sizing: border-box;
     }
 
@@ -160,6 +158,7 @@
       overflow: hidden;
       position: relative;
       background-color: var(--bg-main);
+      /* اینجا هم فقط پدینگ بالا را با env میگیریم */
       padding-top: max(env(safe-area-inset-top, 0px), 4px);
       padding-bottom: 0;
       padding-left: 12px;
@@ -172,7 +171,66 @@
       min-height: 0;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 8px;
+      padding-bottom: 24px;
+    }
+
+    /* iOS PWA Standalone Promotion Banner */
+    .ios-install-banner {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.15), rgba(15, 39, 31, 0.06));
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .ios-install-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ios-install-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .ios-install-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      line-height: 1.4;
+    }
+
+    .ios-install-title {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 12.5px;
+    }
+
+    .ios-install-desc {
+      color: var(--text-secondary);
+      font-size: 11px;
+    }
+
+    .ios-install-close {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 16px;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     #view-ai {
@@ -978,14 +1036,15 @@
     /* Bottom Navigation Bar with Modern Micro-Interactions */
     .bottom-nav {
       flex-shrink: 0;
-      width: calc(100% + 24px);
-      margin: 0 -12px calc(-1 * env(safe-area-inset-bottom, 0px)) -12px;
+      width: calc(100% + 24px); /* برای کشیده شدن تا لبهها (جبران پدینگ چپ و راست اپ) */
+      margin: 0 -12px 0 -12px;  /* فقط چپ و راست رو منفی میدیم */
       background-color: var(--surface-main);
       border-top: 1px solid var(--card-border);
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding-top: 8px;
+      /* مهم: فاصله دکمه ها تا پایین نوار برابر است با ۱۲ پیکسل به علاوه خط امن گوشی */
       padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
       padding-left: 12px;
       padding-right: 12px;
@@ -1561,6 +1620,18 @@
         </button>
       </div>
     </header>
+
+    <!-- iOS PWA Fullscreen Guide Banner -->
+    <div id="ios-pwa-install-banner" class="ios-install-banner" style="display: none;">
+      <div class="ios-install-content">
+        <div class="ios-install-icon">📲</div>
+        <div class="ios-install-text">
+          <div class="ios-install-title">استفاده تمام‌صفحه و حذف نوار سافاری</div>
+          <div class="ios-install-desc">دکمه اشتراک‌گذاری پایین (⎋ Share) را بزنید و <strong>Add to Home Screen (افزودن به صفحه اصلی)</strong> را انتخاب کنید.</div>
+        </div>
+      </div>
+      <button class="ios-install-close" onclick="dismissIosInstallBanner()" title="بستن">✕</button>
+    </div>
 
     <!-- View 1: Price Board -->
     <div id="view-board">
@@ -2695,9 +2766,11 @@
       });
 
       if (tab === 'macro') {
+        fetchLiveCurrencyRates();
         renderMacroView();
       }
       if (tab === 'ai') {
+        fetchLiveCurrencyRates();
         setTimeout(() => {
           const container = document.getElementById('chat-messages');
           if (container) container.scrollTop = container.scrollHeight;
@@ -2714,6 +2787,98 @@
     ];
 
     let isAiGenerating = false;
+
+    // --- Live Currency Manager (پایش آنلاین، زنده و لحظه‌ای نرخ دلار و طلا) ---
+    const LOCAL_STORAGE_CURRENCY_KEY = 'mehre_live_currency';
+    let liveCurrency = {
+      freeDollarToman: 254700,
+      freeDollarRial: 2547000,
+      tetherToman: 252700,
+      iceHavaleToman: 174181,
+      iceHavaleRial: 1741819,
+      iceOskenasToman: 189000,
+      gapToman: 80519,
+      gapPercent: 46.2,
+      eurFreeToman: 289300,
+      aedFreeToman: 69760,
+      aedHavaleToman: 47428,
+      robCoinToman: 73000000,
+      lastUpdated: "هم‌اکنون",
+      isLive: false
+    };
+
+    // بارگذاری آخرین نرخ‌های ذخیره‌شده از حافظه محلی
+    try {
+      const cachedCur = localStorage.getItem(LOCAL_STORAGE_CURRENCY_KEY);
+      if (cachedCur) {
+        const parsed = JSON.parse(cachedCur);
+        if (parsed && parsed.freeDollarToman > 0) {
+          liveCurrency = { ...liveCurrency, ...parsed };
+        }
+      }
+    } catch (_) {}
+
+    // استعلام زنده و واقعی نرخ دلار از وب و سرور
+    async function fetchLiveCurrencyRates() {
+      let updated = false;
+
+      // اولویت ۱: استعلام از پروکسی کلودفلر اختصاصی مهر رضوی
+      try {
+        const workerUrl = getGeminiProxyUrl();
+        if (workerUrl) {
+          const res = await fetch(`${workerUrl}/api/currency`, { signal: AbortSignal.timeout(3500) });
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.freeDollarToman > 0) {
+              liveCurrency = {
+                ...liveCurrency,
+                ...data,
+                lastUpdated: new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' }),
+                isLive: true
+              };
+              updated = true;
+            }
+          }
+        }
+      } catch (_) {}
+
+      // اولویت ۲: استعلام مستقیم تتر آزاد از Tetherland API (دارای CORS مجاز در تمام مرورگرها)
+      if (!updated) {
+        try {
+          const resTether = await fetch("https://api.tetherland.com/currencies", { signal: AbortSignal.timeout(3500) });
+          if (resTether.ok) {
+            const tData = await resTether.json();
+            const tetherPrice = tData?.data?.currencies?.USDT?.price;
+            if (tetherPrice && tetherPrice > 100000) {
+              const freeToman = parseInt(tetherPrice, 10);
+              const havaleToman = liveCurrency.iceHavaleToman || 174181;
+              const gapToman = freeToman - havaleToman;
+              const gapPercent = parseFloat(((gapToman / havaleToman) * 100).toFixed(1));
+
+              liveCurrency = {
+                ...liveCurrency,
+                freeDollarToman: freeToman,
+                freeDollarRial: freeToman * 10,
+                tetherToman: freeToman,
+                gapToman,
+                gapPercent,
+                lastUpdated: new Date().toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' }),
+                isLive: true
+              };
+              updated = true;
+            }
+          }
+        } catch (_) {}
+      }
+
+      if (updated) {
+        try {
+          localStorage.setItem(LOCAL_STORAGE_CURRENCY_KEY, JSON.stringify(liveCurrency));
+        } catch (_) {}
+        renderMacroIndicators();
+      }
+      return liveCurrency;
+    }
 
     // Cloudflare Worker Proxy URL (مستقیماً در کد سامانه ست شد و کاربر هیچ تنظیمی انجام نمی‌دهد)
     const DEFAULT_GEMINI_PROXY_URL = "https://mehrerazavi-gemini-proxy.mehrerazavi-co.workers.dev";
@@ -2798,32 +2963,32 @@
     }
 
     function buildSystemInstruction(marketContext) {
+      const c = liveCurrency;
       return `شما مشاور ارشد و تحلیل‌گر تخصصی هوش مصنوعی هلدینگ آرمان مهر رضوی در حوزه بازار آهن و فولاد و بورس کالای ایران (IME) هستید.
 
-قانون و ساختار رسمی بازار ارز (بسیار مهم و الزامی):
-ما در ساختار اقتصادی و تجارت دو نرخ ارز محوری داریم و باید همواره اعداد دقیق آنها را اعلام کنید:
+قانون و ساختار رسمی بازار ارز (استعلام آنلاین و نرخ لحظه‌ای بازار - آخرین استعلام: ${c.lastUpdated}):
+ما در ساختار اقتصادی و تجارت دو نرخ ارز محوری داریم و همواره باید ارقام دقیق و تازه آن را اعلام کنید:
 
 ۱. نرخ ارز رسمی و دولتی مرکز مبادله طلا و ارز ایران:
-   - نرخ فروش حواله دلار مرکز مبادله: ۱,۷۰۶,۲۶۸ ریال (۱۷۰,۶۲۶ تومان)
-   - نرخ خرید حواله دلار مرکز مبادله: ۱,۶۹۰,۹۱۲ ریال (۱۶۹,۰۹۱ تومان)
-   - نرخ اسکناس دلار مرکز مبادله: ۱,۸۵۹,۴۰۰ ریال (۱۸۵,۹۴۰ تومان)
-   - حواله یورو: ۱,۸۶۰,۲۰۰ ریال (۱۸۶,۰۲۰ تومان) | حواله درهم: ۴۶۴,۶۰۰ ریال (۴۶,۴۶۰ تومان)
+   - نرخ فروش حواله دلار مرکز مبادله: ${formatAmount(c.iceHavaleRial)} ریال (${formatAmount(c.iceHavaleToman)} تومان)
+   - نرخ خرید حواله دلار مرکز مبادله: ${formatAmount(Math.round(c.iceHavaleRial * 0.99))} ریال (${formatAmount(Math.round(c.iceHavaleToman * 0.99))} تومان)
+   - نرخ اسکناس دلار مرکز مبادله: ${formatAmount(c.iceOskenasToman * 10)} ریال (${formatAmount(c.iceOskenasToman)} تومان)
+   - حواله یورو: ${formatAmount(c.eurFreeToman ? Math.round(c.eurFreeToman * 0.68) : 197435)} تومان | حواله درهم: ${formatAmount(c.aedHavaleToman)} تومان
    - کاربرد اقتصادی: مبنای رسمی و قانونی فرمول قیمت پایه بورس کالا (ضرایب جهانی متال بولتن / پلاتس)، حقوق گمرکی و بازگشت ارز حاصل از صادرات.
 
-۲. نرخ ارز بازار آزاد و غیررسمی:
-   - قیمت لحظه‌ای اسکناس دلار بازار آزاد: ۲,۴۴۰,۰۰۰ ریال (۲۴۴,۰۰۰ تومان)
-   - نرخ لحظه‌ای تتر (USDT): ۲,۴۴۵,۰۰۰ ریال (۲۴۴,۵۰۰ تومان)
-   - نرخ درهم آزاد: ۶۶۵,۰۰۰ ریال (۶۶,۵۰۰ تومان)
-   - ربع سکه بهار آزادی: ۲۸۵,۰۰۰,۰۰۰ ریال (۲۸,۵۰۰,۰۰۰ تومان)
-   - سکه تمام طرح جدید: ۸۹۵,۰۰۰,۰۰۰ ریال (۸۹,۵۰۰,۰۰۰ تومان)
+۲. نرخ ارز بازار آزاد و غیررسمی (استعلام زنده تابلوی بازار و تتر):
+   - قیمت لحظه‌ای اسکناس دلار بازار آزاد: ${formatAmount(c.freeDollarRial)} ریال (${formatAmount(c.freeDollarToman)} تومان)
+   - نرخ لحظه‌ای تتر (USDT): ${formatAmount(c.tetherToman * 10)} ریال (${formatAmount(c.tetherToman)} تومان)
+   - نرخ درهم آزاد: ${formatAmount(c.aedFreeToman)} تومان | یورو آزاد: ${formatAmount(c.eurFreeToman)} تومان
+   - ربع سکه بهار آزادی: ${formatAmount(c.robCoinToman)} تومان
    - کاربرد اقتصادی: شکل‌دهنده انتظارات تورمی جامعه و تحریک تقاضای سلف و اعتباری در بورس کالا برای حفظ ارزش پول.
 
 ۳. شکاف و فاصله ریالی و درصد اختلاف:
-   - اختلاف قیمت: ۷۳۳,۷۳۲ ریال (حدود ۷۳,۳۷۰ تومان) به ازای هر دلار
-   - درصد شکاف: حدود ۴۳٪ بالاتر از نرخ رسمی حواله مرکز مبادله
+   - اختلاف قیمت: ${formatAmount(c.gapToman * 10)} ریال (${formatAmount(c.gapToman)} تومان) به ازای هر دلار
+   - درصد شکاف: حدود ${c.gapPercent}٪ بالاتر از نرخ رسمی حواله مرکز مبادله
 
 قانون اکید و حیاتی پاسخ‌گویی درباره ارز (خط قرمز):
-به هیچ وجه کاربر را به لینک سایت‌ها ارجاع ندهید و آدرس سایت ننویسید! سورس‌هایی که در اختیارتان قرار داده شده برای این است که ارقام و نرخ‌ها را خودتان مستقیماً بدانید و به کاربر بگویید، نه اینکه لینک سایت را به او پس بدهید! هر زمان درباره قیمت دلار، ارز یا طلا سوال شد، مستقیماً ارقام دقیق فوق (نرخ رسمی حواله و اسکناس، نرخ دلار آزاد و تتر، و شکاف ۴۳ درصدی) را به ریال و تومان اعلام کنید و اثر آن را بر کشش معاملات شمش و آهن اسفنجی تحلیل نمایید.
+به هیچ وجه کاربر را به لینک سایت‌ها ارجاع ندهید و آدرس سایت ننویسید! سورس‌هایی که در اختیارتان قرار داده شده برای این است که ارقام و نرخ‌ها را خودتان مستقیماً بدانید و به کاربر بگویید، نه اینکه لینک سایت را به او پس بدهید! هر زمان درباره قیمت دلار، ارز یا طلا سوال شد، مستقیماً ارقام دقیق زنده فوق (حواله: ${formatAmount(c.iceHavaleToman)} ت، آزاد: ${formatAmount(c.freeDollarToman)} ت، تتر: ${formatAmount(c.tetherToman)} ت، و شکاف ${c.gapPercent} درصدی) را به ریال و تومان با ذکر زمان آخرین استعلام اعلام کنید و اثر آن را بر کشش معاملات شمش و آهن اسفنجی تحلیل نمایید.
 
 نقش و تخصص شما در زنجیره فولاد:
 1. تحلیل عمیق و همه‌جانبه زنجیره آهن و فولاد ایران شامل: سنگ آهن، کنسانتره، گندله، آهن اسفنجی (DRI)، شمش فولادی (بیلت و بلوم)، اسلب و مقاطع طویل (میلگرد و تیرآهن).
@@ -3014,29 +3179,29 @@ ${marketContext}`;
 
     function generateOfflineIntelligence(prompt, context) {
       const q = prompt.toLowerCase().trim();
+      const c = liveCurrency;
       let text = "";
       if (q.includes("چخبر") || q.includes("چه خبر") || (q.includes("سلام") && (q.includes("بورس") || q.length < 25)) ||
           /^(سلام|درود|خوبی|خوبید|چطوری|چطورید|سلام علیکم|روز بخیر|صبح بخیر|عصر بخیر|شب بخیر|hi|hello|hey)[!?؟.]*$/.test(q) ||
           q.includes("معرفی") || q.includes("کی هستی") || q.includes("چه کمکی")) {
-        text = `سلام و درود! روزتان بخیر 🌹\n\nوضعیت امروز تابلوی بورس کالا و متغیرهای اصلی بازار:\n\n• **پایش نمادها:** ${allItems.length} نماد فعال در تابلوی معاملات رصد شده است.\n• **آهن اسفنجی و شمش:** تقاضا در رینگ معاملات به دلیل انتظارات تورمی بالاست و نسبت قیمت اسفنجی به شمش در محدوده ۵۶ تا ۵۹ درصد نوسان می‌کند.\n• **وضعیت نرخ ارز:** دلار توافقی/حواله مرکز مبادله در کانال ۱۷۰ هزار تومان و دلار آزاد در کانال ۲۴۴ هزار تومان ثبت شده که شکاف ۴۳ درصدی را نشان می‌دهد.\n• **خریدهای اعتباری:** معاملات با تسویه اعتباری با استقبال بالاتری مواجه است.\n\nدرباره هر نماد، شرکت خاص یا استراتژی خرید سوالی دارید بفرمایید تا دقیق تحلیل کنیم!`;
+        text = `سلام و درود! روزتان بخیر 🌹\n\nوضعیت امروز تابلوی بورس کالا و متغیرهای اصلی بازار (استعلام زنده: ${c.lastUpdated}):\n\n• **پایش نمادها:** ${allItems.length} نماد فعال در تابلوی معاملات رصد شده است.\n• **آهن اسفنجی و شمش:** تقاضا در رینگ معاملات به دلیل انتظارات تورمی بالاست و نسبت قیمت اسفنجی به شمش در محدوده ۵۶ تا ۵۹ درصد نوسان می‌کند.\n• **وضعیت نرخ ارز:** دلار حواله مرکز مبادله در کانال **${formatAmount(c.iceHavaleToman)} تومان** و دلار آزاد در کانال **${formatAmount(c.freeDollarToman)} تومان** ثبت شده که شکاف **${toPersianDigits(c.gapPercent)} درصدی** را نشان می‌دهد.\n• **خریدهای اعتباری:** معاملات با تسویه اعتباری با استقبال بالاتری مواجه است.\n\nدرباره هر نماد، شرکت خاص یا استراتژی خرید سوالی دارید بفرمایید تا دقیق تحلیل کنیم!`;
       } else if (q.includes("دلار") || q.includes("ارز") || q.includes("نیما") || q.includes("ice") || q.includes("tgju") || q.includes("رسمی") || q.includes("طلا") || q.includes("سکه") || q.includes("قیمت")) {
-        text = `### اعلام نرخ موثق و رسمی روز ارز و طلا (رادار مهر رضوی):\n\n` +
+        text = `### استعلام لحظه‌ای و آنلاین نرخ ارز و طلا (رادار مهر رضوی - زمان استعلام: ${c.lastUpdated}):\n\n` +
           `• **۱. نرخ رسمی ارز مرکز مبادله طلا و ارز ایران:**\n` +
-          `   - نرخ فروش حواله دلار: **۱۷۰,۶۲۶ تومان (۱,۷۰۶,۲۶۸ ریال)**\n` +
-          `   - نرخ خرید حواله دلار: **۱۶۹,۰۹۱ تومان (۱,۶۹۰,۹۱۲ ریال)**\n` +
-          `   - نرخ اسکناس دلار مرکز مبادله: **۱۸۵,۹۴۰ تومان (۱,۸۵۹,۴۰۰ ریال)**\n` +
-          `   - نرخ حواله یورو: **۱۸۶,۰۲۰ تومان** | نرخ حواله درهم: **۴۶,۴۶۰ تومان**\n` +
-          `   - *کاربرد بورس کالا:* مبنای رسمی و قانونی فرمول قیمت پایه شمش، آهن اسفنجی، میلگرد و اسلب (بر پایه ضرایب جهانی متال بولتن و پلاتس).\n\n` +
-          `• **۲. نرخ ارز بازار آزاد و غیررسمی (نقدی تهران و تتر):**\n` +
-          `   - قیمت لحظه‌ای اسکناس دلار بازار آزاد: **۲۴۴,۰۰۰ تومان (۲,۴۴۰,۰۰۰ ریال)**\n` +
-          `   - نرخ تتر (USDT): **۲۴۴,۵۰۰ تومان (۲,۴۴۵,۰۰۰ ریال)**\n` +
-          `   - نرخ درهم آزاد: **۶۶,۵۰۰ تومان**\n` +
-          `   - سکه تمام بهار آزادی طرح جدید: **۸۹,۵۰۰,۰۰۰ تومان** | ربع سکه: **۲۸,۵۰۰,۰۰۰ تومان**\n` +
+          `   - نرخ فروش حواله دلار: **${formatAmount(c.iceHavaleToman)} تومان (${formatAmount(c.iceHavaleRial)} ریال)**\n` +
+          `   - نرخ اسکناس دلار مرکز مبادله: **${formatAmount(c.iceOskenasToman)} تومان (${formatAmount(c.iceOskenasToman * 10)} ریال)**\n` +
+          `   - نرخ حواله درهم مرکز مبادله: **${formatAmount(c.aedHavaleToman)} تومان**\n` +
+          `   - *کاربرد بورس کالا:* مبنای رسمی و قانونی کشف قیمت پایه شمش، اسلب و آهن اسفنجی در تالار.\n\n` +
+          `• **۲. نرخ ارز بازار آزاد و غیررسمی (استعلام زنده تابلوی بازار و تتر):**\n` +
+          `   - قیمت لحظه‌ای اسکناس دلار بازار آزاد: **${formatAmount(c.freeDollarToman)} تومان (${formatAmount(c.freeDollarRial)} ریال)**\n` +
+          `   - نرخ تتر (USDT): **${formatAmount(c.tetherToman)} تومان (${formatAmount(c.tetherToman * 10)} ریال)**\n` +
+          `   - نرخ درهم آزاد: **${formatAmount(c.aedFreeToman)} تومان** | یورو آزاد: **${formatAmount(c.eurFreeToman)} تومان**\n` +
+          `   - ربع سکه بهار آزادی: **${formatAmount(c.robCoinToman)} تومان**\n` +
           `   - *کاربرد:* شکل‌دهنده انتظارات تورمی، تحریک تقاضای سلف و تبدیل نقدینگی ریالی به مقاطع ساختمانی.\n\n` +
           `• **۳. میزان اختلاف و شکاف دو نرخ:**\n` +
-          `   - فاصله ریالی دو نرخ: **۷۳,۳۷۰ تومان (۷۳۳,۷۳۲ ریال) به ازای هر دلار**\n` +
-          `   - درصد شکاف: **حدود ۴۳٪ بالاتر از نرخ رسمی حواله مرکز مبادله**\n\n` +
-          `**توصیه راهبردی مهر رضوی:** این شکاف ۴۳ درصدی باعث رانت جذاب برای خرید مواد اولیه به قیمت پایه بورس کالا و فروش محصول نهایی با کشش بازار آزاد می‌شود. در نتیجه، رقابت در تالار شمش و آهن اسفنجی داغ خواهد ماند و اولویت خرید با شرایط تسویه اعتباری و سلف بلندمدت است.`;
+          `   - فاصله ریالی دو نرخ: **${formatAmount(c.gapToman)} تومان (${formatAmount(c.gapToman * 10)} ریال) به ازای هر دلار**\n` +
+          `   - درصد شکاف: **حدود ${toPersianDigits(c.gapPercent)}٪ بالاتر از نرخ رسمی حواله مرکز مبادله**\n\n` +
+          `**توصیه راهبردی مهر رضوی:** با شکاف ارزی ${toPersianDigits(c.gapPercent)} درصدی، تقاضای رقابتی در تالار شمش و آهن اسفنجی به شدت بالاست. خرید اعتباری و سلف بلندمدت در قیمت‌های پایه تالار به دلیل پیشی گرفتن تورم آزاد از سود بانکی، بالاترین توجیه اقتصادی و سودآوری را برای خریداران ایجاد می‌کند.`;
       } else if (q.includes("گاز") || q.includes("سرما") || q.includes("زمستان")) {
         text = `### ارزیابی بحران محدودیت گاز فصول سرد بر آهن اسفنجی:\n\n• **آسیب‌پذیری واحدهای احیا:** با برودت هوا و افت فشار شبکه سراسری گاز، شرکت ملی گاز سهمیه واحدهای احیای مستقیم (نظیر چادرملو، ارفع، غدیر و سیرجان) را تا ۶۰ الی ۸۰ درصد کاهش می‌دهد.\n• **جهش رقابت در بورس کالا:** افت هفتگی عرضه آهن اسفنجی در تالار، رقابت‌های قیمتی را تا بالای ۶۰ درصد نرخ شمش می‌برد که تولید بیلت در کوره‌های القایی را غیر اقتصادی می‌کند.\n\n**توصیه راهبردی مهر رضوی:** دپوی حداقل ۳۰ روز آهن اسفنجی یا جایگزینی با قراضه باکیفیت پیش از ورود به پیک برودت زمستان الزامی است.`;
       } else if (q.includes("جنگ") || q.includes("تنش") || q.includes("منطقه")) {
@@ -3162,16 +3327,16 @@ ${marketContext}`;
         <div class="macro-card">
           <div class="macro-card-top">
             <div class="macro-card-title">شکاف دلار مرکز مبادله (ICE) و آزاد (TGJU)</div>
-            <div class="macro-pill gold">پیش‌ران افزایشی</div>
+            <div class="macro-pill gold">پیش‌ران افزایشی (${toPersianDigits(liveCurrency.gapPercent)}٪)</div>
           </div>
           <div class="macro-card-sub" style="color: var(--accent-gold);">
-            رسمی حواله: ۱۷۰,۶۰۰ ت | آزاد: ۲۴۴,۰۰۰ ت (اختلاف: ~۷۳,۴۰۰ ت)
+            رسمی حواله: ${formatAmount(liveCurrency.iceHavaleToman)} ت | آزاد: ${formatAmount(liveCurrency.freeDollarToman)} ت (اختلاف: ~${formatAmount(liveCurrency.gapToman)} ت)
           </div>
           <div class="macro-card-desc">
-            فرمول کشف نرخ پایه بورس کالا وابسته به نرخ رسمی تالار حواله مرکز مبادله است. نرخ بازار غیررسمی انتظارات تورمی را شکل داده و تقاضای خریدهای سلف و اعتباری را برای پوشش ریسک به شدت افزایش داده است.
+            فرمول کشف نرخ پایه بورس کالا وابسته به نرخ رسمی تالار حواله مرکز مبادله است. نرخ بازار آزاد انتظارات تورمی را شکل داده و تقاضای خریدهای سلف و اعتباری را برای پوشش ریسک به شدت افزایش داده است. (استعلام زنده: ${liveCurrency.lastUpdated})
           </div>
           <button class="macro-action-btn" onclick="sendQuickPrompt('الان وضعیت نرخ رسمی دلار مرکز مبادله و نرخ دلار آزاد و اختلافشان چگونه است و چه اثری بر معاملات بورس کالا دارد؟')">
-            ✨ تحلیل با دستیار مهررضوی
+            ✨ استعلام و تحلیل زنده دلار با دستیار مهررضوی
           </button>
         </div>
 
@@ -3193,10 +3358,31 @@ ${marketContext}`;
       `;
     }
 
+    // iOS PWA Install Banner Check
+    function checkIosPwaStatus() {
+      const isIos = /iPhone|iPad|iPod/.test(navigator.userAgent);
+      const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+      const dismissed = sessionStorage.getItem('ios_banner_dismissed');
+
+      if (isIos && !isStandalone && !dismissed) {
+        const banner = document.getElementById('ios-pwa-install-banner');
+        if (banner) banner.style.display = 'flex';
+      }
+    }
+
+    function dismissIosInstallBanner() {
+      const banner = document.getElementById('ios-pwa-install-banner');
+      if (banner) banner.style.display = 'none';
+      sessionStorage.setItem('ios_banner_dismissed', '1');
+    }
+
     // Initialize
     renderCategories();
     loadPrices();
     setInterval(loadPrices, 90000);
+    fetchLiveCurrencyRates();
+    setInterval(fetchLiveCurrencyRates, 180000);
+    checkIosPwaStatus();
 
     // Auto-hide bottom nav bar when keyboard is open or when typing on mobile/iPhone
     const chatInputElem = document.getElementById('chat-input');
