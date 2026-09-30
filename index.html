@@ -154,6 +154,22 @@
       box-sizing: border-box;
     }
 
+    #app-container::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: max(env(safe-area-inset-bottom, 0px), 24px);
+      background: var(--surface-main);
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    body.keyboard-open #app-container::after {
+      display: none !important;
+    }
+
     #view-board {
       flex: 1;
       min-height: 0;
@@ -972,21 +988,24 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 6px 12px max(env(safe-area-inset-bottom, 0px), 8px);
-      height: 62px;
+      padding-top: 8px;
+      padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      padding-left: 12px;
+      padding-right: 12px;
+      min-height: calc(58px + env(safe-area-inset-bottom, 0px));
       box-sizing: border-box;
       z-index: 100;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      transition: opacity 0.2s ease;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
     }
 
-    body.keyboard-open .bottom-nav,
-    body.chat-active-typing .bottom-nav {
+    body.keyboard-open .bottom-nav {
       display: none !important;
       opacity: 0 !important;
       pointer-events: none !important;
+      transform: translateY(120%) !important;
     }
 
     .nav-tab {
@@ -1376,9 +1395,8 @@
       transform: scale(0.90);
     }
 
-    /* Hide bottom nav bar when keyboard is active or when typing */
-    body.keyboard-open .bottom-nav,
-    body.chat-active-typing .bottom-nav {
+    /* Hide bottom nav bar when virtual keyboard is physically open */
+    body.keyboard-open .bottom-nav {
       display: none !important;
       opacity: 0 !important;
       pointer-events: none !important;
@@ -1840,15 +1858,14 @@
       return s1.includes(s2) || s2.includes(s1);
     }
 
-    // Consolidate supplies
+    // Consolidate supplies: Group by Symbol + Settlement (Cash vs Credit)
     function consolidateSupplies(rawItems) {
       const map = new Map();
 
       rawItems.forEach(item => {
-        const isCredit = item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"));
-        const normSup = normalizeSupplier(item.supplier);
-        const normProd = (item.product || "").trim();
-        const key = `${normSup}_${normProd}_${isCredit ? "credit" : "cash"}`;
+        const isCredit = !!(item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف")));
+        const cleanSymbol = (item.symbol || '').trim().toUpperCase();
+        const key = cleanSymbol ? `${cleanSymbol}_${isCredit ? "credit" : "cash"}` : `${normalizeSupplier(item.supplier)}_${(item.product || '').trim()}_${isCredit ? "credit" : "cash"}`;
 
         if (!map.has(key)) {
           map.set(key, []);
@@ -1935,19 +1952,26 @@
       return result;
     }
 
-    // Historical Points Generator
+    // Historical Points Generator - Anchored on exact symbol history
     function getHistoricalChartPoints(item, monthsCount) {
       const allRecords = [...allHistoricalItems, ...allRawLatestItems];
-      const normTarget = normalizeSupplier(item.supplier || '');
-      const targetProd = (item.product || '').trim();
       const isTargetCredit = !!(item.is_credit || (item.settlement && (item.settlement.includes("اعتباری") || item.settlement.includes("سلف"))));
+      const cleanTargetSymbol = (item.symbol || '').trim().toUpperCase();
 
-      const matched = allRecords.filter(r => {
-        const sNorm = normalizeSupplier(r.supplier || '');
-        const supMatch = sNorm && (sNorm === normTarget || normTarget.includes(sNorm) || sNorm.includes(normTarget));
-        const prodMatch = isProductMatch(r.product || '', targetProd);
-        return supMatch && prodMatch;
-      });
+      let matched = [];
+      if (cleanTargetSymbol) {
+        matched = allRecords.filter(r => (r.symbol || '').trim().toUpperCase() === cleanTargetSymbol);
+      }
+      if (matched.length === 0) {
+        const normTarget = normalizeSupplier(item.supplier || '');
+        const targetProd = (item.product || '').trim();
+        matched = allRecords.filter(r => {
+          const sNorm = normalizeSupplier(r.supplier || '');
+          const supMatch = sNorm && (sNorm === normTarget || normTarget.includes(sNorm) || sNorm.includes(normTarget));
+          const prodMatch = isProductMatch(r.product || '', targetProd);
+          return supMatch && prodMatch;
+        });
+      }
 
       const settlementMatched = matched.filter(r => {
         const isCred = !!(r.settlement && (r.settlement.includes("اعتباری") || r.settlement.includes("سلف")));
@@ -2218,7 +2242,8 @@
           cleanSearchText(item.supplier).includes(q) ||
           cleanSearchText(item.product).includes(q) ||
           cleanSearchText(item.settlement).includes(q) ||
-          cleanSearchText(item.date).includes(q);
+          cleanSearchText(item.date).includes(q) ||
+          (item.symbol && item.symbol.toLowerCase().includes(q.toLowerCase()));
 
         return matchesCategory && matchesSearch;
       });
@@ -2870,14 +2895,13 @@ ${marketContext}`;
             contents.push({ role: 'user', parts: [{ text: userText }] });
           }
 
-          // Sequence prioritizing 3.8 Flash, then 500-RPD models (3.5 Flash Lite & 3.1 Flash Lite)
+          // Sequence prioritizing 500-RPD models (3.5 Flash Lite & 3.1 Flash Lite) to prevent 429 quota exhaustion
           const modelsToTry = [
-            "gemini-3.8-flash",
             "gemini-3.5-flash-lite",
             "gemini-3.1-flash-lite",
+            "gemini-3.8-flash",
             "gemini-3.6-flash",
-            "gemini-3.7-flash",
-            "gemini-3.5-flash"
+            "gemini-3.7-flash"
           ];
 
           let lastErr = null;
@@ -2894,11 +2918,15 @@ ${marketContext}`;
             const requestBody = {
               contents: contents,
               systemInstruction: { parts: [{ text: systemInstruction }] },
-              generationConfig: { temperature: 0.7, topP: 0.95 }
+              generationConfig: {
+                temperature: 0.7,
+                topP: 0.95,
+                maxOutputTokens: 800
+              }
             };
 
             const abortCtrl = new AbortController();
-            const abortTimeout = setTimeout(() => abortCtrl.abort(), 15000);
+            const abortTimeout = setTimeout(() => abortCtrl.abort(), 35000);
 
             try {
               let res = await fetch(url, {
@@ -2917,20 +2945,15 @@ ${marketContext}`;
               } else {
                 const errJson = await res.json().catch(() => ({}));
                 lastErr = new Error(errJson.error?.message || `HTTP ${res.status}`);
-                // If model is rate-limited (429), overloaded (503), or deprecated (404), continue to next model
-                if (res.status === 429 || res.status === 503 || res.status === 404) {
-                  continue;
-                }
-                break;
+                // Try next model on quota exhaustion or server error
+                console.warn(`Model ${modelName} returned HTTP ${res.status}, trying fallback...`);
+                continue;
               }
             } catch (err) {
               clearTimeout(abortTimeout);
               lastErr = err;
               console.warn(`Model ${modelName} fetch error:`, err.message);
-              // If network connection failed completely (e.g. offline):
-              if (err.name !== 'AbortError') {
-                break;
-              }
+              continue;
             }
           }
 
@@ -2996,12 +3019,10 @@ ${marketContext}`;
     function generateOfflineIntelligence(prompt, context) {
       const q = prompt.toLowerCase().trim();
       let text = "";
-      if (/^(سلام|درود|خوبی|خوبید|چطوری|چطورید|چخبر|چه خبر|سلام علیکم|روز بخیر|صبح بخیر|عصر بخیر|شب بخیر|hi|hello|hey)[!?؟.]*$/.test(q) ||
-          (q.includes("سلام") && q.length < 15) ||
-          (q.includes("خوبی") && q.length < 15) ||
-          (q.includes("چخبر") && q.length < 15) ||
+      if (q.includes("چخبر") || q.includes("چه خبر") || (q.includes("سلام") && (q.includes("بورس") || q.length < 25)) ||
+          /^(سلام|درود|خوبی|خوبید|چطوری|چطورید|سلام علیکم|روز بخیر|صبح بخیر|عصر بخیر|شب بخیر|hi|hello|hey)[!?؟.]*$/.test(q) ||
           q.includes("معرفی") || q.includes("کی هستی") || q.includes("چه کمکی")) {
-        text = `سلام و درود! روزتان بخیر 🌹\n\nمن **دستیار هوشمند و مشاور تحلیلی هلدینگ آرمان مهر رضوی** هستم.\nبه تابلوی معاملات زنده بورس کالای ایران و متغیرهای کلان بازار متصلم و در حوزه‌های زیر آماده راهنمایی شما هستم:\n\n• **تحلیل جامع زنجیره آهن و فولاد:** (آهن اسفنجی، شمش، میلگرد، اسلب، گندله و کنسانتره)\n• **پایش رقابت‌های تالار و قیمت پایانی نمادها:** مقایسه حجم و درصد رقابت خریداران\n• **بررسی نرخ ارز مرکز مبادله (ICE) و دلار آزاد (TGJU):** اثر شکاف ارزی بر بهای پایه و تقاضای سلف\n• **راهبرد بهینه خرید اعتباری/سلف در برابر نقدی:** مدیریت بهره پول و تورم انتظاری\n• **ارزیابی ریسک‌های فصلی و ژئوپلیتیک:** اثر برودت هوا و افت گاز یا تنش‌های منطقه‌ای بر زنجیره فولاد\n\nهر سوالی درباره یک نماد معاملاتی خاص، سابقه قیمتی، یا استراتژی خرید امروز دارید بفرمایید در خدمتتان هستم.`;
+        text = `سلام و درود! روزتان بخیر 🌹\n\nوضعیت امروز تابلوی بورس کالا و متغیرهای اصلی بازار:\n\n• **پایش نمادها:** ${allItems.length} نماد فعال در تابلوی معاملات رصد شده است.\n• **آهن اسفنجی و شمش:** تقاضا در رینگ معاملات به دلیل انتظارات تورمی بالاست و نسبت قیمت اسفنجی به شمش در محدوده ۵۶ تا ۵۹ درصد نوسان می‌کند.\n• **وضعیت نرخ ارز:** دلار توافقی/حواله مرکز مبادله در کانال ۱۷۰ هزار تومان و دلار آزاد در کانال ۲۴۴ هزار تومان ثبت شده که شکاف ۴۳ درصدی را نشان می‌دهد.\n• **خریدهای اعتباری:** معاملات با تسویه اعتباری با استقبال بالاتری مواجه است.\n\nدرباره هر نماد، شرکت خاص یا استراتژی خرید سوالی دارید بفرمایید تا دقیق تحلیل کنیم!`;
       } else if (q.includes("دلار") || q.includes("ارز") || q.includes("نیما") || q.includes("ice") || q.includes("tgju") || q.includes("رسمی") || q.includes("طلا") || q.includes("سکه") || q.includes("قیمت")) {
         text = `### اعلام نرخ موثق و رسمی روز ارز و طلا (رادار مهر رضوی):\n\n` +
           `• **۱. نرخ رسمی ارز مرکز مبادله طلا و ارز ایران:**\n` +
@@ -3187,35 +3208,22 @@ ${marketContext}`;
     const appContainerElem = document.getElementById('app-container');
 
     function hideBottomNavOnTyping() {
-      document.body.classList.add('keyboard-open', 'chat-active-typing');
-      window.scrollTo(0, 0);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        if (window.visualViewport && appContainerElem) {
-          appContainerElem.style.height = `${window.visualViewport.height}px`;
-        }
-        const c = document.getElementById('chat-messages');
-        if (c) c.scrollTop = c.scrollHeight;
-      }, 80);
+      // Only set typing if input is genuinely active
+      if (document.activeElement === chatInputElem) {
+        document.body.classList.add('chat-active-typing');
+      }
     }
 
     function showBottomNavAfterTyping() {
-      setTimeout(() => {
-        if (document.activeElement !== chatInputElem) {
-          document.body.classList.remove('keyboard-open', 'chat-active-typing');
-          if (appContainerElem) {
-            appContainerElem.style.height = '100dvh';
-            appContainerElem.style.top = '0px';
-          }
-          window.scrollTo(0, 0);
-        }
-      }, 150);
+      document.body.classList.remove('chat-active-typing', 'keyboard-open');
+      if (appContainerElem) {
+        appContainerElem.style.height = '100dvh';
+        appContainerElem.style.top = '0px';
+      }
     }
 
     if (chatInputElem) {
       chatInputElem.addEventListener('focus', hideBottomNavOnTyping);
-      chatInputElem.addEventListener('click', hideBottomNavOnTyping);
-      chatInputElem.addEventListener('touchstart', hideBottomNavOnTyping, { passive: true });
       chatInputElem.addEventListener('blur', showBottomNavAfterTyping);
     }
 
@@ -3229,7 +3237,7 @@ ${marketContext}`;
         window.scrollTo(0, 0);
       }
 
-      const isKeyboard = (initialVpHeight - vp.height) > 100;
+      const isKeyboard = (initialVpHeight - vp.height) > 120;
 
       if (isKeyboard) {
         document.body.classList.add('keyboard-open');
