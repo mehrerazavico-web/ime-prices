@@ -1468,5 +1468,19 @@
     "diff_percent": 1.69,
     "status": "معامله شده",
     "final_checked_at": "2026-09-30 22:51"
+  },
+  {
+    "supplier": "فولاد کاوه جنوب کیش",
+    "product": "شمش بلوم",
+    "symbol": "SKS-DSMBSO00OO-00",
+    "date": "1405/07/08",
+    "base_price": "689235",
+    "volume": "50",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-09-30 23:08"
   }
 ]
