@@ -1489,12 +1489,12 @@
     "symbol": "SKS-BSG324X-00",
     "date": "1405/07/11",
     "base_price": "690235",
-    "volume": "2400",
-    "demand": "2,400",
+    "volume": "3000",
+    "demand": "3,000",
     "settlement": "نقدی / اعتباری",
     "final_price": "690235",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-03 11:48"
+    "final_checked_at": "2026-10-03 12:03"
   }
 ]
