@@ -1614,14 +1614,14 @@
     "product": "تختال C",
     "symbol": "AJSC-SSG09XROA-00",
     "date": "1405/07/12",
-    "base_price": "881887",
-    "volume": "1380",
-    "demand": "1,380",
+    "base_price": "873068",
+    "volume": "1060",
+    "demand": "0",
     "settlement": "نقدی",
-    "final_price": "881887",
+    "final_price": "0",
     "diff_percent": 0.0,
-    "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-05 01:08"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "فولاد هرمزگان جنوب",
@@ -1699,13 +1699,13 @@
     "symbol": "GOLG-PELL-00",
     "date": "1405/07/12",
     "base_price": "159163",
-    "volume": "90000",
-    "demand": "141,000",
-    "settlement": "نقدی / اعتباری",
-    "final_price": "162565",
-    "diff_percent": 2.14,
-    "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-05 01:08"
+    "volume": "30000",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -1714,12 +1714,12 @@
     "date": "1405/07/12",
     "base_price": "381729",
     "volume": "12000",
-    "demand": "در انتظار رقابت",
-    "settlement": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
+    "demand": "0",
+    "settlement": "نقدی",
     "final_price": "0",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 01:07"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "آهن و فولاد غدیر ایرانیان",
@@ -1727,13 +1727,13 @@
     "symbol": "GHIR-DRI-00",
     "date": "1405/07/12",
     "base_price": "381729",
-    "volume": "10000",
+    "volume": "5000",
     "demand": "0",
-    "settlement": "نقدی",
+    "settlement": "نقدی / اعتباری",
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -1747,7 +1747,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -1761,7 +1761,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "سنگ آهن مرکزی ایران",
@@ -1775,7 +1775,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "معدنی و صنعتی گهر زمین (سنگ آهن گهر زمین)",
@@ -1789,7 +1789,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -1887,7 +1887,7 @@
     "final_price": "1034000",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 01:07"
+    "final_checked_at": "2026-10-05 01:24"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -1901,7 +1901,7 @@
     "final_price": "1090000",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 01:07"
+    "final_checked_at": "2026-10-05 01:24"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -1915,7 +1915,7 @@
     "final_price": "856500",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 01:07"
+    "final_checked_at": "2026-10-05 01:24"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -1929,7 +1929,7 @@
     "final_price": "856500",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 01:07"
+    "final_checked_at": "2026-10-05 01:24"
   },
   {
     "supplier": "صنایع آهن و فولاد سرمد ابرکوه",
@@ -1943,7 +1943,7 @@
     "final_price": "994359",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 01:07"
+    "final_checked_at": "2026-10-05 01:24"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2097,7 +2097,7 @@
     "final_price": "1082839",
     "diff_percent": 22.63,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2111,7 +2111,7 @@
     "final_price": "969033",
     "diff_percent": 9.74,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:25"
   },
   {
     "supplier": "صبا نور ایرانیان",
@@ -2125,7 +2125,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:24"
   },
   {
     "supplier": "احیاء استیل فولاد بافت",
@@ -2139,6 +2139,146 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-04 20:41"
+    "final_checked_at": "2026-10-05 01:24"
+  },
+  {
+    "supplier": "توسعه آهن و فولاد گل گهر",
+    "product": "آهن اسفنجی",
+    "symbol": "GISD-DRI-00",
+    "date": "1405/07/12",
+    "base_price": "381729",
+    "volume": "3000",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-05 01:24"
+  },
+  {
+    "supplier": "صنعت فولاد شادگان",
+    "product": "آهن اسفنجی",
+    "symbol": "SSI-DRI-00",
+    "date": "1405/07/12",
+    "base_price": "381729",
+    "volume": "20000",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-05 01:24"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد کلاف 6.5-SAE1008",
+    "symbol": "ESC-SW6552-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "200",
+    "demand": "750",
+    "settlement": "نقدی",
+    "final_price": "1045526",
+    "diff_percent": 18.41,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد آلیاژی A3-25",
+    "symbol": "ESC-HRNENNA3BCU-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "150",
+    "demand": "525",
+    "settlement": "نقدی",
+    "final_price": "1055200",
+    "diff_percent": 19.5,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد آلیاژی A3-20",
+    "symbol": "ESC-MRNNNEA3BCU-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "100",
+    "demand": "350",
+    "settlement": "نقدی",
+    "final_price": "1011647",
+    "diff_percent": 14.57,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد آلیاژی A3-16",
+    "symbol": "ESC-MRNENNA3BCU-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "100",
+    "demand": "425",
+    "settlement": "نقدی",
+    "final_price": "1044917",
+    "diff_percent": 18.34,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد آلیاژی A3-14",
+    "symbol": "ESC-MRENNNA3BCU-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "100",
+    "demand": "375",
+    "settlement": "نقدی",
+    "final_price": "1063217",
+    "diff_percent": 20.41,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد آلیاژی 28-A3",
+    "symbol": "ESC-HRNNENA3BCU-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "100",
+    "demand": "150",
+    "settlement": "نقدی",
+    "final_price": "894119",
+    "diff_percent": 1.26,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "میلگرد A3-22",
+    "symbol": "ESC-HRENNNA3B-00",
+    "date": "1405/07/12",
+    "base_price": "874160",
+    "volume": "1000",
+    "demand": "1,975",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "1006546",
+    "diff_percent": 15.14,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
+  },
+  {
+    "supplier": "جهان فولاد سیرجان",
+    "product": "میلگرد 22تا32-A3",
+    "symbol": "SJS-HREEEEA3B-00",
+    "date": "1405/07/12",
+    "base_price": "882990",
+    "volume": "1000",
+    "demand": "1,650",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "1036491",
+    "diff_percent": 17.38,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 01:25"
   }
 ]
