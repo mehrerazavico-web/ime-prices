@@ -2288,12 +2288,12 @@
     "date": "1405/07/13",
     "base_price": "706203",
     "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت معدنی وصنعتی چادرملو",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "5,800",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "824354",
+    "diff_percent": 16.73,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "مجتمع فولاد خراسان",
@@ -2302,12 +2302,12 @@
     "date": "1405/07/13",
     "base_price": "685844",
     "volume": "2500",
-    "demand": "در انتظار رقابت",
-    "settlement": "مجتمع فولاد خراسان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "2,775",
+    "settlement": "نقدی",
+    "final_price": "762027",
+    "diff_percent": 11.11,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -2315,13 +2315,13 @@
     "symbol": "KSC-BSG194X-00",
     "date": "1405/07/13",
     "base_price": "685844",
-    "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد خوزستان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "volume": "15000",
+    "demand": "18,175",
+    "settlement": "نقدی",
+    "final_price": "872871",
+    "diff_percent": 27.27,
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -2330,12 +2330,12 @@
     "date": "1405/07/13",
     "base_price": "704040",
     "volume": "7000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد کاوه جنوب کیش",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "8,375",
+    "settlement": "نقدی",
+    "final_price": "774013",
+    "diff_percent": 9.94,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -2344,12 +2344,12 @@
     "date": "1405/07/13",
     "base_price": "704040",
     "volume": "7000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد کاوه جنوب کیش",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "8,600",
+    "settlement": "نقدی",
+    "final_price": "876559",
+    "diff_percent": 24.5,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -2358,12 +2358,12 @@
     "date": "1405/07/13",
     "base_price": "697856",
     "volume": "2000",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "3,000",
+    "settlement": "نقدی",
+    "final_price": "895166",
+    "diff_percent": 28.27,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -2372,12 +2372,12 @@
     "date": "1405/07/13",
     "base_price": "697856",
     "volume": "2000",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "2,800",
+    "settlement": "نقدی",
+    "final_price": "902877",
+    "diff_percent": 29.38,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -2386,12 +2386,12 @@
     "date": "1405/07/13",
     "base_price": "691333",
     "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "آهن و فولاد ارفع",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "6,600",
+    "settlement": "نقدی",
+    "final_price": "890139",
+    "diff_percent": 28.76,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -2400,12 +2400,12 @@
     "date": "1405/07/13",
     "base_price": "705385",
     "volume": "3000",
-    "demand": "در انتظار رقابت",
-    "settlement": "جهان فولاد سیرجان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "4,300",
+    "settlement": "نقدی",
+    "final_price": "909441",
+    "diff_percent": 28.93,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -2414,12 +2414,12 @@
     "date": "1405/07/13",
     "base_price": "705385",
     "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "جهان فولاد سیرجان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "8,900",
+    "settlement": "نقدی",
+    "final_price": "923054",
+    "diff_percent": 30.86,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "فولاد غدیر نی ریز",
@@ -2428,12 +2428,12 @@
     "date": "1405/07/13",
     "base_price": "705902",
     "volume": "2000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد غدیر نی ریز",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-05 17:06"
+    "demand": "2,900",
+    "settlement": "نقدی",
+    "final_price": "902867",
+    "diff_percent": 27.9,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "صنایع آهن و فولاد سرمد ابرکوه",
@@ -2447,7 +2447,7 @@
     "final_price": "994359",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 17:07"
+    "final_checked_at": "2026-10-05 17:23"
   },
   {
     "supplier": "فولاد جهان آرا اروند",
@@ -2461,6 +2461,6 @@
     "final_price": "881887",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-05 17:07"
+    "final_checked_at": "2026-10-05 17:23"
   }
 ]
