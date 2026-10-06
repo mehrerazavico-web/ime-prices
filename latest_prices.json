@@ -2470,12 +2470,12 @@
     "date": "1405/07/14",
     "base_price": "381729",
     "volume": "12000",
-    "demand": "در انتظار رقابت",
-    "settlement": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-06 17:14"
+    "demand": "15,150",
+    "settlement": "نقدی",
+    "final_price": "542557",
+    "diff_percent": 42.13,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:31"
   },
   {
     "supplier": "صنعت فولاد شادگان",
@@ -2484,12 +2484,12 @@
     "date": "1405/07/14",
     "base_price": "381729",
     "volume": "20000",
-    "demand": "در انتظار رقابت",
-    "settlement": "صنعت فولاد شادگان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-06 17:14"
+    "demand": "22,150",
+    "settlement": "نقدی",
+    "final_price": "474746",
+    "diff_percent": 24.37,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:31"
   },
   {
     "supplier": "صنعت فولاد شادگان",
@@ -2504,5 +2504,75 @@
     "diff_percent": 0.0,
     "status": "عدم معامله",
     "final_checked_at": "2026-10-06 16:59"
+  },
+  {
+    "supplier": "آهن و فولاد غدیر ایرانیان",
+    "product": "آهن اسفنجی",
+    "symbol": "GHIR-DRI-00",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "15000",
+    "demand": "19,050",
+    "settlement": "نقدی",
+    "final_price": "551264",
+    "diff_percent": 44.41,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:32"
+  },
+  {
+    "supplier": "جهان فولاد سیرجان",
+    "product": "آهن اسفنجی",
+    "symbol": "SJS-DRI-00",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "5000",
+    "demand": "8,650",
+    "settlement": "نقدی",
+    "final_price": "575669",
+    "diff_percent": 50.81,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:32"
+  },
+  {
+    "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
+    "product": "آهن اسفنجی",
+    "symbol": "IMID-DRI-271",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "14000",
+    "demand": "17,350",
+    "settlement": "نقدی",
+    "final_price": "565667",
+    "diff_percent": 48.19,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:32"
+  },
+  {
+    "supplier": "احیاء استیل فولاد بافت",
+    "product": "آهن اسفنجی",
+    "symbol": "BSC-DRI-00",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "8250",
+    "demand": "12,900",
+    "settlement": "نقدی",
+    "final_price": "561911",
+    "diff_percent": 47.2,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:32"
+  },
+  {
+    "supplier": "توسعه آهن و فولاد گل گهر",
+    "product": "آهن اسفنجی",
+    "symbol": "GISD-DRI-00",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "17000",
+    "demand": "22,000",
+    "settlement": "نقدی",
+    "final_price": "550489",
+    "diff_percent": 44.21,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-06 17:32"
   }
 ]
