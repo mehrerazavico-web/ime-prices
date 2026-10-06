@@ -2462,5 +2462,33 @@
     "diff_percent": 0.0,
     "status": "معامله شده",
     "final_checked_at": "2026-10-06 03:20"
+  },
+  {
+    "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
+    "product": "آهن اسفنجی",
+    "symbol": "IMID-DRI-616",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "12000",
+    "demand": "در انتظار رقابت",
+    "settlement": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "در انتظار معامله",
+    "final_checked_at": "2026-10-06 03:37"
+  },
+  {
+    "supplier": "صنعت فولاد شادگان",
+    "product": "آهن اسفنجی",
+    "symbol": "SSI-DRI-00",
+    "date": "1405/07/14",
+    "base_price": "381729",
+    "volume": "20000",
+    "demand": "در انتظار رقابت",
+    "settlement": "صنعت فولاد شادگان",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "در انتظار معامله",
+    "final_checked_at": "2026-10-06 03:37"
   }
 ]
