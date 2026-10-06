@@ -2475,7 +2475,7 @@
     "final_price": "542557",
     "diff_percent": 42.13,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:01"
+    "final_checked_at": "2026-10-07 01:18"
   },
   {
     "supplier": "صنعت فولاد شادگان",
@@ -2489,7 +2489,7 @@
     "final_price": "474746",
     "diff_percent": 24.37,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:01"
+    "final_checked_at": "2026-10-07 01:18"
   },
   {
     "supplier": "صنعت فولاد شادگان",
@@ -2517,7 +2517,7 @@
     "final_price": "551264",
     "diff_percent": 44.41,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:02"
+    "final_checked_at": "2026-10-07 01:18"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -2531,7 +2531,7 @@
     "final_price": "575669",
     "diff_percent": 50.81,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:02"
+    "final_checked_at": "2026-10-07 01:18"
   },
   {
     "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -2545,7 +2545,7 @@
     "final_price": "565667",
     "diff_percent": 48.19,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:02"
+    "final_checked_at": "2026-10-07 01:18"
   },
   {
     "supplier": "احیاء استیل فولاد بافت",
@@ -2559,7 +2559,7 @@
     "final_price": "561911",
     "diff_percent": 47.2,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:02"
+    "final_checked_at": "2026-10-07 01:18"
   },
   {
     "supplier": "توسعه آهن و فولاد گل گهر",
@@ -2573,6 +2573,6 @@
     "final_price": "550489",
     "diff_percent": 44.21,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 01:02"
+    "final_checked_at": "2026-10-07 01:18"
   }
 ]
