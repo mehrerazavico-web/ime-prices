@@ -2587,7 +2587,7 @@
     "final_price": "1069352",
     "diff_percent": 11.96,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "مجتمع فولاد خراسان",
@@ -2595,13 +2595,13 @@
     "symbol": "KSO-MREEEEA3BN-00",
     "date": "1405/07/15",
     "base_price": "926473",
-    "volume": "450",
-    "demand": "750",
+    "volume": "550",
+    "demand": "850",
     "settlement": "نقدی / اعتباری",
     "final_price": "926473",
     "diff_percent": 0.0,
-    "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "فولاد جهان آرا اروند",
@@ -2615,7 +2615,7 @@
     "final_price": "960701",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "فولاد هرمزگان جنوب",
@@ -2629,7 +2629,7 @@
     "final_price": "972531",
     "diff_percent": 1.23,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -2643,7 +2643,7 @@
     "final_price": "1032180",
     "diff_percent": 8.07,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2657,7 +2657,7 @@
     "final_price": "1093007",
     "diff_percent": 14.44,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2665,13 +2665,13 @@
     "symbol": "FROJ-HREEEEA3B-00",
     "date": "1405/07/15",
     "base_price": "955127",
-    "volume": "572",
-    "demand": "572",
+    "volume": "638",
+    "demand": "638",
     "settlement": "نقدی",
     "final_price": "955127",
     "diff_percent": 0.0,
-    "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2685,7 +2685,7 @@
     "final_price": "1118655",
     "diff_percent": 17.12,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -2699,7 +2699,7 @@
     "final_price": "1024387",
     "diff_percent": 7.25,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2713,7 +2713,7 @@
     "final_price": "994250",
     "diff_percent": 4.1,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2727,7 +2727,7 @@
     "final_price": "986365",
     "diff_percent": 3.27,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2741,7 +2741,7 @@
     "final_price": "984120",
     "diff_percent": 3.04,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2755,7 +2755,7 @@
     "final_price": "966940",
     "diff_percent": 1.24,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2769,7 +2769,7 @@
     "final_price": "1016355",
     "diff_percent": 6.41,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -2783,7 +2783,7 @@
     "final_price": "960701",
     "diff_percent": 0.0,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2791,13 +2791,13 @@
     "symbol": "ESC-LRNNEA3BN-00",
     "date": "1405/07/15",
     "base_price": "926473",
-    "volume": "100",
-    "demand": "150",
+    "volume": "125",
+    "demand": "175",
     "settlement": "نقدی",
     "final_price": "926473",
     "diff_percent": 0.0,
-    "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "صنایع آهن و فولاد سرمد ابرکوه",
@@ -2811,7 +2811,7 @@
     "final_price": "1057618",
     "diff_percent": 10.73,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:14"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -2825,7 +2825,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-07 16:14"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -2839,7 +2839,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-07 16:14"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -2853,7 +2853,7 @@
     "final_price": "1014467",
     "diff_percent": 6.21,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:14"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -2867,7 +2867,7 @@
     "final_price": "998924",
     "diff_percent": 4.59,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2875,13 +2875,13 @@
     "symbol": "ESC-MRNEENA3B-00",
     "date": "1405/07/15",
     "base_price": "955127",
-    "volume": "2050",
-    "demand": "2,225",
+    "volume": "4000",
+    "demand": "4,175",
     "settlement": "نقدی / اعتباری",
     "final_price": "955127",
     "diff_percent": 0.0,
-    "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2895,7 +2895,7 @@
     "final_price": "955127",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -2909,6 +2909,6 @@
     "final_price": "955127",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-07 16:13"
+    "final_checked_at": "2026-10-07 16:30"
   }
 ]
