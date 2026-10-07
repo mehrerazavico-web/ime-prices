@@ -2910,5 +2910,19 @@
     "diff_percent": 0.0,
     "status": "معامله شده",
     "final_checked_at": "2026-10-07 17:36"
+  },
+  {
+    "supplier": "فولاد جهان آرا اروند",
+    "product": "تختال",
+    "symbol": "AJSC-DSMSSO00OO-00",
+    "date": "1405/07/15",
+    "base_price": "941487",
+    "volume": "560",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-07 17:53"
   }
 ]
