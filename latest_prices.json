@@ -2937,7 +2937,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2951,7 +2951,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2965,7 +2965,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -2979,7 +2979,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-10 20:06"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -2993,7 +2993,7 @@
     "final_price": "946522",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:21"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3007,7 +3007,7 @@
     "final_price": "1067110",
     "diff_percent": 11.62,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -3021,7 +3021,7 @@
     "final_price": "941077",
     "diff_percent": 1.19,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:21"
   },
   {
     "supplier": "صنایع آهن و فولاد سرمد ابرکوه",
@@ -3035,7 +3035,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-10 20:06"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3049,7 +3049,7 @@
     "final_price": "1121597",
     "diff_percent": 17.32,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3063,7 +3063,7 @@
     "final_price": "1056384",
     "diff_percent": 10.5,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3077,7 +3077,7 @@
     "final_price": "1026558",
     "diff_percent": 7.38,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3091,7 +3091,7 @@
     "final_price": "1023141",
     "diff_percent": 7.02,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3105,7 +3105,7 @@
     "final_price": "975078",
     "diff_percent": 2.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:22"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -3119,6 +3119,6 @@
     "final_price": "920708",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-10 20:05"
+    "final_checked_at": "2026-10-10 20:21"
   }
 ]
