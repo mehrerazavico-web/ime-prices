@@ -2937,7 +2937,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2951,7 +2951,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -2965,7 +2965,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -2979,7 +2979,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -2987,13 +2987,13 @@
     "symbol": "FZI-BSO494X-00",
     "date": "1405/07/18",
     "base_price": "946522",
-    "volume": "750",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "final_price": "0",
+    "volume": "100",
+    "demand": "850",
+    "settlement": "نقدی",
+    "final_price": "946522",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3007,21 +3007,21 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "آهن و فولاد ارفع",
     "product": "شمش بلوم (150*150)C30",
     "symbol": "AISC-BSO834X-00",
     "date": "1405/07/18",
-    "base_price": "940000",
-    "volume": "1250",
-    "demand": "در انتظار رقابت",
-    "settlement": "آهن و فولاد ارفع",
-    "final_price": "0",
+    "base_price": "930000",
+    "volume": "1225",
+    "demand": "1,850",
+    "settlement": "نقدی",
+    "final_price": "930000",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "صنایع آهن و فولاد سرمد ابرکوه",
@@ -3035,7 +3035,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3049,7 +3049,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3063,7 +3063,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3077,7 +3077,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3091,7 +3091,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3105,7 +3105,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "final_checked_at": "2026-10-10 13:20"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -3113,12 +3113,12 @@
     "symbol": "KSC-BSO494X-00",
     "date": "1405/07/18",
     "base_price": "920708",
-    "volume": "2500",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد خوزستان",
-    "final_price": "0",
+    "volume": "3500",
+    "demand": "3,500",
+    "settlement": "نقدی",
+    "final_price": "920708",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-10 13:04"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-10 13:20"
   }
 ]
