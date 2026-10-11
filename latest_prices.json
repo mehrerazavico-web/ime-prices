@@ -3133,7 +3133,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:00"
+    "final_checked_at": "2026-10-11 05:16"
   },
   {
     "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -3147,7 +3147,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:00"
+    "final_checked_at": "2026-10-11 05:16"
   },
   {
     "supplier": "معدنی و صنعتی گهر زمین (سنگ آهن گهر زمین)",
@@ -3161,7 +3161,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:00"
+    "final_checked_at": "2026-10-11 05:16"
   },
   {
     "supplier": "معدنی و صنعتی گل گهر",
@@ -3175,7 +3175,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:00"
+    "final_checked_at": "2026-10-11 05:16"
   },
   {
     "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -3189,7 +3189,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:01"
+    "final_checked_at": "2026-10-11 05:17"
   },
   {
     "supplier": "صنایع معدنی فولاد سنگان خراسان",
@@ -3203,7 +3203,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:01"
+    "final_checked_at": "2026-10-11 05:17"
   },
   {
     "supplier": "سازمان توسعه و نوسازی معادن و صنایع معدنی ایران",
@@ -3217,7 +3217,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:01"
+    "final_checked_at": "2026-10-11 05:17"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3231,6 +3231,6 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-11 05:01"
+    "final_checked_at": "2026-10-11 05:17"
   }
 ]
