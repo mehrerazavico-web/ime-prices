@@ -3478,12 +3478,12 @@
     "date": "1405/07/20",
     "base_price": "714949",
     "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت معدنی وصنعتی چادرملو",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "6,475",
+    "settlement": "نقدی",
+    "final_price": "864438",
+    "diff_percent": 20.91,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "مجتمع فولاد خراسان",
@@ -3492,12 +3492,12 @@
     "date": "1405/07/20",
     "base_price": "710147",
     "volume": "2500",
-    "demand": "در انتظار رقابت",
-    "settlement": "مجتمع فولاد خراسان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "2,925",
+    "settlement": "نقدی",
+    "final_price": "803485",
+    "diff_percent": 13.14,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -3506,12 +3506,12 @@
     "date": "1405/07/20",
     "base_price": "710147",
     "volume": "10000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد خوزستان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "12,575",
+    "settlement": "نقدی",
+    "final_price": "890887",
+    "diff_percent": 25.45,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "فولاد غدیر نی ریز",
@@ -3520,12 +3520,12 @@
     "date": "1405/07/20",
     "base_price": "720020",
     "volume": "2000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد غدیر نی ریز",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "3,075",
+    "settlement": "نقدی",
+    "final_price": "878727",
+    "diff_percent": 22.04,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -3534,12 +3534,12 @@
     "date": "1405/07/20",
     "base_price": "718121",
     "volume": "7500",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد کاوه جنوب کیش",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "10,300",
+    "settlement": "نقدی",
+    "final_price": "887692",
+    "diff_percent": 23.61,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -3548,12 +3548,12 @@
     "date": "1405/07/20",
     "base_price": "718121",
     "volume": "7500",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد کاوه جنوب کیش",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "8,375",
+    "settlement": "نقدی",
+    "final_price": "757937",
+    "diff_percent": 5.54,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -3562,12 +3562,12 @@
     "date": "1405/07/20",
     "base_price": "710147",
     "volume": "2000",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:34"
+    "demand": "2,700",
+    "settlement": "نقدی",
+    "final_price": "857471",
+    "diff_percent": 20.75,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -3576,12 +3576,12 @@
     "date": "1405/07/20",
     "base_price": "710147",
     "volume": "2000",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:35"
+    "demand": "2,450",
+    "settlement": "نقدی",
+    "final_price": "818606",
+    "diff_percent": 15.27,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -3589,13 +3589,13 @@
     "symbol": "AISC-BSG194X-00",
     "date": "1405/07/20",
     "base_price": "710147",
-    "volume": "4000",
-    "demand": "در انتظار رقابت",
-    "settlement": "آهن و فولاد ارفع",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:35"
+    "volume": "7000",
+    "demand": "9,620",
+    "settlement": "نقدی",
+    "final_price": "891190",
+    "diff_percent": 25.49,
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -3604,12 +3604,12 @@
     "date": "1405/07/20",
     "base_price": "719493",
     "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "جهان فولاد سیرجان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:35"
+    "demand": "7,620",
+    "settlement": "نقدی",
+    "final_price": "908867",
+    "diff_percent": 26.32,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -3618,12 +3618,12 @@
     "date": "1405/07/20",
     "base_price": "719493",
     "volume": "3000",
-    "demand": "در انتظار رقابت",
-    "settlement": "جهان فولاد سیرجان",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-12 16:35"
+    "demand": "3,920",
+    "settlement": "نقدی",
+    "final_price": "881251",
+    "diff_percent": 22.48,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-12 16:51"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -3637,6 +3637,6 @@
     "final_price": "147469",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-12 16:35"
+    "final_checked_at": "2026-10-12 16:51"
   }
 ]
