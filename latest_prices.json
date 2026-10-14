@@ -3665,7 +3665,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "final_checked_at": "2026-10-14 15:28"
   },
   {
     "supplier": "مجتمع فولاد خراسان",
@@ -3679,7 +3679,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "final_checked_at": "2026-10-14 15:28"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -3687,13 +3687,13 @@
     "symbol": "KSC-SSG09XROA-00",
     "date": "1405/07/22",
     "base_price": "948888",
-    "volume": "30000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد خوزستان",
-    "final_price": "0",
+    "volume": "6000",
+    "demand": "9,500",
+    "settlement": "نقدی",
+    "final_price": "948888",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -3701,13 +3701,13 @@
     "symbol": "FROJ-MREEEEA3B-00",
     "date": "1405/07/22",
     "base_price": "968694",
-    "volume": "286",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد روهینا جنوب",
-    "final_price": "0",
+    "volume": "22",
+    "demand": "22",
+    "settlement": "نقدی",
+    "final_price": "968694",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -3721,7 +3721,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "final_checked_at": "2026-10-14 15:28"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3735,7 +3735,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "final_checked_at": "2026-10-14 15:28"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3743,13 +3743,13 @@
     "symbol": "ESC-MRNNENA3B-00",
     "date": "1405/07/22",
     "base_price": "974052",
-    "volume": "1500",
-    "demand": "در انتظار رقابت",
-    "settlement": "ذوب آهن اصفهان",
-    "final_price": "0",
+    "volume": "350",
+    "demand": "400",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "974052",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3757,13 +3757,13 @@
     "symbol": "ESC-MRNENNA3B-00",
     "date": "1405/07/22",
     "base_price": "974052",
-    "volume": "1500",
-    "demand": "در انتظار رقابت",
-    "settlement": "ذوب آهن اصفهان",
-    "final_price": "0",
+    "volume": "1225",
+    "demand": "1,425",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "974052",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3771,13 +3771,13 @@
     "symbol": "ESC-MRNNNEA3B-00",
     "date": "1405/07/22",
     "base_price": "974052",
-    "volume": "1500",
-    "demand": "در انتظار رقابت",
-    "settlement": "ذوب آهن اصفهان",
-    "final_price": "0",
+    "volume": "525",
+    "demand": "525",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "974052",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "فولاد کاوه اروند",
@@ -3785,13 +3785,13 @@
     "symbol": "AKST-MRNENNA3B-00",
     "date": "1405/07/22",
     "base_price": "941955",
-    "volume": "1012",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد کاوه اروند",
-    "final_price": "0",
+    "volume": "22",
+    "demand": "22",
+    "settlement": "نقدی",
+    "final_price": "941955",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "ذوب آهن اصفهان",
@@ -3799,13 +3799,13 @@
     "symbol": "ESC-HRENNNA3B-00",
     "date": "1405/07/22",
     "base_price": "974052",
-    "volume": "1500",
-    "demand": "در انتظار رقابت",
-    "settlement": "ذوب آهن اصفهان",
-    "final_price": "0",
+    "volume": "425",
+    "demand": "425",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "974052",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "فولاد جهان آرا اروند",
@@ -3813,13 +3813,13 @@
     "symbol": "AJSC-SSG09XROA-00",
     "date": "1405/07/22",
     "base_price": "948888",
-    "volume": "10000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد جهان آرا اروند",
-    "final_price": "0",
+    "volume": "4000",
+    "demand": "4,100",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "948888",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "فولاد هرمزگان جنوب",
@@ -3827,13 +3827,13 @@
     "symbol": "HSTC-SSG09XROA-00",
     "date": "1405/07/22",
     "base_price": "948888",
-    "volume": "5000",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد هرمزگان جنوب",
-    "final_price": "0",
+    "volume": "3000",
+    "demand": "3,000",
+    "settlement": "نقدی",
+    "final_price": "948888",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -3847,7 +3847,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -3861,7 +3861,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:12"
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "صنایع آهن و فولاد سرمد ابرکوه",
@@ -3875,7 +3875,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:13"
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -3889,7 +3889,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:13"
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -3903,7 +3903,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:13"
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -3917,7 +3917,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:13"
+    "final_checked_at": "2026-10-14 15:29"
   },
   {
     "supplier": "مجتمع فولاد صنعت بناب",
@@ -3931,6 +3931,6 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-14 15:13"
+    "final_checked_at": "2026-10-14 15:29"
   }
 ]
