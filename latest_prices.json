@@ -3954,12 +3954,12 @@
     "date": "1405/07/25",
     "base_price": "1220000",
     "volume": "400",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد روهینا جنوب",
+    "demand": "0",
+    "settlement": "نقدی / اعتباری",
     "final_price": "0",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-17 13:31"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -3968,12 +3968,12 @@
     "date": "1405/07/25",
     "base_price": "1170000",
     "volume": "200",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد روهینا جنوب",
+    "demand": "0",
+    "settlement": "نقدی / اعتباری",
     "final_price": "0",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-17 13:31"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -3982,12 +3982,12 @@
     "date": "1405/07/25",
     "base_price": "1103000",
     "volume": "100",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد روهینا جنوب",
+    "demand": "0",
+    "settlement": "نقدی / اعتباری",
     "final_price": "0",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-17 13:31"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -3996,12 +3996,12 @@
     "date": "1405/07/25",
     "base_price": "920000",
     "volume": "750",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
+    "demand": "0",
+    "settlement": "نقدی",
     "final_price": "0",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-17 13:31"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -4010,26 +4010,26 @@
     "date": "1405/07/25",
     "base_price": "941954",
     "volume": "750",
-    "demand": "در انتظار رقابت",
-    "settlement": "شرکت فولاد زرند ایرانیان",
+    "demand": "0",
+    "settlement": "نقدی",
     "final_price": "0",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-17 13:31"
   },
   {
     "supplier": "آهن و فولاد ارفع",
     "product": "شمش بلوم (150*150)C30",
     "symbol": "AISC-BSO834X-00",
     "date": "1405/07/25",
-    "base_price": "923000",
-    "volume": "1250",
-    "demand": "در انتظار رقابت",
-    "settlement": "آهن و فولاد ارفع",
-    "final_price": "0",
-    "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "base_price": "893000",
+    "volume": "4175",
+    "demand": "4,950",
+    "settlement": "نقدی",
+    "final_price": "913659",
+    "diff_percent": -1.01,
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-10-17 13:31"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -4038,11 +4038,11 @@
     "date": "1405/07/25",
     "base_price": "916263",
     "volume": "2500",
-    "demand": "در انتظار رقابت",
-    "settlement": "فولاد خوزستان",
-    "final_price": "0",
+    "demand": "3,000",
+    "settlement": "نقدی",
+    "final_price": "916263",
     "diff_percent": 0.0,
-    "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-17 13:15"
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-17 13:31"
   }
 ]
