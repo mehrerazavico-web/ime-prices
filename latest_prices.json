@@ -3959,7 +3959,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -3973,7 +3973,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -3987,7 +3987,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -4001,7 +4001,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -4015,7 +4015,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "عدم معامله",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -4023,13 +4023,13 @@
     "symbol": "AISC-BSO834X-00",
     "date": "1405/07/25",
     "base_price": "893000",
-    "volume": "4300",
-    "demand": "5,075",
+    "volume": "4850",
+    "demand": "5,625",
     "settlement": "نقدی",
-    "final_price": "913931",
-    "diff_percent": -0.98,
+    "final_price": "914959",
+    "diff_percent": -0.87,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -4043,6 +4043,6 @@
     "final_price": "916263",
     "diff_percent": 0.0,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-10-17 14:19"
+    "final_checked_at": "2026-10-17 14:35"
   }
 ]
