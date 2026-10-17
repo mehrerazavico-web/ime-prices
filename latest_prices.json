@@ -4058,5 +4058,19 @@
     "diff_percent": 0.0,
     "status": "معامله شده",
     "final_checked_at": "2026-10-17 19:27"
+  },
+  {
+    "supplier": "صنعت فولاد شادگان",
+    "product": "ضایعات آهن اسفنجی",
+    "symbol": "SSI-DSMWSTDRI-00",
+    "date": "1405/07/25",
+    "base_price": "113600",
+    "volume": "2000",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-17 19:43"
   }
 ]
