@@ -4604,5 +4604,33 @@
     "diff_percent": 0.0,
     "status": "عدم معامله",
     "final_checked_at": "2026-10-19 19:22"
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "product": "شمش بلوم",
+    "symbol": "ESC-DSMBSO00OO-00",
+    "date": "1405/07/27",
+    "base_price": "715796",
+    "volume": "500",
+    "demand": "0",
+    "settlement": "نقدی / اعتباری",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-19 19:38"
+  },
+  {
+    "supplier": "فولاد کاوه جنوب کیش",
+    "product": "شمش بلوم",
+    "symbol": "SKS-DSMBSO00OO-00",
+    "date": "1405/07/27",
+    "base_price": "731483",
+    "volume": "1800",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-10-19 19:38"
   }
 ]
