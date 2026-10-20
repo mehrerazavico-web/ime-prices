@@ -4632,5 +4632,19 @@
     "diff_percent": 0.0,
     "status": "عدم معامله",
     "final_checked_at": "2026-10-20 01:12"
+  },
+  {
+    "supplier": "فولاد خوزستان",
+    "product": "شمش بلوم (150*150) RST34-2",
+    "symbol": "KSC-BSO494X-00",
+    "date": "1405/07/28",
+    "base_price": "916263",
+    "volume": "1000",
+    "demand": "1,000",
+    "settlement": "نقدی",
+    "final_price": "916263",
+    "diff_percent": 0.0,
+    "status": "معامله شده",
+    "final_checked_at": "2026-10-20 11:37"
   }
 ]
