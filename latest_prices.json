@@ -4659,7 +4659,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -4673,7 +4673,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "جهان فولاد سیرجان",
@@ -4687,7 +4687,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "مجتمع فولاد خراسان",
@@ -4701,7 +4701,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -4715,7 +4715,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -4729,7 +4729,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -4743,7 +4743,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:55"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "فولاد کاوه جنوب کیش",
@@ -4757,7 +4757,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:56"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -4771,7 +4771,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:56"
+    "final_checked_at": "2026-10-21 15:11"
   },
   {
     "supplier": "فولاد غدیر نی ریز",
@@ -4785,7 +4785,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:56"
+    "final_checked_at": "2026-10-21 15:12"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -4799,7 +4799,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:56"
+    "final_checked_at": "2026-10-21 15:12"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -4813,7 +4813,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-10-21 14:56"
+    "final_checked_at": "2026-10-21 15:12"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -4821,12 +4821,12 @@
     "symbol": "KSC-BSO494X-00",
     "date": "1405/07/29",
     "base_price": "916263",
-    "volume": "675",
-    "demand": "675",
+    "volume": "4125",
+    "demand": "4,125",
     "settlement": "نقدی",
     "final_price": "916263",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-10-21 14:56"
+    "final_checked_at": "2026-10-21 15:12"
   }
 ]
