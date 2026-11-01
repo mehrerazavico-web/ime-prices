@@ -87,7 +87,62 @@ jobs:
           admin_env = clean_secret(os.getenv("ADMIN_USERS", ""), "ADMIN_USERS") or "5526517891"
           admin_users = [u.strip() for u in admin_env.split(",") if u.strip().isdigit()] or ["5526517891"]
 
-          # اگر کاربر دستی دکمه Run workflow را زده باشد، پیام تست سلامت به بله بفرست
+          sms_key = clean_secret(os.getenv("SMS_API_KEY", ""), "SMS_API_KEY")
+          sms_line = clean_secret(os.getenv("SMS_LINE_NUMBER", ""), "SMS_LINE_NUMBER") or "30002108004628"
+          mobiles_env = clean_secret(os.getenv("MOBILE_NUMBERS", ""), "MOBILE_NUMBERS") or "09120464215,09123463075"
+          mobiles = [m.strip() for m in mobiles_env.split(",") if m.strip()]
+
+          def send_bale_message(chat_id, text_msg):
+              if not bale_token:
+                  print("⚠️ BALE_TOKEN secret is empty.")
+                  return False
+              url = f"https://tapi.bale.ai/bot{bale_token}/sendMessage"
+              payload = json.dumps({"chat_id": chat_id, "text": text_msg, "parse_mode": "Markdown"}).encode("utf-8")
+              headers = {
+                  "Content-Type": "application/json",
+                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.0.0.0",
+                  "Connection": "close"
+              }
+              # تلاش تا ۴ بار برای عبور از کندی لحظه‌ای اینترنت بین‌الملل به ایران
+              for attempt in range(1, 5):
+                  try:
+                      req = urllib.request.Request(url, data=payload, headers=headers, method="POST")
+                      urllib.request.urlopen(req, timeout=20)
+                      print(f"✅ Bale message sent to {chat_id} (attempt {attempt})")
+                      return True
+                  except Exception as e:
+                      print(f"⚠️ Bale attempt {attempt}/4 to {chat_id} failed: {e}")
+                      time.sleep(3)
+              return False
+
+          def send_sms_alert(text_msg):
+              if not (sms_key and sms_line and mobiles):
+                  return False
+              url = "https://api.sms.ir/v1/send/bulk"
+              payload = json.dumps({
+                  "lineNumber": int("".join(filter(str.isdigit, sms_line))),
+                  "messageText": text_msg,
+                  "mobiles": mobiles,
+                  "sendDateTime": None
+              }).encode("utf-8")
+              headers = {
+                  "X-API-KEY": sms_key,
+                  "Content-Type": "application/json",
+                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.0.0.0",
+                  "Connection": "close"
+              }
+              for attempt in range(1, 5):
+                  try:
+                      req_sms = urllib.request.Request(url, data=payload, headers=headers, method="POST")
+                      urllib.request.urlopen(req_sms, timeout=20)
+                      print(f"✅ SMS alert sent successfully (attempt {attempt})")
+                      return True
+                  except Exception as e:
+                      print(f"⚠️ SMS attempt {attempt}/4 failed: {e}")
+                      time.sleep(3)
+              return False
+
+          # اگر کاربر دکمه Run workflow را دستی زده باشد، پیام تست سلامت به بله بفرست
           if event_name == "workflow_dispatch" and diff_minutes < max_minutes and bot_status != "stopped":
               test_msg = (
                   f"✅ *تست ناظر ابری گیت‌هاب موفقیت‌آمیز بود!*\n\n"
@@ -97,17 +152,7 @@ jobs:
                   f"🛡️ ناظر گیت‌هاب هر ۳۰ دقیقه وضعیت سرور شما را به صورت خودکار چک می‌کند."
               )
               for chat_id in admin_users:
-                  if not bale_token:
-                      print("⚠️ ERROR: BALE_TOKEN secret is empty!")
-                      exit(1)
-                  req = urllib.request.Request(
-                      f"https://tapi.bale.ai/bot{bale_token}/sendMessage",
-                      data=json.dumps({"chat_id": chat_id, "text": test_msg, "parse_mode": "Markdown"}).encode("utf-8"),
-                      headers={"Content-Type": "application/json"},
-                      method="POST"
-                  )
-                  urllib.request.urlopen(req, timeout=12)
-                  print(f"✅ Manual test message successfully sent to Bale ({chat_id})")
+                  send_bale_message(chat_id, test_msg)
               exit(0)
 
           should_alert = False
@@ -130,40 +175,7 @@ jobs:
           )
 
           for chat_id in admin_users:
-              if not bale_token:
-                  break
-              try:
-                  req = urllib.request.Request(
-                      f"https://tapi.bale.ai/bot{bale_token}/sendMessage",
-                      data=json.dumps({"chat_id": chat_id, "text": msg, "parse_mode": "Markdown"}).encode("utf-8"),
-                      headers={"Content-Type": "application/json"},
-                      method="POST"
-                  )
-                  urllib.request.urlopen(req, timeout=12)
-                  print(f"Bale alert sent to {chat_id}")
-              except Exception as e:
-                  print(f"Failed to send Bale alert to {chat_id}: {e}")
+              send_bale_message(chat_id, msg)
 
-          sms_key = clean_secret(os.getenv("SMS_API_KEY", ""), "SMS_API_KEY")
-          sms_line = clean_secret(os.getenv("SMS_LINE_NUMBER", ""), "SMS_LINE_NUMBER") or "30002108004628"
-          mobiles_env = clean_secret(os.getenv("MOBILE_NUMBERS", ""), "MOBILE_NUMBERS") or "09120464215,09123463075"
-          mobiles = [m.strip() for m in mobiles_env.split(",") if m.strip()]
-          if sms_key and sms_line and mobiles:
-              try:
-                  sms_body = {
-                      "lineNumber": int("".join(filter(str.isdigit, sms_line))),
-                      "messageText": f"هشدار ناظر گیت‌هاب:\nربات بورس کالا {diff_minutes} دقیقه است که قطع شده است.\nآخرین پالس: {last_seen_str}",
-                      "mobiles": mobiles,
-                      "sendDateTime": None
-                  }
-                  req_sms = urllib.request.Request(
-                      "https://api.sms.ir/v1/send/bulk",
-                      data=json.dumps(sms_body).encode("utf-8"),
-                      headers={"X-API-KEY": sms_key, "Content-Type": "application/json"},
-                      method="POST"
-                  )
-                  urllib.request.urlopen(req_sms, timeout=12)
-                  print("SMS alert sent.")
-              except Exception as e:
-                  print("SMS alert error:", e)
+          send_sms_alert(f"هشدار ناظر گیت‌هاب:\nربات بورس کالا {diff_minutes} دقیقه است که قطع شده است.\nآخرین پالس: {last_seen_str}")
           EOF
