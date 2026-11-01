@@ -63,15 +63,35 @@ jobs:
           diff_minutes = int((now_ts - last_seen_ts) / 60) if last_seen_ts > 0 else 99999
           print(f"Last bot activity: {diff_minutes} minutes ago ({last_seen_str}) | status={bot_status} | trigger={event_name}")
 
-          bale_token = os.getenv("BALE_TOKEN", "").strip()
-          admin_env = os.getenv("ADMIN_USERS", "").strip() or "5526517891"
-          admin_users = [u.strip() for u in admin_env.split(",") if u.strip()]
+          def clean_secret(raw_val, expected_key=""):
+              if not raw_val:
+                  return ""
+              lines = [l.strip() for l in raw_val.splitlines() if l.strip() and not l.strip().startswith("#")]
+              if not lines:
+                  return ""
+              chosen = lines[0]
+              if expected_key:
+                  for l in lines:
+                      if l.upper().startswith(expected_key.upper() + "="):
+                          chosen = l.split("=", 1)[1].strip()
+                          break
+              if "=" in chosen and ":" not in chosen.split("=", 1)[0]:
+                  chosen = chosen.split("=", 1)[1].strip()
+              chosen = chosen.strip("\"' \t\r\n")
+              return "".join(chosen.split())
+
+          bale_token = clean_secret(os.getenv("BALE_TOKEN", ""), "BALE_TOKEN")
+          if bale_token.lower().startswith("bot"):
+              bale_token = bale_token[3:]
+
+          admin_env = clean_secret(os.getenv("ADMIN_USERS", ""), "ADMIN_USERS") or "5526517891"
+          admin_users = [u.strip() for u in admin_env.split(",") if u.strip().isdigit()] or ["5526517891"]
 
           # اگر کاربر دستی دکمه Run workflow را زده باشد، پیام تست سلامت به بله بفرست
           if event_name == "workflow_dispatch" and diff_minutes < max_minutes and bot_status != "stopped":
               test_msg = (
                   f"✅ *تست ناظر ابری گیت‌هاب موفقیت‌آمیز بود!*\n\n"
-                  f"🟢 *وضعیت ربات سرور شخصی:* `آنلاین و فعال`\n"
+                  f"🟢 *وضعیت ربات سرور شخصی:* `آنلاین و فعال ({bot_status})`\n"
                   f"⏱️ *آخرین فعالیت ثبت‌شده:* `{diff_minutes} دقیقه پیش`\n"
                   f"🕒 *زمان آخرین آپدیت:* `{last_seen_str}`\n"
                   f"🛡️ ناظر گیت‌هاب هر ۳۰ دقیقه وضعیت سرور شما را به صورت خودکار چک می‌کند."
@@ -124,9 +144,9 @@ jobs:
               except Exception as e:
                   print(f"Failed to send Bale alert to {chat_id}: {e}")
 
-          sms_key = os.getenv("SMS_API_KEY", "").strip()
-          sms_line = os.getenv("SMS_LINE_NUMBER", "").strip() or "30002108004628"
-          mobiles_env = os.getenv("MOBILE_NUMBERS", "").strip() or "09120464215,09123463075"
+          sms_key = clean_secret(os.getenv("SMS_API_KEY", ""), "SMS_API_KEY")
+          sms_line = clean_secret(os.getenv("SMS_LINE_NUMBER", ""), "SMS_LINE_NUMBER") or "30002108004628"
+          mobiles_env = clean_secret(os.getenv("MOBILE_NUMBERS", ""), "MOBILE_NUMBERS") or "09120464215,09123463075"
           mobiles = [m.strip() for m in mobiles_env.split(",") if m.strip()]
           if sms_key and sms_line and mobiles:
               try:
