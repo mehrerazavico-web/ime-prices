@@ -1,7 +1,7 @@
 {
-  "timestamp_utc": 1793556561,
-  "last_seen_utc": "2026-11-01T18:09:21Z",
-  "last_seen_local": "2026-11-01 21:39:21",
-  "status": "alive",
+  "timestamp_utc": 1793561510,
+  "last_seen_utc": "2026-11-01T19:31:50Z",
+  "last_seen_local": "2026-11-01 23:01:50",
+  "status": "started",
   "host": "FaraGostar-SRV"
 }
