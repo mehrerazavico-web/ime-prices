@@ -1,0 +1,137 @@
+# ==============================================================================
+# ناظر ابری ۲۴ ساعته گیت‌هاب (GitHub Actions Cloud Watchdog)
+# مسیر قرارگیری این فایل در مخزن گیت‌هاب شما (mehrerazavico-web/ime-prices):
+# .github/workflows/watchdog.yml
+# ==============================================================================
+# نحوه کارکرد:
+# ۱. این فایل روی سرورهای ابری گیت‌هاب (بدون قطعی برق یا اینترنت) هر ۳۰ دقیقه یک‌بار بیدار می‌شود.
+# ۲. آخرین زمان پالس ربات سرور شخصی شما (از فایل bot_heartbeat.json یا آخرین کامیت مخزن) را چک می‌کند.
+# ۳. اگر بیش از ۴۵ دقیقه از آخرین فعالیت ربات گذشته باشد (مثلاً برق یا اینترنت سرور شخصی قطع شده باشد
+#    یا ویندوز خاموش شده باشد)، مستقیماً از سرور گیت‌هاب به «بله» و «پیامک» شما هشدار می‌فرستد!
+# ==============================================================================
+
+name: IME Bot Cloud Watchdog (24/7)
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # اجرای خودکار هر ۳۰ دقیقه روی سرورهای ابری گیت‌هاب
+  workflow_dispatch:          # امکان اجرای دستی با دکمه Run workflow برای تست
+
+permissions:
+  contents: write
+
+jobs:
+  check-bot-heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Personal Server Heartbeat & Alert via Bale/SMS
+        env:
+          BALE_TOKEN: ${{ secrets.BALE_TOKEN }}
+          ADMIN_USERS: ${{ secrets.ADMIN_USERS }}
+          SMS_API_KEY: ${{ secrets.SMS_API_KEY }}
+          SMS_LINE_NUMBER: ${{ secrets.SMS_LINE_NUMBER }}
+          MOBILE_NUMBERS: ${{ secrets.MOBILE_NUMBERS }}
+          MAX_OFFLINE_MINUTES: "45"
+        run: |
+          python3 - << 'EOF'
+          import os, json, time, subprocess, urllib.request
+          from datetime import datetime, timezone
+
+          max_minutes = int(os.getenv("MAX_OFFLINE_MINUTES", "45"))
+          now_ts = int(time.time())
+          last_seen_ts = 0
+          last_seen_str = "نامشخص"
+          bot_status = "unknown"
+
+          # ۱. بررسی فایل پالس ضربان قلب (bot_heartbeat.json) که ربات در هر چرخه آپدیت می‌کند
+          if os.path.exists("bot_heartbeat.json"):
+              try:
+                  with open("bot_heartbeat.json", "r", encoding="utf-8") as f:
+                      hb = json.load(f)
+                      last_seen_ts = int(hb.get("timestamp_utc", 0))
+                      last_seen_str = hb.get("last_seen_local") or hb.get("last_seen_utc") or "نامشخص"
+                      bot_status = hb.get("status", "unknown")
+              except Exception as e:
+                  print("Error reading bot_heartbeat.json:", e)
+
+          # ۲. پشتیبان: اگر هنوز bot_heartbeat.json ساخته نشده، زمان آخرین کامیت latest_prices.json را بگیر
+          if last_seen_ts <= 0:
+              try:
+                  out = subprocess.check_output(
+                      ["git", "log", "-1", "--format=%ct|%ci", "--", "latest_prices.json"],
+                      text=True
+                  ).strip()
+                  if "|" in out:
+                      ts_s, date_s = out.split("|", 1)
+                      last_seen_ts = int(ts_s)
+                      last_seen_str = date_s
+              except Exception as e:
+                  print("Git log fallback error:", e)
+
+          diff_minutes = int((now_ts - last_seen_ts) / 60) if last_seen_ts > 0 else 99999
+          print(f"Last bot activity: {diff_minutes} minutes ago ({last_seen_str}) | status={bot_status}")
+
+          # جلوگیری از ارسال پیام تکراری در هر ۳۰ دقیقه (ارسال در دقیقه ۴۵، ۱۸۰، ۳۶۰ و ...)
+          should_alert = False
+          if bot_status == "stopped" and diff_minutes <= 60:
+              should_alert = True
+          elif diff_minutes >= max_minutes:
+              # بار اول (بین ۴۵ تا ۷۵ دقیقه) یا هر ۳ ساعت یک‌بار یادآوری کن تا زمان وصل شدن مجدد
+              if diff_minutes < (max_minutes + 35) or (diff_minutes % 180) < 30:
+                  should_alert = True
+
+          if not should_alert:
+              print("✅ Bot is online and healthy (or alert already sent recently).")
+              exit(0)
+
+          bale_token = os.getenv("BALE_TOKEN", "").strip()
+          admin_users = [u.strip() for u in os.getenv("ADMIN_USERS", "").split(",") if u.strip()]
+
+          msg = (
+              f"🚨 *هشدار ناظر ابری گیت‌هاب (Cloud Watchdog)*\n\n"
+              f"⚠️ *ربات سرور شخصی شما متوقف یا قطع شده است!*\n"
+              f"⏱️ *مدت زمان عدم پاسخ:* `{diff_minutes} دقیقه`\n"
+              f"🕒 *آخرین پالس دریافتی:* `{last_seen_str}`\n"
+              f"🔌 *علت احتمالی:* قطعی برق یا اینترنت سرور، بسته شدن پنجره CMD یا خاموش شدن ویندوز."
+          )
+
+          for chat_id in admin_users:
+              if not bale_token:
+                  break
+              try:
+                  req = urllib.request.Request(
+                      f"https://tapi.bale.ai/bot{bale_token}/sendMessage",
+                      data=json.dumps({"chat_id": chat_id, "text": msg, "parse_mode": "Markdown"}).encode("utf-8"),
+                      headers={"Content-Type": "application/json"},
+                      method="POST"
+                  )
+                  urllib.request.urlopen(req, timeout=12)
+                  print(f"Bale alert sent to {chat_id}")
+              except Exception as e:
+                  print(f"Failed to send Bale alert to {chat_id}: {e}")
+
+          sms_key = os.getenv("SMS_API_KEY", "").strip()
+          sms_line = os.getenv("SMS_LINE_NUMBER", "").strip()
+          mobiles = [m.strip() for m in os.getenv("MOBILE_NUMBERS", "").split(",") if m.strip()]
+          if sms_key and sms_line and mobiles:
+              try:
+                  sms_body = {
+                      "lineNumber": int("".join(filter(str.isdigit, sms_line))),
+                      "messageText": f"هشدار ناظر گیت‌هاب:\nربات بورس کالا {diff_minutes} دقیقه است که قطع شده است.\nآخرین پالس: {last_seen_str}",
+                      "mobiles": mobiles,
+                      "sendDateTime": None
+                  }
+                  req_sms = urllib.request.Request(
+                      "https://api.sms.ir/v1/send/bulk",
+                      data=json.dumps(sms_body).encode("utf-8"),
+                      headers={"X-API-KEY": sms_key, "Content-Type": "application/json"},
+                      method="POST"
+                  )
+                  urllib.request.urlopen(req_sms, timeout=12)
+                  print("SMS alert sent.")
+              except Exception as e:
+                  print("SMS alert error:", e)
+          EOF
