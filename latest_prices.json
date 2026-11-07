@@ -11,7 +11,7 @@
     "final_price": "1230000",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-11-07 15:44"
+    "final_checked_at": "2026-11-07 16:00"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -25,7 +25,7 @@
     "final_price": "1140000",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-11-07 15:44"
+    "final_checked_at": "2026-11-07 16:00"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -33,13 +33,13 @@
     "symbol": "AISC-BSO824X-00",
     "date": "1405/08/16",
     "base_price": "925300",
-    "volume": "5000",
-    "demand": "6,000",
+    "volume": "5500",
+    "demand": "6,500",
     "settlement": "نقدی",
-    "final_price": "944401",
-    "diff_percent": 2.06,
+    "final_price": "942664",
+    "diff_percent": 1.88,
     "status": "معامله قطعی (حراج + مچینگ)",
-    "final_checked_at": "2026-11-07 15:44"
+    "final_checked_at": "2026-11-07 16:00"
   },
   {
     "supplier": "مجتمع معدنی و صنعت آهن و فولاد بافق",
