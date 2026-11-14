@@ -5,13 +5,13 @@
     "symbol": "KSC-BSO494X-00",
     "date": "1405/08/23",
     "base_price": "895000",
-    "volume": "14500",
-    "demand": "14,600",
+    "volume": "15000",
+    "demand": "15,100",
     "settlement": "نقدی",
     "final_price": "895000",
     "diff_percent": 0.0,
-    "status": "معامله شده",
-    "final_checked_at": "2026-11-14 14:57"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -25,7 +25,7 @@
     "final_price": "1230000",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-11-14 14:57"
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "فولاد روهینا جنوب",
@@ -39,7 +39,7 @@
     "final_price": "1125200",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-11-14 14:57"
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "آهن و فولاد ارفع",
@@ -53,7 +53,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-11-14 14:56"
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -61,13 +61,13 @@
     "symbol": "FZI-BSO494X-00",
     "date": "1405/08/23",
     "base_price": "903458",
-    "volume": "750",
-    "demand": "1,250",
+    "volume": "3000",
+    "demand": "3,500",
     "settlement": "نقدی",
     "final_price": "903458",
     "diff_percent": 0.0,
-    "status": "معامله شده",
-    "final_checked_at": "2026-11-14 14:57"
+    "status": "معامله قطعی (حراج + مچینگ)",
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "شرکت فولاد زرند ایرانیان",
@@ -81,7 +81,7 @@
     "final_price": "0",
     "diff_percent": 0.0,
     "status": "در انتظار معامله",
-    "final_checked_at": "2026-11-14 14:57"
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "فولاد خوزستان",
@@ -95,7 +95,7 @@
     "final_price": "936526",
     "diff_percent": 0.0,
     "status": "معامله شده",
-    "final_checked_at": "2026-11-14 14:57"
+    "final_checked_at": "2026-11-14 15:12"
   },
   {
     "supplier": "مجتمع فولاد خراسان",
