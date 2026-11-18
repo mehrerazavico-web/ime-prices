@@ -252,6 +252,34 @@
     "final_checked_at": "2026-11-18 19:26"
   },
   {
+    "supplier": "صنعت فولاد شادگان",
+    "product": "ضایعات آهن اسفنجی",
+    "symbol": "SSI-DSMWSTDRI-00",
+    "date": "1405/08/27",
+    "base_price": "125000",
+    "volume": "2000",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-11-18 19:42"
+  },
+  {
+    "supplier": "صنعت فولاد شادگان",
+    "product": "ضایعات لجن آهن اسفنجی",
+    "symbol": "SSI-DSMDRISLGWST-00",
+    "date": "1405/08/27",
+    "base_price": "58000",
+    "volume": "2000",
+    "demand": "0",
+    "settlement": "نقدی",
+    "final_price": "0",
+    "diff_percent": 0.0,
+    "status": "عدم معامله",
+    "final_checked_at": "2026-11-18 19:42"
+  },
+  {
     "supplier": "شرکت معدنی وصنعتی چادرملو",
     "product": "شمش بلوم (150*150)5SP",
     "symbol": "CHMI-BSG194X-00",
