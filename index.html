@@ -445,6 +445,177 @@
       height: 14px;
     }
 
+    /* Codal Fakhuz Benchmark Bar */
+    .codal-fakhuz-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.11), rgba(197, 160, 89, 0.04));
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      animation: fadeIn 0.25s ease;
+    }
+
+    .codal-fakhuz-right {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .codal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .codal-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .codal-period-tag {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      background: rgba(197, 160, 89, 0.16);
+      padding: 1px 6px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .codal-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+
+    .codal-price-val {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--accent-gold);
+      letter-spacing: -0.3px;
+    }
+
+    .codal-price-unit {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* Category Weekly Average Box */
+    .category-weekly-box {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 9px 12px;
+      margin-bottom: 10px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(56, 142, 60, 0.10), rgba(56, 142, 60, 0.03));
+      border: 1px solid rgba(56, 142, 60, 0.30);
+      animation: fadeIn 0.22s ease;
+    }
+
+    .cat-weekly-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .cat-weekly-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .cat-weekly-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cat-weekly-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cat-weekly-price {
+      font-size: 14.5px;
+      font-weight: 900;
+      color: var(--green-trend);
+      letter-spacing: -0.3px;
+    }
+
+    .cat-weekly-sub {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 10.5px;
+      color: var(--text-secondary);
+    }
+
+    .cat-weekly-ratio {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      white-space: nowrap;
+    }
+
+    /* Archive Toggle Button inside 2-column Grid */
+    .archive-toggle-btn {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 11px 14px;
+      margin: 4px 0 2px;
+      border-radius: 14px;
+      background: var(--surface-main);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.12s ease;
+    }
+
+    .archive-toggle-btn:active {
+      transform: scale(0.985);
+      background: var(--btn-hover);
+    }
+
+    .archive-toggle-right {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
     /* Status Indicator */
     .status-badge {
       display: flex;
@@ -1640,6 +1811,9 @@
 
     <!-- View 1: Price Board -->
     <div id="view-board">
+      <!-- Latest Codal Fakhuz Average Benchmark Bar -->
+      <div id="codal-fakhuz-bar" class="codal-fakhuz-bar" style="display: none;"></div>
+
       <!-- Search Input (Toggled) -->
       <div class="search-box" id="search-box-wrapper" style="display: none;">
         <input type="text" id="search-input" placeholder="جستجو در کالا، کارخانه یا تاریخ...">
@@ -1653,6 +1827,9 @@
 
       <!-- Category Chips Slider with Circular Colored Badges -->
       <div class="categories-bar" id="categories-container"></div>
+
+      <!-- Category Weekly Average Box (Visible when a specific category is selected) -->
+      <div id="category-weekly-box" class="category-weekly-box" style="display: none;"></div>
 
       <!-- Status Badge -->
       <div class="status-badge">
@@ -1904,6 +2081,28 @@
         return parts[0] * 10000 + parts[1] * 100 + parts[2];
       }
       return 0;
+    }
+
+    function parseJalaliDayNumber(dateStr) {
+      if (!dateStr) return 0;
+      const clean = String(dateStr).trim()
+        .replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+        .replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+      const parts = clean.split(/[\/\-]/).map(p => parseInt(p.trim(), 10));
+      if (parts.length !== 3 || parts.some(isNaN)) return 0;
+      const year = parts[0];
+      const month = Math.min(12, Math.max(1, parts[1]));
+      const day = Math.min(31, Math.max(1, parts[2]));
+      if (year < 1300) return 0;
+
+      const leapRemainders = new Set([1, 5, 9, 13, 17, 22, 26, 30]);
+      let leapDays = 0;
+      for (let yr = 1300; yr < year; yr++) {
+        if (leapRemainders.has(yr % 33)) leapDays++;
+      }
+      const yearDays = (year - 1300) * 365 + leapDays;
+      const monthDays = month <= 6 ? (month - 1) * 31 : 186 + (month - 7) * 30;
+      return yearDays + monthDays + day;
     }
 
     function formatDateLabel(dateStr) {
@@ -2163,8 +2362,10 @@
     let allItems = [];
     let allHistoricalItems = [];
     let allRawLatestItems = [];
+    let marketBenchmarks = null;
     let selectedCategory = "همه";
     let searchQuery = "";
+    let showArchivedItems = false;
     let currentModalItem = null;
     let selectedChartMonths = 12;
 
@@ -2188,7 +2389,107 @@
 
     function setCategory(cat) {
       selectedCategory = cat;
+      showArchivedItems = false;
       renderCategories();
+      renderCategoryWeeklyBox();
+      renderCards();
+    }
+
+    function renderCodalFakhuzBar() {
+      const bar = document.getElementById('codal-fakhuz-bar');
+      if (!bar) return;
+      const codal = marketBenchmarks && marketBenchmarks.codal_fakhuz;
+      const avgPrice = codal ? (codal.fakhuz_avg_price_rial || codal.bloom_billet_price_rial || codal.domestic_bloom_billet_rial || 0) : 0;
+      if (!codal || avgPrice <= 0) {
+        bar.style.display = 'none';
+        return;
+      }
+      const periodHtml = codal.report_period
+        ? `<span class="codal-period-tag">${toPersianDigits(codal.report_period)}</span>`
+        : '';
+      bar.innerHTML = `
+        <div class="codal-fakhuz-right">
+          <span class="codal-dot"></span>
+          <span class="codal-label">آخرین قیمت کدال فخوز:</span>
+          ${periodHtml}
+        </div>
+        <div class="codal-price-wrap">
+          <span class="codal-price-val">${formatAmount(avgPrice)}</span>
+          <span class="codal-price-unit">ریال</span>
+        </div>
+      `;
+      bar.style.display = 'flex';
+    }
+
+    function renderCategoryWeeklyBox() {
+      const box = document.getElementById('category-weekly-box');
+      if (!box) return;
+      if (selectedCategory === "همه" || !marketBenchmarks || !Array.isArray(marketBenchmarks.category_weekly_averages)) {
+        box.style.display = 'none';
+        return;
+      }
+      const stats = marketBenchmarks.category_weekly_averages.find(c => (c.category || '').trim() === selectedCategory.trim());
+      if (!stats) {
+        box.style.display = 'none';
+        return;
+      }
+      const prevAvg = Number(stats.prev_week_avg_rial || 0);
+      const curAvg = Number(stats.current_week_avg_rial || 0);
+      if (prevAvg <= 0 && curAvg <= 0) {
+        box.style.display = 'none';
+        return;
+      }
+
+      const primaryPrice = prevAvg > 0 ? prevAvg : curAvg;
+      const primaryLabel = prevAvg > 0
+        ? `میانگین هفته گذشته ${selectedCategory}:`
+        : `میانگین هفته جاری ${selectedCategory}:`;
+
+      const hasCurrentWeek = prevAvg > 0 && curAvg > 0;
+      const changePct = typeof stats.weekly_change_percent === 'number' ? stats.weekly_change_percent : null;
+      let leftSubHtml = '';
+      if (hasCurrentWeek) {
+        let chgSpan = '';
+        if (changePct !== null && changePct !== 0) {
+          const isUp = changePct > 0;
+          const color = isUp ? 'var(--green-trend)' : 'var(--red-trend)';
+          const arrow = isUp ? '↑' : '↓';
+          chgSpan = `<span style="color: ${color}; font-weight: 700; margin-right: 4px;">${arrow} ${toPersianDigits(Math.abs(changePct).toFixed(1))}٪</span>`;
+        }
+        leftSubHtml = `<span>هفته جاری: ${formatAmount(curAvg)} ریال${chgSpan}</span>`;
+      } else if (stats.prev_week_range) {
+        leftSubHtml = `<span>بازه: ${toPersianDigits(stats.prev_week_range)}</span>`;
+      }
+
+      const ratioPct = typeof stats.fakhuz_codal_ratio_percent === 'number' ? stats.fakhuz_codal_ratio_percent : null;
+      const ratioHtml = (ratioPct && ratioPct > 0)
+        ? `<span class="cat-weekly-ratio">${toPersianDigits(ratioPct.toFixed(1))}٪ کدال فخوز</span>`
+        : '';
+
+      const subRowHtml = (leftSubHtml || ratioHtml)
+        ? `<div class="cat-weekly-sub">${leftSubHtml || '<span></span>'}${ratioHtml}</div>`
+        : '';
+
+      box.innerHTML = `
+        <div class="cat-weekly-top">
+          <div class="cat-weekly-title-wrap">
+            <div class="cat-weekly-icon" style="background: ${getCommodityGradient(selectedCategory)}">
+              ${getCommodityIconSvg(selectedCategory, 13)}
+            </div>
+            <span class="cat-weekly-title">${primaryLabel}</span>
+          </div>
+          <div class="codal-price-wrap">
+            <span class="cat-weekly-price">${formatAmount(primaryPrice)}</span>
+            <span class="codal-price-unit">ریال</span>
+          </div>
+        </div>
+        ${subRowHtml}
+      `;
+      box.style.display = 'flex';
+    }
+
+    function toggleArchivedItems() {
+      showArchivedItems = !showArchivedItems;
       renderCards();
     }
 
@@ -2239,9 +2540,11 @@
       if (updateElem) updateElem.innerText = 'بورس کالا • در حال دریافت...';
 
       try {
-        const [latestRes, histRes] = await Promise.allSettled([
-          fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/latest_prices.json?t=" + Date.now()),
-          fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/historical_prices.json?t=" + Date.now())
+        const ts = Date.now();
+        const [latestRes, histRes, benchRes] = await Promise.allSettled([
+          fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/latest_prices.json?t=" + ts),
+          fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/historical_prices.json?t=" + ts),
+          fetch("https://raw.githubusercontent.com/mehrerazavico-web/ime-prices/main/market_benchmarks.json?t=" + ts)
         ]);
 
         let rawLatest = [];
@@ -2259,11 +2562,19 @@
           rawHist = Array.isArray(hData) ? hData : (hData.items || hData.items_list || hData.data || []);
         }
 
+        if (benchRes.status === 'fulfilled' && benchRes.value.ok) {
+          try {
+            marketBenchmarks = await benchRes.value.json();
+          } catch (_) {}
+        }
+
         allRawLatestItems = rawLatest;
         allHistoricalItems = rawHist;
         allItems = consolidateSupplies([...rawLatest, ...rawHist]);
 
         if (updateElem) updateElem.innerText = 'بورس کالا • بروزرسانی: ' + updatedAt;
+        renderCodalFakhuzBar();
+        renderCategoryWeeklyBox();
         renderCards();
       } catch (err) {
         if (updateElem) updateElem.innerText = 'بورس کالا • خطا در ارتباط';
@@ -2292,13 +2603,75 @@
       }
     });
 
-    // Render Cards
+    // Helper to build a single card HTML with uniform styling
+    function buildPriceCardHtml(item, idx) {
+      const isTraded = item.is_traded;
+      const primaryPrice = isTraded ? item.final_price : item.base_price;
+      const priceLabel = isTraded ? "پایانی" : "پایه";
+      const isCredit = item.is_credit;
+
+      const shortSupplier = (item.supplier || "")
+        .replace("معدنی و صنعتی", "")
+        .replace("شرکت", "")
+        .replace("سنگ آهن", "")
+        .trim();
+
+      const diff = item.diff_percent;
+      let trendHtml = `<span class="trend-zero">پایه: ${formatAmount(item.base_price)}</span>`;
+      if (diff !== null && diff !== undefined) {
+        if (diff > 0) {
+          trendHtml = `<span class="trend-up">↑ ٪${toPersianDigits(diff.toFixed(2))}</span>`;
+        } else if (diff < 0) {
+          trendHtml = `<span class="trend-down">↓ ٪${toPersianDigits(Math.abs(diff).toFixed(2))}</span>`;
+        } else {
+          trendHtml = `<span class="trend-zero">— بدون رقابت</span>`;
+        }
+      }
+
+      const iconBg = getCommodityGradient(item.product);
+      const iconSvg = getCommodityIconSvg(item.product, 22);
+
+      return `
+        <div class="price-card" onclick="openDetailModalByIndex(${idx})">
+          <div class="card-top">
+            <div class="card-icon" style="background: ${iconBg};">
+              ${iconSvg}
+            </div>
+            <div class="card-info">
+              <div class="supplier-name">${shortSupplier}</div>
+              <div class="product-name">${item.product || ''}</div>
+            </div>
+          </div>
+
+          <div class="card-trend">${trendHtml}</div>
+
+          <div class="card-price-row">
+            <div class="price-val ${isTraded ? 'traded-green' : ''}">${formatAmount(primaryPrice)}</div>
+            <div class="price-tag">${priceLabel}</div>
+          </div>
+
+          <div class="card-bottom-info">
+            <div>${item.date ? item.date + ' • ' : ''}${formatAmount(item.volume)} تن</div>
+            <div class="${isCredit ? 'credit-badge' : ''}">${isCredit ? 'اعتباری / سلف' : 'نقدی'}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Render Cards (with 14-day freshness filter on board/categories + full archive in search or optional toggle)
     function renderCards() {
       const container = document.getElementById('cards-container');
       const countBadge = document.getElementById('item-count-badge');
       const q = cleanSearchText(searchQuery);
+      const isSearching = !!q;
 
-      const filtered = allItems.filter(item => {
+      let latestBoardDayNumber = 0;
+      allItems.forEach(it => {
+        const d = parseJalaliDayNumber(it.date);
+        if (d > latestBoardDayNumber) latestBoardDayNumber = d;
+      });
+
+      const matched = allItems.filter(item => {
         let matchesCategory = false;
         if (selectedCategory === "همه") {
           matchesCategory = true;
@@ -2320,9 +2693,29 @@
         return matchesCategory && matchesSearch;
       });
 
-      if (countBadge) countBadge.innerText = `${toPersianDigits(filtered.length)} نماد فعال`;
+      let activeItems = [];
+      let archivedItems = [];
 
-      if (filtered.length === 0) {
+      if (isSearching || latestBoardDayNumber <= 0) {
+        activeItems = matched;
+      } else {
+        matched.forEach(item => {
+          const itemDay = parseJalaliDayNumber(item.date);
+          if (itemDay > 0 && (latestBoardDayNumber - itemDay) <= 14) {
+            activeItems.push(item);
+          } else {
+            archivedItems.push(item);
+          }
+        });
+      }
+
+      if (countBadge) {
+        countBadge.innerText = isSearching
+          ? `${toPersianDigits(activeItems.length)} نتیجه جستجو`
+          : `${toPersianDigits(activeItems.length)} نماد فعال (۱۴ روز اخیر)`;
+      }
+
+      if (activeItems.length === 0 && archivedItems.length === 0) {
         container.innerHTML = `
           <div style="grid-column: 1/-1; text-align: center; padding: 48px 16px; color: var(--text-secondary);">
             <div style="font-size: 32px; margin-bottom: 8px;">🔍</div>
@@ -2330,64 +2723,54 @@
             <div style="font-size: 12px; margin-top: 4px;">لطفاً عبارت جستجو یا دسته‌بندی دیگری را انتخاب کنید.</div>
           </div>
         `;
+        window.currentRenderedItems = [];
         return;
       }
 
-      container.innerHTML = filtered.map((item, idx) => {
-        const isTraded = item.is_traded;
-        const primaryPrice = isTraded ? item.final_price : item.base_price;
-        const priceLabel = isTraded ? "پایانی" : "پایه";
-        const isCredit = item.is_credit;
+      const renderedItems = [];
+      let htmlParts = [];
 
-        const shortSupplier = (item.supplier || "")
-          .replace("معدنی و صنعتی", "")
-          .replace("شرکت", "")
-          .replace("سنگ آهن", "")
-          .trim();
-
-        const diff = item.diff_percent;
-        let trendHtml = `<span class="trend-zero">پایه: ${formatAmount(item.base_price)}</span>`;
-        if (diff !== null && diff !== undefined) {
-          if (diff > 0) {
-            trendHtml = `<span class="trend-up">↑ ٪${toPersianDigits(diff.toFixed(2))}</span>`;
-          } else if (diff < 0) {
-            trendHtml = `<span class="trend-down">↓ ٪${toPersianDigits(Math.abs(diff).toFixed(2))}</span>`;
-          } else {
-            trendHtml = `<span class="trend-zero">— بدون رقابت</span>`;
-          }
-        }
-
-        const iconBg = getCommodityGradient(item.product);
-        const iconSvg = getCommodityIconSvg(item.product, 22);
-
-        return `
-          <div class="price-card" onclick="openDetailModalByIndex(${idx})">
-            <div class="card-top">
-              <div class="card-icon" style="background: ${iconBg};">
-                ${iconSvg}
-              </div>
-              <div class="card-info">
-                <div class="supplier-name">${shortSupplier}</div>
-                <div class="product-name">${item.product || ''}</div>
-              </div>
-            </div>
-
-            <div class="card-trend">${trendHtml}</div>
-
-            <div class="card-price-row">
-              <div class="price-val ${isTraded ? 'traded-green' : ''}">${formatAmount(primaryPrice)}</div>
-              <div class="price-tag">${priceLabel}</div>
-            </div>
-
-            <div class="card-bottom-info">
-              <div>${item.date ? item.date + ' • ' : ''}${formatAmount(item.volume)} تن</div>
-              <div class="${isCredit ? 'credit-badge' : ''}">${isCredit ? 'اعتباری / سلف' : 'نقدی'}</div>
-            </div>
+      if (activeItems.length === 0 && !isSearching) {
+        htmlParts.push(`
+          <div style="grid-column: 1/-1; text-align: center; padding: 20px 12px; color: var(--text-secondary); font-size: 12.5px;">
+            در ۱۴ روز اخیر عرضه‌ای برای این بخش ثبت نشده است
           </div>
-        `;
-      }).join('');
+        `);
+      }
 
-      window.currentRenderedItems = filtered;
+      activeItems.forEach(item => {
+        const idx = renderedItems.length;
+        renderedItems.push(item);
+        htmlParts.push(buildPriceCardHtml(item, idx));
+      });
+
+      if (!isSearching && archivedItems.length > 0) {
+        const toggleText = showArchivedItems
+          ? `آرشیو عرضه‌های قدیمی‌تر از ۱۴ روز (${toPersianDigits(archivedItems.length)} مورد)`
+          : `نمایش ${toPersianDigits(archivedItems.length)} عرضه قدیمی‌تر (بیش از ۱۴ روز)`;
+        const chevron = showArchivedItems ? '▲' : '▼';
+
+        htmlParts.push(`
+          <button type="button" class="archive-toggle-btn" onclick="toggleArchivedItems()">
+            <span class="archive-toggle-right">
+              <span>🕘</span>
+              <span>${toggleText}</span>
+            </span>
+            <span style="font-size: 11px;">${chevron}</span>
+          </button>
+        `);
+
+        if (showArchivedItems) {
+          archivedItems.forEach(item => {
+            const idx = renderedItems.length;
+            renderedItems.push(item);
+            htmlParts.push(buildPriceCardHtml(item, idx));
+          });
+        }
+      }
+
+      container.innerHTML = htmlParts.join('');
+      window.currentRenderedItems = renderedItems;
     }
 
     function openDetailModalByIndex(idx) {

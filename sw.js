@@ -1,4 +1,4 @@
-const CACHE_NAME = 'radar-mehr-razavi-v31';
+const CACHE_NAME = 'radar-mehr-razavi-v32';
 const ASSETS_TO_CACHE = [
   '/',
   '/manifest.json',
@@ -33,7 +33,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = event.request.url;
 
-  if (event.request.mode === 'navigate' || url.endsWith('.html') || url.includes('prices.json')) {
+  if (event.request.mode === 'navigate' || url.endsWith('.html') || url.includes('prices.json') || url.includes('market_benchmarks.json')) {
     event.respondWith(
       fetch(event.request)
         .then((networkResponse) => {
