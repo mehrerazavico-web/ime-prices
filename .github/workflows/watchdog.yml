@@ -2,7 +2,7 @@ name: IME Bot Cloud Watchdog (24/7)
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '13,43 * * * *'
   workflow_dispatch:
 
 permissions:
