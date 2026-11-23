@@ -1,6 +1,6 @@
 {
-  "updated_at": "1405/09/02 - 06:59",
-  "updated_at_utc": "2026-11-23T03:29:51Z",
+  "updated_at": "1405/09/02 - 13:09",
+  "updated_at_utc": "2026-11-23T09:39:52Z",
   "bot_version": "codal-benchmarks-v1.2",
   "calendar_weeks": {
     "week_rule": "هفته تقویمی شمسی (شنبه تا جمعه) · منحصراً معاملات قطعی انجام‌شده (بدون عدم معامله و بدون قیمت پایه)",
@@ -26,7 +26,7 @@
   "codal_fakhuz": {
     "report_period": "مهر 1405",
     "report_end_date": "1405/07/30",
-    "publish_date": "1405/08/04",
+    "publish_date": "1405/09/02",
     "formula_description": "میانگین ساده نرخ‌های غیرصفر ۴ ردیف ماه اخیر (اسلب و بلوم/بیلت داخلی و صادراتی)",
     "fakhuz_avg_price_rial": 739733,
     "fakhuz_avg_price_rial_per_ton": 739732552,
@@ -55,7 +55,7 @@
     "slab_price_rial": 756193,
     "ime_weekly_billet_avg_rial": 957434,
     "ime_prev_week_billet_avg_rial": 912847,
-    "source_url": "https://codal.ir/Reports/Decision.aspx?LetterSerial=kUIIYhFWVXNWiFwtbcGYiQ%3d%3d&rt=0&let=58&ct=0&ft=-1",
+    "source_url": "https://codal.ir/Reports/Decision.aspx?LetterSerial=m1IdEfzqR0ARs64QcchA4Q%3d%3d&rt=0&let=58&ct=0&ft=-1",
     "source_type": "codal_live",
     "formula_benchmarks": {
       "concentrate_coeff_percent": 16.7,
@@ -75,24 +75,24 @@
   "category_weekly_averages": [
     {
       "category": "گندله",
-      "current_week_avg_rial": 212492,
-      "current_week_volume_tons": 285500,
-      "current_week_trades_count": 8,
+      "current_week_avg_rial": 212971,
+      "current_week_volume_tons": 348500,
+      "current_week_trades_count": 12,
       "current_week_range": "1405/08/30 تا 1405/09/06",
       "prev_week_avg_rial": 202195,
       "prev_week_volume_tons": 502250,
       "prev_week_trades_count": 14,
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "two_weeks_ago_avg_rial": 205196,
-      "weekly_change_percent": 5.09,
+      "weekly_change_percent": 5.33,
       "prev_week_change_percent": -1.46,
-      "total_traded_volume_tons": 285500,
-      "trades_count": 8,
+      "total_traded_volume_tons": 348500,
+      "trades_count": 12,
       "ratio_basis_week": "current_week",
-      "fakhuz_codal_ratio_percent": 28.73,
+      "fakhuz_codal_ratio_percent": 28.79,
       "prev_week_fakhuz_ratio_percent": 27.33,
-      "codal_ratio_percent": 28.73,
-      "ime_billet_ratio_percent": 22.19
+      "codal_ratio_percent": 28.79,
+      "ime_billet_ratio_percent": 22.24
     },
     {
       "category": "کنسانتره",
@@ -292,8 +292,8 @@
       "category": "گندله",
       "ime_symbol": "SMO-PELL-00",
       "current_week_avg_rial": 207660,
-      "current_week_volume_tons": 59000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 60000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 197118,
       "prev_week_volume_tons": 36000,
       "prev_week_trades_count": 2,
@@ -301,10 +301,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.35,
       "fakhuz_codal_ratio_percent": 28.07,
-      "total_traded_volume_tons": 59000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 60000,
+      "trades_count": 2,
       "latest_price_rial": 207660,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "اپال (گندله)": {
       "supplier": "صنعتی و معدنی اپال پارسیان سنگان",
@@ -313,8 +313,8 @@
       "category": "گندله",
       "ime_symbol": "SMO-PELL-00",
       "current_week_avg_rial": 207660,
-      "current_week_volume_tons": 59000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 60000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 197118,
       "prev_week_volume_tons": 36000,
       "prev_week_trades_count": 2,
@@ -322,10 +322,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.35,
       "fakhuz_codal_ratio_percent": 28.07,
-      "total_traded_volume_tons": 59000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 60000,
+      "trades_count": 2,
       "latest_price_rial": 207660,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "فبافت": {
       "supplier": "احیاء استیل فولاد بافت",
@@ -1090,8 +1090,8 @@
       "category": "گندله",
       "ime_symbol": "SND-PELL-00",
       "current_week_avg_rial": 207660,
-      "current_week_volume_tons": 8000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 23000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 195727,
       "prev_week_volume_tons": 20000,
       "prev_week_trades_count": 1,
@@ -1099,10 +1099,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 6.1,
       "fakhuz_codal_ratio_percent": 28.07,
-      "total_traded_volume_tons": 8000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 23000,
+      "trades_count": 2,
       "latest_price_rial": 207660,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "کنور (کنسانتره)": {
       "supplier": "توسعه معدنی و صنعتی صبانور",
@@ -1132,8 +1132,8 @@
       "category": "گندله",
       "ime_symbol": "SND-PELL-00",
       "current_week_avg_rial": 207660,
-      "current_week_volume_tons": 8000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 23000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 195727,
       "prev_week_volume_tons": 20000,
       "prev_week_trades_count": 1,
@@ -1141,10 +1141,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 6.1,
       "fakhuz_codal_ratio_percent": 28.07,
-      "total_traded_volume_tons": 8000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 23000,
+      "trades_count": 2,
       "latest_price_rial": 207660,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "فبناب": {
       "supplier": "مجتمع فولاد صنعت بناب",
@@ -1615,8 +1615,8 @@
       "category": "گندله",
       "ime_symbol": "CHMI-PELL-00",
       "current_week_avg_rial": 202401,
-      "current_week_volume_tons": 16000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 18000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 191838,
       "prev_week_volume_tons": 30000,
       "prev_week_trades_count": 2,
@@ -1624,10 +1624,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.51,
       "fakhuz_codal_ratio_percent": 27.36,
-      "total_traded_volume_tons": 16000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 18000,
+      "trades_count": 2,
       "latest_price_rial": 202401,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "کچاد (شمش)": {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -1678,8 +1678,8 @@
       "category": "گندله",
       "ime_symbol": "CHMI-PELL-00",
       "current_week_avg_rial": 202401,
-      "current_week_volume_tons": 16000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 18000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 191838,
       "prev_week_volume_tons": 30000,
       "prev_week_trades_count": 2,
@@ -1687,10 +1687,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.51,
       "fakhuz_codal_ratio_percent": 27.36,
-      "total_traded_volume_tons": 16000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 18000,
+      "trades_count": 2,
       "latest_price_rial": 202401,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "فاروند": {
       "supplier": "فولاد کاوه اروند",
@@ -1783,8 +1783,8 @@
       "category": "گندله",
       "ime_symbol": "GOLG-PELL-00",
       "current_week_avg_rial": 218372,
-      "current_week_volume_tons": 68000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 113000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 207751,
       "prev_week_volume_tons": 180000,
       "prev_week_trades_count": 2,
@@ -1792,10 +1792,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.11,
       "fakhuz_codal_ratio_percent": 29.52,
-      "total_traded_volume_tons": 68000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 113000,
+      "trades_count": 2,
       "latest_price_rial": 218372,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "کگهر (آهن اسفنجی)": {
       "supplier": "توسعه آهن و فولاد گل گهر",
@@ -1846,8 +1846,8 @@
       "category": "گندله",
       "ime_symbol": "GOLG-PELL-00",
       "current_week_avg_rial": 218372,
-      "current_week_volume_tons": 68000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 113000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 207751,
       "prev_week_volume_tons": 180000,
       "prev_week_trades_count": 2,
@@ -1855,10 +1855,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.11,
       "fakhuz_codal_ratio_percent": 29.52,
-      "total_traded_volume_tons": 68000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 113000,
+      "trades_count": 2,
       "latest_price_rial": 218372,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "کگوهر": {
       "supplier": "معدنی و صنعتی گهر زمین (سنگ آهن گهر زمین)",
@@ -2959,8 +2959,8 @@
       "category": "گندله",
       "ime_symbol": "CHMI-PELL-00",
       "current_week_avg_rial": 202401,
-      "current_week_volume_tons": 16000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 18000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 191838,
       "prev_week_volume_tons": 30000,
       "prev_week_trades_count": 2,
@@ -2968,10 +2968,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.51,
       "fakhuz_codal_ratio_percent": 27.36,
-      "total_traded_volume_tons": 16000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 18000,
+      "trades_count": 2,
       "latest_price_rial": 202401,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "EHS-OAIOC-00": {
       "supplier": "معادن سنگ آهن احیای سپاهان",
@@ -4387,8 +4387,8 @@
       "category": "گندله",
       "ime_symbol": "GOLG-PELL-00",
       "current_week_avg_rial": 218372,
-      "current_week_volume_tons": 68000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 113000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 207751,
       "prev_week_volume_tons": 180000,
       "prev_week_trades_count": 2,
@@ -4396,10 +4396,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.11,
       "fakhuz_codal_ratio_percent": 29.52,
-      "total_traded_volume_tons": 68000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 113000,
+      "trades_count": 2,
       "latest_price_rial": 218372,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "HSSC-LRENNA2B-00": {
       "supplier": "ذوب آهن  تولید میلگرد سیرجان حدید جنوب",
@@ -6025,8 +6025,8 @@
       "category": "گندله",
       "ime_symbol": "SMO-PELL-00",
       "current_week_avg_rial": 207660,
-      "current_week_volume_tons": 59000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 60000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 197118,
       "prev_week_volume_tons": 36000,
       "prev_week_trades_count": 2,
@@ -6034,10 +6034,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.35,
       "fakhuz_codal_ratio_percent": 28.07,
-      "total_traded_volume_tons": 59000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 60000,
+      "trades_count": 2,
       "latest_price_rial": 207660,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "SND-OAIOC-00": {
       "supplier": "توسعه معدنی و صنعتی صبانور",
@@ -6067,8 +6067,8 @@
       "category": "گندله",
       "ime_symbol": "SND-PELL-00",
       "current_week_avg_rial": 207660,
-      "current_week_volume_tons": 8000,
-      "current_week_trades_count": 1,
+      "current_week_volume_tons": 23000,
+      "current_week_trades_count": 2,
       "prev_week_avg_rial": 195727,
       "prev_week_volume_tons": 20000,
       "prev_week_trades_count": 1,
@@ -6076,10 +6076,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 6.1,
       "fakhuz_codal_ratio_percent": 28.07,
-      "total_traded_volume_tons": 8000,
-      "trades_count": 1,
+      "total_traded_volume_tons": 23000,
+      "trades_count": 2,
       "latest_price_rial": 207660,
-      "latest_date": "1405/09/01"
+      "latest_date": "1405/09/02"
     },
     "SPSG-HREENNA3B-00": {
       "supplier": "مجتمع ذوب آهن اطلس تجارت سهند",
