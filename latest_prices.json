@@ -23,6 +23,28 @@
   },
   {
     "supplier": "شرکت معدنی وصنعتی چادرملو",
+    "producer": "شرکت معدنی وصنعتی چادرملو",
+    "product": "گندله سنگ آهن",
+    "symbol": "CHMI-PELL-00",
+    "date": "1405/09/03",
+    "base_price": "202401",
+    "final_price": "202401",
+    "diff_percent": 0.0,
+    "volume": "6000",
+    "demand": "6000",
+    "traded_volume": "6000",
+    "settlement": "نقدی / اعتباری",
+    "broker": "بانک سپه",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-24 12:48:56",
+    "matched_targets": [
+      "گندله - چادرملو"
+    ]
+  },
+  {
+    "supplier": "شرکت معدنی وصنعتی چادرملو",
     "product": "شمش بلوم (150*150)5SP",
     "symbol": "CHMI-BSG194X-00",
     "date": "1405/09/02",
