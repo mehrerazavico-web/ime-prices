@@ -1,6 +1,6 @@
 {
-  "updated_at": "1405/09/03 - 07:10",
-  "updated_at_utc": "2026-11-24T03:40:25Z",
+  "updated_at": "1405/09/03 - 13:10",
+  "updated_at_utc": "2026-11-24T09:40:34Z",
   "bot_version": "codal-benchmarks-v1.2",
   "calendar_weeks": {
     "week_rule": "هفته تقویمی شمسی (شنبه تا جمعه) · منحصراً معاملات قطعی انجام‌شده (بدون عدم معامله و بدون قیمت پایه)",
@@ -75,24 +75,24 @@
   "category_weekly_averages": [
     {
       "category": "گندله",
-      "current_week_avg_rial": 213275,
-      "current_week_volume_tons": 396500,
-      "current_week_trades_count": 12,
+      "current_week_avg_rial": 213034,
+      "current_week_volume_tons": 405500,
+      "current_week_trades_count": 14,
       "current_week_range": "1405/08/30 تا 1405/09/06",
       "prev_week_avg_rial": 202195,
       "prev_week_volume_tons": 502250,
       "prev_week_trades_count": 14,
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "two_weeks_ago_avg_rial": 205196,
-      "weekly_change_percent": 5.48,
+      "weekly_change_percent": 5.36,
       "prev_week_change_percent": -1.46,
-      "total_traded_volume_tons": 396500,
-      "trades_count": 12,
+      "total_traded_volume_tons": 405500,
+      "trades_count": 14,
       "ratio_basis_week": "current_week",
-      "fakhuz_codal_ratio_percent": 28.83,
+      "fakhuz_codal_ratio_percent": 28.8,
       "prev_week_fakhuz_ratio_percent": 27.33,
-      "codal_ratio_percent": 28.83,
-      "ime_billet_ratio_percent": 22.96
+      "codal_ratio_percent": 28.8,
+      "ime_billet_ratio_percent": 22.94
     },
     {
       "category": "کنسانتره",
@@ -1615,8 +1615,8 @@
       "category": "گندله",
       "ime_symbol": "CHMI-PELL-00",
       "current_week_avg_rial": 202401,
-      "current_week_volume_tons": 22000,
-      "current_week_trades_count": 2,
+      "current_week_volume_tons": 31000,
+      "current_week_trades_count": 4,
       "prev_week_avg_rial": 191838,
       "prev_week_volume_tons": 30000,
       "prev_week_trades_count": 2,
@@ -1624,10 +1624,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.51,
       "fakhuz_codal_ratio_percent": 27.36,
-      "total_traded_volume_tons": 22000,
-      "trades_count": 2,
+      "total_traded_volume_tons": 31000,
+      "trades_count": 4,
       "latest_price_rial": 202401,
-      "latest_date": "1405/09/02"
+      "latest_date": "1405/09/03"
     },
     "کچاد (شمش)": {
       "supplier": "شرکت معدنی وصنعتی چادرملو",
@@ -1678,8 +1678,8 @@
       "category": "گندله",
       "ime_symbol": "CHMI-PELL-00",
       "current_week_avg_rial": 202401,
-      "current_week_volume_tons": 22000,
-      "current_week_trades_count": 2,
+      "current_week_volume_tons": 31000,
+      "current_week_trades_count": 4,
       "prev_week_avg_rial": 191838,
       "prev_week_volume_tons": 30000,
       "prev_week_trades_count": 2,
@@ -1687,10 +1687,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.51,
       "fakhuz_codal_ratio_percent": 27.36,
-      "total_traded_volume_tons": 22000,
-      "trades_count": 2,
+      "total_traded_volume_tons": 31000,
+      "trades_count": 4,
       "latest_price_rial": 202401,
-      "latest_date": "1405/09/02"
+      "latest_date": "1405/09/03"
     },
     "فاروند": {
       "supplier": "فولاد کاوه اروند",
@@ -2959,8 +2959,8 @@
       "category": "گندله",
       "ime_symbol": "CHMI-PELL-00",
       "current_week_avg_rial": 202401,
-      "current_week_volume_tons": 22000,
-      "current_week_trades_count": 2,
+      "current_week_volume_tons": 31000,
+      "current_week_trades_count": 4,
       "prev_week_avg_rial": 191838,
       "prev_week_volume_tons": 30000,
       "prev_week_trades_count": 2,
@@ -2968,10 +2968,10 @@
       "prev_week_range": "1405/08/23 تا 1405/08/29",
       "weekly_change_percent": 5.51,
       "fakhuz_codal_ratio_percent": 27.36,
-      "total_traded_volume_tons": 22000,
-      "trades_count": 2,
+      "total_traded_volume_tons": 31000,
+      "trades_count": 4,
       "latest_price_rial": 202401,
-      "latest_date": "1405/09/02"
+      "latest_date": "1405/09/03"
     },
     "EHS-OAIOC-00": {
       "supplier": "معادن سنگ آهن احیای سپاهان",
