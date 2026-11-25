@@ -16,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:00",
+    "final_checked_at": "2026-11-25 23:07:55",
     "matched_targets": [
       "تختال - فولاد خوزستان"
     ]
@@ -38,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:00",
+    "final_checked_at": "2026-11-25 23:07:55",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -60,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:04",
+    "final_checked_at": "2026-11-25 23:07:59",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -82,7 +82,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:04",
+    "final_checked_at": "2026-11-25 23:07:59",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -104,7 +104,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:04",
+    "final_checked_at": "2026-11-25 23:07:59",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -126,7 +126,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:04",
+    "final_checked_at": "2026-11-25 23:07:59",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -148,7 +148,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "تختال - فولاد خوزستان"
     ]
@@ -170,7 +170,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "تختال - جهان آرا"
     ]
@@ -192,7 +192,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "تختال - فولاد خوزستان"
     ]
@@ -214,7 +214,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "میلگرد - فولاد خراسان"
     ]
@@ -236,7 +236,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -258,7 +258,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -280,7 +280,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:11",
+    "final_checked_at": "2026-11-25 23:08:16",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -302,7 +302,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:07",
+    "final_checked_at": "2026-11-25 23:08:12",
     "matched_targets": [
       "تختال - فولاد هرمزگان"
     ]
@@ -324,7 +324,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:11",
+    "final_checked_at": "2026-11-25 23:08:16",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -346,7 +346,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:11",
+    "final_checked_at": "2026-11-25 23:08:16",
     "matched_targets": [
       "میلگرد - سرمد"
     ]
@@ -368,7 +368,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -390,7 +390,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "تختال - فولاد هرمزگان"
     ]
@@ -412,7 +412,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -434,7 +434,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:19",
+    "final_checked_at": "2026-11-25 23:08:25",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -456,7 +456,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -478,7 +478,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -500,7 +500,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:11",
+    "final_checked_at": "2026-11-25 23:08:16",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -522,7 +522,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -544,7 +544,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:11",
+    "final_checked_at": "2026-11-25 23:08:16",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -566,7 +566,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - سرمد"
     ]
@@ -588,7 +588,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - جهان فولاد سیرجان"
     ]
@@ -610,7 +610,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 22:36:15",
+    "final_checked_at": "2026-11-25 23:08:20",
     "matched_targets": [
       "میلگرد - جهان فولاد سیرجان"
     ]
@@ -632,7 +632,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:19",
+    "final_checked_at": "2026-11-25 23:08:25",
     "matched_targets": [
       "میلگرد - کاوه اروند"
     ]
@@ -654,7 +654,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:19",
+    "final_checked_at": "2026-11-25 23:08:25",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -676,7 +676,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:19",
+    "final_checked_at": "2026-11-25 23:08:25",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -698,7 +698,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:23",
+    "final_checked_at": "2026-11-25 23:08:29",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -720,7 +720,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 22:36:23",
+    "final_checked_at": "2026-11-25 23:08:29",
     "matched_targets": [
       "میلگرد - کاوه اروند"
     ]
@@ -1065,14 +1065,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "154",
-    "demand": "در انتظار رقابت",
+    "demand": "0",
     "traded_volume": "0",
-    "settlement": "فولاد روهینا جنوب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:00",
+    "settlement": "نقدی",
+    "broker": "حافظ",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 23:08:29",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -1087,14 +1087,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "66",
-    "demand": "در انتظار رقابت",
+    "demand": "0",
     "traded_volume": "0",
-    "settlement": "فولاد روهینا جنوب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:00",
+    "settlement": "نقدی",
+    "broker": "حافظ",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 23:08:29",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -1109,14 +1109,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "144",
-    "demand": "در انتظار رقابت",
+    "demand": "0",
     "traded_volume": "0",
-    "settlement": "مجتمع فولاد ظفر بناب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:04",
+    "settlement": "نقدی",
+    "broker": "کارآمد",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 23:08:29",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -1131,14 +1131,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "120",
-    "demand": "در انتظار رقابت",
+    "demand": "0",
     "traded_volume": "0",
-    "settlement": "مجتمع فولاد صنعت بناب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 22:52:08",
+    "settlement": "نقدی",
+    "broker": "لقمان",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 23:08:29",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
