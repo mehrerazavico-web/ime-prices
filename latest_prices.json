@@ -16,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 18:16:51",
+    "final_checked_at": "2026-11-25 18:33:01",
     "matched_targets": [
       "تختال - فولاد خوزستان"
     ]
@@ -38,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 18:16:51",
+    "final_checked_at": "2026-11-25 18:33:01",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -60,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 18:16:55",
+    "final_checked_at": "2026-11-25 18:33:05",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -82,7 +82,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 18:16:55",
+    "final_checked_at": "2026-11-25 18:33:05",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -104,7 +104,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 18:16:55",
+    "final_checked_at": "2026-11-25 18:33:05",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -126,7 +126,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 18:16:55",
+    "final_checked_at": "2026-11-25 18:33:05",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -691,14 +691,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "154",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "حافظ",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-25 18:17:25",
+    "settlement": "فولاد روهینا جنوب",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-25 18:33:01",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -713,14 +713,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "66",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "حافظ",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-25 18:17:25",
+    "settlement": "فولاد روهینا جنوب",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-25 18:33:01",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -735,14 +735,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "144",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "کارآمد",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-25 18:17:25",
+    "settlement": "مجتمع فولاد ظفر بناب",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-25 18:33:05",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -757,14 +757,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "120",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "لقمان",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-25 18:17:25",
+    "settlement": "مجتمع فولاد صنعت بناب",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-25 18:33:09",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -811,6 +811,336 @@
     "final_checked_at": "2026-11-25 18:17:25",
     "matched_targets": [
       "میلگرد - کاوه اروند"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1001746",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "1550",
+    "demand": "1240",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:18",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1012300",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "80",
+    "demand": "160",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1022830",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "230",
+    "demand": "460",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1001746",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "170",
+    "demand": "340",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1001746",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "200",
+    "demand": "800",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1001746",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "40",
+    "demand": "100",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1012300",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "330",
+    "demand": "495",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1012300",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "370",
+    "demand": "925",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1022830",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "1860",
+    "demand": "3720",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1012300",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "80",
+    "demand": "320",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1022830",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "350",
+    "demand": "1225",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1022830",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "300",
+    "demand": "750",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1022830",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "70",
+    "demand": "280",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1001746",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "50",
+    "demand": "125",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/04",
+    "base_price": "1012300",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "130",
+    "demand": "520",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 18:33:23",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
     ]
   },
   {
