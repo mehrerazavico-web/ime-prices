@@ -16,53 +16,9 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:21",
+    "final_checked_at": "2026-11-25 16:39:45",
     "matched_targets": [
       "تختال - فولاد خوزستان"
-    ]
-  },
-  {
-    "supplier": "فولاد روهینا جنوب",
-    "producer": "فولاد روهینا جنوب",
-    "product": "میلگرد طول کوتاه 14تا20-A3",
-    "symbol": "FROJ-MREEEEA3BN-00",
-    "date": "1405/09/04",
-    "base_price": "993547",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "154",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "فولاد روهینا جنوب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:21",
-    "matched_targets": [
-      "میلگرد - روهینا"
-    ]
-  },
-  {
-    "supplier": "فولاد روهینا جنوب",
-    "producer": "فولاد روهینا جنوب",
-    "product": "میلگرد طول کوتاه 32تا22-A3",
-    "symbol": "FROJ-HREEEEA3BN-00",
-    "date": "1405/09/04",
-    "base_price": "993547",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "66",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "فولاد روهینا جنوب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:21",
-    "matched_targets": [
-      "میلگرد - روهینا"
     ]
   },
   {
@@ -82,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:21",
+    "final_checked_at": "2026-11-25 16:39:45",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -104,31 +60,9 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:25",
+    "final_checked_at": "2026-11-25 16:39:49",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
-    ]
-  },
-  {
-    "supplier": "مجتمع فولاد ظفر بناب",
-    "producer": "مجتمع فولاد ظفر بناب",
-    "product": "میلگرد طول کوتاه 14تا20-A3",
-    "symbol": "ZBS-MREEEEA3BN-00",
-    "date": "1405/09/04",
-    "base_price": "982142",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "144",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "مجتمع فولاد ظفر بناب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:25",
-    "matched_targets": [
-      "میلگرد - صنعت بناب"
     ]
   },
   {
@@ -148,7 +82,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:25",
+    "final_checked_at": "2026-11-25 16:39:49",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -170,7 +104,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:25",
+    "final_checked_at": "2026-11-25 16:39:49",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -192,75 +126,9 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:25",
+    "final_checked_at": "2026-11-25 16:39:49",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
-    ]
-  },
-  {
-    "supplier": "مجتمع فولاد صنعت بناب",
-    "producer": "مجتمع فولاد صنعت بناب",
-    "product": "میلگرد طول کوتاه 14تا20-A3",
-    "symbol": "BIMC-MREEEEA3BN-00",
-    "date": "1405/09/04",
-    "base_price": "994313",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "264",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "مجتمع فولاد صنعت بناب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:29",
-    "matched_targets": [
-      "میلگرد - صنعت بناب"
-    ]
-  },
-  {
-    "supplier": "مجتمع فولاد صنعت بناب",
-    "producer": "مجتمع فولاد صنعت بناب",
-    "product": "میلگرد طول کوتاه 32تا22-A3",
-    "symbol": "BIMC-HREEEEA3BN-00",
-    "date": "1405/09/04",
-    "base_price": "994313",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "120",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "مجتمع فولاد صنعت بناب",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:29",
-    "matched_targets": [
-      "میلگرد - صنعت بناب"
-    ]
-  },
-  {
-    "supplier": "فولاد کاوه اروند",
-    "producer": "فولاد کاوه اروند",
-    "product": "میلگرد 16",
-    "symbol": "AKST-MRNENNA3B-00",
-    "date": "1405/09/04",
-    "base_price": "1030200",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "450",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "فولاد کاوه اروند",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-25 16:23:29",
-    "matched_targets": [
-      "میلگرد - کاوه اروند"
     ]
   },
   {
@@ -280,7 +148,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 16:23:38",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "تختال - فولاد خوزستان"
     ]
@@ -302,7 +170,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 16:23:38",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "تختال - جهان آرا"
     ]
@@ -324,7 +192,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-25 16:23:38",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "تختال - فولاد خوزستان"
     ]
@@ -346,7 +214,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:38",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "میلگرد - فولاد خراسان"
     ]
@@ -368,7 +236,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:38",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -390,7 +258,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:38",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -412,7 +280,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:43",
+    "final_checked_at": "2026-11-25 16:40:07",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -434,7 +302,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:43",
+    "final_checked_at": "2026-11-25 16:40:02",
     "matched_targets": [
       "تختال - فولاد هرمزگان"
     ]
@@ -456,7 +324,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:43",
+    "final_checked_at": "2026-11-25 16:40:07",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -478,7 +346,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:43",
+    "final_checked_at": "2026-11-25 16:40:07",
     "matched_targets": [
       "میلگرد - سرمد"
     ]
@@ -500,7 +368,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -522,7 +390,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "تختال - فولاد هرمزگان"
     ]
@@ -544,7 +412,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -566,7 +434,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:15",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -588,7 +456,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -610,7 +478,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -632,7 +500,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:07",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -654,7 +522,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -676,7 +544,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:07",
     "matched_targets": [
       "میلگرد - صنعت بناب"
     ]
@@ -698,7 +566,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - سرمد"
     ]
@@ -720,7 +588,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:47",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - جهان فولاد سیرجان"
     ]
@@ -742,9 +610,163 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-25 16:23:51",
+    "final_checked_at": "2026-11-25 16:40:11",
     "matched_targets": [
       "میلگرد - جهان فولاد سیرجان"
+    ]
+  },
+  {
+    "supplier": "فولاد کاوه اروند",
+    "producer": "فولاد کاوه اروند",
+    "product": "میلگرد 16",
+    "symbol": "AKST-MRNENNA3B-00",
+    "date": "1405/09/04",
+    "base_price": "1030200",
+    "final_price": "1030200",
+    "diff_percent": 0.0,
+    "volume": "450",
+    "demand": "375",
+    "traded_volume": "325",
+    "settlement": "نقدی",
+    "broker": "نهایت نگر",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-25 16:40:15",
+    "matched_targets": [
+      "میلگرد - کاوه اروند"
+    ]
+  },
+  {
+    "supplier": "مجتمع فولاد صنعت بناب",
+    "producer": "مجتمع فولاد صنعت بناب",
+    "product": "میلگرد طول کوتاه 14تا20-A3",
+    "symbol": "BIMC-MREEEEA3BN-00",
+    "date": "1405/09/04",
+    "base_price": "994313",
+    "final_price": "994313",
+    "diff_percent": 0.0,
+    "volume": "264",
+    "demand": "72",
+    "traded_volume": "72",
+    "settlement": "نقدی",
+    "broker": "لقمان",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-25 16:40:15",
+    "matched_targets": [
+      "میلگرد - صنعت بناب"
+    ]
+  },
+  {
+    "supplier": "ذوب آهن اصفهان",
+    "producer": "ذوب آهن اصفهان",
+    "product": "میلگرد A3-22",
+    "symbol": "ESC-HRENNNA3B-00",
+    "date": "1405/09/04",
+    "base_price": "1023832",
+    "final_price": "1023832",
+    "diff_percent": 0.0,
+    "volume": "500",
+    "demand": "475",
+    "traded_volume": "475",
+    "settlement": "نقدی / اعتباری",
+    "broker": "بانک رفاه کارگران",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-25 16:40:15",
+    "matched_targets": [
+      "میلگرد - ذوب آهن اصفهان"
+    ]
+  },
+  {
+    "supplier": "فولاد روهینا جنوب",
+    "producer": "فولاد روهینا جنوب",
+    "product": "میلگرد طول کوتاه 14تا20-A3",
+    "symbol": "FROJ-MREEEEA3BN-00",
+    "date": "1405/09/04",
+    "base_price": "993547",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "154",
+    "demand": "0",
+    "traded_volume": "0",
+    "settlement": "نقدی",
+    "broker": "حافظ",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 16:40:19",
+    "matched_targets": [
+      "میلگرد - روهینا"
+    ]
+  },
+  {
+    "supplier": "فولاد روهینا جنوب",
+    "producer": "فولاد روهینا جنوب",
+    "product": "میلگرد طول کوتاه 32تا22-A3",
+    "symbol": "FROJ-HREEEEA3BN-00",
+    "date": "1405/09/04",
+    "base_price": "993547",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "66",
+    "demand": "0",
+    "traded_volume": "0",
+    "settlement": "نقدی",
+    "broker": "حافظ",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 16:40:19",
+    "matched_targets": [
+      "میلگرد - روهینا"
+    ]
+  },
+  {
+    "supplier": "مجتمع فولاد ظفر بناب",
+    "producer": "مجتمع فولاد ظفر بناب",
+    "product": "میلگرد طول کوتاه 14تا20-A3",
+    "symbol": "ZBS-MREEEEA3BN-00",
+    "date": "1405/09/04",
+    "base_price": "982142",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "144",
+    "demand": "0",
+    "traded_volume": "0",
+    "settlement": "نقدی",
+    "broker": "کارآمد",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 16:40:19",
+    "matched_targets": [
+      "میلگرد - صنعت بناب"
+    ]
+  },
+  {
+    "supplier": "مجتمع فولاد صنعت بناب",
+    "producer": "مجتمع فولاد صنعت بناب",
+    "product": "میلگرد طول کوتاه 32تا22-A3",
+    "symbol": "BIMC-HREEEEA3BN-00",
+    "date": "1405/09/04",
+    "base_price": "994313",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "120",
+    "demand": "0",
+    "traded_volume": "0",
+    "settlement": "نقدی",
+    "broker": "لقمان",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-25 16:40:19",
+    "matched_targets": [
+      "میلگرد - صنعت بناب"
     ]
   },
   {
