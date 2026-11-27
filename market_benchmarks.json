@@ -1,6 +1,6 @@
 {
-  "updated_at": "1405/09/06 - 13:12",
-  "updated_at_utc": "2026-11-27T09:42:34Z",
+  "updated_at": "1405/09/06 - 19:13",
+  "updated_at_utc": "2026-11-27T15:43:25Z",
   "bot_version": "codal-benchmarks-v1.2",
   "calendar_weeks": {
     "week_rule": "هفته تقویمی شمسی (شنبه تا جمعه) · منحصراً معاملات قطعی انجام‌شده (بدون عدم معامله و بدون قیمت پایه)",
@@ -57,7 +57,7 @@
     "ime_weekly_billet_avg_rial": 928850,
     "ime_prev_week_billet_avg_rial": 912847,
     "source_url": "https://codal.ir/Reports/Decision.aspx?LetterSerial=xsVtlKeC5HdSgpNGYovDSw%3d%3d&rt=0&let=58&ct=0&ft=-1",
-    "source_type": "codal_live",
+    "source_type": "codal_cache",
     "formula_benchmarks": {
       "concentrate_coeff_percent": 16.7,
       "concentrate_theoretical_rial": 139822,
