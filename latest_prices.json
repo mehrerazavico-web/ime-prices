@@ -1,27 +1,5 @@
 [
   {
-    "supplier": "فولاد خوزستان",
-    "producer": "فولاد خوزستان",
-    "product": "شمش بلوم (150*150) RST34-2",
-    "symbol": "KSC-BSO494X-00",
-    "date": "1405/09/07",
-    "base_price": "985878",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "2500",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "فولاد خوزستان",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:24",
-    "matched_targets": [
-      "شمش - فولاد خوزستان"
-    ]
-  },
-  {
     "supplier": "فولاد روهینا جنوب",
     "producer": "فولاد روهینا جنوب",
     "product": "میلگرد آلیاژ CK45",
@@ -38,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:29",
+    "final_checked_at": "2026-11-28 13:42:01",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -60,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:29",
+    "final_checked_at": "2026-11-28 13:42:01",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -82,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:29",
+    "final_checked_at": "2026-11-28 13:42:01",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -104,7 +82,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:29",
+    "final_checked_at": "2026-11-28 13:42:01",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -126,7 +104,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:33",
+    "final_checked_at": "2026-11-28 13:42:05",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -148,51 +126,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:33",
-    "matched_targets": [
-      "شمش - زرند"
-    ]
-  },
-  {
-    "supplier": "فولاد بوتیای ایرانیان",
-    "producer": "فولاد بوتیای ایرانیان",
-    "product": "شمش بلوم (150*150) RST34-2",
-    "symbol": "BISC-BSO494X-00",
-    "date": "1405/09/07",
-    "base_price": "990000",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "750",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "فولاد بوتیای ایرانیان",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:33",
-    "matched_targets": [
-      "شمش - زرند"
-    ]
-  },
-  {
-    "supplier": "فولاد سیرجان ایرانیان",
-    "producer": "فولاد سیرجان ایرانیان",
-    "product": "شمش بلوم (150*150) RST34-2",
-    "symbol": "SIS-BSO494X-00",
-    "date": "1405/09/07",
-    "base_price": "985000",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "375",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "فولاد سیرجان ایرانیان",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:33",
+    "final_checked_at": "2026-11-28 13:42:05",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -214,7 +148,139 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:33",
+    "final_checked_at": "2026-11-28 13:42:05",
+    "matched_targets": [
+      "شمش - ارفع"
+    ]
+  },
+  {
+    "supplier": "فولاد روهینا جنوب",
+    "producer": "فولاد روهینا جنوب",
+    "product": "میلگرد آلیاژ CK45",
+    "symbol": "FROJ-ARCK45B-00",
+    "date": "1405/09/07",
+    "base_price": "1350000",
+    "final_price": "1350000",
+    "diff_percent": 0.0,
+    "volume": "600",
+    "demand": "300",
+    "traded_volume": "300",
+    "settlement": "نقدی / اعتباری",
+    "broker": "حافظ",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-28 13:42:15",
+    "matched_targets": [
+      "میلگرد - روهینا"
+    ]
+  },
+  {
+    "supplier": "فولاد روهینا جنوب",
+    "producer": "فولاد روهینا جنوب",
+    "product": "میلگرد آلیاژ CK15",
+    "symbol": "FROJ-ARCK15B-00",
+    "date": "1405/09/07",
+    "base_price": "1249000",
+    "final_price": "1249000",
+    "diff_percent": 0.0,
+    "volume": "600",
+    "demand": "225",
+    "traded_volume": "225",
+    "settlement": "نقدی / اعتباری",
+    "broker": "حافظ",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-28 13:42:15",
+    "matched_targets": [
+      "میلگرد - روهینا"
+    ]
+  },
+  {
+    "supplier": "فولاد بوتیای ایرانیان",
+    "producer": "فولاد بوتیای ایرانیان",
+    "product": "شمش بلوم (150*150) RST34-2",
+    "symbol": "BISC-BSO494X-00",
+    "date": "1405/09/07",
+    "base_price": "990000",
+    "final_price": "990000",
+    "diff_percent": 0.0,
+    "volume": "3000",
+    "demand": "750",
+    "traded_volume": "750",
+    "settlement": "نقدی",
+    "broker": "آفتاب درخشان خاورمیانه",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-28 13:42:15",
+    "matched_targets": [
+      "شمش - زرند"
+    ]
+  },
+  {
+    "supplier": "فولاد خوزستان",
+    "producer": "فولاد خوزستان",
+    "product": "شمش بلوم (150*150) RST34-2",
+    "symbol": "KSC-BSO494X-00",
+    "date": "1405/09/07",
+    "base_price": "985878",
+    "final_price": "986309",
+    "diff_percent": 0.04,
+    "volume": "2500",
+    "demand": "3500",
+    "traded_volume": "2500",
+    "settlement": "نقدی",
+    "broker": "توسعه نماد",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "رقابتی",
+    "trade_status": "رقابتی",
+    "final_checked_at": "2026-11-28 13:42:15",
+    "matched_targets": [
+      "شمش - فولاد خوزستان"
+    ]
+  },
+  {
+    "supplier": "فولاد سیرجان ایرانیان",
+    "producer": "فولاد سیرجان ایرانیان",
+    "product": "شمش بلوم (150*150) RST34-2",
+    "symbol": "SIS-BSO494X-00",
+    "date": "1405/09/07",
+    "base_price": "985000",
+    "final_price": "985000",
+    "diff_percent": 0.0,
+    "volume": "1500",
+    "demand": "1500",
+    "traded_volume": "1500",
+    "settlement": "نقدی",
+    "broker": "آفتاب درخشان خاورمیانه",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-28 13:42:19",
+    "matched_targets": [
+      "شمش - زرند"
+    ]
+  },
+  {
+    "supplier": "آهن و فولاد ارفع",
+    "producer": "آهن و فولاد ارفع",
+    "product": "شمش بلوم (150*150)B500B",
+    "symbol": "AISC-BSO824X-00",
+    "date": "1405/09/07",
+    "base_price": "1030000",
+    "final_price": "1034525",
+    "diff_percent": 0.44,
+    "volume": "4000",
+    "demand": "4750",
+    "traded_volume": "4000",
+    "settlement": "نقدی / اعتباری",
+    "broker": "سی ولکس",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "رقابتی",
+    "trade_status": "رقابتی",
+    "final_checked_at": "2026-11-28 13:42:19",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -226,17 +292,17 @@
     "symbol": "AISC-BSO824X-00",
     "date": "1405/09/07",
     "base_price": "935000",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "750",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "آهن و فولاد ارفع",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:26:33",
+    "final_price": "954756",
+    "diff_percent": 2.11,
+    "volume": "3000",
+    "demand": "4500",
+    "traded_volume": "3000",
+    "settlement": "نقدی",
+    "broker": "سی ولکس",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "رقابتی",
+    "trade_status": "رقابتی",
+    "final_checked_at": "2026-11-28 13:42:19",
     "matched_targets": [
       "شمش - ارفع"
     ]
