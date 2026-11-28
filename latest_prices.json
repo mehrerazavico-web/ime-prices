@@ -16,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:26:25",
+    "final_checked_at": "2026-11-28 18:42:02",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -38,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:26:25",
+    "final_checked_at": "2026-11-28 18:42:02",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -60,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:26:29",
+    "final_checked_at": "2026-11-28 18:42:06",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -82,7 +82,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 18:11:00",
+    "final_checked_at": "2026-11-28 18:42:16",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -104,7 +104,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 18:11:00",
+    "final_checked_at": "2026-11-28 18:42:16",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -126,7 +126,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 18:11:00",
+    "final_checked_at": "2026-11-28 18:42:16",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -148,7 +148,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-28 18:10:56",
+    "final_checked_at": "2026-11-28 18:42:20",
     "matched_targets": [
       "شمش - فولاد خوزستان"
     ]
@@ -170,7 +170,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 18:10:48",
+    "final_checked_at": "2026-11-28 18:42:20",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -192,7 +192,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-28 18:10:48",
+    "final_checked_at": "2026-11-28 18:42:20",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -214,7 +214,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-28 18:11:00",
+    "final_checked_at": "2026-11-28 18:42:16",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -236,7 +236,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 18:10:48",
+    "final_checked_at": "2026-11-28 18:42:20",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -258,7 +258,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "بدون معامله",
     "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 18:10:56",
+    "final_checked_at": "2026-11-28 18:42:20",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -280,53 +280,9 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "بدون معامله",
     "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 18:10:56",
+    "final_checked_at": "2026-11-28 18:42:24",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
-    ]
-  },
-  {
-    "supplier": "شرکت فولاد زرند ایرانیان",
-    "producer": "شرکت فولاد زرند ایرانیان",
-    "product": "شمش بلوم (200*200)RST34-2",
-    "symbol": "FZI-BSO495X-00",
-    "date": "1405/09/07",
-    "base_price": "1000000",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "375",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:26:29",
-    "matched_targets": [
-      "شمش - زرند"
-    ]
-  },
-  {
-    "supplier": "شرکت فولاد زرند ایرانیان",
-    "producer": "شرکت فولاد زرند ایرانیان",
-    "product": "شمش بلوم (150*150) RST34-2",
-    "symbol": "FZI-BSO494X-00",
-    "date": "1405/09/07",
-    "base_price": "985000",
-    "final_price": null,
-    "diff_percent": 0.0,
-    "volume": "750",
-    "demand": "در انتظار رقابت",
-    "traded_volume": "0",
-    "settlement": "شرکت فولاد زرند ایرانیان",
-    "broker": "",
-    "hall": "صنعتی",
-    "status": "در انتظار معامله",
-    "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:26:29",
-    "matched_targets": [
-      "شمش - زرند"
     ]
   },
   {
@@ -349,6 +305,50 @@
     "final_checked_at": "2026-11-28 18:26:38",
     "matched_targets": [
       "تختال - فولاد هرمزگان"
+    ]
+  },
+  {
+    "supplier": "شرکت فولاد زرند ایرانیان",
+    "producer": "شرکت فولاد زرند ایرانیان",
+    "product": "شمش بلوم (200*200)RST34-2",
+    "symbol": "FZI-BSO495X-00",
+    "date": "1405/09/07",
+    "base_price": "1000000",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "375",
+    "demand": "0",
+    "traded_volume": "0",
+    "settlement": "نقدی",
+    "broker": "آفتاب درخشان خاورمیانه",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-28 18:42:24",
+    "matched_targets": [
+      "شمش - زرند"
+    ]
+  },
+  {
+    "supplier": "شرکت فولاد زرند ایرانیان",
+    "producer": "شرکت فولاد زرند ایرانیان",
+    "product": "شمش بلوم (150*150) RST34-2",
+    "symbol": "FZI-BSO494X-00",
+    "date": "1405/09/07",
+    "base_price": "985000",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "750",
+    "demand": "0",
+    "traded_volume": "0",
+    "settlement": "نقدی",
+    "broker": "آفتاب درخشان خاورمیانه",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-28 18:42:24",
+    "matched_targets": [
+      "شمش - زرند"
     ]
   },
   {
