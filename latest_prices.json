@@ -16,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 20:01:13",
+    "final_checked_at": "2026-11-28 20:17:03",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -38,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 20:01:13",
+    "final_checked_at": "2026-11-28 20:17:03",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -60,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 20:01:17",
+    "final_checked_at": "2026-11-28 20:17:07",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -302,7 +302,7 @@
     "hall": "تالار فرعی",
     "status": "بدون معامله",
     "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 18:26:38",
+    "final_checked_at": "2026-11-28 20:17:16",
     "matched_targets": [
       "تختال - فولاد هرمزگان"
     ]
@@ -317,14 +317,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "375",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "آفتاب درخشان خاورمیانه",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 20:01:34",
+    "settlement": "شرکت فولاد زرند ایرانیان",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-28 20:17:07",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -339,14 +339,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "750",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "آفتاب درخشان خاورمیانه",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 20:01:34",
+    "settlement": "شرکت فولاد زرند ایرانیان",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-28 20:17:07",
     "matched_targets": [
       "شمش - زرند"
     ]
