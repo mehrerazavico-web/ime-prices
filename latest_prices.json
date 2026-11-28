@@ -16,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:10:35",
+    "final_checked_at": "2026-11-28 18:26:25",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -38,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:10:35",
+    "final_checked_at": "2026-11-28 18:26:25",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -60,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 18:10:39",
+    "final_checked_at": "2026-11-28 18:26:29",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -295,14 +295,14 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "375",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "آفتاب درخشان خاورمیانه",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 18:10:48",
+    "settlement": "شرکت فولاد زرند ایرانیان",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-28 18:26:29",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -317,16 +317,38 @@
     "final_price": null,
     "diff_percent": 0.0,
     "volume": "750",
-    "demand": "0",
+    "demand": "در انتظار رقابت",
     "traded_volume": "0",
-    "settlement": "نقدی",
-    "broker": "آفتاب درخشان خاورمیانه",
-    "hall": "تالار صنعتی و معدنی",
-    "status": "بدون معامله",
-    "trade_status": "بدون معامله",
-    "final_checked_at": "2026-11-28 18:10:52",
+    "settlement": "شرکت فولاد زرند ایرانیان",
+    "broker": "",
+    "hall": "صنعتی",
+    "status": "در انتظار معامله",
+    "trade_status": "در انتظار معامله",
+    "final_checked_at": "2026-11-28 18:26:29",
     "matched_targets": [
       "شمش - زرند"
+    ]
+  },
+  {
+    "supplier": "فولاد هرمزگان جنوب",
+    "producer": "فولاد هرمزگان جنوب",
+    "product": "تختال",
+    "symbol": "HSTC-DSMSSO00OO-00",
+    "date": "1405/09/07",
+    "base_price": "1001746",
+    "final_price": null,
+    "diff_percent": 0.0,
+    "volume": "0",
+    "demand": "310",
+    "traded_volume": "0",
+    "settlement": "نقدی / اعتباری",
+    "broker": "باهنر",
+    "hall": "تالار فرعی",
+    "status": "بدون معامله",
+    "trade_status": "بدون معامله",
+    "final_checked_at": "2026-11-28 18:26:38",
+    "matched_targets": [
+      "تختال - فولاد هرمزگان"
     ]
   },
   {
