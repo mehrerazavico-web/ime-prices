@@ -16,7 +16,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:44",
+    "final_checked_at": "2026-11-28 14:13:25",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -38,7 +38,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:44",
+    "final_checked_at": "2026-11-28 14:13:25",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -60,7 +60,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:44",
+    "final_checked_at": "2026-11-28 14:13:25",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -82,7 +82,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:44",
+    "final_checked_at": "2026-11-28 14:13:25",
     "matched_targets": [
       "میلگرد - ذوب آهن اصفهان"
     ]
@@ -104,7 +104,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:48",
+    "final_checked_at": "2026-11-28 14:13:29",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -126,7 +126,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:48",
+    "final_checked_at": "2026-11-28 14:13:29",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -148,7 +148,7 @@
     "hall": "صنعتی",
     "status": "در انتظار معامله",
     "trade_status": "در انتظار معامله",
-    "final_checked_at": "2026-11-28 13:57:48",
+    "final_checked_at": "2026-11-28 14:13:29",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -170,7 +170,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 13:57:57",
+    "final_checked_at": "2026-11-28 14:13:39",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -192,7 +192,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 13:57:57",
+    "final_checked_at": "2026-11-28 14:13:39",
     "matched_targets": [
       "میلگرد - روهینا"
     ]
@@ -214,7 +214,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 13:57:57",
+    "final_checked_at": "2026-11-28 14:13:39",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -236,7 +236,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-28 13:57:57",
+    "final_checked_at": "2026-11-28 14:13:39",
     "matched_targets": [
       "شمش - فولاد خوزستان"
     ]
@@ -258,7 +258,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "معامله با نرخ پایه",
     "trade_status": "معامله با نرخ پایه",
-    "final_checked_at": "2026-11-28 13:58:02",
+    "final_checked_at": "2026-11-28 14:13:43",
     "matched_targets": [
       "شمش - زرند"
     ]
@@ -280,7 +280,7 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-28 13:58:02",
+    "final_checked_at": "2026-11-28 14:13:43",
     "matched_targets": [
       "شمش - ارفع"
     ]
@@ -302,9 +302,31 @@
     "hall": "تالار صنعتی و معدنی",
     "status": "رقابتی",
     "trade_status": "رقابتی",
-    "final_checked_at": "2026-11-28 13:58:02",
+    "final_checked_at": "2026-11-28 14:13:39",
     "matched_targets": [
       "شمش - ارفع"
+    ]
+  },
+  {
+    "supplier": "فولاد بوتیای ایرانیان",
+    "producer": "فولاد بوتیای ایرانیان",
+    "product": "شمش بلوم (150*150) RST34-2",
+    "symbol": "BISC-BSO494X-00",
+    "date": "1405/09/07",
+    "base_price": "990000",
+    "final_price": "990000",
+    "diff_percent": 0.0,
+    "volume": "750",
+    "demand": "750",
+    "traded_volume": "750",
+    "settlement": "نقدی",
+    "broker": "آفتاب درخشان خاورمیانه",
+    "hall": "تالار صنعتی و معدنی",
+    "status": "معامله با نرخ پایه",
+    "trade_status": "معامله با نرخ پایه",
+    "final_checked_at": "2026-11-28 14:13:43",
+    "matched_targets": [
+      "شمش - زرند"
     ]
   },
   {
